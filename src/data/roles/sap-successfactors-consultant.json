@@ -1,0 +1,174 @@
+{
+  "id": "sap-successfactors-consultant",
+  "name": "SAP SuccessFactors Human Experience Management (HXM) Consultant",
+  "title": "SAP SuccessFactors Human Experience Management (HXM) Consultant",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Human Experience Management (HXM) with SAP SuccessFactors. Employee Central core, Foundation Objects, Position Management, Role-Based Permissions (RBP), Business Rules Engine, Integration Center, and OData APIs.",
+  "targetRoles": [
+    "SAP SuccessFactors Consultant",
+    "HXM Specialist",
+    "HR Technology Architect"
+  ],
+  "prerequisites": [
+    "HR business processes understanding"
+  ],
+  "difficulty": "Intermediate",
+  "estimatedDuration": "5-7 months",
+  "estimatedHours": 280,
+  "technologies": [
+    "SAP SuccessFactors",
+    "Employee Central",
+    "OData API",
+    "Integration Center",
+    "Business Rules",
+    "Role-Based Permissions (RBP)",
+    "People Analytics"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "sf-l0",
+      "order": 0,
+      "title": "Level 0 — Employee Central & SuccessFactors HXM Architecture",
+      "description": "Employee Central data model, MDF objects, Foundation Objects, Position Management, and Role-Based Permissions.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "sf-l0-s1",
+          "order": 1,
+          "title": "Employee Central Core & Integration Center",
+          "description": "Core subject domain covering Employee Central Core & Integration Center.",
+          "topics": [
+            {
+              "id": "sf-l0-t1",
+              "order": 1,
+              "title": "Employee Central, Business Rules & Integration Center",
+              "description": "Configure Employee Central master data, business rules, RBP security, and export data via Integration Center.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Employee Central, Business Rules & Integration Center",
+                "Implement production-grade components using industry best practices for Employee Central, Business Rules & Integration Center",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Employee Central, Business Rules & Integration Center",
+                "Explain design trade-offs and answer senior technical interview questions on Employee Central, Business Rules & Integration Center"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-sf-l0-t1-1",
+                  "title": "SuccessFactors HXM Architecture & Core Modules Overview",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-sf-l0-t1-2",
+                  "title": "Employee Central: Foundation Objects (Legal Entity, Business Unit), Generic Objects (MDF)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-sf-l0-t1-3",
+                  "title": "Role-Based Permissions (RBP): Permission Groups, Permission Roles, Target Populations",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-sf-l0-t1-4",
+                  "title": "SuccessFactors Business Rules Engine: Trigger Events (onChange, onSave, onInit)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-sf-l0-t1-5",
+                  "title": "Integration Center & SuccessFactors OData API for System Integrations",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-sf-l0-t1-1",
+                  "title": "Hands-on Lab: Employee Central, Business Rules & Integration Center",
+                  "description": "Implement, test, and validate core patterns of Employee Central, Business Rules & Integration Center in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-sf-l0-t1-2",
+                  "title": "Independent Challenge: Employee Central, Business Rules & Integration Center",
+                  "description": "Build end-to-end functionality for Employee Central, Business Rules & Integration Center from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-sf-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Employee Central, Business Rules & Integration Center",
+                  "description": "Troubleshoot a scenario where Employee Central, Business Rules & Integration Center throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-sf-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Employee Central, Business Rules & Integration Center. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-sf-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Employee Central, Business Rules & Integration Center?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-sf-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Employee Central, Business Rules & Integration Center",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

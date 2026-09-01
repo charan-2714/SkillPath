@@ -1,0 +1,187 @@
+{
+  "version": 1,
+  "id": "full-stack-developer",
+  "name": "Full Stack Developer",
+  "description": "Master modern full-stack web development from HTML/CSS/JS fundamentals to React, Node.js, databases, APIs, and cloud deployment.",
+  "category": "Software Development",
+  "difficulty": "Beginner to Advanced",
+  "estimatedDuration": "8-12 months",
+  "tags": ["Full Stack", "React", "Node.js", "JavaScript", "TypeScript", "PostgreSQL", "Next.js"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "fs-l0",
+      "order": 0,
+      "title": "Web Foundations & JavaScript",
+      "description": "Semantic HTML5, responsive CSS Grid/Flexbox, modern ES6+ JavaScript, and DOM APIs.",
+      "estimatedDuration": "4 weeks",
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "html-css-js",
+          "order": 1,
+          "title": "Frontend Core",
+          "topics": [
+            {
+              "id": "semantic-html-a11y",
+              "order": 1,
+              "title": "Semantic HTML5 & Accessibility",
+              "description": "ARIA attributes, semantic hierarchy, keyboard navigation, and form validation.",
+              "priority": "core",
+              "tags": ["html", "a11y"],
+              "estimatedHours": 6
+            },
+            {
+              "id": "css-layouts",
+              "order": 2,
+              "title": "Modern CSS (Flexbox, Grid & Tailwind)",
+              "description": "Box model, responsive breakpoints, Flexbox layouts, Grid systems, and CSS variables.",
+              "priority": "core",
+              "tags": ["css", "tailwind"],
+              "estimatedHours": 8
+            },
+            {
+              "id": "js-es6-async",
+              "order": 3,
+              "title": "JavaScript ES6+ & Async/Await",
+              "description": "Promises, async/await, closures, prototypes, destructuring, and Fetch API.",
+              "priority": "core",
+              "tags": ["javascript", "es6"],
+              "estimatedHours": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fs-l1",
+      "order": 1,
+      "title": "Frontend Frameworks (React & Next.js)",
+      "description": "Components, state management, hooks, routing, server-side rendering, and caching.",
+      "estimatedDuration": "6 weeks",
+      "color": "indigo",
+      "subjects": [
+        {
+          "id": "react-nextjs",
+          "order": 1,
+          "title": "React & Next.js Architecture",
+          "topics": [
+            {
+              "id": "react-hooks-state",
+              "order": 1,
+              "title": "React Hooks & State Architecture",
+              "description": "useState, useEffect, useMemo, useCallback, useRef, custom hooks, and context.",
+              "priority": "core",
+              "tags": ["react", "hooks"],
+              "estimatedHours": 14
+            },
+            {
+              "id": "nextjs-app-router",
+              "order": 2,
+              "title": "Next.js App Router & Server Components",
+              "description": "React Server Components, server actions, dynamic routing, and caching strategies.",
+              "priority": "core",
+              "tags": ["nextjs", "react"],
+              "estimatedHours": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fs-l2",
+      "order": 2,
+      "title": "Backend Engineering & Node.js",
+      "description": "RESTful API design with Express/NestJS, middleware, authentication, and security.",
+      "estimatedDuration": "6 weeks",
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "nodejs-backend",
+          "order": 1,
+          "title": "Server-Side Development",
+          "topics": [
+            {
+              "id": "express-apis",
+              "order": 1,
+              "title": "Express REST API Architecture",
+              "description": "Routing controllers, middleware pipelines, error handling, and Zod input validation.",
+              "priority": "core",
+              "tags": ["nodejs", "express"],
+              "estimatedHours": 10
+            },
+            {
+              "id": "auth-security",
+              "order": 2,
+              "title": "Authentication & Security (JWT, OAuth)",
+              "description": "Bcrypt password hashing, JWT cookies, CORS, rate limiting, and RBAC authorization.",
+              "priority": "core",
+              "tags": ["auth", "security"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fs-l3",
+      "order": 3,
+      "title": "Databases & ORMs",
+      "description": "PostgreSQL relational data modeling, indexing, transactions, and Prisma/Drizzle ORM.",
+      "estimatedDuration": "4 weeks",
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "databases-sql",
+          "order": 1,
+          "title": "Data Persistence",
+          "topics": [
+            {
+              "id": "postgresql-prisma",
+              "order": 1,
+              "title": "PostgreSQL & Prisma ORM",
+              "description": "Schema migrations, relations, complex joins, indexing, and connection pooling.",
+              "priority": "core",
+              "tags": ["postgresql", "prisma", "sql"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fs-l4",
+      "order": 4,
+      "title": "DevOps, CI/CD & Deployment",
+      "description": "Docker containerization, GitHub Actions automated CI/CD, and deploying to Vercel and AWS.",
+      "estimatedDuration": "4 weeks",
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "deployment-devops",
+          "order": 1,
+          "title": "Production Deployment",
+          "topics": [
+            {
+              "id": "docker-cicd-deploy",
+              "order": 1,
+              "title": "Docker Containers & GitHub Actions CI/CD",
+              "description": "Multi-stage builds, automated lint/test workflows, and zero-downtime deployments.",
+              "priority": "core",
+              "tags": ["docker", "cicd"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

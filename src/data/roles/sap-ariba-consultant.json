@@ -1,0 +1,168 @@
+{
+  "id": "sap-ariba-consultant",
+  "name": "SAP Ariba Sourcing & Procurement Consultant",
+  "title": "SAP Ariba Sourcing & Procurement Consultant",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Mastery of strategic sourcing, supplier management, buying, and contract compliance with SAP Ariba and SAP Business Network. Integration with S/4HANA via SAP Integration Suite Managed Gateway for Spend&Network (CIG).",
+  "targetRoles": [
+    "SAP Ariba Consultant",
+    "Strategic Sourcing Lead",
+    "Ariba Procurement Specialist"
+  ],
+  "prerequisites": [
+    "Procurement and sourcing fundamentals"
+  ],
+  "difficulty": "Intermediate",
+  "estimatedDuration": "5-7 months",
+  "estimatedHours": 280,
+  "technologies": [
+    "SAP Ariba",
+    "Ariba Sourcing",
+    "Ariba Buying & Invoicing",
+    "Ariba Network (SAP Business Network)",
+    "Cloud Integration Gateway (CIG / Managed Gateway)",
+    "S/4HANA Integration"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "ariba-l0",
+      "order": 0,
+      "title": "Level 0 — Ariba Modules & Sourcing Lifecycle",
+      "description": "Strategic Sourcing, Contracts, Supplier Lifecycle & Performance (SLP), Buying & Invoicing, and SAP Business Network.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "ariba-l0-s1",
+          "order": 1,
+          "title": "Ariba Sourcing & Procurement Suite",
+          "description": "Core subject domain covering Ariba Sourcing & Procurement Suite.",
+          "topics": [
+            {
+              "id": "ariba-l0-t1",
+              "order": 1,
+              "title": "Ariba Modules & S/4HANA CIG Integration",
+              "description": "Understand Ariba strategic sourcing, guided buying, catalogs, and Managed Gateway integration.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Ariba Modules & S/4HANA CIG Integration",
+                "Implement production-grade components using industry best practices for Ariba Modules & S/4HANA CIG Integration",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Ariba Modules & S/4HANA CIG Integration",
+                "Explain design trade-offs and answer senior technical interview questions on Ariba Modules & S/4HANA CIG Integration"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-ariba-l0-t1-1",
+                  "title": "SAP Ariba Solution Portfolio: Upstream (Sourcing, Contracts, SLP) vs Downstream (Buying, Invoicing)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-ariba-l0-t1-2",
+                  "title": "Guided Buying: Requisitioning, Spot Buy, Approval Workflows, Catalogs",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-ariba-l0-t1-3",
+                  "title": "SAP Business Network (Ariba Network): Purchase Order Dispatch, PO Flip to Invoice, Advance Ship Notices (ASN)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-ariba-l0-t1-4",
+                  "title": "SAP Integration Suite Managed Gateway for Spend&Network (formerly CIG) Integration with S/4HANA",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-ariba-l0-t1-1",
+                  "title": "Hands-on Lab: Ariba Modules & S/4HANA CIG Integration",
+                  "description": "Implement, test, and validate core patterns of Ariba Modules & S/4HANA CIG Integration in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-ariba-l0-t1-2",
+                  "title": "Independent Challenge: Ariba Modules & S/4HANA CIG Integration",
+                  "description": "Build end-to-end functionality for Ariba Modules & S/4HANA CIG Integration from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-ariba-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Ariba Modules & S/4HANA CIG Integration",
+                  "description": "Troubleshoot a scenario where Ariba Modules & S/4HANA CIG Integration throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-ariba-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Ariba Modules & S/4HANA CIG Integration. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-ariba-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Ariba Modules & S/4HANA CIG Integration?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-ariba-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Ariba Modules & S/4HANA CIG Integration",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

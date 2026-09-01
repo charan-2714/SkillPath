@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "id": "machine-learning-engineer",
+  "name": "Machine Learning Engineer",
+  "description": "Design, build, and deploy production ML models, data pipelines, feature stores, and MLOps architectures.",
+  "category": "Data Science & AI",
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "9-12 months",
+  "tags": ["Machine Learning", "Python", "PyTorch", "Scikit-Learn", "MLOps"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "mle-l0",
+      "order": 0,
+      "title": "Mathematics & Data Foundations",
+      "description": "Linear algebra, multivariate calculus, probability, statistics, and Pandas vectorization.",
+      "estimatedDuration": "4 weeks",
+      "color": "indigo",
+      "subjects": [
+        {
+          "id": "math-data-prep",
+          "order": 1,
+          "title": "Applied Math & Data Wrangling",
+          "topics": [
+            {
+              "id": "matrix-operations",
+              "order": 1,
+              "title": "Matrix Operations & Linear Algebra",
+              "description": "Eigenvalues, SVD, PCA, matrix factorizations, and gradient vectors.",
+              "priority": "core",
+              "tags": ["math", "linear-algebra"],
+              "estimatedHours": 8,
+              "learningItems": [
+                { "id": "mle-1", "title": "Understand dot products, norms, and projections", "type": "concept" },
+                { "id": "mle-2", "title": "Implement SVD from scratch using NumPy", "type": "implementation" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mle-l1",
+      "order": 1,
+      "title": "Classical ML & Ensembles",
+      "description": "Supervised learning, loss optimization, XGBoost, CatBoost, feature engineering.",
+      "estimatedDuration": "6 weeks",
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "supervised-ensembles",
+          "order": 1,
+          "title": "Supervised Learning Algorithms",
+          "topics": [
+            {
+              "id": "gradient-boosted-trees",
+              "order": 1,
+              "title": "Gradient Boosted Trees (XGBoost, LightGBM)",
+              "description": "Tree splitting criteria, regularization, learning rates, and early stopping.",
+              "priority": "core",
+              "tags": ["ml", "xgboost"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mle-l2",
+      "order": 2,
+      "title": "Deep Learning & PyTorch",
+      "description": "Neural network architectures, custom datasets, DataLoader pipelines, and GPU training.",
+      "estimatedDuration": "6 weeks",
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "pytorch-foundations",
+          "order": 1,
+          "title": "PyTorch Production Models",
+          "topics": [
+            {
+              "id": "custom-training-loops",
+              "order": 1,
+              "title": "PyTorch Training Loops & Mixed Precision",
+              "description": "Writing clean training/validation loops with torch.cuda.amp mixed precision.",
+              "priority": "core",
+              "tags": ["pytorch", "deep-learning"],
+              "estimatedHours": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mle-l3",
+      "order": 3,
+      "title": "MLOps, Serving & Monitoring",
+      "description": "Model serving with Triton/TorchServe, MLflow tracking, feature stores (Feast), and drift monitoring.",
+      "estimatedDuration": "6 weeks",
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "model-serving",
+          "order": 1,
+          "title": "Model Serving & Monitoring",
+          "topics": [
+            {
+              "id": "model-deployment-fastapi",
+              "order": 1,
+              "title": "Low-Latency Model Serving with FastAPI & ONNX",
+              "description": "Exporting models to ONNX runtime and serving via batch inference endpoints.",
+              "priority": "core",
+              "tags": ["mlops", "onnx", "fastapi"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

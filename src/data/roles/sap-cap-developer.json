@@ -1,0 +1,411 @@
+{
+  "id": "sap-cap-developer",
+  "name": "SAP CAP Developer (Cloud Application Programming Model)",
+  "title": "SAP CAP Developer (Cloud Application Programming Model)",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Enterprise backend development with SAP Cloud Application Programming Model (CAP). Core Data Services (CDS) modeling, custom event handlers (before/on/after), persistence on SQLite & HANA Cloud, external service integration via SAP Cloud SDK, security annotations, and Fiori frontends.",
+  "targetRoles": [
+    "SAP CAP Developer",
+    "Full-Stack SAP Cloud Engineer",
+    "BTP Backend Developer"
+  ],
+  "prerequisites": [
+    "JavaScript/Node.js or Java",
+    "Basic SQL & REST concepts"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "6-8 months",
+  "estimatedHours": 350,
+  "technologies": [
+    "SAP CAP",
+    "CDS (Core Data Services)",
+    "Node.js",
+    "Java SDK",
+    "SAP HANA Cloud",
+    "SQLite",
+    "OData V4",
+    "Fiori Elements",
+    "BTP Cloud Foundry"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "cap-l0",
+      "order": 0,
+      "title": "Level 0 — CAP Architecture, CLI & CDS Modeling",
+      "description": "CAP philosophy (convention over configuration), CDS language, entities, types, associations, and compositions.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "cap-l0-s1",
+          "order": 1,
+          "title": "CDS Data Modeling & Service Definitions",
+          "description": "Core subject domain covering CDS Data Modeling & Service Definitions.",
+          "topics": [
+            {
+              "id": "cap-l0-t1",
+              "order": 1,
+              "title": "Core Data Services (CDS) & Entity Relations",
+              "description": "Define domain models, managed aspects (cuid, managed), associations, and compositions in schema.cds.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Core Data Services (CDS) & Entity Relations",
+                "Implement production-grade components using industry best practices for Core Data Services (CDS) & Entity Relations",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Core Data Services (CDS) & Entity Relations",
+                "Explain design trade-offs and answer senior technical interview questions on Core Data Services (CDS) & Entity Relations"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cap-l0-t1-1",
+                  "title": "CAP Architecture: Separation of Domain Data Model, Service Definitions, and Custom Logic",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cap-l0-t1-2",
+                  "title": "@sap/cds-dk CLI Setup & Project Scaffolding (cds init, cds watch)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cap-l0-t1-3",
+                  "title": "Defining Entities, Custom Types, Enums & Built-in Types in schema.cds",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cap-l0-t1-4",
+                  "title": "Built-in Aspects: cuid (UUID keys), managed (createdAt, createdBy, modifiedAt), temporal",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cap-l0-t1-5",
+                  "title": "Associations (1:1, 1:N) vs Compositions (Parent-Child Lifecycle Coupling)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cap-l0-t1-6",
+                  "title": "Service Definitions in srv/cat-service.cds & OData Service Expositions",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cap-l0-t1-1",
+                  "title": "Hands-on Lab: Core Data Services (CDS) & Entity Relations",
+                  "description": "Implement, test, and validate core patterns of Core Data Services (CDS) & Entity Relations in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cap-l0-t1-2",
+                  "title": "Independent Challenge: Core Data Services (CDS) & Entity Relations",
+                  "description": "Build end-to-end functionality for Core Data Services (CDS) & Entity Relations from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cap-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Core Data Services (CDS) & Entity Relations",
+                  "description": "Troubleshoot a scenario where Core Data Services (CDS) & Entity Relations throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cap-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Core Data Services (CDS) & Entity Relations. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cap-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Core Data Services (CDS) & Entity Relations?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cap-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Core Data Services (CDS) & Entity Relations",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cap-l1",
+      "order": 1,
+      "title": "Level 1 — Custom Handlers, Events & Business Logic",
+      "description": "Implementing server logic: Custom handlers (before, on, after), CQL (Core Query Language), and custom actions/functions.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "cap-l1-s1",
+          "order": 1,
+          "title": "Node.js / Java Event Handlers & CQL",
+          "description": "Core subject domain covering Node.js / Java Event Handlers & CQL.",
+          "topics": [
+            {
+              "id": "cap-l1-t1",
+              "order": 1,
+              "title": "Event Handling Lifecycle & CQL Database Operations",
+              "description": "Implement validation, enrichments, custom CRUD handlers, and custom actions/functions.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Event Handling Lifecycle & CQL Database Operations",
+                "Implement production-grade components using industry best practices for Event Handling Lifecycle & CQL Database Operations",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Event Handling Lifecycle & CQL Database Operations",
+                "Explain design trade-offs and answer senior technical interview questions on Event Handling Lifecycle & CQL Database Operations"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cap-l1-t1-1",
+                  "title": "Service Event Handlers: srv.before(), srv.on(), srv.after() for READ, CREATE, UPDATE, DELETE",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cap-l1-t1-2",
+                  "title": "Core Query Language (CQL): SELECT, INSERT, UPDATE, UPSERT, DELETE programmatically",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cap-l1-t1-3",
+                  "title": "Custom Actions (Side-Effect Modifiers) and Custom Functions (Read-Only Computations)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cap-l1-t1-4",
+                  "title": "Input Validation, Data Sanitization & Rejecting Requests with req.error() / req.reject()",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cap-l1-t1-5",
+                  "title": "Handling Draft-Enabled Entities & Side-Effects in CAP",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cap-l1-t1-1",
+                  "title": "Hands-on Lab: Event Handling Lifecycle & CQL Database Operations",
+                  "description": "Implement, test, and validate core patterns of Event Handling Lifecycle & CQL Database Operations in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cap-l1-t1-2",
+                  "title": "Independent Challenge: Event Handling Lifecycle & CQL Database Operations",
+                  "description": "Build end-to-end functionality for Event Handling Lifecycle & CQL Database Operations from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cap-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Event Handling Lifecycle & CQL Database Operations",
+                  "description": "Troubleshoot a scenario where Event Handling Lifecycle & CQL Database Operations throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cap-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Event Handling Lifecycle & CQL Database Operations. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cap-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Event Handling Lifecycle & CQL Database Operations?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cap-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Event Handling Lifecycle & CQL Database Operations",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cap-l2",
+      "order": 2,
+      "title": "Level 2 — Persistence, HANA Cloud & External Services",
+      "description": "Database deployment on SQLite (local) and SAP HANA Cloud (production), HDI containers, and consuming external S/4HANA APIs.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "cap-l2-s1",
+          "order": 1,
+          "title": "HANA Cloud & External Integrations",
+          "description": "Core subject domain covering HANA Cloud & External Integrations.",
+          "topics": [
+            {
+              "id": "cap-l2-t1",
+              "order": 1,
+              "title": "SAP HANA Cloud Deployment & External S/4HANA Integration",
+              "description": "Deploy HDI containers with cds-deploy and integrate remote OData services using CDS external imports.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAP HANA Cloud Deployment & External S/4HANA Integration",
+                "Implement production-grade components using industry best practices for SAP HANA Cloud Deployment & External S/4HANA Integration",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAP HANA Cloud Deployment & External S/4HANA Integration",
+                "Explain design trade-offs and answer senior technical interview questions on SAP HANA Cloud Deployment & External S/4HANA Integration"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cap-l2-t1-1",
+                  "title": "Local Development with In-Memory SQLite vs Persistent SQLite",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cap-l2-t1-2",
+                  "title": "SAP HANA Cloud Configuration: HDI Containers & @sap/hana-client",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cap-l2-t1-3",
+                  "title": "Deploying Schema to HANA: cds deploy --to hana",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cap-l2-t1-4",
+                  "title": "Importing External S/4HANA OData Services (cds import api.edmx)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cap-l2-t1-5",
+                  "title": "Connecting to External Services with cds.connect.to() and Destination Service",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cap-l2-t1-6",
+                  "title": "Authentication & Authorization with @requires and @restrict Annotations",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cap-l2-t1-1",
+                  "title": "Hands-on Lab: SAP HANA Cloud Deployment & External S/4HANA Integration",
+                  "description": "Implement, test, and validate core patterns of SAP HANA Cloud Deployment & External S/4HANA Integration in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cap-l2-t1-2",
+                  "title": "Independent Challenge: SAP HANA Cloud Deployment & External S/4HANA Integration",
+                  "description": "Build end-to-end functionality for SAP HANA Cloud Deployment & External S/4HANA Integration from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cap-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in SAP HANA Cloud Deployment & External S/4HANA Integration",
+                  "description": "Troubleshoot a scenario where SAP HANA Cloud Deployment & External S/4HANA Integration throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cap-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for SAP HANA Cloud Deployment & External S/4HANA Integration. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cap-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAP HANA Cloud Deployment & External S/4HANA Integration?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cap-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for SAP HANA Cloud Deployment & External S/4HANA Integration",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

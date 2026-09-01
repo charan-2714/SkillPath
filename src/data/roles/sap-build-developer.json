@@ -1,0 +1,172 @@
+{
+  "id": "sap-build-developer",
+  "name": "SAP Build (Low-Code/No-Code) Specialist",
+  "title": "SAP Build (Low-Code/No-Code) Specialist",
+  "category": "SAP Ecosystem",
+  "status": "Growing",
+  "description": "Rapid application development and workflow automation with SAP Build. Build Apps (AppGyver), Build Process Automation (Workflows, Forms, RPA bots, Business Rules), and Build Work Zone digital experience hubs.",
+  "targetRoles": [
+    "SAP Build Developer",
+    "Citizen Developer Lead",
+    "Low-Code Enterprise Specialist"
+  ],
+  "prerequisites": [
+    "Basic understanding of enterprise business applications"
+  ],
+  "difficulty": "Beginner to Intermediate",
+  "estimatedDuration": "3-5 months",
+  "estimatedHours": 200,
+  "technologies": [
+    "SAP Build Apps",
+    "SAP Build Process Automation",
+    "SAP Build Work Zone",
+    "Business Rules",
+    "BTP Destinations"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "build-l0",
+      "order": 0,
+      "title": "Level 0 — SAP Build Portfolio & Unified Experience",
+      "description": "SAP Build Apps, SAP Build Process Automation, SAP Build Work Zone, and citizen development governance.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "build-l0-s1",
+          "order": 1,
+          "title": "SAP Build Suite & Visual Workflows",
+          "description": "Core subject domain covering SAP Build Suite & Visual Workflows.",
+          "topics": [
+            {
+              "id": "build-l0-t1",
+              "order": 1,
+              "title": "SAP Build Apps & Process Automation",
+              "description": "Build web/mobile applications and automated approval workflows without writing complex code.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAP Build Apps & Process Automation",
+                "Implement production-grade components using industry best practices for SAP Build Apps & Process Automation",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAP Build Apps & Process Automation",
+                "Explain design trade-offs and answer senior technical interview questions on SAP Build Apps & Process Automation"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-build-l0-t1-1",
+                  "title": "SAP Build Unified Low-Code Portfolio Overview",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-build-l0-t1-2",
+                  "title": "SAP Build Apps: Drag-and-Drop UI, Logic Canvas, Formulas, BTP Destination Integrations",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-build-l0-t1-3",
+                  "title": "SAP Build Process Automation: Designing Automated Workflow Processes, Approval Forms & Triggers",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-build-l0-t1-4",
+                  "title": "Business Rules Management & Decision Tables in Process Automation",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-build-l0-t1-5",
+                  "title": "SAP Build Work Zone: Standard and Advanced Digital Workplace Portals & Launchpad Sites",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-build-l0-t1-1",
+                  "title": "Hands-on Lab: SAP Build Apps & Process Automation",
+                  "description": "Implement, test, and validate core patterns of SAP Build Apps & Process Automation in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-build-l0-t1-2",
+                  "title": "Independent Challenge: SAP Build Apps & Process Automation",
+                  "description": "Build end-to-end functionality for SAP Build Apps & Process Automation from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-build-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in SAP Build Apps & Process Automation",
+                  "description": "Troubleshoot a scenario where SAP Build Apps & Process Automation throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-build-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for SAP Build Apps & Process Automation. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-build-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAP Build Apps & Process Automation?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-build-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for SAP Build Apps & Process Automation",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

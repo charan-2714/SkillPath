@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "id": "devops-engineer",
+  "name": "DevOps Engineer",
+  "description": "Bridge development and operations with CI/CD automation, observability (Prometheus/Grafana), IaC, container platforms, and site reliability principles.",
+  "category": "Cybersecurity & Cloud",
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "8-10 months",
+  "tags": ["DevOps", "CI/CD", "Docker", "Kubernetes", "Terraform", "Monitoring", "Linux"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "devops-l0",
+      "order": 0,
+      "title": "CI/CD Automation Pipelines",
+      "description": "GitHub Actions, GitLab CI, pipeline triggers, matrix builds, artifact caching, and automated testing.",
+      "estimatedDuration": "3 weeks",
+      "color": "indigo",
+      "subjects": [
+        {
+          "id": "cicd-pipelines",
+          "order": 1,
+          "title": "Pipeline Architecture",
+          "topics": [
+            {
+              "id": "github-actions-pipelines",
+              "order": 1,
+              "title": "GitHub Actions Enterprise CI/CD",
+              "description": "Reusable workflows, secrets management, environment approvals, and Docker image publishing.",
+              "priority": "core",
+              "tags": ["cicd", "github-actions"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "devops-l1",
+      "order": 1,
+      "title": "Observability & Site Reliability (SRE)",
+      "description": "Prometheus metrics collection, Grafana dashboards, alert manager, OpenTelemetry tracing, and log aggregation.",
+      "estimatedDuration": "4 weeks",
+      "color": "amber",
+      "subjects": [
+        {
+          "id": "monitoring-sre",
+          "order": 1,
+          "title": "Metrics, Logs & Traces",
+          "topics": [
+            {
+              "id": "prometheus-grafana-alerts",
+              "order": 1,
+              "title": "Prometheus & Grafana Dashboarding",
+              "description": "PromQL queries, instrumenting custom metrics, SLO/SLI tracking, and PagerDuty alerts.",
+              "priority": "core",
+              "tags": ["prometheus", "grafana", "sre"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

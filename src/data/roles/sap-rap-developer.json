@@ -1,0 +1,417 @@
+{
+  "id": "sap-rap-developer",
+  "name": "SAP RAP Developer (ABAP RESTful Application Programming Model)",
+  "title": "SAP RAP Developer (ABAP RESTful Application Programming Model)",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "State-of-the-art backend architecture on S/4HANA and ABAP Cloud using RAP. CDS data modeling, interface/projection views, Behavior Definitions (BDEF), Behavior Implementations (ABAP OO), Managed vs Unmanaged scenarios, Draft capability, EML (Entity Manipulation Language), Actions, Determinations, Validations, and OData V4 service bindings.",
+  "targetRoles": [
+    "SAP RAP Developer",
+    "Modern ABAP Cloud Engineer",
+    "S/4HANA Backend Architect"
+  ],
+  "prerequisites": [
+    "ABAP fundamentals",
+    "Core Data Services (CDS) basics"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "6-8 months",
+  "estimatedHours": 360,
+  "technologies": [
+    "SAP RAP",
+    "ABAP Cloud",
+    "ABAP Development Tools (ADT)",
+    "CDS Views",
+    "Behavior Definitions (BDEF)",
+    "Behavior Implementations",
+    "EML",
+    "Draft Handling",
+    "OData V4",
+    "Fiori Elements"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "rap-l0",
+      "order": 0,
+      "title": "Level 0 — RAP Architecture & CDS Data Modeling",
+      "description": "RAP evolution, Interface Views (R_View), Projection Views (C_View), associations, compositions, and semantic annotations.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "rap-l0-s1",
+          "order": 1,
+          "title": "RAP Layers & Core Data Services",
+          "description": "Core subject domain covering RAP Layers & Core Data Services.",
+          "topics": [
+            {
+              "id": "rap-l0-t1",
+              "order": 1,
+              "title": "RAP Architectural Layers & CDS Views Hierarchy",
+              "description": "Build robust data models with CDS Basic/Interface views and consumption projection views in Eclipse ADT.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of RAP Architectural Layers & CDS Views Hierarchy",
+                "Implement production-grade components using industry best practices for RAP Architectural Layers & CDS Views Hierarchy",
+                "Diagnose runtime errors, misconfigurations, and edge cases in RAP Architectural Layers & CDS Views Hierarchy",
+                "Explain design trade-offs and answer senior technical interview questions on RAP Architectural Layers & CDS Views Hierarchy"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-rap-l0-t1-1",
+                  "title": "Evolution: Classic ABAP -> BOPF -> ABAP Programming Model for SAP Fiori -> SAP RAP",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l0-t1-2",
+                  "title": "RAP Big Picture: Data Model (CDS), Behavior Definition, Business Logic, Service Definition, Service Binding",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-rap-l0-t1-3",
+                  "title": "Defining CDS Interface / Root Views (define root view entity R_TravelTP)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l0-t1-4",
+                  "title": "Compositions of Children Entities (Parent-Child Tree) & Associations to Master Data",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-rap-l0-t1-5",
+                  "title": "CDS Consumption / Projection Views (define root view entity C_TravelTP as projection on R_TravelTP)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l0-t1-6",
+                  "title": "UI Annotations in CDS Views & Metadata Extensions (.ddlx files)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-rap-l0-t1-1",
+                  "title": "Hands-on Lab: RAP Architectural Layers & CDS Views Hierarchy",
+                  "description": "Implement, test, and validate core patterns of RAP Architectural Layers & CDS Views Hierarchy in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-rap-l0-t1-2",
+                  "title": "Independent Challenge: RAP Architectural Layers & CDS Views Hierarchy",
+                  "description": "Build end-to-end functionality for RAP Architectural Layers & CDS Views Hierarchy from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-rap-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in RAP Architectural Layers & CDS Views Hierarchy",
+                  "description": "Troubleshoot a scenario where RAP Architectural Layers & CDS Views Hierarchy throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-rap-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for RAP Architectural Layers & CDS Views Hierarchy. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-rap-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with RAP Architectural Layers & CDS Views Hierarchy?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-rap-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for RAP Architectural Layers & CDS Views Hierarchy",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rap-l1",
+      "order": 1,
+      "title": "Level 1 — Behavior Definitions & Implementations (BDEF / EML)",
+      "description": "Behavior Definitions: Managed vs Unmanaged scenarios, Operations (create, update, delete), Actions, Determinations, Validations, and EML.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "rap-l1-s1",
+          "order": 1,
+          "title": "Behavior Modeling & Entity Manipulation Language (EML)",
+          "description": "Core subject domain covering Behavior Modeling & Entity Manipulation Language (EML).",
+          "topics": [
+            {
+              "id": "rap-l1-t1",
+              "order": 1,
+              "title": "Managed Scenarios, Validations, Determinations & Actions",
+              "description": "Author managed behaviors and implement custom business logic in Local Handler classes (LCL_HANDLER).",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Managed Scenarios, Validations, Determinations & Actions",
+                "Implement production-grade components using industry best practices for Managed Scenarios, Validations, Determinations & Actions",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Managed Scenarios, Validations, Determinations & Actions",
+                "Explain design trade-offs and answer senior technical interview questions on Managed Scenarios, Validations, Determinations & Actions"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-rap-l1-t1-1",
+                  "title": "Managed Behavior Definition: Framework-Handled Standard CRUD vs Unmanaged (Legacy BAPI Integration)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l1-t1-2",
+                  "title": "Determinations: Triggering Automatic Computations (on modify, on save)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-rap-l1-t1-3",
+                  "title": "Validations: Enforcing Business Rules (on save) with REPORTED and FAILED response structures",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l1-t1-4",
+                  "title": "Custom Actions: Non-Standard Operations (e.g. approveTravel, calculateDiscount)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-rap-l1-t1-5",
+                  "title": "Entity Manipulation Language (EML): MODIFY ENTITIES, READ ENTITIES, COMMIT ENTITIES in ABAP",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l1-t1-6",
+                  "title": "Draft Handling: Enabling Draft Capabilities for Long-Running Web Transactions & Auto-Save",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-rap-l1-t1-1",
+                  "title": "Hands-on Lab: Managed Scenarios, Validations, Determinations & Actions",
+                  "description": "Implement, test, and validate core patterns of Managed Scenarios, Validations, Determinations & Actions in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-rap-l1-t1-2",
+                  "title": "Independent Challenge: Managed Scenarios, Validations, Determinations & Actions",
+                  "description": "Build end-to-end functionality for Managed Scenarios, Validations, Determinations & Actions from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-rap-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Managed Scenarios, Validations, Determinations & Actions",
+                  "description": "Troubleshoot a scenario where Managed Scenarios, Validations, Determinations & Actions throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-rap-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Managed Scenarios, Validations, Determinations & Actions. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-rap-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Managed Scenarios, Validations, Determinations & Actions?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-rap-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Managed Scenarios, Validations, Determinations & Actions",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rap-l2",
+      "order": 2,
+      "title": "Level 2 — Service Definitions, Bindings & Fiori Elements Integration",
+      "description": "Exposing RAP business objects: Service Definitions, Service Bindings (OData V4 UI / Web API), and Fiori Elements apps.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "rap-l2-s1",
+          "order": 1,
+          "title": "Service Exposure & Fiori Elements",
+          "description": "Core subject domain covering Service Exposure & Fiori Elements.",
+          "topics": [
+            {
+              "id": "rap-l2-t1",
+              "order": 1,
+              "title": "Service Definition, Service Binding & Fiori Elements App Generation",
+              "description": "Publish OData V4 services in ADT, test with Fiori Elements Preview, and build List Report / Object Page apps.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Service Definition, Service Binding & Fiori Elements App Generation",
+                "Implement production-grade components using industry best practices for Service Definition, Service Binding & Fiori Elements App Generation",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Service Definition, Service Binding & Fiori Elements App Generation",
+                "Explain design trade-offs and answer senior technical interview questions on Service Definition, Service Binding & Fiori Elements App Generation"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-rap-l2-t1-1",
+                  "title": "Service Definition: Exposing Projection Views as a Cohesive Business Service",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l2-t1-2",
+                  "title": "Service Binding: Binding Types (OData V4 - UI, OData V4 - Web API, OData V2 - UI)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-rap-l2-t1-3",
+                  "title": "Publishing Services Locally in ADT & Testing via Fiori Elements App Preview",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l2-t1-4",
+                  "title": "Implementing Value Helps & Value List Annotations in RAP",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-rap-l2-t1-5",
+                  "title": "Side Effects in RAP: Refreshing Dependent Fields on User Input",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-rap-l2-t1-6",
+                  "title": "Authorization Control in RAP: Instance-Based vs Master Authorization (authorization:update)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-rap-l2-t1-1",
+                  "title": "Hands-on Lab: Service Definition, Service Binding & Fiori Elements App Generation",
+                  "description": "Implement, test, and validate core patterns of Service Definition, Service Binding & Fiori Elements App Generation in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-rap-l2-t1-2",
+                  "title": "Independent Challenge: Service Definition, Service Binding & Fiori Elements App Generation",
+                  "description": "Build end-to-end functionality for Service Definition, Service Binding & Fiori Elements App Generation from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-rap-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Service Definition, Service Binding & Fiori Elements App Generation",
+                  "description": "Troubleshoot a scenario where Service Definition, Service Binding & Fiori Elements App Generation throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-rap-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Service Definition, Service Binding & Fiori Elements App Generation. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-rap-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Service Definition, Service Binding & Fiori Elements App Generation?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-rap-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Service Definition, Service Binding & Fiori Elements App Generation",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

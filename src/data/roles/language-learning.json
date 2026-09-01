@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "id": "language-learning",
+  "name": "Spanish Language Mastery (CEFR A1 to B2)",
+  "description": "Structured path to conversational fluency in Spanish: core vocabulary, grammar rules, listening comprehension, and speaking practice.",
+  "category": "Language",
+  "difficulty": "Beginner to Intermediate",
+  "estimatedDuration": "6-9 months",
+  "tags": ["Language", "Spanish", "Grammar", "Vocabulary", "Conversation"],
+  "trackingModel": "custom",
+  "skillDimensions": [
+    { "id": "vocabulary", "name": "Vocabulary & Idioms", "maxScore": 5 },
+    { "id": "grammar", "name": "Grammar & Syntax", "maxScore": 5 },
+    { "id": "speaking", "name": "Speaking & Pronunciation", "maxScore": 5 },
+    { "id": "listening", "name": "Listening Comprehension", "maxScore": 5 },
+    { "id": "writing", "name": "Writing & Reading", "maxScore": 5 }
+  ],
+  "enableAIDependency": false,
+  "levels": [
+    {
+      "id": "lang-a1",
+      "order": 0,
+      "title": "A1 — Beginner Spanish Foundations",
+      "description": "Greetings, personal introductions, present tense verbs (Ser/Estar, regular verbs), and numbers.",
+      "estimatedDuration": "4 weeks",
+      "color": "yellow",
+      "subjects": [
+        {
+          "id": "essential-grammar",
+          "order": 1,
+          "title": "Essential Grammar & Verbs",
+          "topics": [
+            {
+              "id": "ser-vs-estar",
+              "order": 1,
+              "title": "Ser vs. Estar & Present Tense",
+              "description": "Understanding permanent characteristics (Ser) vs temporary states/locations (Estar).",
+              "priority": "core",
+              "tags": ["grammar", "verbs"],
+              "estimatedHours": 6,
+              "learningItems": [
+                { "id": "l-1", "title": "Conjugate Ser in all singular and plural forms", "type": "grammar" },
+                { "id": "l-2", "title": "Conjugate Estar and use for locations and emotions", "type": "grammar" },
+                { "id": "l-3", "title": "Practice sample sentences distinguishing DOCTOR vs PLACE", "type": "practice" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lang-a2",
+      "order": 1,
+      "title": "A2 — Elementary Spanish & Past Tenses",
+      "description": "Preterite vs Imperfect past tenses, object pronouns, and daily routine descriptions.",
+      "estimatedDuration": "6 weeks",
+      "color": "orange",
+      "subjects": [
+        {
+          "id": "past-tenses",
+          "order": 1,
+          "title": "Past Tenses (Pretérito vs Imperfecto)",
+          "topics": [
+            {
+              "id": "preterite-vs-imperfect",
+              "order": 1,
+              "title": "Pretérito Indefinido vs Imperfecto",
+              "description": "Narrating completed past actions vs ongoing background descriptions.",
+              "priority": "core",
+              "tags": ["grammar", "past-tense"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

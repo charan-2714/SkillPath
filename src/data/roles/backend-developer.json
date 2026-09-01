@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "id": "backend-developer",
+  "name": "Backend Developer",
+  "description": "Architect scalable backend services, REST/gRPC/GraphQL APIs, relational and NoSQL databases, caching layers, and asynchronous task workers.",
+  "category": "Software Development",
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "8-10 months",
+  "tags": ["Backend", "Node.js", "Python", "Go", "PostgreSQL", "Redis", "APIs", "System Design"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "be-l0",
+      "order": 0,
+      "title": "API Protocols & Backend Architecture",
+      "description": "REST principles, OpenAPI/Swagger specifications, gRPC Protocol Buffers, and GraphQL schemas.",
+      "estimatedDuration": "4 weeks",
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "api-protocols",
+          "order": 1,
+          "title": "Protocols & Communication",
+          "topics": [
+            {
+              "id": "grpc-protobuf",
+              "order": 1,
+              "title": "gRPC & Protocol Buffers",
+              "description": "Binary serialization, HTTP/2 streaming, proto definitions, and high-performance RPCs.",
+              "priority": "core",
+              "tags": ["grpc", "api", "backend"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "be-l1",
+      "order": 1,
+      "title": "Databases & Caching (PostgreSQL + Redis)",
+      "description": "ACID guarantees, transaction isolation levels, indexing (B-Tree, GIN), and Redis caching patterns.",
+      "estimatedDuration": "5 weeks",
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "db-caching",
+          "order": 1,
+          "title": "Data Tier & Caching",
+          "topics": [
+            {
+              "id": "redis-caching-patterns",
+              "order": 1,
+              "title": "Redis Caching Patterns & Distributed Locks",
+              "description": "Cache-Aside, Write-Through, cache stampede prevention, TTL strategies, and Redlock distributed locking.",
+              "priority": "core",
+              "tags": ["redis", "caching", "database"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

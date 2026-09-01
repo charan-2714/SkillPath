@@ -1,0 +1,621 @@
+{
+  "id": "agentic-ai-engineer",
+  "name": "Agentic AI & GenAI Engineer",
+  "title": "Agentic AI & GenAI Engineer",
+  "category": "AI & Machine Learning",
+  "status": "Emerging",
+  "description": "State-of-the-art engineering curriculum for autonomous AI agents and GenAI systems. Model Context Protocol (MCP), LangGraph cyclical state graphs, deterministic tool calling, multi-agent collaboration swarms, local LLM serving (Ollama/vLLM), structured outputs, semantic memory, and agent evaluation.",
+  "targetRoles": [
+    "Agentic AI Engineer",
+    "GenAI Solutions Architect",
+    "LLM Application Developer",
+    "Autonomous Agent Engineer"
+  ],
+  "prerequisites": [
+    "Python programming mastery",
+    "Basic understanding of LLMs & API integration"
+  ],
+  "difficulty": "Advanced",
+  "estimatedDuration": "6-9 months",
+  "estimatedHours": 400,
+  "technologies": [
+    "LangGraph",
+    "Model Context Protocol (MCP)",
+    "Tool Calling",
+    "Multi-Agent Swarms",
+    "RAG",
+    "Vector Databases",
+    "vLLM / Ollama",
+    "DSPy",
+    "LlamaIndex"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "agent-l0",
+      "order": 0,
+      "title": "Level 0 — LLM Foundations, Structured Outputs & Function Calling",
+      "description": "Transformer mechanics, tokenization, context windows, deterministic JSON outputs (Pydantic / Instructor), and function calling.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "agent-l0-s1",
+          "order": 1,
+          "title": "LLM Mechanics & Deterministic Outputs",
+          "description": "Core subject domain covering LLM Mechanics & Deterministic Outputs.",
+          "topics": [
+            {
+              "id": "agent-l0-t1",
+              "order": 1,
+              "title": "Structured Outputs, Tool Calling & Context Windows",
+              "description": "Master tool calling schemas, system prompt engineering, and deterministic structured extraction.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Structured Outputs, Tool Calling & Context Windows",
+                "Implement production-grade components using industry best practices for Structured Outputs, Tool Calling & Context Windows",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Structured Outputs, Tool Calling & Context Windows",
+                "Explain design trade-offs and answer senior technical interview questions on Structured Outputs, Tool Calling & Context Windows"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-agent-l0-t1-1",
+                  "title": "Transformer Architecture Recap: Attention Mechanism, Token Limits & KV Cache",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l0-t1-2",
+                  "title": "OpenAI / Anthropic Function Calling Protocol & Tool Definition Schemas",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-agent-l0-t1-3",
+                  "title": "Guaranteed JSON Outputs with Pydantic & Instructor Library",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l0-t1-4",
+                  "title": "Few-Shot Prompting, Chain-of-Thought (CoT), ReAct (Reasoning + Acting) Framework",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-agent-l0-t1-5",
+                  "title": "Handling Tool Errors, Re-prompts & Argument Correction Loops",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-agent-l0-t1-1",
+                  "title": "Hands-on Lab: Structured Outputs, Tool Calling & Context Windows",
+                  "description": "Implement, test, and validate core patterns of Structured Outputs, Tool Calling & Context Windows in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-agent-l0-t1-2",
+                  "title": "Independent Challenge: Structured Outputs, Tool Calling & Context Windows",
+                  "description": "Build end-to-end functionality for Structured Outputs, Tool Calling & Context Windows from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-agent-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Structured Outputs, Tool Calling & Context Windows",
+                  "description": "Troubleshoot a scenario where Structured Outputs, Tool Calling & Context Windows throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-agent-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Structured Outputs, Tool Calling & Context Windows. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-agent-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Structured Outputs, Tool Calling & Context Windows?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-agent-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Structured Outputs, Tool Calling & Context Windows",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent-l1",
+      "order": 1,
+      "title": "Level 1 — Model Context Protocol (MCP) Architecture",
+      "description": "Standardized agent-to-tool protocol: MCP client/server architecture, transports (stdio/SSE), resources, tools, and prompts.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "agent-l1-s1",
+          "order": 1,
+          "title": "Model Context Protocol (MCP) Standards",
+          "description": "Core subject domain covering Model Context Protocol (MCP) Standards.",
+          "topics": [
+            {
+              "id": "agent-l1-t1",
+              "order": 1,
+              "title": "Building Custom MCP Servers & Tool Transports",
+              "description": "Author secure, production-grade MCP servers exposing enterprise APIs, databases, and filesystem tools to LLMs.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Building Custom MCP Servers & Tool Transports",
+                "Implement production-grade components using industry best practices for Building Custom MCP Servers & Tool Transports",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Building Custom MCP Servers & Tool Transports",
+                "Explain design trade-offs and answer senior technical interview questions on Building Custom MCP Servers & Tool Transports"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-agent-l1-t1-1",
+                  "title": "Model Context Protocol (MCP) Specification & Architecture (Anthropic Open Standard)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l1-t1-2",
+                  "title": "MCP Core Primitives: Resources (Read-Only Data), Tools (Executable Actions), Prompts (Templates)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-agent-l1-t1-3",
+                  "title": "Transports: Stdio (Local Process Execution) vs Server-Sent Events (SSE / HTTP Remote)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l1-t1-4",
+                  "title": "Authoring MCP Servers in Python (FastMCP) and TypeScript",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-agent-l1-t1-5",
+                  "title": "Securing MCP Tools: Sandboxing, Human-in-the-Loop Confirmation & Access Control",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l1-t1-6",
+                  "title": "Connecting MCP Servers to Claude Desktop, Cursor, and Custom Agent Runtimes",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-agent-l1-t1-1",
+                  "title": "Hands-on Lab: Building Custom MCP Servers & Tool Transports",
+                  "description": "Implement, test, and validate core patterns of Building Custom MCP Servers & Tool Transports in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-agent-l1-t1-2",
+                  "title": "Independent Challenge: Building Custom MCP Servers & Tool Transports",
+                  "description": "Build end-to-end functionality for Building Custom MCP Servers & Tool Transports from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-agent-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Building Custom MCP Servers & Tool Transports",
+                  "description": "Troubleshoot a scenario where Building Custom MCP Servers & Tool Transports throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-agent-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Building Custom MCP Servers & Tool Transports. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-agent-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Building Custom MCP Servers & Tool Transports?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-agent-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Building Custom MCP Servers & Tool Transports",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent-l2",
+      "order": 2,
+      "title": "Level 2 — Cyclical Agentic Workflows with LangGraph",
+      "description": "Stateful agent architecture: StateGraph, Nodes, Edges, Conditional Routing, Memory Checkpointing, and Human-in-the-Loop.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "agent-l2-s1",
+          "order": 1,
+          "title": "LangGraph State Graphs & Control Flow",
+          "description": "Core subject domain covering LangGraph State Graphs & Control Flow.",
+          "topics": [
+            {
+              "id": "agent-l2-t1",
+              "order": 1,
+              "title": "StateGraph, Checkpointing & Conditional Edges",
+              "description": "Build robust, non-linear cyclical agent graphs with persistent memory and review gates.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of StateGraph, Checkpointing & Conditional Edges",
+                "Implement production-grade components using industry best practices for StateGraph, Checkpointing & Conditional Edges",
+                "Diagnose runtime errors, misconfigurations, and edge cases in StateGraph, Checkpointing & Conditional Edges",
+                "Explain design trade-offs and answer senior technical interview questions on StateGraph, Checkpointing & Conditional Edges"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-agent-l2-t1-1",
+                  "title": "LangGraph Core Concepts: State, Nodes, Edges, Entry/Finish Points",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l2-t1-2",
+                  "title": "Typed State Management with TypedDict / Pydantic and Reducers",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-agent-l2-t1-3",
+                  "title": "Conditional Routing & Decision Nodes (e.g. should_continue based on tool calls)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l2-t1-4",
+                  "title": "Memory Checkpointing with SQLite / Postgres for Thread Persistence & Time Travel",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-agent-l2-t1-5",
+                  "title": "Human-in-the-Loop (HITL): Breakpoints, Approval Gates & State Modification",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-agent-l2-t1-1",
+                  "title": "Hands-on Lab: StateGraph, Checkpointing & Conditional Edges",
+                  "description": "Implement, test, and validate core patterns of StateGraph, Checkpointing & Conditional Edges in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-agent-l2-t1-2",
+                  "title": "Independent Challenge: StateGraph, Checkpointing & Conditional Edges",
+                  "description": "Build end-to-end functionality for StateGraph, Checkpointing & Conditional Edges from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-agent-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in StateGraph, Checkpointing & Conditional Edges",
+                  "description": "Troubleshoot a scenario where StateGraph, Checkpointing & Conditional Edges throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-agent-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for StateGraph, Checkpointing & Conditional Edges. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-agent-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with StateGraph, Checkpointing & Conditional Edges?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-agent-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for StateGraph, Checkpointing & Conditional Edges",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent-l3",
+      "order": 3,
+      "title": "Level 3 — Multi-Agent Systems & Swarm Architectures",
+      "description": "Hierarchical supervisor agents, peer-to-peer swarms, role specialization, consensus mechanisms, and subagent delegation.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "agent-l3-s1",
+          "order": 1,
+          "title": "Multi-Agent Collaboration Patterns",
+          "description": "Core subject domain covering Multi-Agent Collaboration Patterns.",
+          "topics": [
+            {
+              "id": "agent-l3-t1",
+              "order": 1,
+              "title": "Hierarchical Supervisors & Swarm Delegation",
+              "description": "Coordinate specialized worker agents (Coder, Researcher, Critic, Tester) under supervisor orchestration.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Hierarchical Supervisors & Swarm Delegation",
+                "Implement production-grade components using industry best practices for Hierarchical Supervisors & Swarm Delegation",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Hierarchical Supervisors & Swarm Delegation",
+                "Explain design trade-offs and answer senior technical interview questions on Hierarchical Supervisors & Swarm Delegation"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-agent-l3-t1-1",
+                  "title": "Multi-Agent Architectures: Supervisor Pattern, Network / Swarm Pattern, Sequential Chain",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l3-t1-2",
+                  "title": "Designing Specialized Agent Personas with Scoped Tools and System Prompts",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-agent-l3-t1-3",
+                  "title": "Inter-Agent Communication Protocols, Structured Message Passing & Handoffs",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l3-t1-4",
+                  "title": "Resolving Agent Deadlocks, Infinite Loops & Maximum Iteration Guards",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-agent-l3-t1-1",
+                  "title": "Hands-on Lab: Hierarchical Supervisors & Swarm Delegation",
+                  "description": "Implement, test, and validate core patterns of Hierarchical Supervisors & Swarm Delegation in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-agent-l3-t1-2",
+                  "title": "Independent Challenge: Hierarchical Supervisors & Swarm Delegation",
+                  "description": "Build end-to-end functionality for Hierarchical Supervisors & Swarm Delegation from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-agent-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Hierarchical Supervisors & Swarm Delegation",
+                  "description": "Troubleshoot a scenario where Hierarchical Supervisors & Swarm Delegation throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-agent-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Hierarchical Supervisors & Swarm Delegation. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-agent-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Hierarchical Supervisors & Swarm Delegation?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-agent-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Hierarchical Supervisors & Swarm Delegation",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "agent-l4",
+      "order": 4,
+      "title": "Level 4 — Local LLM Serving, Agent Evaluation & Guardrails",
+      "description": "Self-hosted inference (Ollama, vLLM, SGLang), RAG Triad evaluation (Ragas, TruLens), guardrails (NeMo, Guardrails AI), and telemetry.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "agent-l4-s1",
+          "order": 1,
+          "title": "Inference, Guardrails & Evaluation",
+          "description": "Core subject domain covering Inference, Guardrails & Evaluation.",
+          "topics": [
+            {
+              "id": "agent-l4-t1",
+              "order": 1,
+              "title": "vLLM Serving, Agent Telemetry (LangSmith) & Evaluation",
+              "description": "Serve high-throughput local models and evaluate agent accuracy, trajectory efficiency, and safety guardrails.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of vLLM Serving, Agent Telemetry (LangSmith) & Evaluation",
+                "Implement production-grade components using industry best practices for vLLM Serving, Agent Telemetry (LangSmith) & Evaluation",
+                "Diagnose runtime errors, misconfigurations, and edge cases in vLLM Serving, Agent Telemetry (LangSmith) & Evaluation",
+                "Explain design trade-offs and answer senior technical interview questions on vLLM Serving, Agent Telemetry (LangSmith) & Evaluation"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-agent-l4-t1-1",
+                  "title": "Local LLM Serving with vLLM & Ollama: PagedAttention, Continuous Batching, Quantization (AWQ/GPTQ)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l4-t1-2",
+                  "title": "Safety Guardrails with NeMo Guardrails / Llama-Guard for Input/Output Filtering",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-agent-l4-t1-3",
+                  "title": "Observability & Trace Tracking with LangSmith / OpenTelemetry (Traces, Latency, Token Costs)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-agent-l4-t1-4",
+                  "title": "Automated Agent Evaluation: Success Rate, Tool Selection Accuracy, Hallucination Benchmarks",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-agent-l4-t1-1",
+                  "title": "Hands-on Lab: vLLM Serving, Agent Telemetry (LangSmith) & Evaluation",
+                  "description": "Implement, test, and validate core patterns of vLLM Serving, Agent Telemetry (LangSmith) & Evaluation in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-agent-l4-t1-2",
+                  "title": "Independent Challenge: vLLM Serving, Agent Telemetry (LangSmith) & Evaluation",
+                  "description": "Build end-to-end functionality for vLLM Serving, Agent Telemetry (LangSmith) & Evaluation from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-agent-l4-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in vLLM Serving, Agent Telemetry (LangSmith) & Evaluation",
+                  "description": "Troubleshoot a scenario where vLLM Serving, Agent Telemetry (LangSmith) & Evaluation throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-agent-l4-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for vLLM Serving, Agent Telemetry (LangSmith) & Evaluation. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-agent-l4-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with vLLM Serving, Agent Telemetry (LangSmith) & Evaluation?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-agent-l4-t1-1",
+                  "title": "Official Documentation & Architecture Guide for vLLM Serving, Agent Telemetry (LangSmith) & Evaluation",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

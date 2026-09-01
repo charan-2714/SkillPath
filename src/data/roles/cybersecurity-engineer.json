@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "id": "cybersecurity-engineer",
+  "name": "Cybersecurity Engineer",
+  "description": "From computer networking and Linux internals to penetration testing, threat modeling, SIEM monitoring, and defensive security operations.",
+  "category": "Cybersecurity & Cloud",
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "9-12 months",
+  "tags": ["Security", "Networking", "Pen Testing", "OWASP", "SIEM", "Linux"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "sec-l0",
+      "order": 0,
+      "title": "Networking & OS Security",
+      "description": "TCP/IP protocols, DNS, OSI model, packet analysis with Wireshark, and Linux server hardening.",
+      "estimatedDuration": "4 weeks",
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "networking-protocols",
+          "order": 1,
+          "title": "Network Protocols & Packet Capture",
+          "topics": [
+            {
+              "id": "wireshark-packets",
+              "order": 1,
+              "title": "Wireshark & Traffic Capture",
+              "description": "Inspecting TCP handshakes, TLS negotiation, and identifying malicious payloads in PCAP files.",
+              "priority": "core",
+              "tags": ["networking", "wireshark"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-l1",
+      "order": 1,
+      "title": "Ethical Hacking & Web Security (OWASP)",
+      "description": "OWASP Top 10 (SQLi, XSS, CSRF, SSRF), Burp Suite, and vulnerability assessment.",
+      "estimatedDuration": "6 weeks",
+      "color": "red",
+      "subjects": [
+        {
+          "id": "web-pentest",
+          "order": 1,
+          "title": "Web Application Penetration Testing",
+          "topics": [
+            {
+              "id": "owasp-top-10",
+              "order": 1,
+              "title": "OWASP Top 10 Exploits & Mitigations",
+              "description": "Testing for and fixing SQL injection, XSS, broken access controls, and SSRF vulnerabilities.",
+              "priority": "core",
+              "tags": ["pentest", "owasp", "security"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-l2",
+      "order": 2,
+      "title": "Defensive Security & SOC Operations",
+      "description": "SIEM platforms (Splunk, Elastic), incident response, firewall configuration, and endpoint detection.",
+      "estimatedDuration": "5 weeks",
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "blue-team",
+          "order": 1,
+          "title": "Blue Team & SOC Defense",
+          "topics": [
+            {
+              "id": "siem-monitoring",
+              "order": 1,
+              "title": "SIEM Monitoring & Incident Response",
+              "description": "Log correlation, writing detection rules, threat hunting, and containment playbooks.",
+              "priority": "core",
+              "tags": ["soc", "siem", "defense"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

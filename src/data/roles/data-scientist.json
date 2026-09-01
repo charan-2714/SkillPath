@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "id": "data-scientist",
+  "name": "Data Scientist",
+  "description": "Formulate hypotheses, run A/B experiments, build predictive models, apply advanced statistical inference, and extract strategic business insights.",
+  "category": "Data Science & AI",
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "9-12 months",
+  "tags": ["Data Science", "Python", "Statistics", "Machine Learning", "A/B Testing", "NLP"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "ds-l0",
+      "order": 0,
+      "title": "Probability, Statistics & Hypothesis Testing",
+      "description": "Parametric/non-parametric tests, p-values, power analysis, A/B experiment design, and Bayesian statistics.",
+      "estimatedDuration": "4 weeks",
+      "color": "indigo",
+      "subjects": [
+        {
+          "id": "stats-experiments",
+          "order": 1,
+          "title": "Experimental Design & Inference",
+          "topics": [
+            {
+              "id": "ab-testing-power",
+              "order": 1,
+              "title": "A/B Testing & Statistical Power Analysis",
+              "description": "Sample size determination, minimum detectable effect (MDE), variance reduction (CUPED), and false positive control.",
+              "priority": "core",
+              "tags": ["statistics", "ab-testing"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ds-l1",
+      "order": 1,
+      "title": "Statistical Modeling & Feature Engineering",
+      "description": "GLMs, regularized regression (Lasso/Ridge), clustering, and advanced feature transforms.",
+      "estimatedDuration": "5 weeks",
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "predictive-modeling",
+          "order": 1,
+          "title": "Predictive Modeling & Feature Engineering",
+          "topics": [
+            {
+              "id": "feature-engineering-selection",
+              "order": 1,
+              "title": "Feature Engineering & Dimensionality Reduction",
+              "description": "Target encoding, interaction terms, PCA, t-SNE, and feature importance interpretations.",
+              "priority": "core",
+              "tags": ["ml", "features", "pca"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

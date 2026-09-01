@@ -1,0 +1,607 @@
+{
+  "id": "devops-platform-engineer",
+  "name": "DevOps & Platform Engineer",
+  "title": "DevOps & Platform Engineer",
+  "category": "Cloud & DevOps",
+  "status": "Production Standard",
+  "description": "Master enterprise cloud infrastructure, container orchestration, Infrastructure as Code (IaC), GitOps, and site reliability engineering. Linux internals, Docker, Kubernetes clusters, Helm, Terraform, GitOps with ArgoCD, CI/CD automation, and full-stack observability.",
+  "targetRoles": [
+    "DevOps Engineer",
+    "Platform Engineer",
+    "Site Reliability Engineer (SRE)",
+    "Cloud Infrastructure Engineer"
+  ],
+  "prerequisites": [
+    "Linux fundamentals",
+    "Basic networking understanding"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "7-9 months",
+  "estimatedHours": 420,
+  "technologies": [
+    "Kubernetes",
+    "Docker",
+    "Terraform",
+    "Helm",
+    "GitHub Actions",
+    "ArgoCD (GitOps)",
+    "Prometheus",
+    "Grafana",
+    "OpenTelemetry",
+    "Linux"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "devops-l0",
+      "order": 0,
+      "title": "Level 0 — Linux Internals, Networking & Shell Automation",
+      "description": "Linux process models, memory, cgroups, namespaces, systemd, TCP/IP, DNS, SSL/TLS, and Bash scripting.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "devops-l0-s1",
+          "order": 1,
+          "title": "Linux Systems & Networking",
+          "description": "Core subject domain covering Linux Systems & Networking.",
+          "topics": [
+            {
+              "id": "devops-l0-t1",
+              "order": 1,
+              "title": "Linux Kernel Mechanics, cgroups & Networking Diagnostics",
+              "description": "Master operating system internals and network troubleshooting tools (tcpdump, ss, curl, dig).",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Linux Kernel Mechanics, cgroups & Networking Diagnostics",
+                "Implement production-grade components using industry best practices for Linux Kernel Mechanics, cgroups & Networking Diagnostics",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Linux Kernel Mechanics, cgroups & Networking Diagnostics",
+                "Explain design trade-offs and answer senior technical interview questions on Linux Kernel Mechanics, cgroups & Networking Diagnostics"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-devops-l0-t1-1",
+                  "title": "Linux Namespaces, Control Groups (cgroups v2) & Container Foundations",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l0-t1-2",
+                  "title": "Process Management, Signals (SIGTERM/SIGKILL), systemd Service Units",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-devops-l0-t1-3",
+                  "title": "Networking Foundations: TCP 3-Way Handshake, DNS Resolution, TLS Handshake, IPTables/NFTables",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l0-t1-4",
+                  "title": "Robust Shell Scripting: Error Handling (set -euo pipefail), Arguments, Traps",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-devops-l0-t1-1",
+                  "title": "Hands-on Lab: Linux Kernel Mechanics, cgroups & Networking Diagnostics",
+                  "description": "Implement, test, and validate core patterns of Linux Kernel Mechanics, cgroups & Networking Diagnostics in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-devops-l0-t1-2",
+                  "title": "Independent Challenge: Linux Kernel Mechanics, cgroups & Networking Diagnostics",
+                  "description": "Build end-to-end functionality for Linux Kernel Mechanics, cgroups & Networking Diagnostics from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-devops-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Linux Kernel Mechanics, cgroups & Networking Diagnostics",
+                  "description": "Troubleshoot a scenario where Linux Kernel Mechanics, cgroups & Networking Diagnostics throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-devops-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Linux Kernel Mechanics, cgroups & Networking Diagnostics. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-devops-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Linux Kernel Mechanics, cgroups & Networking Diagnostics?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-devops-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Linux Kernel Mechanics, cgroups & Networking Diagnostics",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "devops-l1",
+      "order": 1,
+      "title": "Level 1 — Docker & Containerization Best Practices",
+      "description": "Multi-stage builds, non-root users, minimal base images (Alpine/Distroless), layer caching, and vulnerability scanning.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "devops-l1-s1",
+          "order": 1,
+          "title": "Container Engineering & Image Hardening",
+          "description": "Core subject domain covering Container Engineering & Image Hardening.",
+          "topics": [
+            {
+              "id": "devops-l1-t1",
+              "order": 1,
+              "title": "Production Dockerfiles, Multi-Stage Builds & Security Scanning",
+              "description": "Author secure, lightweight production container images and scan for CVEs with Trivy.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Production Dockerfiles, Multi-Stage Builds & Security Scanning",
+                "Implement production-grade components using industry best practices for Production Dockerfiles, Multi-Stage Builds & Security Scanning",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Production Dockerfiles, Multi-Stage Builds & Security Scanning",
+                "Explain design trade-offs and answer senior technical interview questions on Production Dockerfiles, Multi-Stage Builds & Security Scanning"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-devops-l1-t1-1",
+                  "title": "Multi-Stage Dockerfile Patterns for Compiled & Interpreted Languages",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l1-t1-2",
+                  "title": "Layer Caching Optimization & Minimizing Image Size with Distroless / Alpine",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-devops-l1-t1-3",
+                  "title": "Container Security: Non-Root Execution, Read-Only Root Filesystem, Capability Dropping",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l1-t1-4",
+                  "title": "Automated Container Vulnerability Scanning with Trivy & Grype in CI Pipelines",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-devops-l1-t1-1",
+                  "title": "Hands-on Lab: Production Dockerfiles, Multi-Stage Builds & Security Scanning",
+                  "description": "Implement, test, and validate core patterns of Production Dockerfiles, Multi-Stage Builds & Security Scanning in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-devops-l1-t1-2",
+                  "title": "Independent Challenge: Production Dockerfiles, Multi-Stage Builds & Security Scanning",
+                  "description": "Build end-to-end functionality for Production Dockerfiles, Multi-Stage Builds & Security Scanning from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-devops-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Production Dockerfiles, Multi-Stage Builds & Security Scanning",
+                  "description": "Troubleshoot a scenario where Production Dockerfiles, Multi-Stage Builds & Security Scanning throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-devops-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Production Dockerfiles, Multi-Stage Builds & Security Scanning. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-devops-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Production Dockerfiles, Multi-Stage Builds & Security Scanning?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-devops-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Production Dockerfiles, Multi-Stage Builds & Security Scanning",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "devops-l2",
+      "order": 2,
+      "title": "Level 2 — Kubernetes Cluster Orchestration & Helm",
+      "description": "Pods, Deployments, StatefulSets, Services, Ingress Controllers, ConfigMaps/Secrets, RBAC, and Helm charts.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "devops-l2-s1",
+          "order": 1,
+          "title": "Kubernetes Core & Package Management",
+          "description": "Core subject domain covering Kubernetes Core & Package Management.",
+          "topics": [
+            {
+              "id": "devops-l2-t1",
+              "order": 1,
+              "title": "Kubernetes Workloads, Networking & Helm Packaging",
+              "description": "Deploy highly available distributed applications on Kubernetes and package reusable charts with Helm.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Kubernetes Workloads, Networking & Helm Packaging",
+                "Implement production-grade components using industry best practices for Kubernetes Workloads, Networking & Helm Packaging",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Kubernetes Workloads, Networking & Helm Packaging",
+                "Explain design trade-offs and answer senior technical interview questions on Kubernetes Workloads, Networking & Helm Packaging"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-devops-l2-t1-1",
+                  "title": "Kubernetes Architecture: Control Plane (API Server, etcd, Scheduler) & Worker Nodes (kubelet, kube-proxy)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l2-t1-2",
+                  "title": "Workload Resources: Pods, Deployments (RollingUpdate, Recreate), StatefulSets, DaemonSets, Jobs",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-devops-l2-t1-3",
+                  "title": "Networking: ClusterIP, NodePort, LoadBalancer Services, Ingress Controllers (NGINX/Traefik)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l2-t1-4",
+                  "title": "Storage: PersistentVolumes (PV), PersistentVolumeClaims (PVC), StorageClasses",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-devops-l2-t1-5",
+                  "title": "Helm 3: Templates, values.yaml, Dependencies, Chart Versioning & Release Lifecycle",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-devops-l2-t1-1",
+                  "title": "Hands-on Lab: Kubernetes Workloads, Networking & Helm Packaging",
+                  "description": "Implement, test, and validate core patterns of Kubernetes Workloads, Networking & Helm Packaging in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-devops-l2-t1-2",
+                  "title": "Independent Challenge: Kubernetes Workloads, Networking & Helm Packaging",
+                  "description": "Build end-to-end functionality for Kubernetes Workloads, Networking & Helm Packaging from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-devops-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Kubernetes Workloads, Networking & Helm Packaging",
+                  "description": "Troubleshoot a scenario where Kubernetes Workloads, Networking & Helm Packaging throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-devops-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Kubernetes Workloads, Networking & Helm Packaging. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-devops-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Kubernetes Workloads, Networking & Helm Packaging?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-devops-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Kubernetes Workloads, Networking & Helm Packaging",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "devops-l3",
+      "order": 3,
+      "title": "Level 3 — Infrastructure as Code (Terraform) & GitOps (ArgoCD)",
+      "description": "Declarative cloud provisioning with Terraform (HCL, state management, modules) and declarative GitOps with ArgoCD.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "devops-l3-s1",
+          "order": 1,
+          "title": "Terraform & Declarative GitOps",
+          "description": "Core subject domain covering Terraform & Declarative GitOps.",
+          "topics": [
+            {
+              "id": "devops-l3-t1",
+              "order": 1,
+              "title": "Terraform Cloud Provisioning & ArgoCD Continuous Delivery",
+              "description": "Manage immutable cloud infrastructure and automate zero-touch GitOps deployments.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Terraform Cloud Provisioning & ArgoCD Continuous Delivery",
+                "Implement production-grade components using industry best practices for Terraform Cloud Provisioning & ArgoCD Continuous Delivery",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Terraform Cloud Provisioning & ArgoCD Continuous Delivery",
+                "Explain design trade-offs and answer senior technical interview questions on Terraform Cloud Provisioning & ArgoCD Continuous Delivery"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-devops-l3-t1-1",
+                  "title": "Terraform Workflow: init, plan, apply, destroy; Remote State Locking with S3/DynamoDB",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l3-t1-2",
+                  "title": "Modular Terraform: Reusable Modules, Input Variables, Outputs, Data Sources",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-devops-l3-t1-3",
+                  "title": "GitOps Principles & Architecture with ArgoCD",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l3-t1-4",
+                  "title": "Automated Sync, Self-Healing & Drift Detection in Kubernetes Clusters via ArgoCD",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-devops-l3-t1-1",
+                  "title": "Hands-on Lab: Terraform Cloud Provisioning & ArgoCD Continuous Delivery",
+                  "description": "Implement, test, and validate core patterns of Terraform Cloud Provisioning & ArgoCD Continuous Delivery in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-devops-l3-t1-2",
+                  "title": "Independent Challenge: Terraform Cloud Provisioning & ArgoCD Continuous Delivery",
+                  "description": "Build end-to-end functionality for Terraform Cloud Provisioning & ArgoCD Continuous Delivery from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-devops-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Terraform Cloud Provisioning & ArgoCD Continuous Delivery",
+                  "description": "Troubleshoot a scenario where Terraform Cloud Provisioning & ArgoCD Continuous Delivery throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-devops-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Terraform Cloud Provisioning & ArgoCD Continuous Delivery. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-devops-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Terraform Cloud Provisioning & ArgoCD Continuous Delivery?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-devops-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Terraform Cloud Provisioning & ArgoCD Continuous Delivery",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "devops-l4",
+      "order": 4,
+      "title": "Level 4 — Site Reliability Engineering (SRE) & Observability",
+      "description": "Metrics, logs, traces: Prometheus, Grafana, OpenTelemetry, Loki, SLIs/SLOs, Error Budgets, and Alerting.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "devops-l4-s1",
+          "order": 1,
+          "title": "Observability & SRE Reliability",
+          "description": "Core subject domain covering Observability & SRE Reliability.",
+          "topics": [
+            {
+              "id": "devops-l4-t1",
+              "order": 1,
+              "title": "Prometheus Metrics, Grafana Dashboards & OpenTelemetry",
+              "description": "Build end-to-end distributed tracing, Prometheus alert rules, and calculate SLOs / Error Budgets.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Prometheus Metrics, Grafana Dashboards & OpenTelemetry",
+                "Implement production-grade components using industry best practices for Prometheus Metrics, Grafana Dashboards & OpenTelemetry",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Prometheus Metrics, Grafana Dashboards & OpenTelemetry",
+                "Explain design trade-offs and answer senior technical interview questions on Prometheus Metrics, Grafana Dashboards & OpenTelemetry"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-devops-l4-t1-1",
+                  "title": "The Three Pillars of Observability: Metrics (Prometheus), Logs (Loki), Distributed Traces (OpenTelemetry/Jaeger)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l4-t1-2",
+                  "title": "PromQL (Prometheus Query Language): Rates, Histograms, Quantiles, Aggregations",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-devops-l4-t1-3",
+                  "title": "Designing Executive & Operational Grafana Dashboards with Alertmanager Integration",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-devops-l4-t1-4",
+                  "title": "Defining Service Level Indicators (SLIs), Service Level Objectives (SLOs) & Error Budgets",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-devops-l4-t1-1",
+                  "title": "Hands-on Lab: Prometheus Metrics, Grafana Dashboards & OpenTelemetry",
+                  "description": "Implement, test, and validate core patterns of Prometheus Metrics, Grafana Dashboards & OpenTelemetry in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-devops-l4-t1-2",
+                  "title": "Independent Challenge: Prometheus Metrics, Grafana Dashboards & OpenTelemetry",
+                  "description": "Build end-to-end functionality for Prometheus Metrics, Grafana Dashboards & OpenTelemetry from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-devops-l4-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Prometheus Metrics, Grafana Dashboards & OpenTelemetry",
+                  "description": "Troubleshoot a scenario where Prometheus Metrics, Grafana Dashboards & OpenTelemetry throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-devops-l4-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Prometheus Metrics, Grafana Dashboards & OpenTelemetry. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-devops-l4-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Prometheus Metrics, Grafana Dashboards & OpenTelemetry?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-devops-l4-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Prometheus Metrics, Grafana Dashboards & OpenTelemetry",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

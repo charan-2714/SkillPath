@@ -1,0 +1,84 @@
+{
+  "version": 1,
+  "id": "photography",
+  "name": "Mastering Photography",
+  "description": "From camera mechanics and manual exposure to creative composition, portrait lighting, and Lightroom color grading.",
+  "category": "Creative Arts",
+  "difficulty": "Beginner to Intermediate",
+  "estimatedDuration": "3-6 months",
+  "tags": ["Photography", "Creative Arts", "Composition", "Lighting", "Color Grading", "Lightroom"],
+  "trackingModel": "custom",
+  "skillDimensions": [
+    { "id": "theory", "name": "Theory & Optics", "maxScore": 5 },
+    { "id": "technique", "name": "Camera Technique", "maxScore": 5 },
+    { "id": "composition", "name": "Composition & Eye", "maxScore": 5 },
+    { "id": "postprocessing", "name": "Post-Processing", "maxScore": 5 },
+    { "id": "portfolio", "name": "Portfolio Quality", "maxScore": 5 }
+  ],
+  "enableAIDependency": false,
+  "levels": [
+    {
+      "id": "photo-l0",
+      "order": 0,
+      "title": "Camera Mechanics & Exposure Triangle",
+      "description": "Master aperture (f-stops), shutter speed, ISO sensitivity, and manual shooting mode.",
+      "estimatedDuration": "3 weeks",
+      "color": "amber",
+      "subjects": [
+        {
+          "id": "manual-exposure",
+          "order": 1,
+          "title": "Manual Exposure & Optics",
+          "topics": [
+            {
+              "id": "exposure-triangle-practice",
+              "order": 1,
+              "title": "The Exposure Triangle in Practice",
+              "description": "Balancing depth of field, motion blur, and sensor noise in changing light conditions.",
+              "priority": "core",
+              "tags": ["aperture", "shutter", "iso"],
+              "estimatedHours": 6,
+              "learningItems": [
+                { "id": "p-1", "title": "Understand depth of field relationships with f/1.4 vs f/8", "type": "concept" },
+                { "id": "p-2", "title": "Freezing motion vs panning with shutter speed", "type": "technique" },
+                { "id": "p-3", "title": "Managing dynamic range and histogram readings", "type": "technique" }
+              ],
+              "practice": [
+                { "id": "prac-p-1", "title": "Golden Hour Portrait Shoot", "description": "Shoot 20 portrait photos in Manual mode during golden hour.", "difficulty": "easy", "type": "hands-on" }
+              ],
+              "assessments": [
+                { "id": "a-p-1", "question": "How do you prevent motion blur when shooting handheld in low-light conditions?", "difficulty": "medium", "type": "self-assessment" }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "photo-l1",
+      "order": 1,
+      "title": "Composition & Visual Storytelling",
+      "description": "Rule of thirds, leading lines, framing, negative space, and color harmony.",
+      "estimatedDuration": "4 weeks",
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "framing-composition",
+          "order": 1,
+          "title": "Framing & Geometry",
+          "topics": [
+            {
+              "id": "leading-lines-golden-ratio",
+              "order": 1,
+              "title": "Leading Lines & Golden Ratio",
+              "description": "Guiding viewer eye through the frame using natural geometry and perspective.",
+              "priority": "core",
+              "tags": ["composition", "framing"],
+              "estimatedHours": 6
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

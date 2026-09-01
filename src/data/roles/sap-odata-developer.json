@@ -1,0 +1,297 @@
+{
+  "id": "sap-odata-developer",
+  "name": "SAP OData & Gateway Developer",
+  "title": "SAP OData & Gateway Developer",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Deep dive into building and consuming enterprise OData services via SAP Gateway. SEGW Service Builder, Data Provider Class (DPC_EXT), Model Provider Class (MPC_EXT), CRUDQ operations, deep entities, batch processing, and security.",
+  "targetRoles": [
+    "SAP Gateway Developer",
+    "SAP OData Engineer",
+    "SAP Integration Specialist"
+  ],
+  "prerequisites": [
+    "ABAP fundamentals",
+    "REST & HTTP understanding"
+  ],
+  "difficulty": "Intermediate",
+  "estimatedDuration": "4-6 months",
+  "estimatedHours": 250,
+  "technologies": [
+    "SAP Gateway (SEGW)",
+    "OData V2",
+    "OData V4",
+    "SAP NetWeaver",
+    "ABAP DPC/MPC Classes",
+    "OData Batch",
+    "Service Registration (/IWFND/MAINT_SERVICE)"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "odata-l0",
+      "order": 0,
+      "title": "Level 0 — OData Protocol & SAP Gateway Architecture",
+      "description": "OData protocol standards, SAP Gateway hub vs embedded deployment, Service Builder (SEGW), and metadata generation.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "odata-l0-s1",
+          "order": 1,
+          "title": "Gateway Architecture & Service Modeling",
+          "description": "Core subject domain covering Gateway Architecture & Service Modeling.",
+          "topics": [
+            {
+              "id": "odata-l0-t1",
+              "order": 1,
+              "title": "Gateway Architecture & SEGW Model Definition",
+              "description": "Define entity types, entity sets, properties, navigation properties, and associations in transaction SEGW.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Gateway Architecture & SEGW Model Definition",
+                "Implement production-grade components using industry best practices for Gateway Architecture & SEGW Model Definition",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Gateway Architecture & SEGW Model Definition",
+                "Explain design trade-offs and answer senior technical interview questions on Gateway Architecture & SEGW Model Definition"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-odata-l0-t1-1",
+                  "title": "OData Protocol Foundations (OASIS Standard, EDM - Entity Data Model)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-odata-l0-t1-2",
+                  "title": "SAP Gateway Hub Deployment vs Embedded Deployment Architecture",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-odata-l0-t1-3",
+                  "title": "Service Builder (SEGW): Modeling Entity Types, Entity Sets, Associations & Navigation Properties",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-odata-l0-t1-4",
+                  "title": "Model Provider Class (MPC/MPC_EXT) and Data Provider Class (DPC/DPC_EXT) Generation",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-odata-l0-t1-5",
+                  "title": "Service Registration & Activation via /IWFND/MAINT_SERVICE",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-odata-l0-t1-6",
+                  "title": "Gateway Client (/IWFND/GW_CLIENT) for Testing HTTP GET, POST, PUT, DELETE",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-odata-l0-t1-1",
+                  "title": "Hands-on Lab: Gateway Architecture & SEGW Model Definition",
+                  "description": "Implement, test, and validate core patterns of Gateway Architecture & SEGW Model Definition in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-odata-l0-t1-2",
+                  "title": "Independent Challenge: Gateway Architecture & SEGW Model Definition",
+                  "description": "Build end-to-end functionality for Gateway Architecture & SEGW Model Definition from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-odata-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Gateway Architecture & SEGW Model Definition",
+                  "description": "Troubleshoot a scenario where Gateway Architecture & SEGW Model Definition throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-odata-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Gateway Architecture & SEGW Model Definition. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-odata-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Gateway Architecture & SEGW Model Definition?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-odata-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Gateway Architecture & SEGW Model Definition",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "odata-l1",
+      "order": 1,
+      "title": "Level 1 — DPC_EXT CRUDQ Operations & Performance",
+      "description": "Implementing GetEntity (Read), GetEntitySet (Query), Create, Update, Delete, Deep Inserts, and $batch handling.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "odata-l1-s1",
+          "order": 1,
+          "title": "DPC_EXT Implementation & Query Options",
+          "description": "Core subject domain covering DPC_EXT Implementation & Query Options.",
+          "topics": [
+            {
+              "id": "odata-l1-t1",
+              "order": 1,
+              "title": "DPC_EXT Implementation, Filtering, Batching & Deep Inserts",
+              "description": "Write ABAP logic in DPC_EXT to handle $filter, $select, $expand, $orderby, $top/$skip, and deep entity structures.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of DPC_EXT Implementation, Filtering, Batching & Deep Inserts",
+                "Implement production-grade components using industry best practices for DPC_EXT Implementation, Filtering, Batching & Deep Inserts",
+                "Diagnose runtime errors, misconfigurations, and edge cases in DPC_EXT Implementation, Filtering, Batching & Deep Inserts",
+                "Explain design trade-offs and answer senior technical interview questions on DPC_EXT Implementation, Filtering, Batching & Deep Inserts"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-odata-l1-t1-1",
+                  "title": "Implementing ENTITYSET_GET_ENTITYSET with Filter Strings (io_tech_request_context)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-odata-l1-t1-2",
+                  "title": "Implementing ENTITYSET_GET_ENTITY for Single Key Lookups",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-odata-l1-t1-3",
+                  "title": "Implementing CREATE_ENTITY, UPDATE_ENTITY & DELETE_ENTITY with ETag Validation",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-odata-l1-t1-4",
+                  "title": "Handling Deep Entities (CREATE_DEEP_ENTITY) for Header-Item Structures (e.g. Sales Order + Items)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-odata-l1-t1-5",
+                  "title": "Batch Processing (CHANGESET_BEGIN, CHANGESET_PROCESS, CHANGESET_END) with Database Commits",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-odata-l1-t1-6",
+                  "title": "Error Handling with /IWBEP/CX_MGW_BUSI_EXCEPTION and Message Containers",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-odata-l1-t1-1",
+                  "title": "Hands-on Lab: DPC_EXT Implementation, Filtering, Batching & Deep Inserts",
+                  "description": "Implement, test, and validate core patterns of DPC_EXT Implementation, Filtering, Batching & Deep Inserts in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-odata-l1-t1-2",
+                  "title": "Independent Challenge: DPC_EXT Implementation, Filtering, Batching & Deep Inserts",
+                  "description": "Build end-to-end functionality for DPC_EXT Implementation, Filtering, Batching & Deep Inserts from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-odata-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in DPC_EXT Implementation, Filtering, Batching & Deep Inserts",
+                  "description": "Troubleshoot a scenario where DPC_EXT Implementation, Filtering, Batching & Deep Inserts throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-odata-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for DPC_EXT Implementation, Filtering, Batching & Deep Inserts. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-odata-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with DPC_EXT Implementation, Filtering, Batching & Deep Inserts?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-odata-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for DPC_EXT Implementation, Filtering, Batching & Deep Inserts",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "id": "cloud-engineer",
+  "name": "Cloud Engineer",
+  "description": "Master cloud architecture: AWS/GCP services, Terraform Infrastructure as Code, Kubernetes orchestration, and serverless compute.",
+  "category": "Cybersecurity & Cloud",
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "8-10 months",
+  "tags": ["Cloud", "AWS", "GCP", "Terraform", "Kubernetes", "Docker", "DevOps"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "cloud-l0",
+      "order": 0,
+      "title": "Linux, Networking & Containers",
+      "description": "Linux systems administration, DNS, VPC subnets, and Docker container fundamentals.",
+      "estimatedDuration": "3 weeks",
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "containers-networking",
+          "order": 1,
+          "title": "Containers & Cloud Networking",
+          "topics": [
+            {
+              "id": "docker-containers-builds",
+              "order": 1,
+              "title": "Docker Containers & Multi-Stage Builds",
+              "description": "Creating lightweight, secure container images for cloud microservices.",
+              "priority": "core",
+              "tags": ["docker", "linux"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cloud-l1",
+      "order": 1,
+      "title": "Infrastructure as Code (Terraform)",
+      "description": "HCL syntax, state management, modules, and multi-environment orchestration.",
+      "estimatedDuration": "4 weeks",
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "terraform-iac",
+          "order": 1,
+          "title": "Terraform Automation",
+          "topics": [
+            {
+              "id": "terraform-state-modules",
+              "order": 1,
+              "title": "Terraform State & Reusable Modules",
+              "description": "Managing remote state in S3/GCS with DynamoDB locks and environment workspaces.",
+              "priority": "core",
+              "tags": ["terraform", "iac"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cloud-l2",
+      "order": 2,
+      "title": "Kubernetes Container Orchestration",
+      "description": "Pods, Deployments, Services, Ingress, Helm charts, and cluster autoscaling.",
+      "estimatedDuration": "5 weeks",
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "k8s-orchestration",
+          "order": 1,
+          "title": "Kubernetes Production Clusters",
+          "topics": [
+            {
+              "id": "k8s-deployments-ingress",
+              "order": 1,
+              "title": "Kubernetes Deployments & Ingress Controllers",
+              "description": "Declarative cluster management, rolling updates, and traffic routing with NGINX ingress.",
+              "priority": "core",
+              "tags": ["k8s", "kubernetes"],
+              "estimatedHours": 12
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

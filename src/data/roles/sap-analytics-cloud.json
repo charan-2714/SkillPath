@@ -1,0 +1,181 @@
+{
+  "id": "sap-analytics-cloud",
+  "name": "SAP Analytics Cloud & Datasphere Consultant",
+  "title": "SAP Analytics Cloud & Datasphere Consultant",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Enterprise analytics, business intelligence, and planning with SAP Analytics Cloud (SAC) and SAP Datasphere. Live/Import connections to S/4HANA and HANA, Story design, calculations, planning models, Datasphere Spaces, Data Builder, and Business Builder.",
+  "targetRoles": [
+    "SAP Analytics Consultant",
+    "SAC Developer",
+    "SAP Data Fabric Architect",
+    "BI Specialist"
+  ],
+  "prerequisites": [
+    "Data analysis fundamentals",
+    "SQL & reporting basics"
+  ],
+  "difficulty": "Intermediate",
+  "estimatedDuration": "5-7 months",
+  "estimatedHours": 300,
+  "technologies": [
+    "SAP Analytics Cloud (SAC)",
+    "SAP Datasphere",
+    "Data Modeling",
+    "Stories & Dashboards",
+    "Live Connections",
+    "Import Connections",
+    "Analytical Models"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "sac-l0",
+      "order": 0,
+      "title": "Level 0 — SAC Architecture, Data Models & Stories",
+      "description": "SAC overview, Live vs Import data connections, Model creation, Dimensions, Measures, and responsive Story design.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "sac-l0-s1",
+          "order": 1,
+          "title": "Data Modeling & Dashboard Design in SAC",
+          "description": "Core subject domain covering Data Modeling & Dashboard Design in SAC.",
+          "topics": [
+            {
+              "id": "sac-l0-t1",
+              "order": 1,
+              "title": "SAC Data Connections, Models & Interactive Stories",
+              "description": "Build live connections to S/4HANA CDS views and create interactive dashboards with charts and tables.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAC Data Connections, Models & Interactive Stories",
+                "Implement production-grade components using industry best practices for SAC Data Connections, Models & Interactive Stories",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAC Data Connections, Models & Interactive Stories",
+                "Explain design trade-offs and answer senior technical interview questions on SAC Data Connections, Models & Interactive Stories"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-sac-l0-t1-1",
+                  "title": "SAP Analytics Cloud (SAC) Architecture & User Roles",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-sac-l0-t1-2",
+                  "title": "Live Data Connections (S/4HANA, HANA, BW/4HANA) vs Import Data Connections",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-sac-l0-t1-3",
+                  "title": "SAC Data Modeling: Dimensions (Generic, Organization, Date), Measures, Hierarchies",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-sac-l0-t1-4",
+                  "title": "Story Design: Responsive Pages, Canvas Pages, Charts, Tables, Dynamic Text",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-sac-l0-t1-5",
+                  "title": "Calculated Measures, Restricted Measures & Aggregation Formulas",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-sac-l0-t1-6",
+                  "title": "SAP Datasphere Foundations: Spaces, Data Builder (Tables, Views), Business Builder (Analytical Datasets)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-sac-l0-t1-1",
+                  "title": "Hands-on Lab: SAC Data Connections, Models & Interactive Stories",
+                  "description": "Implement, test, and validate core patterns of SAC Data Connections, Models & Interactive Stories in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-sac-l0-t1-2",
+                  "title": "Independent Challenge: SAC Data Connections, Models & Interactive Stories",
+                  "description": "Build end-to-end functionality for SAC Data Connections, Models & Interactive Stories from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-sac-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in SAC Data Connections, Models & Interactive Stories",
+                  "description": "Troubleshoot a scenario where SAC Data Connections, Models & Interactive Stories throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-sac-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for SAC Data Connections, Models & Interactive Stories. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-sac-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAC Data Connections, Models & Interactive Stories?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-sac-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for SAC Data Connections, Models & Interactive Stories",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

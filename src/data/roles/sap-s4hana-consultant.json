@@ -1,0 +1,619 @@
+{
+  "id": "sap-s4hana-consultant",
+  "name": "SAP S/4HANA Consultant / Developer",
+  "title": "SAP S/4HANA Consultant / Developer",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Mastery of SAP S/4HANA architecture, simplified data structures, Universal Journal, Business Partner concept, cross-functional module integration (FI, CO, MM, SD, PP, EWM), Clean Core extensibility paradigm, and migration cockpit.",
+  "targetRoles": [
+    "SAP S/4HANA Lead Consultant",
+    "S/4HANA Solution Architect",
+    "SAP Techno-Functional Consultant"
+  ],
+  "prerequisites": [
+    "Basic ERP knowledge",
+    "General understanding of enterprise finance & logistics"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "7-9 months",
+  "estimatedHours": 420,
+  "technologies": [
+    "SAP S/4HANA",
+    "Universal Journal (ACDOCA)",
+    "Business Partner",
+    "Clean Core",
+    "In-App Extensibility",
+    "Side-by-Side Extensibility",
+    "Embedded Analytics",
+    "Fiori Architecture"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "s4-l0",
+      "order": 0,
+      "title": "Level 0 — S/4HANA Architecture & Simplified Data Model",
+      "description": "Evolution to in-memory computing, table elimination (BSIS, BSAS, BSEG -> ACDOCA, MATDOC), and architectural principles.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "s4-l0-s1",
+          "order": 1,
+          "title": "S/4HANA Core Data Model",
+          "description": "Core subject domain covering S/4HANA Core Data Model.",
+          "topics": [
+            {
+              "id": "s4-l0-t1",
+              "order": 1,
+              "title": "In-Memory Computing & Table Reductions",
+              "description": "Understand how HANA column store enabled table elimination, aggregate removal, and real-time processing.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of In-Memory Computing & Table Reductions",
+                "Implement production-grade components using industry best practices for In-Memory Computing & Table Reductions",
+                "Diagnose runtime errors, misconfigurations, and edge cases in In-Memory Computing & Table Reductions",
+                "Explain design trade-offs and answer senior technical interview questions on In-Memory Computing & Table Reductions"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-s4-l0-t1-1",
+                  "title": "Traditional ERP Aggregate and Index Tables vs S/4HANA Columnar Architecture",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l0-t1-2",
+                  "title": "Universal Journal Table (ACDOCA): Merging FI and CO Single Source of Truth",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l0-t1-3",
+                  "title": "Material Document Table (MATDOC): Simplifying Inventory Management",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l0-t1-4",
+                  "title": "Simplification List & Release Differences across S/4HANA Versions (2020, 2021, 2022, 2023)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l0-t1-5",
+                  "title": "Compatibility Views & Redirects for Legacy Custom Code",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-s4-l0-t1-1",
+                  "title": "Hands-on Lab: In-Memory Computing & Table Reductions",
+                  "description": "Implement, test, and validate core patterns of In-Memory Computing & Table Reductions in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-s4-l0-t1-2",
+                  "title": "Independent Challenge: In-Memory Computing & Table Reductions",
+                  "description": "Build end-to-end functionality for In-Memory Computing & Table Reductions from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-s4-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in In-Memory Computing & Table Reductions",
+                  "description": "Troubleshoot a scenario where In-Memory Computing & Table Reductions throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-s4-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for In-Memory Computing & Table Reductions. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-s4-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with In-Memory Computing & Table Reductions?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-s4-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for In-Memory Computing & Table Reductions",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-l1",
+      "order": 1,
+      "title": "Level 1 — Business Partner & Master Data Harmonization",
+      "description": "Customer-Vendor Integration (CVI), central Business Partner data model, and credit management.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "s4-l1-s1",
+          "order": 1,
+          "title": "Central Business Partner (BP) Approach",
+          "description": "Core subject domain covering Central Business Partner (BP) Approach.",
+          "topics": [
+            {
+              "id": "s4-l1-t1",
+              "order": 1,
+              "title": "Business Partner Architecture & CVI Migration",
+              "description": "Configure Business Partner categories, roles, groupings, and synchronization with FI/SD/MM.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Business Partner Architecture & CVI Migration",
+                "Implement production-grade components using industry best practices for Business Partner Architecture & CVI Migration",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Business Partner Architecture & CVI Migration",
+                "Explain design trade-offs and answer senior technical interview questions on Business Partner Architecture & CVI Migration"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-s4-l1-t1-1",
+                  "title": "Business Partner Concept: Person, Organization, Group",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l1-t1-2",
+                  "title": "BP Roles: FLCU00/FLCU01 (Customer), FLVN00/FLVN01 (Supplier), General Roles",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l1-t1-3",
+                  "title": "Customer Vendor Integration (CVI) Synchronization Direction & Post-Processing Office (PPO)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l1-t1-4",
+                  "title": "Credit Management in S/4HANA (FSCM Integration vs Classic FI-AR Credit Check)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l1-t1-5",
+                  "title": "Product Master (Material Master) S/4HANA Enhancements (40-Character Material Number)",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-s4-l1-t1-1",
+                  "title": "Hands-on Lab: Business Partner Architecture & CVI Migration",
+                  "description": "Implement, test, and validate core patterns of Business Partner Architecture & CVI Migration in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-s4-l1-t1-2",
+                  "title": "Independent Challenge: Business Partner Architecture & CVI Migration",
+                  "description": "Build end-to-end functionality for Business Partner Architecture & CVI Migration from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-s4-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Business Partner Architecture & CVI Migration",
+                  "description": "Troubleshoot a scenario where Business Partner Architecture & CVI Migration throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-s4-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Business Partner Architecture & CVI Migration. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-s4-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Business Partner Architecture & CVI Migration?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-s4-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Business Partner Architecture & CVI Migration",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-l2",
+      "order": 2,
+      "title": "Level 2 — End-to-End Enterprise Module Integration",
+      "description": "Cross-functional touchpoints: Record-to-Report (FI/CO), Procure-to-Pay (MM/FI), Order-to-Cash (SD/FI), Plan-to-Produce (PP/MM).",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "s4-l2-s1",
+          "order": 1,
+          "title": "Cross-Functional Business Process Flows",
+          "description": "Core subject domain covering Cross-Functional Business Process Flows.",
+          "topics": [
+            {
+              "id": "s4-l2-t1",
+              "order": 1,
+              "title": "Record-to-Report & Order-to-Cash Integration",
+              "description": "Understand end-to-end accounting flows from sales orders, billing documents, goods movements to General Ledger.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Record-to-Report & Order-to-Cash Integration",
+                "Implement production-grade components using industry best practices for Record-to-Report & Order-to-Cash Integration",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Record-to-Report & Order-to-Cash Integration",
+                "Explain design trade-offs and answer senior technical interview questions on Record-to-Report & Order-to-Cash Integration"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-s4-l2-t1-1",
+                  "title": "Order-to-Cash (O2C): Sales Order -> Availability Check -> Outbound Delivery -> PGI -> Billing -> FI Posting",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l2-t1-2",
+                  "title": "Record-to-Report (R2R): General Ledger, Accounts Payable, Accounts Receivable, Asset Accounting, Profitability Analysis (CO-PA)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l2-t1-3",
+                  "title": "Plan-to-Produce (P2P): Production Orders, BOM Explosion, Routing, Confirmation, Settlement",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l2-t1-4",
+                  "title": "Extended Warehouse Management (EWM) & Transportation Management (TM) Embedded in S/4HANA",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-s4-l2-t1-1",
+                  "title": "Hands-on Lab: Record-to-Report & Order-to-Cash Integration",
+                  "description": "Implement, test, and validate core patterns of Record-to-Report & Order-to-Cash Integration in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-s4-l2-t1-2",
+                  "title": "Independent Challenge: Record-to-Report & Order-to-Cash Integration",
+                  "description": "Build end-to-end functionality for Record-to-Report & Order-to-Cash Integration from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-s4-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Record-to-Report & Order-to-Cash Integration",
+                  "description": "Troubleshoot a scenario where Record-to-Report & Order-to-Cash Integration throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-s4-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Record-to-Report & Order-to-Cash Integration. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-s4-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Record-to-Report & Order-to-Cash Integration?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-s4-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Record-to-Report & Order-to-Cash Integration",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-l3",
+      "order": 3,
+      "title": "Level 3 — Clean Core Strategy & Extensibility Paradigms",
+      "description": "Modern SAP Extensibility: Clean Core, Key-User In-App Extensibility, Developer Extensibility, and Side-by-Side on BTP.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "s4-l3-s1",
+          "order": 1,
+          "title": "Modern S/4HANA Extensibility Matrix",
+          "description": "Core subject domain covering Modern S/4HANA Extensibility Matrix.",
+          "topics": [
+            {
+              "id": "s4-l3-t1",
+              "order": 1,
+              "title": "Clean Core, In-App & Side-by-Side Extensibility on BTP",
+              "description": "Implement upgrades without friction using released APIs, custom fields, and BTP extensions.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Clean Core, In-App & Side-by-Side Extensibility on BTP",
+                "Implement production-grade components using industry best practices for Clean Core, In-App & Side-by-Side Extensibility on BTP",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Clean Core, In-App & Side-by-Side Extensibility on BTP",
+                "Explain design trade-offs and answer senior technical interview questions on Clean Core, In-App & Side-by-Side Extensibility on BTP"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-s4-l3-t1-1",
+                  "title": "The Clean Core Principle: Zero Direct Modifications to SAP Core Code",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l3-t1-2",
+                  "title": "Key-User In-App Extensibility: Custom Fields & Logic App, Custom CDS Views, Custom Business Objects",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l3-t1-3",
+                  "title": "Developer Extensibility (Embedded Steampunk / ABAP Cloud): Restricted ABAP Syntax & Released APIs",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l3-t1-4",
+                  "title": "Side-by-Side Extensibility on SAP BTP: CAP, RAP, Event-Driven Decoupling via Event Mesh",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l3-t1-5",
+                  "title": "Choosing the Right Extensibility Model for Business Scenarios",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-s4-l3-t1-1",
+                  "title": "Hands-on Lab: Clean Core, In-App & Side-by-Side Extensibility on BTP",
+                  "description": "Implement, test, and validate core patterns of Clean Core, In-App & Side-by-Side Extensibility on BTP in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-s4-l3-t1-2",
+                  "title": "Independent Challenge: Clean Core, In-App & Side-by-Side Extensibility on BTP",
+                  "description": "Build end-to-end functionality for Clean Core, In-App & Side-by-Side Extensibility on BTP from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-s4-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Clean Core, In-App & Side-by-Side Extensibility on BTP",
+                  "description": "Troubleshoot a scenario where Clean Core, In-App & Side-by-Side Extensibility on BTP throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-s4-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Clean Core, In-App & Side-by-Side Extensibility on BTP. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-s4-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Clean Core, In-App & Side-by-Side Extensibility on BTP?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-s4-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Clean Core, In-App & Side-by-Side Extensibility on BTP",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s4-l4",
+      "order": 4,
+      "title": "Level 4 — Migration Cockpit & Transition Scenarios",
+      "description": "Transition strategies: System Conversion (Brownfield), New Implementation (Greenfield), Selective Data Transition (Bluefield).",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "s4-l4-s1",
+          "order": 1,
+          "title": "S/4HANA Migration & Conversion",
+          "description": "Core subject domain covering S/4HANA Migration & Conversion.",
+          "topics": [
+            {
+              "id": "s4-l4-t1",
+              "order": 1,
+              "title": "SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)",
+              "description": "Execute readiness assessments, custom code remediation, and staging table data migrations.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)",
+                "Implement production-grade components using industry best practices for SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)",
+                "Explain design trade-offs and answer senior technical interview questions on SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-s4-l4-t1-1",
+                  "title": "Transition Paths: Greenfield (New Implementation) vs Brownfield (System Conversion) vs Bluefield",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l4-t1-2",
+                  "title": "SAP Readiness Check for S/4HANA: Financial Data Quality, Add-On Compatibility, Recommended Fiori Apps",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l4-t1-3",
+                  "title": "Custom Code Migration App & ABAP Test Cockpit (ATC) for S/4HANA Readiness Checks",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-s4-l4-t1-4",
+                  "title": "SAP S/4HANA Migration Cockpit (Migrate Your Data Fiori App): Staging Tables, Direct Extraction from SAP",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-s4-l4-t1-5",
+                  "title": "Financial Data Reconciliation & Migration to ACDOCA",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-s4-l4-t1-1",
+                  "title": "Hands-on Lab: SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)",
+                  "description": "Implement, test, and validate core patterns of SAP Readiness Check & Migration Cockpit (LTMC / Fiori App) in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-s4-l4-t1-2",
+                  "title": "Independent Challenge: SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)",
+                  "description": "Build end-to-end functionality for SAP Readiness Check & Migration Cockpit (LTMC / Fiori App) from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-s4-l4-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)",
+                  "description": "Troubleshoot a scenario where SAP Readiness Check & Migration Cockpit (LTMC / Fiori App) throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-s4-l4-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for SAP Readiness Check & Migration Cockpit (LTMC / Fiori App). What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-s4-l4-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-s4-l4-t1-1",
+                  "title": "Official Documentation & Architecture Guide for SAP Readiness Check & Migration Cockpit (LTMC / Fiori App)",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

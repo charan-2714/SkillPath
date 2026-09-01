@@ -1,0 +1,513 @@
+{
+  "id": "sap-btp-developer",
+  "name": "SAP BTP Developer (Business Technology Platform)",
+  "title": "SAP BTP Developer (Business Technology Platform)",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Architecting and developing cloud-native extensions on SAP Business Technology Platform (BTP). Global accounts, subaccounts, Cloud Foundry, Kyma runtime, Connectivity Service, Destinations, Cloud Connector, Approuter, Multi-Target Applications (MTA), Security (XSUAA/IAS), and DevOps.",
+  "targetRoles": [
+    "SAP BTP Cloud Developer",
+    "BTP Solution Architect",
+    "SAP Cloud Platform Engineer"
+  ],
+  "prerequisites": [
+    "Cloud computing basics",
+    "REST & Node.js/Java awareness"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "6-8 months",
+  "estimatedHours": 360,
+  "technologies": [
+    "SAP BTP",
+    "Cloud Foundry",
+    "Kyma (Kubernetes)",
+    "Destinations",
+    "Connectivity Service",
+    "Cloud Connector",
+    "HTML5 Application Repository",
+    "cTMS",
+    "SAP Build"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "btp-l0",
+      "order": 0,
+      "title": "Level 0 — BTP Hierarchy, Subaccounts & Entitlements",
+      "description": "Global Accounts, Directories, Subaccounts, Regions, Commercial Models (CPEA, Pay-As-You-Go), and Quotas.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "btp-l0-s1",
+          "order": 1,
+          "title": "Account Administration & Governance",
+          "description": "Core subject domain covering Account Administration & Governance.",
+          "topics": [
+            {
+              "id": "btp-l0-t1",
+              "order": 1,
+              "title": "BTP Account Hierarchy & Resource Management",
+              "description": "Configure enterprise global accounts, subaccounts, spaces, and entitlement allocations.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of BTP Account Hierarchy & Resource Management",
+                "Implement production-grade components using industry best practices for BTP Account Hierarchy & Resource Management",
+                "Diagnose runtime errors, misconfigurations, and edge cases in BTP Account Hierarchy & Resource Management",
+                "Explain design trade-offs and answer senior technical interview questions on BTP Account Hierarchy & Resource Management"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-btp-l0-t1-1",
+                  "title": "BTP Account Model: Global Account -> Directories -> Subaccounts -> Spaces/Namespaces",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-btp-l0-t1-2",
+                  "title": "Hyperscaler Regions (AWS, Azure, GCP) & Service Availability",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-btp-l0-t1-3",
+                  "title": "Commercial Models: Consumption-Based (CPEA, Pay-As-You-Go) vs Subscription Model",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-btp-l0-t1-4",
+                  "title": "Managing Entitlements & Service Plans Allocation across Subaccounts",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-btp-l0-t1-5",
+                  "title": "BTP CLI (btp tool) for Automated Scripting and Account Provisioning",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-btp-l0-t1-1",
+                  "title": "Hands-on Lab: BTP Account Hierarchy & Resource Management",
+                  "description": "Implement, test, and validate core patterns of BTP Account Hierarchy & Resource Management in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-btp-l0-t1-2",
+                  "title": "Independent Challenge: BTP Account Hierarchy & Resource Management",
+                  "description": "Build end-to-end functionality for BTP Account Hierarchy & Resource Management from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-btp-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in BTP Account Hierarchy & Resource Management",
+                  "description": "Troubleshoot a scenario where BTP Account Hierarchy & Resource Management throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-btp-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for BTP Account Hierarchy & Resource Management. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-btp-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with BTP Account Hierarchy & Resource Management?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-btp-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for BTP Account Hierarchy & Resource Management",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "btp-l1",
+      "order": 1,
+      "title": "Level 1 — Cloud Foundry & Kyma Runtime Environments",
+      "description": "Multi-runtime architecture: Cloud Foundry environment, Kyma (Managed Kubernetes) runtime, and ABAP Environment.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "btp-l1-s1",
+          "order": 1,
+          "title": "Runtimes & Container Orchestration",
+          "description": "Core subject domain covering Runtimes & Container Orchestration.",
+          "topics": [
+            {
+              "id": "btp-l1-t1",
+              "order": 1,
+              "title": "Cloud Foundry vs Kyma Runtime Environments",
+              "description": "Deploy microservices, manage buildpacks, scale instances, and work with Kubernetes manifests in Kyma.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Cloud Foundry vs Kyma Runtime Environments",
+                "Implement production-grade components using industry best practices for Cloud Foundry vs Kyma Runtime Environments",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Cloud Foundry vs Kyma Runtime Environments",
+                "Explain design trade-offs and answer senior technical interview questions on Cloud Foundry vs Kyma Runtime Environments"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-btp-l1-t1-1",
+                  "title": "Cloud Foundry Architecture: Orgs, Spaces, Droplets, Buildpacks, Memory Quotas",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-btp-l1-t1-2",
+                  "title": "Cloud Foundry CLI (cf push, cf scale, cf logs, cf env)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-btp-l1-t1-3",
+                  "title": "Kyma Environment: Managed Kubernetes, Istio Service Mesh, Serverless Functions, Microservices",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-btp-l1-t1-4",
+                  "title": "Containerization: Dockerizing Custom Workloads & Deploying to Kyma via Helm/kubectl",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-btp-l1-t1-5",
+                  "title": "SAP BTP ABAP Environment (Steampunk): Cloud ABAP Runtime on BTP",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-btp-l1-t1-1",
+                  "title": "Hands-on Lab: Cloud Foundry vs Kyma Runtime Environments",
+                  "description": "Implement, test, and validate core patterns of Cloud Foundry vs Kyma Runtime Environments in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-btp-l1-t1-2",
+                  "title": "Independent Challenge: Cloud Foundry vs Kyma Runtime Environments",
+                  "description": "Build end-to-end functionality for Cloud Foundry vs Kyma Runtime Environments from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-btp-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Cloud Foundry vs Kyma Runtime Environments",
+                  "description": "Troubleshoot a scenario where Cloud Foundry vs Kyma Runtime Environments throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-btp-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Cloud Foundry vs Kyma Runtime Environments. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-btp-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Cloud Foundry vs Kyma Runtime Environments?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-btp-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Cloud Foundry vs Kyma Runtime Environments",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "btp-l2",
+      "order": 2,
+      "title": "Level 2 — Connectivity, Destinations & Cloud Connector",
+      "description": "Secure hybrid connectivity: SAP Cloud Connector, BTP Connectivity Service, Destinations, and Principal Propagation.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "btp-l2-s1",
+          "order": 1,
+          "title": "Hybrid Cloud Connectivity",
+          "description": "Core subject domain covering Hybrid Cloud Connectivity.",
+          "topics": [
+            {
+              "id": "btp-l2-t1",
+              "order": 1,
+              "title": "Cloud Connector & Destination Configuration",
+              "description": "Connect BTP applications securely to on-premise SAP S/4HANA, ECC, and databases without inbound firewall ports.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Cloud Connector & Destination Configuration",
+                "Implement production-grade components using industry best practices for Cloud Connector & Destination Configuration",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Cloud Connector & Destination Configuration",
+                "Explain design trade-offs and answer senior technical interview questions on Cloud Connector & Destination Configuration"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-btp-l2-t1-1",
+                  "title": "SAP Cloud Connector Installation, Pairing with BTP Subaccount & Resource Whitelisting",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-btp-l2-t1-2",
+                  "title": "BTP Connectivity Service & Destination Service Binding in Cloud Foundry / Kyma",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-btp-l2-t1-3",
+                  "title": "Destination Types: HTTP, RFC, Mail; Proxy Types: Internet vs OnPremise",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-btp-l2-t1-4",
+                  "title": "Authentication Methods: Basic, OAuth2ClientCredentials, PrincipalPropagation (SSO)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-btp-l2-t1-5",
+                  "title": "Calling Destinations programmatically using @sap-cloud-sdk/connectivity",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-btp-l2-t1-1",
+                  "title": "Hands-on Lab: Cloud Connector & Destination Configuration",
+                  "description": "Implement, test, and validate core patterns of Cloud Connector & Destination Configuration in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-btp-l2-t1-2",
+                  "title": "Independent Challenge: Cloud Connector & Destination Configuration",
+                  "description": "Build end-to-end functionality for Cloud Connector & Destination Configuration from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-btp-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Cloud Connector & Destination Configuration",
+                  "description": "Troubleshoot a scenario where Cloud Connector & Destination Configuration throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-btp-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Cloud Connector & Destination Configuration. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-btp-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Cloud Connector & Destination Configuration?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-btp-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Cloud Connector & Destination Configuration",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "btp-l3",
+      "order": 3,
+      "title": "Level 3 — Security, Identity & Multi-Target Applications (MTA)",
+      "description": "Identity Authentication Service (IAS), XSUAA service, role collections, Approuter, and MTA descriptor (mta.yaml).",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "btp-l3-s1",
+          "order": 1,
+          "title": "BTP Security & Multi-Target Applications",
+          "description": "Core subject domain covering BTP Security & Multi-Target Applications.",
+          "topics": [
+            {
+              "id": "btp-l3-t1",
+              "order": 1,
+              "title": "XSUAA, IAS, Approuter & MTA Deployment",
+              "description": "Implement zero-trust security and deploy full-stack applications with Cloud MTA Build Tool.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of XSUAA, IAS, Approuter & MTA Deployment",
+                "Implement production-grade components using industry best practices for XSUAA, IAS, Approuter & MTA Deployment",
+                "Diagnose runtime errors, misconfigurations, and edge cases in XSUAA, IAS, Approuter & MTA Deployment",
+                "Explain design trade-offs and answer senior technical interview questions on XSUAA, IAS, Approuter & MTA Deployment"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-btp-l3-t1-1",
+                  "title": "SAP Cloud Identity Services: Identity Authentication (IAS) & Identity Provisioning (IPS)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-btp-l3-t1-2",
+                  "title": "BTP XSUAA Service (xs-security.json): Scopes, Role Templates, Role Collections",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-btp-l3-t1-3",
+                  "title": "Application Router (@sap/approuter): Reverse Proxy, CSRF Handling, Authentication Flow",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-btp-l3-t1-4",
+                  "title": "Multi-Target Application Architecture (mta.yaml): Modules, Resources, Parameters, Requires/Provides",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-btp-l3-t1-5",
+                  "title": "Building and Deploying MTA Archives (.mtar) using Cloud MTA Build Tool (mbt) and cf deploy",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-btp-l3-t1-1",
+                  "title": "Hands-on Lab: XSUAA, IAS, Approuter & MTA Deployment",
+                  "description": "Implement, test, and validate core patterns of XSUAA, IAS, Approuter & MTA Deployment in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-btp-l3-t1-2",
+                  "title": "Independent Challenge: XSUAA, IAS, Approuter & MTA Deployment",
+                  "description": "Build end-to-end functionality for XSUAA, IAS, Approuter & MTA Deployment from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-btp-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in XSUAA, IAS, Approuter & MTA Deployment",
+                  "description": "Troubleshoot a scenario where XSUAA, IAS, Approuter & MTA Deployment throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-btp-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for XSUAA, IAS, Approuter & MTA Deployment. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-btp-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with XSUAA, IAS, Approuter & MTA Deployment?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-btp-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for XSUAA, IAS, Approuter & MTA Deployment",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

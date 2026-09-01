@@ -1,0 +1,1275 @@
+{
+  "id": "sap-mm-consultant",
+  "name": "SAP MM / S/4HANA Sourcing & Procurement Consultant",
+  "title": "SAP MM / S/4HANA Sourcing & Procurement Consultant",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Comprehensive functional and technical curriculum for SAP MM and S/4HANA Sourcing & Procurement consultants. Moves far beyond transaction codes into enterprise organizational structures, Business Partner master data, full Procure-to-Pay (P2P) lifecycle, 3-way matching, inventory management, special procurement (Subcontracting, Consignment, Stock Transport Orders), cross-module integration (FI, CO, SD, PP, EWM), configuration (Release Strategies, Pricing Conditions, Automatic Account Determination), and S/4HANA innovations (Flexible Workflows, Fiori Procurement Apps, Embedded Analytics, APIs).",
+  "targetRoles": [
+    "SAP MM Functional Consultant",
+    "S/4HANA Sourcing & Procurement Consultant",
+    "Supply Chain Analyst",
+    "Procure-to-Pay Lead"
+  ],
+  "prerequisites": [
+    "Enterprise business processes understanding",
+    "Supply chain and procurement basics"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "6-9 months",
+  "estimatedHours": 380,
+  "technologies": [
+    "SAP MM",
+    "SAP S/4HANA",
+    "Sourcing & Procurement",
+    "Business Partner",
+    "Fiori Procurement Apps",
+    "Flexible Workflow",
+    "Material Master",
+    "Inventory Management",
+    "Logistics Invoice Verification"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "mm-l0",
+      "order": 0,
+      "title": "Level 0 — MM Enterprise Structure & Organizational Units",
+      "description": "Organizational hierarchy: Client, Company Code, Plant, Storage Location, Purchasing Organization, and Assignments.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "mm-l0-s1",
+          "order": 1,
+          "title": "Enterprise Organizational Architecture",
+          "description": "Core subject domain covering Enterprise Organizational Architecture.",
+          "topics": [
+            {
+              "id": "mm-l0-t1",
+              "order": 1,
+              "title": "Organizational Units & Hierarchy in Procurement",
+              "description": "Configure and assign enterprise units for procurement and inventory management.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Organizational Units & Hierarchy in Procurement",
+                "Implement production-grade components using industry best practices for Organizational Units & Hierarchy in Procurement",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Organizational Units & Hierarchy in Procurement",
+                "Explain design trade-offs and answer senior technical interview questions on Organizational Units & Hierarchy in Procurement"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l0-t1-1",
+                  "title": "Client and Company Code (FI Integration Foundation)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l0-t1-2",
+                  "title": "Plant: Logistics Facility Definition, Valuation Area Significance",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l0-t1-3",
+                  "title": "Storage Location: Physical/Logical Warehouse Subdivisions",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l0-t1-4",
+                  "title": "Purchasing Organization Types: Plant-Specific, Cross-Plant, Cross-Company Code",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l0-t1-5",
+                  "title": "Purchasing Group: Buyer Team Responsibilities & Operational Tracking",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l0-t1-6",
+                  "title": "Assignments in SPRO: Plant to Company Code, Purchasing Org to Company Code & Plant",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l0-t1-1",
+                  "title": "Hands-on Lab: Organizational Units & Hierarchy in Procurement",
+                  "description": "Implement, test, and validate core patterns of Organizational Units & Hierarchy in Procurement in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l0-t1-2",
+                  "title": "Independent Challenge: Organizational Units & Hierarchy in Procurement",
+                  "description": "Build end-to-end functionality for Organizational Units & Hierarchy in Procurement from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Organizational Units & Hierarchy in Procurement",
+                  "description": "Troubleshoot a scenario where Organizational Units & Hierarchy in Procurement throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Organizational Units & Hierarchy in Procurement. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Organizational Units & Hierarchy in Procurement?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Organizational Units & Hierarchy in Procurement",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mm-l1",
+      "order": 1,
+      "title": "Level 1 — Master Data Architecture in S/4HANA",
+      "description": "Material Master views, Business Partner (Supplier), Purchasing Info Records, Source Lists, and Material Valuation.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "mm-l1-s1",
+          "order": 1,
+          "title": "Master Data & Valuation in S/4HANA",
+          "description": "Core subject domain covering Master Data & Valuation in S/4HANA.",
+          "topics": [
+            {
+              "id": "mm-l1-t1",
+              "order": 1,
+              "title": "Material Master & S/4HANA Business Partner (BP)",
+              "description": "Configure material types, industry sectors, field selection, and the unified Business Partner model.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Material Master & S/4HANA Business Partner (BP)",
+                "Implement production-grade components using industry best practices for Material Master & S/4HANA Business Partner (BP)",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Material Master & S/4HANA Business Partner (BP)",
+                "Explain design trade-offs and answer senior technical interview questions on Material Master & S/4HANA Business Partner (BP)"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l1-t1-1",
+                  "title": "Material Master Views: Basic Data, Purchasing, MRP, Storage/Warehouse, Accounting, Costing",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l1-t1-2",
+                  "title": "Material Types (ROH, HALB, FERT, DIEN, NLAG) & Number Ranges Configuration",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l1-t1-3",
+                  "title": "S/4HANA Business Partner (BP) Approach vs Classic Vendor Master (XK01/MK01)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l1-t1-4",
+                  "title": "BP Roles: General BP, FI Vendor (FLVN00), Purchasing Vendor (FLVN01)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l1-t1-5",
+                  "title": "Customer-Vendor Integration (CVI) Configuration & Number Assignment",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l1-t1-1",
+                  "title": "Hands-on Lab: Material Master & S/4HANA Business Partner (BP)",
+                  "description": "Implement, test, and validate core patterns of Material Master & S/4HANA Business Partner (BP) in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l1-t1-2",
+                  "title": "Independent Challenge: Material Master & S/4HANA Business Partner (BP)",
+                  "description": "Build end-to-end functionality for Material Master & S/4HANA Business Partner (BP) from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Material Master & S/4HANA Business Partner (BP)",
+                  "description": "Troubleshoot a scenario where Material Master & S/4HANA Business Partner (BP) throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Material Master & S/4HANA Business Partner (BP). What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Material Master & S/4HANA Business Partner (BP)?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Material Master & S/4HANA Business Partner (BP)",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "mm-l1-t2",
+              "order": 2,
+              "title": "Purchasing Info Records, Source Lists & Valuation",
+              "description": "Manage pricing conditions, vendor determination, quota arrangements, and inventory valuation.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Purchasing Info Records, Source Lists & Valuation",
+                "Implement production-grade components using industry best practices for Purchasing Info Records, Source Lists & Valuation",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Purchasing Info Records, Source Lists & Valuation",
+                "Explain design trade-offs and answer senior technical interview questions on Purchasing Info Records, Source Lists & Valuation"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l1-t2-1",
+                  "title": "Purchasing Info Record (PIR): Standard, Subcontracting, Consignment, Pipeline",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l1-t2-2",
+                  "title": "Source List Configuration, Automatic Vendor Source Determination & Blocking",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l1-t2-3",
+                  "title": "Quota Arrangement: Splitting Procurement Demand across Multiple Suppliers",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l1-t2-4",
+                  "title": "Material Valuation: Standard Price (S) vs Moving Average Price (V)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l1-t2-5",
+                  "title": "Material Ledger & Multiple Currencies / Valuation Views in S/4HANA",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l1-t2-1",
+                  "title": "Hands-on Lab: Purchasing Info Records, Source Lists & Valuation",
+                  "description": "Implement, test, and validate core patterns of Purchasing Info Records, Source Lists & Valuation in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l1-t2-2",
+                  "title": "Independent Challenge: Purchasing Info Records, Source Lists & Valuation",
+                  "description": "Build end-to-end functionality for Purchasing Info Records, Source Lists & Valuation from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l1-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Purchasing Info Records, Source Lists & Valuation",
+                  "description": "Troubleshoot a scenario where Purchasing Info Records, Source Lists & Valuation throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l1-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Purchasing Info Records, Source Lists & Valuation. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l1-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Purchasing Info Records, Source Lists & Valuation?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l1-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Purchasing Info Records, Source Lists & Valuation",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mm-l2",
+      "order": 2,
+      "title": "Level 2 — Operational Procurement Lifecycle (Procure-to-Pay)",
+      "description": "Complete operational P2P lifecycle: Purchase Requisitions, RFQ, Quotations, Purchase Orders, Contracts, and Agreements.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "mm-l2-s1",
+          "order": 1,
+          "title": "Procure-to-Pay (P2P) Flow & Documents",
+          "description": "Core subject domain covering Procure-to-Pay (P2P) Flow & Documents.",
+          "topics": [
+            {
+              "id": "mm-l2-t1",
+              "order": 1,
+              "title": "Purchase Requisitions, RFQ & Purchase Orders",
+              "description": "Manage requisitioning, sourcing quotes, PO creation, item categories, and account assignments.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Purchase Requisitions, RFQ & Purchase Orders",
+                "Implement production-grade components using industry best practices for Purchase Requisitions, RFQ & Purchase Orders",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Purchase Requisitions, RFQ & Purchase Orders",
+                "Explain design trade-offs and answer senior technical interview questions on Purchase Requisitions, RFQ & Purchase Orders"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l2-t1-1",
+                  "title": "Purchase Requisition (PR): Direct vs Indirect Requisitions, MRP Generation",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l2-t1-2",
+                  "title": "Request for Quotation (RFQ) & Quotation Comparison (Price Comparison List)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l2-t1-3",
+                  "title": "Purchase Order (PO) Creation: Structure, Header, Item Overview, Item Details",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l2-t1-4",
+                  "title": "Item Categories (Standard, Consignment, Subcontracting, Third-Party, Stock Transfer, Service)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l2-t1-5",
+                  "title": "Account Assignment Categories (K - Cost Center, P - Project, A - Asset, F - Order)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l2-t1-6",
+                  "title": "Outline Agreements: Quantity Contracts, Value Contracts & Scheduling Agreements",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l2-t1-1",
+                  "title": "Hands-on Lab: Purchase Requisitions, RFQ & Purchase Orders",
+                  "description": "Implement, test, and validate core patterns of Purchase Requisitions, RFQ & Purchase Orders in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l2-t1-2",
+                  "title": "Independent Challenge: Purchase Requisitions, RFQ & Purchase Orders",
+                  "description": "Build end-to-end functionality for Purchase Requisitions, RFQ & Purchase Orders from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Purchase Requisitions, RFQ & Purchase Orders",
+                  "description": "Troubleshoot a scenario where Purchase Requisitions, RFQ & Purchase Orders throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Purchase Requisitions, RFQ & Purchase Orders. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Purchase Requisitions, RFQ & Purchase Orders?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Purchase Requisitions, RFQ & Purchase Orders",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mm-l3",
+      "order": 3,
+      "title": "Level 3 — Inventory Management & Physical Inventory",
+      "description": "Goods Receipts, Goods Issues, Stock Transfers, Transfer Postings, Reservations, Stock Types, and Physical Inventory.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "cyan",
+      "subjects": [
+        {
+          "id": "mm-l3-s1",
+          "order": 1,
+          "title": "Movement Types & Stock Management",
+          "description": "Core subject domain covering Movement Types & Stock Management.",
+          "topics": [
+            {
+              "id": "mm-l3-t1",
+              "order": 1,
+              "title": "Goods Movements (MIGO), Stock Types & Transfer Postings",
+              "description": "Master standard movement types, stock states, reservations, and inventory documents.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Goods Movements (MIGO), Stock Types & Transfer Postings",
+                "Implement production-grade components using industry best practices for Goods Movements (MIGO), Stock Types & Transfer Postings",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Goods Movements (MIGO), Stock Types & Transfer Postings",
+                "Explain design trade-offs and answer senior technical interview questions on Goods Movements (MIGO), Stock Types & Transfer Postings"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l3-t1-1",
+                  "title": "Goods Receipt (GR) against Purchase Order (Movement Type 101)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l3-t1-2",
+                  "title": "Goods Issue (GI) to Cost Center (201), Project (221), Production Order (261)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l3-t1-3",
+                  "title": "Stock Types: Unrestricted-Use, Quality Inspection (321/322), Blocked Stock (350/351)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l3-t1-4",
+                  "title": "Transfer Postings & Stock Transfers (Plant-to-Plant, SLoc-to-SLoc; 1-step vs 2-step)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l3-t1-5",
+                  "title": "Reservations Management (Manual vs System-Generated)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l3-t1-6",
+                  "title": "Batch Management & Serial Number Profiles in Inventory",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l3-t1-7",
+                  "title": "Physical Inventory Process: Physical Inventory Document, Count Entry, Difference Posting",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l3-t1-1",
+                  "title": "Hands-on Lab: Goods Movements (MIGO), Stock Types & Transfer Postings",
+                  "description": "Implement, test, and validate core patterns of Goods Movements (MIGO), Stock Types & Transfer Postings in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l3-t1-2",
+                  "title": "Independent Challenge: Goods Movements (MIGO), Stock Types & Transfer Postings",
+                  "description": "Build end-to-end functionality for Goods Movements (MIGO), Stock Types & Transfer Postings from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Goods Movements (MIGO), Stock Types & Transfer Postings",
+                  "description": "Troubleshoot a scenario where Goods Movements (MIGO), Stock Types & Transfer Postings throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Goods Movements (MIGO), Stock Types & Transfer Postings. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Goods Movements (MIGO), Stock Types & Transfer Postings?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Goods Movements (MIGO), Stock Types & Transfer Postings",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mm-l4",
+      "order": 4,
+      "title": "Level 4 — Special Procurement Processes",
+      "description": "Complex procurement flows: Subcontracting, Vendor Consignment, Stock Transport Orders (STO), and Third-Party Orders.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "mm-l4-s1",
+          "order": 1,
+          "title": "Special Procurement Scenarios",
+          "description": "Core subject domain covering Special Procurement Scenarios.",
+          "topics": [
+            {
+              "id": "mm-l4-t1",
+              "order": 1,
+              "title": "Subcontracting, Consignment, STO & Third-Party Orders",
+              "description": "Configure and execute end-to-end special procurement processes with multi-component BOMs.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Subcontracting, Consignment, STO & Third-Party Orders",
+                "Implement production-grade components using industry best practices for Subcontracting, Consignment, STO & Third-Party Orders",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Subcontracting, Consignment, STO & Third-Party Orders",
+                "Explain design trade-offs and answer senior technical interview questions on Subcontracting, Consignment, STO & Third-Party Orders"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l4-t1-1",
+                  "title": "Subcontracting Process: BOM Components Provisioning (541), GR (101) & Component Consumption (543)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l4-t1-2",
+                  "title": "Vendor Consignment: Goods Receipt to Consignment Stock (101 K) & Settlement (MRKO)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l4-t1-3",
+                  "title": "Stock Transport Order (STO): Intra-Company (UB) vs Inter-Company STO (with Billing & SD Delivery)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l4-t1-4",
+                  "title": "Third-Party Procurement: Sales Order -> Auto PR -> PO -> Direct Supplier Delivery to Customer",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l4-t1-5",
+                  "title": "Pipeline Procurement: Continuous Supply (Oil/Gas/Electricity) & Direct Settlement",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l4-t1-1",
+                  "title": "Hands-on Lab: Subcontracting, Consignment, STO & Third-Party Orders",
+                  "description": "Implement, test, and validate core patterns of Subcontracting, Consignment, STO & Third-Party Orders in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l4-t1-2",
+                  "title": "Independent Challenge: Subcontracting, Consignment, STO & Third-Party Orders",
+                  "description": "Build end-to-end functionality for Subcontracting, Consignment, STO & Third-Party Orders from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l4-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Subcontracting, Consignment, STO & Third-Party Orders",
+                  "description": "Troubleshoot a scenario where Subcontracting, Consignment, STO & Third-Party Orders throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l4-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Subcontracting, Consignment, STO & Third-Party Orders. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l4-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Subcontracting, Consignment, STO & Third-Party Orders?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l4-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Subcontracting, Consignment, STO & Third-Party Orders",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mm-l5",
+      "order": 5,
+      "title": "Level 5 — Logistics Invoice Verification (LIV)",
+      "description": "Invoice Receipts (MIRO), 3-way matching, price variances, quantity variances, credit memos, and GR/IR clearing.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "mm-l5-s1",
+          "order": 1,
+          "title": "Invoice Verification & GR/IR Clearing",
+          "description": "Core subject domain covering Invoice Verification & GR/IR Clearing.",
+          "topics": [
+            {
+              "id": "mm-l5-t1",
+              "order": 1,
+              "title": "Three-Way Match, Price/Quantity Variances & GR/IR",
+              "description": "Perform logistics invoice verification, investigate blocking reasons, and clear GR/IR accounts.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Three-Way Match, Price/Quantity Variances & GR/IR",
+                "Implement production-grade components using industry best practices for Three-Way Match, Price/Quantity Variances & GR/IR",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Three-Way Match, Price/Quantity Variances & GR/IR",
+                "Explain design trade-offs and answer senior technical interview questions on Three-Way Match, Price/Quantity Variances & GR/IR"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l5-t1-1",
+                  "title": "Three-Way Matching: Purchase Order vs Goods Receipt vs Vendor Invoice",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l5-t1-2",
+                  "title": "Logistics Invoice Verification (MIRO): Entering Invoices against PO & GR",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l5-t1-3",
+                  "title": "Tolerance Limits Configuration & Invoice Blocking Reasons (Price, Quantity, Date)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l5-t1-4",
+                  "title": "Credit Memos, Subsequent Debits, and Subsequent Credits Handling",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l5-t1-5",
+                  "title": "GR/IR Clearing Account (F.13 / MR11) Maintenance & Discrepancy Investigation",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l5-t1-6",
+                  "title": "Evaluated Receipt Settlement (ERS) for Automated Invoice Generation without Vendor Invoice",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l5-t1-1",
+                  "title": "Hands-on Lab: Three-Way Match, Price/Quantity Variances & GR/IR",
+                  "description": "Implement, test, and validate core patterns of Three-Way Match, Price/Quantity Variances & GR/IR in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l5-t1-2",
+                  "title": "Independent Challenge: Three-Way Match, Price/Quantity Variances & GR/IR",
+                  "description": "Build end-to-end functionality for Three-Way Match, Price/Quantity Variances & GR/IR from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l5-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Three-Way Match, Price/Quantity Variances & GR/IR",
+                  "description": "Troubleshoot a scenario where Three-Way Match, Price/Quantity Variances & GR/IR throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l5-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Three-Way Match, Price/Quantity Variances & GR/IR. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l5-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Three-Way Match, Price/Quantity Variances & GR/IR?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l5-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Three-Way Match, Price/Quantity Variances & GR/IR",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mm-l6",
+      "order": 6,
+      "title": "Level 6 — Cross-Module Integration",
+      "description": "End-to-end integration: MM + FI (Accounting), MM + CO (Controlling), MM + SD (Sales), MM + PP (Production), MM + EWM.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "mm-l6-s1",
+          "order": 1,
+          "title": "Enterprise Cross-Module Touchpoints",
+          "description": "Core subject domain covering Enterprise Cross-Module Touchpoints.",
+          "topics": [
+            {
+              "id": "mm-l6-t1",
+              "order": 1,
+              "title": "Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)",
+              "description": "Understand accounting document generation, cost center assignments, production backflushing, and EWM.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)",
+                "Implement production-grade components using industry best practices for Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)",
+                "Explain design trade-offs and answer senior technical interview questions on Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l6-t1-1",
+                  "title": "MM-FI Integration: Automatic Financial Postings on Goods Receipt and Invoice Receipt",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l6-t1-2",
+                  "title": "MM-CO Integration: Account Assignments to Cost Centers, Internal Orders, WBS Elements",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l6-t1-3",
+                  "title": "MM-SD Integration: Intercompany STOs, Third-Party Deliveries, Availability Checks (ATP)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l6-t1-4",
+                  "title": "MM-PP Integration: Material Requirements Planning (MRP), Component Staging, Backflushing",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l6-t1-5",
+                  "title": "MM-EWM Integration: Inbound Deliveries, Warehouse Tasks, Putaway Strategies",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l6-t1-1",
+                  "title": "Hands-on Lab: Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)",
+                  "description": "Implement, test, and validate core patterns of Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM) in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l6-t1-2",
+                  "title": "Independent Challenge: Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)",
+                  "description": "Build end-to-end functionality for Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM) from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l6-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)",
+                  "description": "Troubleshoot a scenario where Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM) throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l6-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM). What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l6-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l6-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Integration with FI, CO, SD, PP & Extended Warehouse Management (EWM)",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mm-l7",
+      "order": 7,
+      "title": "Level 7 — SPRO Configuration & Valuation Engine",
+      "description": "Deep backend configuration: Document Types, Release Procedures, Pricing Condition Technique, Automatic Account Determination (OBYC).",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "violet",
+      "subjects": [
+        {
+          "id": "mm-l7-s1",
+          "order": 1,
+          "title": "SPRO Configuration & Pricing Conditions",
+          "description": "Core subject domain covering SPRO Configuration & Pricing Conditions.",
+          "topics": [
+            {
+              "id": "mm-l7-t1",
+              "order": 1,
+              "title": "Document Types, Release Strategy & Condition Technique",
+              "description": "Configure PO document types, field selection keys, classification release strategies, and pricing schemas.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Document Types, Release Strategy & Condition Technique",
+                "Implement production-grade components using industry best practices for Document Types, Release Strategy & Condition Technique",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Document Types, Release Strategy & Condition Technique",
+                "Explain design trade-offs and answer senior technical interview questions on Document Types, Release Strategy & Condition Technique"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l7-t1-1",
+                  "title": "Defining Document Types, Number Ranges & Field Selection Controls for PR and PO",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l7-t1-2",
+                  "title": "Release Procedure with Classification: Characteristics, Classes, Release Groups, Codes, Strategies",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l7-t1-3",
+                  "title": "Pricing Condition Technique in Purchasing: Condition Types (PB00, FRA1, RA01), Calculation Schema, Access Sequences",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l7-t1-4",
+                  "title": "Schema Determination for Standard POs and Stock Transport Orders",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l7-t1-1",
+                  "title": "Hands-on Lab: Document Types, Release Strategy & Condition Technique",
+                  "description": "Implement, test, and validate core patterns of Document Types, Release Strategy & Condition Technique in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l7-t1-2",
+                  "title": "Independent Challenge: Document Types, Release Strategy & Condition Technique",
+                  "description": "Build end-to-end functionality for Document Types, Release Strategy & Condition Technique from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l7-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Document Types, Release Strategy & Condition Technique",
+                  "description": "Troubleshoot a scenario where Document Types, Release Strategy & Condition Technique throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l7-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Document Types, Release Strategy & Condition Technique. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l7-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Document Types, Release Strategy & Condition Technique?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l7-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Document Types, Release Strategy & Condition Technique",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "mm-l7-t2",
+              "order": 2,
+              "title": "Automatic Account Determination (OBYC)",
+              "description": "Configure automatic posting rules linking MM movement types to FI general ledger accounts.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Automatic Account Determination (OBYC)",
+                "Implement production-grade components using industry best practices for Automatic Account Determination (OBYC)",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Automatic Account Determination (OBYC)",
+                "Explain design trade-offs and answer senior technical interview questions on Automatic Account Determination (OBYC)"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l7-t2-1",
+                  "title": "Valuation Grouping Code, Valuation Class, and Account Category Reference",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l7-t2-2",
+                  "title": "Transaction Keys in OBYC: BSX (Inventory Posting), WRX (GR/IR Clearing), PRD (Price Difference), GBB (Offsetting Entry)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l7-t2-3",
+                  "title": "General Modification (Account Modification Keys): VBR, VAX, VNG, BSA",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l7-t2-4",
+                  "title": "Step-by-Step Simulation and Troubleshooting of OBYC Account Determination Errors",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l7-t2-1",
+                  "title": "Hands-on Lab: Automatic Account Determination (OBYC)",
+                  "description": "Implement, test, and validate core patterns of Automatic Account Determination (OBYC) in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l7-t2-2",
+                  "title": "Independent Challenge: Automatic Account Determination (OBYC)",
+                  "description": "Build end-to-end functionality for Automatic Account Determination (OBYC) from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l7-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Automatic Account Determination (OBYC)",
+                  "description": "Troubleshoot a scenario where Automatic Account Determination (OBYC) throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l7-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Automatic Account Determination (OBYC). What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l7-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Automatic Account Determination (OBYC)?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l7-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Automatic Account Determination (OBYC)",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mm-l8",
+      "order": 8,
+      "title": "Level 8 — S/4HANA Sourcing Innovations, Analytics & APIs",
+      "description": "Modern S/4HANA procurement: Flexible Workflows, Situation Handling, Fiori Procurement Apps, Embedded Analytics, and APIs.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "rose",
+      "subjects": [
+        {
+          "id": "mm-l8-s1",
+          "order": 1,
+          "title": "S/4HANA Next-Gen Procurement",
+          "description": "Core subject domain covering S/4HANA Next-Gen Procurement.",
+          "topics": [
+            {
+              "id": "mm-l8-t1",
+              "order": 1,
+              "title": "Flexible Workflow, Situation Handling & Fiori Apps",
+              "description": "Configure modern workflow approvals, automated exception handling, and self-service procurement.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Flexible Workflow, Situation Handling & Fiori Apps",
+                "Implement production-grade components using industry best practices for Flexible Workflow, Situation Handling & Fiori Apps",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Flexible Workflow, Situation Handling & Fiori Apps",
+                "Explain design trade-offs and answer senior technical interview questions on Flexible Workflow, Situation Handling & Fiori Apps"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mm-l8-t1-1",
+                  "title": "Flexible Workflow for PR and PO: Managing Conditions, Approvers & Push Notifications",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l8-t1-2",
+                  "title": "Situation Handling: Proactive Alerts for Expiring Contracts, Overdue Deliveries, Invoice Errors",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l8-t1-3",
+                  "title": "SAP Fiori Procurement Apps: Manage Purchase Orders, Create Purchase Requisition (Self-Service), Monitor GR/IR",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mm-l8-t1-4",
+                  "title": "Real-Time Embedded Analytics in S/4HANA: Spend Analysis, Supplier Evaluation KPI Cards",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mm-l8-t1-5",
+                  "title": "Standard Procurement OData APIs & Integration with SAP Ariba and SAP Integration Suite",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mm-l8-t1-1",
+                  "title": "Hands-on Lab: Flexible Workflow, Situation Handling & Fiori Apps",
+                  "description": "Implement, test, and validate core patterns of Flexible Workflow, Situation Handling & Fiori Apps in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mm-l8-t1-2",
+                  "title": "Independent Challenge: Flexible Workflow, Situation Handling & Fiori Apps",
+                  "description": "Build end-to-end functionality for Flexible Workflow, Situation Handling & Fiori Apps from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mm-l8-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Flexible Workflow, Situation Handling & Fiori Apps",
+                  "description": "Troubleshoot a scenario where Flexible Workflow, Situation Handling & Fiori Apps throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mm-l8-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Flexible Workflow, Situation Handling & Fiori Apps. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mm-l8-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Flexible Workflow, Situation Handling & Fiori Apps?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mm-l8-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Flexible Workflow, Situation Handling & Fiori Apps",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

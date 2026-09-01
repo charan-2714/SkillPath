@@ -1,0 +1,519 @@
+{
+  "id": "sap-abap-developer",
+  "name": "SAP ABAP Developer",
+  "title": "SAP ABAP Developer",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Comprehensive ABAP engineering curriculum. Covers procedural and Object-Oriented ABAP, Data Dictionary, modern Open SQL syntax, CDS Views, ABAP Managed Database Procedures (AMDP), Enhancement Framework (BAdIs, User Exits), ALV Grid, and modern ABAP Cloud syntax rules.",
+  "targetRoles": [
+    "SAP ABAP Developer",
+    "ABAP Cloud Engineer",
+    "SAP Technical Consultant"
+  ],
+  "prerequisites": [
+    "Basic programming fundamentals",
+    "Relational database concepts"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "6-9 months",
+  "estimatedHours": 400,
+  "technologies": [
+    "ABAP",
+    "ABAP OO",
+    "ABAP Cloud",
+    "Eclipse ADT",
+    "Open SQL",
+    "CDS Views",
+    "AMDP",
+    "BAdIs",
+    "ALV Grid",
+    "SAP NetWeaver"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "abap-l0",
+      "order": 0,
+      "title": "Level 0 — ABAP Core & Data Dictionary (DDIC)",
+      "description": "Syntax fundamentals, elementary types, structures, internal tables, and Data Dictionary objects (Tables, Views, Data Elements).",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "abap-l0-s1",
+          "order": 1,
+          "title": "Data Dictionary & Internal Tables",
+          "description": "Core subject domain covering Data Dictionary & Internal Tables.",
+          "topics": [
+            {
+              "id": "abap-l0-t1",
+              "order": 1,
+              "title": "Data Dictionary (SE11) & ABAP Data Types",
+              "description": "Build robust database tables, data elements, domains, structures, and search helps.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Data Dictionary (SE11) & ABAP Data Types",
+                "Implement production-grade components using industry best practices for Data Dictionary (SE11) & ABAP Data Types",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Data Dictionary (SE11) & ABAP Data Types",
+                "Explain design trade-offs and answer senior technical interview questions on Data Dictionary (SE11) & ABAP Data Types"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-abap-l0-t1-1",
+                  "title": "Data Dictionary Objects: Domains, Data Elements, Structures, Database Tables (SE11)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l0-t1-2",
+                  "title": "Primary Keys, Foreign Key Relationships & Value Tables",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-abap-l0-t1-3",
+                  "title": "Elementary Data Types, Variables & String Manipulation in ABAP",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l0-t1-4",
+                  "title": "Internal Tables: Standard Tables, Sorted Tables, Hashed Tables & Performance Trade-Offs",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-abap-l0-t1-5",
+                  "title": "Table Operations: APPEND, INSERT, MODIFY, DELETE, READ TABLE with Keys, LOOP AT ... ASSIGNING FIELD-SYMBOLS",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-abap-l0-t1-1",
+                  "title": "Hands-on Lab: Data Dictionary (SE11) & ABAP Data Types",
+                  "description": "Implement, test, and validate core patterns of Data Dictionary (SE11) & ABAP Data Types in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-abap-l0-t1-2",
+                  "title": "Independent Challenge: Data Dictionary (SE11) & ABAP Data Types",
+                  "description": "Build end-to-end functionality for Data Dictionary (SE11) & ABAP Data Types from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-abap-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Data Dictionary (SE11) & ABAP Data Types",
+                  "description": "Troubleshoot a scenario where Data Dictionary (SE11) & ABAP Data Types throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-abap-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Data Dictionary (SE11) & ABAP Data Types. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-abap-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Data Dictionary (SE11) & ABAP Data Types?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-abap-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Data Dictionary (SE11) & ABAP Data Types",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abap-l1",
+      "order": 1,
+      "title": "Level 1 — Object-Oriented ABAP (ABAP OO) & Clean ABAP",
+      "description": "Classes, interfaces, inheritance, polymorphism, design patterns, exception handling, and Clean ABAP guidelines.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "abap-l1-s1",
+          "order": 1,
+          "title": "Object-Oriented Programming in ABAP",
+          "description": "Core subject domain covering Object-Oriented Programming in ABAP.",
+          "topics": [
+            {
+              "id": "abap-l1-t1",
+              "order": 1,
+              "title": "ABAP OO Classes, Interfaces & Clean ABAP",
+              "description": "Master global and local classes (SE24/ADT), interfaces, polymorphism, and Clean ABAP principles.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of ABAP OO Classes, Interfaces & Clean ABAP",
+                "Implement production-grade components using industry best practices for ABAP OO Classes, Interfaces & Clean ABAP",
+                "Diagnose runtime errors, misconfigurations, and edge cases in ABAP OO Classes, Interfaces & Clean ABAP",
+                "Explain design trade-offs and answer senior technical interview questions on ABAP OO Classes, Interfaces & Clean ABAP"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-abap-l1-t1-1",
+                  "title": "Global Classes (CLAS) & Interfaces (INTF) in Eclipse ADT",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l1-t1-2",
+                  "title": "Visibility Sections: PUBLIC, PROTECTED, PRIVATE",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-abap-l1-t1-3",
+                  "title": "Constructors, Class-Methods vs Instance-Methods",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l1-t1-4",
+                  "title": "Inheritance, Method Redefinition (Polymorphism) and Abstract Classes",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-abap-l1-t1-5",
+                  "title": "Class-Based Exception Handling (TRY ... CATCH cx_root ... ENDTRY)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l1-t1-6",
+                  "title": "Clean ABAP Guidelines: Method Length, Expression-Based Syntax, Constructor Operators (NEW, VALUE, CORRESPONDING, COND, REDUCE)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-abap-l1-t1-1",
+                  "title": "Hands-on Lab: ABAP OO Classes, Interfaces & Clean ABAP",
+                  "description": "Implement, test, and validate core patterns of ABAP OO Classes, Interfaces & Clean ABAP in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-abap-l1-t1-2",
+                  "title": "Independent Challenge: ABAP OO Classes, Interfaces & Clean ABAP",
+                  "description": "Build end-to-end functionality for ABAP OO Classes, Interfaces & Clean ABAP from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-abap-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in ABAP OO Classes, Interfaces & Clean ABAP",
+                  "description": "Troubleshoot a scenario where ABAP OO Classes, Interfaces & Clean ABAP throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-abap-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for ABAP OO Classes, Interfaces & Clean ABAP. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-abap-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with ABAP OO Classes, Interfaces & Clean ABAP?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-abap-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for ABAP OO Classes, Interfaces & Clean ABAP",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abap-l2",
+      "order": 2,
+      "title": "Level 2 — Modern Open SQL, CDS Views & AMDP",
+      "description": "Modern Open SQL expressions, Core Data Services (CDS), and ABAP Managed Database Procedures (AMDP) in HANA.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "abap-l2-s1",
+          "order": 1,
+          "title": "Database Access & Code Pushdown",
+          "description": "Core subject domain covering Database Access & Code Pushdown.",
+          "topics": [
+            {
+              "id": "abap-l2-t1",
+              "order": 1,
+              "title": "Modern Open SQL, CDS Views & AMDP Execution",
+              "description": "Leverage SAP HANA code pushdown with modern Open SQL joins, CDS views, and AMDP SQLScript methods.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Modern Open SQL, CDS Views & AMDP Execution",
+                "Implement production-grade components using industry best practices for Modern Open SQL, CDS Views & AMDP Execution",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Modern Open SQL, CDS Views & AMDP Execution",
+                "Explain design trade-offs and answer senior technical interview questions on Modern Open SQL, CDS Views & AMDP Execution"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-abap-l2-t1-1",
+                  "title": "Modern Open SQL Syntax: Comma-Separated Columns, Host Variables (@), Inline Declarations (DATA(...))",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l2-t1-2",
+                  "title": "SQL Expressions: CASE, COALESCE, String/Math Functions, Subqueries, Left/Inner Joins",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-abap-l2-t1-3",
+                  "title": "Core Data Services (CDS Views) in ADT: Calculations, Joins, Associations, Annotations",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l2-t1-4",
+                  "title": "ABAP Managed Database Procedures (AMDP): Writing SQLScript directly inside ABAP Class Methods",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-abap-l2-t1-5",
+                  "title": "ABAP Test Cockpit (ATC) & Performance Profiling (SAT / ST05 Trace Analysis)",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-abap-l2-t1-1",
+                  "title": "Hands-on Lab: Modern Open SQL, CDS Views & AMDP Execution",
+                  "description": "Implement, test, and validate core patterns of Modern Open SQL, CDS Views & AMDP Execution in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-abap-l2-t1-2",
+                  "title": "Independent Challenge: Modern Open SQL, CDS Views & AMDP Execution",
+                  "description": "Build end-to-end functionality for Modern Open SQL, CDS Views & AMDP Execution from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-abap-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Modern Open SQL, CDS Views & AMDP Execution",
+                  "description": "Troubleshoot a scenario where Modern Open SQL, CDS Views & AMDP Execution throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-abap-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Modern Open SQL, CDS Views & AMDP Execution. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-abap-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Modern Open SQL, CDS Views & AMDP Execution?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-abap-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Modern Open SQL, CDS Views & AMDP Execution",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "abap-l3",
+      "order": 3,
+      "title": "Level 3 — Enhancements, BAdIs & Modern ABAP Cloud",
+      "description": "Enhancement framework, BAdIs, User Exits, Enhancement Points, and transition to ABAP Cloud language version.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "abap-l3-s1",
+          "order": 1,
+          "title": "Enhancement Framework & ABAP Cloud",
+          "description": "Core subject domain covering Enhancement Framework & ABAP Cloud.",
+          "topics": [
+            {
+              "id": "abap-l3-t1",
+              "order": 1,
+              "title": "BAdIs, Enhancement Points & ABAP Cloud Language Rules",
+              "description": "Implement custom business logic non-invasively using modern BAdIs and ABAP Cloud strict syntax rules.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of BAdIs, Enhancement Points & ABAP Cloud Language Rules",
+                "Implement production-grade components using industry best practices for BAdIs, Enhancement Points & ABAP Cloud Language Rules",
+                "Diagnose runtime errors, misconfigurations, and edge cases in BAdIs, Enhancement Points & ABAP Cloud Language Rules",
+                "Explain design trade-offs and answer senior technical interview questions on BAdIs, Enhancement Points & ABAP Cloud Language Rules"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-abap-l3-t1-1",
+                  "title": "Business Add-Ins (BAdI): Classic BAdIs (SE18/SE19) vs New Enhancement Spot Kernel BAdIs",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l3-t1-2",
+                  "title": "Explicit Enhancement Points & Implicit Enhancement Options",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-abap-l3-t1-3",
+                  "title": "User Exits & Customer Exits (SMOD/CMOD) in Legacy Maintenance",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-abap-l3-t1-4",
+                  "title": "ABAP Cloud Language Version: Restricted Syntax (No Direct DB Modifs on SAP Tables, No Dynpro, No Obsolete Statements)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-abap-l3-t1-5",
+                  "title": "Calling Released SAP APIs (C1 Release Contract) in ABAP Cloud",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-abap-l3-t1-1",
+                  "title": "Hands-on Lab: BAdIs, Enhancement Points & ABAP Cloud Language Rules",
+                  "description": "Implement, test, and validate core patterns of BAdIs, Enhancement Points & ABAP Cloud Language Rules in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-abap-l3-t1-2",
+                  "title": "Independent Challenge: BAdIs, Enhancement Points & ABAP Cloud Language Rules",
+                  "description": "Build end-to-end functionality for BAdIs, Enhancement Points & ABAP Cloud Language Rules from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-abap-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in BAdIs, Enhancement Points & ABAP Cloud Language Rules",
+                  "description": "Troubleshoot a scenario where BAdIs, Enhancement Points & ABAP Cloud Language Rules throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-abap-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for BAdIs, Enhancement Points & ABAP Cloud Language Rules. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-abap-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with BAdIs, Enhancement Points & ABAP Cloud Language Rules?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-abap-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for BAdIs, Enhancement Points & ABAP Cloud Language Rules",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

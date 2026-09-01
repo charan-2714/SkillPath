@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "id": "data-analyst",
+  "name": "Data Analyst",
+  "description": "Master business analytics, SQL queries, Excel dashboards, Python data wrangling, Tableau storytelling, and metrics reporting.",
+  "category": "Data Science & AI",
+  "difficulty": "Beginner to Intermediate",
+  "estimatedDuration": "6-9 months",
+  "tags": ["Data Analysis", "SQL", "Excel", "Python", "Pandas", "Tableau", "PowerBI"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "da-l0",
+      "order": 0,
+      "title": "Spreadsheets & Business Foundations",
+      "description": "Advanced Excel formulas, pivot tables, XLOOKUP, data validation, and business KPI modeling.",
+      "estimatedDuration": "3 weeks",
+      "color": "green",
+      "subjects": [
+        {
+          "id": "excel-mastery",
+          "order": 1,
+          "title": "Advanced Excel & Modeling",
+          "topics": [
+            {
+              "id": "excel-pivots",
+              "order": 1,
+              "title": "Pivot Tables & Dynamic Dashboards",
+              "description": "Creating interactive executive KPI dashboards with slicers and calculated fields.",
+              "priority": "core",
+              "tags": ["excel", "dashboards"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "da-l1",
+      "order": 1,
+      "title": "SQL Querying & Analytics",
+      "description": "Writing complex queries, aggregate functions, subqueries, and window functions.",
+      "estimatedDuration": "4 weeks",
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "sql-analytics",
+          "order": 1,
+          "title": "SQL Queries & Data Modeling",
+          "topics": [
+            {
+              "id": "sql-window-funcs",
+              "order": 1,
+              "title": "Window Functions & CTEs",
+              "description": "ROW_NUMBER, RANK, DENSE_RANK, LEAD, LAG, running totals, and Common Table Expressions.",
+              "priority": "core",
+              "tags": ["sql", "analytics"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "da-l2",
+      "order": 2,
+      "title": "Python for Data Analysis (Pandas & Seaborn)",
+      "description": "NumPy, Pandas, data cleaning, exploratory data analysis (EDA), and Seaborn visualization.",
+      "estimatedDuration": "5 weeks",
+      "color": "amber",
+      "subjects": [
+        {
+          "id": "python-pandas-eda",
+          "order": 1,
+          "title": "Exploratory Data Analysis",
+          "topics": [
+            {
+              "id": "pandas-eda-cleaning",
+              "order": 1,
+              "title": "Data Cleaning & Transformation with Pandas",
+              "description": "Handling missing values, outlier detection, data reshaping, and melting.",
+              "priority": "core",
+              "tags": ["python", "pandas"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "da-l3",
+      "order": 3,
+      "title": "Data Visualization & BI Tools",
+      "description": "Tableau / PowerBI dashboard storytelling, metrics, calculated fields, and executive reporting.",
+      "estimatedDuration": "4 weeks",
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "bi-visualization",
+          "order": 1,
+          "title": "Business Intelligence Dashboards",
+          "topics": [
+            {
+              "id": "tableau-powerbi-storytelling",
+              "order": 1,
+              "title": "Tableau / Power BI Visual Storytelling",
+              "description": "Building executive dashboards with drill-downs, filters, and storytelling flows.",
+              "priority": "core",
+              "tags": ["bi", "tableau", "powerbi"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

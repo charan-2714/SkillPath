@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "id": "frontend-developer",
+  "name": "Frontend Developer",
+  "description": "Craft responsive, accessible, high-performance web user interfaces using modern React, TypeScript, Tailwind CSS, Next.js, and state management.",
+  "category": "Software Development",
+  "difficulty": "Beginner to Intermediate",
+  "estimatedDuration": "6-8 months",
+  "tags": ["Frontend", "React", "TypeScript", "CSS", "Next.js", "Accessibility", "UI/UX"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "fe-l0",
+      "order": 0,
+      "title": "HTML, CSS & JavaScript In-Depth",
+      "description": "Semantic markup, CSS architecture (BEM, Tailwind), animations, TypeScript basics, and DOM performance.",
+      "estimatedDuration": "4 weeks",
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "css-ts-core",
+          "order": 1,
+          "title": "CSS Layouts & TypeScript",
+          "topics": [
+            {
+              "id": "ts-generics-react",
+              "order": 1,
+              "title": "TypeScript Generics & React Component Typing",
+              "description": "Generic props, polymorphic components, discriminated unions, and utility types (Pick, Omit, Partial).",
+              "priority": "core",
+              "tags": ["typescript", "react"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fe-l1",
+      "order": 1,
+      "title": "React Architecture & Performance",
+      "description": "Component design patterns, custom hooks, React 19 features, reconciliation, and bundle optimization.",
+      "estimatedDuration": "5 weeks",
+      "color": "indigo",
+      "subjects": [
+        {
+          "id": "react-patterns",
+          "order": 1,
+          "title": "Design Patterns & Rendering Optimization",
+          "topics": [
+            {
+              "id": "react-render-optimization",
+              "order": 1,
+              "title": "React Profiling & Re-Render Prevention",
+              "description": "Using React DevTools Profiler, useMemo, useCallback, memo, virtualized lists (TanStack Virtual), and code splitting.",
+              "priority": "core",
+              "tags": ["react", "performance"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

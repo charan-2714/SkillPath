@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "id": "data-engineer",
+  "name": "Data Engineer",
+  "description": "Design and build scalable data pipelines, data warehouses, streaming systems with Apache Kafka, Apache Spark, and orchestration with Airflow.",
+  "category": "Data Science & AI",
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "9-12 months",
+  "tags": ["Data Engineering", "SQL", "Python", "Spark", "Kafka", "Airflow", "Snowflake"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "de-l0",
+      "order": 0,
+      "title": "Data Warehousing & Dimensional Modeling",
+      "description": "Star schema, snowflake schema, slowly changing dimensions (SCD), and dbt transformations.",
+      "estimatedDuration": "4 weeks",
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "data-modeling",
+          "order": 1,
+          "title": "Dimensional Data Modeling",
+          "topics": [
+            {
+              "id": "dbt-transformations",
+              "order": 1,
+              "title": "dbt (Data Build Tool) & SQL Transformations",
+              "description": "Writing modular SQL models, testing data quality, and managing lineage in Snowflake/BigQuery.",
+              "priority": "core",
+              "tags": ["dbt", "sql", "warehouse"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "de-l1",
+      "order": 1,
+      "title": "Big Data Processing (Apache Spark)",
+      "description": "PySpark, DataFrame APIs, RDDs, partitioning, shuffle operations, and memory tuning.",
+      "estimatedDuration": "5 weeks",
+      "color": "orange",
+      "subjects": [
+        {
+          "id": "spark-processing",
+          "order": 1,
+          "title": "Distributed Processing with PySpark",
+          "topics": [
+            {
+              "id": "pyspark-optimizations",
+              "order": 1,
+              "title": "PySpark Transformations & Optimization",
+              "description": "Handling skew, broadcast joins, window aggregations, and Delta Lake tables.",
+              "priority": "core",
+              "tags": ["spark", "pyspark", "big-data"],
+              "estimatedHours": 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "de-l2",
+      "order": 2,
+      "title": "Pipeline Orchestration & Streaming (Airflow & Kafka)",
+      "description": "Apache Airflow DAGs, task sensors, Kafka message brokers, and event-driven architectures.",
+      "estimatedDuration": "5 weeks",
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "airflow-kafka",
+          "order": 1,
+          "title": "Orchestration & Event Streaming",
+          "topics": [
+            {
+              "id": "airflow-dags",
+              "order": 1,
+              "title": "Apache Airflow DAG Architecture",
+              "description": "Authoring reliable ETL workflows, custom operators, dynamic task generation, and failure retries.",
+              "priority": "core",
+              "tags": ["airflow", "orchestration"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+{
+  "id": "mlops-engineer",
+  "name": "MLOps Engineer",
+  "title": "MLOps Engineer",
+  "category": "AI & Machine Learning",
+  "status": "Growing",
+  "description": "Production machine learning lifecycle engineering. Data & model versioning (DVC), experiment tracking (MLflow), automated training pipelines (Kubeflow Pipelines), high-throughput model serving (Triton / TorchServe / FastAPI), model registries, and drift detection (Evidently AI).",
+  "targetRoles": [
+    "MLOps Engineer",
+    "Machine Learning Platform Engineer",
+    "AI Infrastructure Lead"
+  ],
+  "prerequisites": [
+    "Python mastery",
+    "Machine Learning fundamentals",
+    "Docker basics"
+  ],
+  "difficulty": "Advanced",
+  "estimatedDuration": "6-8 months",
+  "estimatedHours": 360,
+  "technologies": [
+    "MLflow",
+    "DVC",
+    "Kubeflow",
+    "Triton Inference Server",
+    "FastAPI",
+    "Prometheus",
+    "Evidently AI",
+    "Docker",
+    "Kubernetes"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "mlops-l0",
+      "order": 0,
+      "title": "Level 0 — Model Versioning, Experiment Tracking & Artifacts",
+      "description": "Experiment logging with MLflow, dataset/pipeline versioning with DVC, and model registry governance.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "mlops-l0-s1",
+          "order": 1,
+          "title": "Experiment Tracking & Model Registries",
+          "description": "Core subject domain covering Experiment Tracking & Model Registries.",
+          "topics": [
+            {
+              "id": "mlops-l0-t1",
+              "order": 1,
+              "title": "MLflow & DVC for Reproducible ML",
+              "description": "Track hyperparameters, metrics, and artifacts, and version multi-gigabyte datasets with DVC and cloud storage.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of MLflow & DVC for Reproducible ML",
+                "Implement production-grade components using industry best practices for MLflow & DVC for Reproducible ML",
+                "Diagnose runtime errors, misconfigurations, and edge cases in MLflow & DVC for Reproducible ML",
+                "Explain design trade-offs and answer senior technical interview questions on MLflow & DVC for Reproducible ML"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mlops-l0-t1-1",
+                  "title": "MLflow Tracking Server: Parameters, Metrics, Artifacts, Run Tagging",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mlops-l0-t1-2",
+                  "title": "MLflow Model Registry: Staging, Production, Archival Lifecycles & Model Signatures",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mlops-l0-t1-3",
+                  "title": "Data Version Control (DVC): Tracking Large Datasets with Git & S3/GCS Remotes",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mlops-l0-t1-4",
+                  "title": "DVC Pipelines (dvc.yaml): Reproducible Data Prep, Feature Extraction, and Training DAGs",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mlops-l0-t1-1",
+                  "title": "Hands-on Lab: MLflow & DVC for Reproducible ML",
+                  "description": "Implement, test, and validate core patterns of MLflow & DVC for Reproducible ML in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mlops-l0-t1-2",
+                  "title": "Independent Challenge: MLflow & DVC for Reproducible ML",
+                  "description": "Build end-to-end functionality for MLflow & DVC for Reproducible ML from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mlops-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in MLflow & DVC for Reproducible ML",
+                  "description": "Troubleshoot a scenario where MLflow & DVC for Reproducible ML throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mlops-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for MLflow & DVC for Reproducible ML. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mlops-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with MLflow & DVC for Reproducible ML?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mlops-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for MLflow & DVC for Reproducible ML",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mlops-l1",
+      "order": 1,
+      "title": "Level 1 — Production Model Serving & High-Throughput Inference",
+      "description": "FastAPI microservices, NVIDIA Triton Inference Server, ONNX Runtime optimization, and batch serving.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "mlops-l1-s1",
+          "order": 1,
+          "title": "Inference Engines & Model Serving",
+          "description": "Core subject domain covering Inference Engines & Model Serving.",
+          "topics": [
+            {
+              "id": "mlops-l1-t1",
+              "order": 1,
+              "title": "Triton Inference Server, ONNX Runtime & FastAPI",
+              "description": "Deploy low-latency, high-concurrency model serving endpoints with dynamic batching and GPU acceleration.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Triton Inference Server, ONNX Runtime & FastAPI",
+                "Implement production-grade components using industry best practices for Triton Inference Server, ONNX Runtime & FastAPI",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Triton Inference Server, ONNX Runtime & FastAPI",
+                "Explain design trade-offs and answer senior technical interview questions on Triton Inference Server, ONNX Runtime & FastAPI"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mlops-l1-t1-1",
+                  "title": "Containerized FastAPI Model Serving with Asynchronous Worker Pools",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mlops-l1-t1-2",
+                  "title": "ONNX Model Conversion & Graph Optimization for Fast CPU/GPU Inference",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mlops-l1-t1-3",
+                  "title": "NVIDIA Triton Inference Server: Multi-Model Concurrency, Dynamic Batching, Model Ensembles",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mlops-l1-t1-4",
+                  "title": "TorchServe & TensorRT Deployment for Deep Learning Models",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mlops-l1-t1-1",
+                  "title": "Hands-on Lab: Triton Inference Server, ONNX Runtime & FastAPI",
+                  "description": "Implement, test, and validate core patterns of Triton Inference Server, ONNX Runtime & FastAPI in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mlops-l1-t1-2",
+                  "title": "Independent Challenge: Triton Inference Server, ONNX Runtime & FastAPI",
+                  "description": "Build end-to-end functionality for Triton Inference Server, ONNX Runtime & FastAPI from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mlops-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Triton Inference Server, ONNX Runtime & FastAPI",
+                  "description": "Troubleshoot a scenario where Triton Inference Server, ONNX Runtime & FastAPI throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mlops-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Triton Inference Server, ONNX Runtime & FastAPI. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mlops-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Triton Inference Server, ONNX Runtime & FastAPI?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mlops-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Triton Inference Server, ONNX Runtime & FastAPI",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mlops-l2",
+      "order": 2,
+      "title": "Level 2 — ML Pipelines, Kubernetes & Drift Monitoring",
+      "description": "Orchestrating Kubeflow Pipelines, CI/CD for ML (CT - Continuous Training), data drift, and concept drift detection.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "mlops-l2-s1",
+          "order": 1,
+          "title": "Continuous Training & Drift Monitoring",
+          "description": "Core subject domain covering Continuous Training & Drift Monitoring.",
+          "topics": [
+            {
+              "id": "mlops-l2-t1",
+              "order": 1,
+              "title": "Kubeflow Pipelines & Evidently AI Drift Monitoring",
+              "description": "Automate retrain triggers, monitor production data distributions, and detect model degradation.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Kubeflow Pipelines & Evidently AI Drift Monitoring",
+                "Implement production-grade components using industry best practices for Kubeflow Pipelines & Evidently AI Drift Monitoring",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Kubeflow Pipelines & Evidently AI Drift Monitoring",
+                "Explain design trade-offs and answer senior technical interview questions on Kubeflow Pipelines & Evidently AI Drift Monitoring"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-mlops-l2-t1-1",
+                  "title": "Kubeflow Pipelines (KFP) on Kubernetes: Containerized Pipeline Steps & Artifact Passing",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mlops-l2-t1-2",
+                  "title": "Continuous Training (CT) Triggers on Data Drift or Scheduled Retraining",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-mlops-l2-t1-3",
+                  "title": "Detecting Data Drift & Concept Drift with Evidently AI / Evidently Cloud",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-mlops-l2-t1-4",
+                  "title": "Prometheus & Grafana Dashboards for Inference Latency, GPU Utilization & Prediction Distributions",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-mlops-l2-t1-1",
+                  "title": "Hands-on Lab: Kubeflow Pipelines & Evidently AI Drift Monitoring",
+                  "description": "Implement, test, and validate core patterns of Kubeflow Pipelines & Evidently AI Drift Monitoring in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-mlops-l2-t1-2",
+                  "title": "Independent Challenge: Kubeflow Pipelines & Evidently AI Drift Monitoring",
+                  "description": "Build end-to-end functionality for Kubeflow Pipelines & Evidently AI Drift Monitoring from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-mlops-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Kubeflow Pipelines & Evidently AI Drift Monitoring",
+                  "description": "Troubleshoot a scenario where Kubeflow Pipelines & Evidently AI Drift Monitoring throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-mlops-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Kubeflow Pipelines & Evidently AI Drift Monitoring. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-mlops-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Kubeflow Pipelines & Evidently AI Drift Monitoring?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-mlops-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Kubeflow Pipelines & Evidently AI Drift Monitoring",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

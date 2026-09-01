@@ -1,0 +1,293 @@
+{
+  "id": "sap-hana-developer",
+  "name": "SAP HANA Native Developer",
+  "title": "SAP HANA Native Developer",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Native in-memory development on SAP HANA and SAP HANA Cloud. Columnar data storage, SQLScript procedures, Graphical Calculation Views, HDI (HANA Deployment Infrastructure) containers, performance tuning with Plan Visualizer, and security.",
+  "targetRoles": [
+    "SAP HANA Developer",
+    "HANA Database Engineer",
+    "SAP Data Modeler"
+  ],
+  "prerequisites": [
+    "SQL fundamentals",
+    "Relational database architecture"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "5-7 months",
+  "estimatedHours": 320,
+  "technologies": [
+    "SAP HANA",
+    "HANA Cloud",
+    "SQLScript",
+    "Calculation Views",
+    "HDI Containers",
+    "SAP Business Application Studio (BAS)",
+    "Explain Plan",
+    "Database Explorer"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "hana-l0",
+      "order": 0,
+      "title": "Level 0 — HANA Architecture & Column Store Internals",
+      "description": "In-memory engine, columnar vs row-based storage, compression techniques (dictionary, run-length), and persistence layer.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "hana-l0-s1",
+          "order": 1,
+          "title": "HANA In-Memory Engine",
+          "description": "Core subject domain covering HANA In-Memory Engine.",
+          "topics": [
+            {
+              "id": "hana-l0-t1",
+              "order": 1,
+              "title": "HANA Engine Architecture & Columnar Storage Mechanics",
+              "description": "Understand how column store, dictionary compression, and delta merge engines operate in RAM.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of HANA Engine Architecture & Columnar Storage Mechanics",
+                "Implement production-grade components using industry best practices for HANA Engine Architecture & Columnar Storage Mechanics",
+                "Diagnose runtime errors, misconfigurations, and edge cases in HANA Engine Architecture & Columnar Storage Mechanics",
+                "Explain design trade-offs and answer senior technical interview questions on HANA Engine Architecture & Columnar Storage Mechanics"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-hana-l0-t1-1",
+                  "title": "HANA Architecture: In-Memory Computing Engine, Persistence Layer, Log Volume, Data Volume",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-hana-l0-t1-2",
+                  "title": "Column Store vs Row Store: When to use which, Cache Locality & SIMD Parallelism",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-hana-l0-t1-3",
+                  "title": "Compression Algorithms: Dictionary Encoding, Prefix Encoding, Run-Length Encoding (RLE)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-hana-l0-t1-4",
+                  "title": "Delta Store vs Main Store & Delta Merge Process Operations",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-hana-l0-t1-5",
+                  "title": "SAP HANA Cloud vs On-Premise SAP HANA 2.0 SPS Enterprise",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-hana-l0-t1-1",
+                  "title": "Hands-on Lab: HANA Engine Architecture & Columnar Storage Mechanics",
+                  "description": "Implement, test, and validate core patterns of HANA Engine Architecture & Columnar Storage Mechanics in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-hana-l0-t1-2",
+                  "title": "Independent Challenge: HANA Engine Architecture & Columnar Storage Mechanics",
+                  "description": "Build end-to-end functionality for HANA Engine Architecture & Columnar Storage Mechanics from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-hana-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in HANA Engine Architecture & Columnar Storage Mechanics",
+                  "description": "Troubleshoot a scenario where HANA Engine Architecture & Columnar Storage Mechanics throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-hana-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for HANA Engine Architecture & Columnar Storage Mechanics. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-hana-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with HANA Engine Architecture & Columnar Storage Mechanics?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-hana-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for HANA Engine Architecture & Columnar Storage Mechanics",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "hana-l1",
+      "order": 1,
+      "title": "Level 1 — SQLScript & Calculation Views Modeling",
+      "description": "Advanced SQLScript programming, graphical Calculation Views (Projection, Join, Aggregation, Star Schema), and HDI containers.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "hana-l1-s1",
+          "order": 1,
+          "title": "Data Modeling & SQLScript",
+          "description": "Core subject domain covering Data Modeling & SQLScript.",
+          "topics": [
+            {
+              "id": "hana-l1-t1",
+              "order": 1,
+              "title": "Calculation Views & Stored Procedures in BAS",
+              "description": "Model dimensional and star schema calculation views and write high-performance SQLScript stored procedures.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Calculation Views & Stored Procedures in BAS",
+                "Implement production-grade components using industry best practices for Calculation Views & Stored Procedures in BAS",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Calculation Views & Stored Procedures in BAS",
+                "Explain design trade-offs and answer senior technical interview questions on Calculation Views & Stored Procedures in BAS"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-hana-l1-t1-1",
+                  "title": "Graphical Calculation Views: Projection, Join (Inner, Left, Referential), Aggregation Nodes",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-hana-l1-t1-2",
+                  "title": "Star Schema Models & Dimensional Cube Calculation Views with Measures/Attributes",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-hana-l1-t1-3",
+                  "title": "Calculated Columns, Input Parameters, Filter Expressions & Variables",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-hana-l1-t1-4",
+                  "title": "SQLScript Fundamentals: Table Variables, Control Structures, Dynamic SQL, Stored Procedures, Functions",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-hana-l1-t1-5",
+                  "title": "HANA Deployment Infrastructure (HDI Containers) & Synonyms (.hdbsynonym) for Cross-Schema Access",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-hana-l1-t1-6",
+                  "title": "Plan Visualizer & EXPLAIN PLAN Analysis for Eliminating Expensive Full-Table Scans",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-hana-l1-t1-1",
+                  "title": "Hands-on Lab: Calculation Views & Stored Procedures in BAS",
+                  "description": "Implement, test, and validate core patterns of Calculation Views & Stored Procedures in BAS in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-hana-l1-t1-2",
+                  "title": "Independent Challenge: Calculation Views & Stored Procedures in BAS",
+                  "description": "Build end-to-end functionality for Calculation Views & Stored Procedures in BAS from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-hana-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Calculation Views & Stored Procedures in BAS",
+                  "description": "Troubleshoot a scenario where Calculation Views & Stored Procedures in BAS throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-hana-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Calculation Views & Stored Procedures in BAS. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-hana-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Calculation Views & Stored Procedures in BAS?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-hana-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Calculation Views & Stored Procedures in BAS",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

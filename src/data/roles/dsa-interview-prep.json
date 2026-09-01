@@ -1,0 +1,146 @@
+{
+  "id": "dsa-interview-prep",
+  "title": "DSA & Coding Interview Master Track",
+  "domain": "Software Engineering & Problem Solving",
+  "category": "software-engineering",
+  "description": "Comprehensive 22-level curriculum covering all core algorithmic patterns, LeetCode data structures, complexity analysis, and FAANG interview strategies.",
+  "icon": "Binary",
+  "color": "indigo",
+  "estimatedMonths": 4,
+  "difficulty": "Intermediate to Advanced",
+  "version": "1.0.0",
+  "tags": ["dsa", "leetcode", "algorithms", "data-structures", "interviews", "problem-solving", "faang"],
+  "features": {
+    "hasProjects": true,
+    "hasAssessments": true,
+    "hasDebugging": true,
+    "aiIndependence": true
+  },
+  "levels": [
+    {
+      "id": "lvl-1",
+      "level": 1,
+      "title": "Complexity Analysis & Foundations",
+      "description": "Asymptotic notation, Big-O, Big-Ω, Big-Θ, space complexity, and amortized bounds.",
+      "estimatedHours": 12,
+      "subjects": [
+        {
+          "id": "sub-1-1",
+          "title": "Asymptotic Notation & Cost Analysis",
+          "topics": [
+            {
+              "id": "top-1-1-1",
+              "title": "Big-O, Space Complexity & Recursion Trees",
+              "description": "Calculate time and memory footprints across iterative and recursive algorithms.",
+              "learningItems": [
+                { "id": "li-1-1-1-1", "title": "Big-O, Big-Ω, Big-Θ definitions", "completed": false },
+                { "id": "li-1-1-1-2", "title": "Auxiliary space vs input space", "completed": false },
+                { "id": "li-1-1-1-3", "title": "Amortized complexity and dynamic arrays", "completed": false }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lvl-2",
+      "level": 2,
+      "title": "Arrays & In-Place Algorithms",
+      "description": "Contiguous memory, Kadane's algorithm, prefix sums, and 2D matrix traversal.",
+      "estimatedHours": 18,
+      "subjects": [
+        {
+          "id": "sub-2-1",
+          "title": "Array Manipulation & Accumulation",
+          "topics": [
+            {
+              "id": "top-2-1-1",
+              "title": "Prefix Sums, Subarrays & Kadane's Algorithm",
+              "description": "Optimizing contiguous subarray computations from quadratic to linear time.",
+              "learningItems": [
+                { "id": "li-2-1-1-1", "title": "In-place array reversals and rotations", "completed": false },
+                { "id": "li-2-1-1-2", "title": "Prefix sum arrays and range sum queries", "completed": false },
+                { "id": "li-2-1-1-3", "title": "Kadane's algorithm for max subarray sum", "completed": false }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lvl-3",
+      "level": 3,
+      "title": "Two Pointers & Sliding Window",
+      "description": "Two pointers from opposite ends, fast/slow pointers, and dynamic sliding windows.",
+      "estimatedHours": 24,
+      "subjects": [
+        {
+          "id": "sub-3-1",
+          "title": "Windowing & Pointer Invariants",
+          "topics": [
+            {
+              "id": "top-3-1-1",
+              "title": "Two Pointers & Sliding Window Invariants",
+              "description": "Eliminating nested iterations with monotonic window boundaries.",
+              "learningItems": [
+                { "id": "li-3-1-1-1", "title": "Opposite direction two pointers on sorted arrays", "completed": false },
+                { "id": "li-3-1-1-2", "title": "Dynamic sliding window with frequency hash maps", "completed": false },
+                { "id": "li-3-1-1-3", "title": "Minimum window substring matching logic", "completed": false }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lvl-4",
+      "level": 4,
+      "title": "Trees, BST & Heaps",
+      "description": "Binary tree DFS/BFS, Tree DP, BST properties, and Min/Max Heaps.",
+      "estimatedHours": 32,
+      "subjects": [
+        {
+          "id": "sub-4-1",
+          "title": "Hierarchical Data Structures",
+          "topics": [
+            {
+              "id": "top-4-1-1",
+              "title": "Binary Trees, BST Validation & Priority Queues",
+              "description": "Master recursive tree traversal, bottom-up DP, and top-K heap selections.",
+              "learningItems": [
+                { "id": "li-4-1-1-1", "title": "Recursive DFS (Pre, In, Post) & Level-order BFS", "completed": false },
+                { "id": "li-4-1-1-2", "title": "Lowest Common Ancestor and Tree Diameter", "completed": false },
+                { "id": "li-4-1-1-3", "title": "Top-K elements with Min-Heap", "completed": false }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lvl-5",
+      "level": 5,
+      "title": "Graphs, Backtracking & Dynamic Programming",
+      "description": "Graph BFS/DFS, Topological Sort, Backtracking permutations, and 1D/2D DP.",
+      "estimatedHours": 40,
+      "subjects": [
+        {
+          "id": "sub-5-1",
+          "title": "Advanced Algorithmic Paradigms",
+          "topics": [
+            {
+              "id": "top-5-1-1",
+              "title": "Graph Traversals, Backtracking Pruning & Dynamic Programming",
+              "description": "Master shortest path, topological ordering, constraint satisfaction, and DP memoization.",
+              "learningItems": [
+                { "id": "li-5-1-1-1", "title": "Graph BFS/DFS and Kahn's Topological Sort", "completed": false },
+                { "id": "li-5-1-1-2", "title": "Backtracking decision trees and constraint pruning", "completed": false },
+                { "id": "li-5-1-1-3", "title": "1D and 2D DP state transitions and Knapsack", "completed": false }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

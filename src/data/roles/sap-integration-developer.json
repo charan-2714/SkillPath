@@ -1,0 +1,2015 @@
+{
+  "id": "sap-integration-developer",
+  "name": "SAP Integration Developer (Integration Suite / Cloud Integration)",
+  "title": "SAP Integration Developer (Integration Suite / Cloud Integration)",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "The definitive end-to-end curriculum for modern enterprise integration engineering on SAP BTP. Covers Integration Suite capabilities, Cloud Integration (CPI) core, iFlow authoring, 15+ adapters, multi-format message transformations (XML/JSON/CSV/Groovy/XSLT), advanced routing patterns, Groovy scripting, security & keystores, exception subprocesses & dead-letter handling, API Management policies, Event Mesh EDA, and production operations.",
+  "targetRoles": [
+    "SAP Integration Developer",
+    "SAP CPI Consultant",
+    "Enterprise Integration Architect",
+    "SAP Cloud Integration Engineer"
+  ],
+  "prerequisites": [
+    "HTTP & REST fundamentals",
+    "XML & JSON data structures",
+    "Basic enterprise systems awareness"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "7-10 months",
+  "estimatedHours": 450,
+  "technologies": [
+    "SAP Integration Suite",
+    "Cloud Integration (CPI)",
+    "API Management",
+    "Event Mesh",
+    "Groovy Scripting",
+    "XSLT",
+    "Open Connectors",
+    "Integration Advisor",
+    "OData",
+    "SOAP",
+    "IDoc",
+    "SFTP"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "cpi-l0",
+      "order": 0,
+      "title": "Level 0 — Enterprise Integration Fundamentals",
+      "description": "Core integration paradigms, topologies, synchronous vs asynchronous communications, and message patterns.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "cpi-l0-s1",
+          "order": 1,
+          "title": "Integration Paradigms & Topologies",
+          "description": "Core subject domain covering Integration Paradigms & Topologies.",
+          "topics": [
+            {
+              "id": "cpi-l0-t1",
+              "order": 1,
+              "title": "Integration Concepts, Topologies & Patterns",
+              "description": "Master source/target systems, middleware, point-to-point vs hub-and-spoke, and message-driven architectures.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Integration Concepts, Topologies & Patterns",
+                "Implement production-grade components using industry best practices for Integration Concepts, Topologies & Patterns",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Integration Concepts, Topologies & Patterns",
+                "Explain design trade-offs and answer senior technical interview questions on Integration Concepts, Topologies & Patterns"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l0-t1-1",
+                  "title": "Source System, Target System & Middleware Roles in Enterprises",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l0-t1-2",
+                  "title": "Synchronous vs Asynchronous Integration: Latency, Coupling & Guarantees",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l0-t1-3",
+                  "title": "Point-to-Point vs Hub-and-Spoke vs Enterprise Service Bus (ESB)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l0-t1-4",
+                  "title": "API-Led Integration vs Event-Driven Architecture (EDA)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l0-t1-5",
+                  "title": "Message-Based Integration: Payloads, Headers, Properties, Metadata",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l0-t1-6",
+                  "title": "Data Transformation, Message Enrichment, Protocol Conversion, Routing",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l0-t1-1",
+                  "title": "Hands-on Lab: Integration Concepts, Topologies & Patterns",
+                  "description": "Implement, test, and validate core patterns of Integration Concepts, Topologies & Patterns in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l0-t1-2",
+                  "title": "Independent Challenge: Integration Concepts, Topologies & Patterns",
+                  "description": "Build end-to-end functionality for Integration Concepts, Topologies & Patterns from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Integration Concepts, Topologies & Patterns",
+                  "description": "Troubleshoot a scenario where Integration Concepts, Topologies & Patterns throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Integration Concepts, Topologies & Patterns. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Integration Concepts, Topologies & Patterns?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Integration Concepts, Topologies & Patterns",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l1",
+      "order": 1,
+      "title": "Level 1 — SAP Integration Suite Overview & Capabilities",
+      "description": "Explore the full spectrum of SAP Integration Suite services on SAP BTP and their strategic capabilities.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "cpi-l1-s1",
+          "order": 1,
+          "title": "SAP Integration Suite Architecture",
+          "description": "Core subject domain covering SAP Integration Suite Architecture.",
+          "topics": [
+            {
+              "id": "cpi-l1-t1",
+              "order": 1,
+              "title": "SAP Integration Suite Portfolio & Capabilities",
+              "description": "Understand Cloud Integration, API Management, Event Mesh, Open Connectors, Integration Advisor, and Migration Assessment.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAP Integration Suite Portfolio & Capabilities",
+                "Implement production-grade components using industry best practices for SAP Integration Suite Portfolio & Capabilities",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAP Integration Suite Portfolio & Capabilities",
+                "Explain design trade-offs and answer senior technical interview questions on SAP Integration Suite Portfolio & Capabilities"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l1-t1-1",
+                  "title": "SAP BTP Multi-Cloud Architecture for Integration Suite",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l1-t1-2",
+                  "title": "Cloud Integration (formerly CPI): Core Message Orchestration",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l1-t1-3",
+                  "title": "API Management: API Gateway, Security Policies, Lifecycle & Monetization",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l1-t1-4",
+                  "title": "Event Mesh: Event-Driven Publish/Subscribe & Decoupling",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l1-t1-5",
+                  "title": "Open Connectors: 160+ Pre-built Third-Party SaaS Connectors",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l1-t1-6",
+                  "title": "Integration Advisor: AI-Powered Mapping & Schema Standardization (MAG/MIG)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l1-t1-7",
+                  "title": "Integration Assessment Tool & Migration Assessment (PI/PO to Cloud)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l1-t1-8",
+                  "title": "SAP Graph: Unified API Access across SAP Business Systems",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l1-t1-1",
+                  "title": "Hands-on Lab: SAP Integration Suite Portfolio & Capabilities",
+                  "description": "Implement, test, and validate core patterns of SAP Integration Suite Portfolio & Capabilities in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l1-t1-2",
+                  "title": "Independent Challenge: SAP Integration Suite Portfolio & Capabilities",
+                  "description": "Build end-to-end functionality for SAP Integration Suite Portfolio & Capabilities from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in SAP Integration Suite Portfolio & Capabilities",
+                  "description": "Troubleshoot a scenario where SAP Integration Suite Portfolio & Capabilities throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for SAP Integration Suite Portfolio & Capabilities. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAP Integration Suite Portfolio & Capabilities?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for SAP Integration Suite Portfolio & Capabilities",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l2",
+      "order": 2,
+      "title": "Level 2 — Cloud Integration Core Architecture & Tenants",
+      "description": "Tenants, workspace hierarchy, integration packages, runtime execution engine, and deployment lifecycle.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "cpi-l2-s1",
+          "order": 1,
+          "title": "Tenants, Packages & Message Context",
+          "description": "Core subject domain covering Tenants, Packages & Message Context.",
+          "topics": [
+            {
+              "id": "cpi-l2-t1",
+              "order": 1,
+              "title": "Cloud Integration Workspace & Package Lifecycle",
+              "description": "Navigate the web UI, manage integration packages, versioning, artifacts, and discover pre-packaged content.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Cloud Integration Workspace & Package Lifecycle",
+                "Implement production-grade components using industry best practices for Cloud Integration Workspace & Package Lifecycle",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Cloud Integration Workspace & Package Lifecycle",
+                "Explain design trade-offs and answer senior technical interview questions on Cloud Integration Workspace & Package Lifecycle"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l2-t1-1",
+                  "title": "Design, Discover, and Monitor Workspaces in Integration Suite UI",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l2-t1-2",
+                  "title": "Integration Packages: Metadata, Documents, Artifact Bundling, Versioning",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l2-t1-3",
+                  "title": "Discovering & Consuming Standard Pre-Packaged Content from SAP Business Accelerator Hub",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l2-t1-4",
+                  "title": "Sender & Receiver Participants in Integration Canvas",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l2-t1-5",
+                  "title": "Integration Flow (iFlow) Runtime Container & Camel Exchange Lifecycle",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l2-t1-6",
+                  "title": "Message Structure in Memory: Body, Headers, Exchange Properties",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l2-t1-1",
+                  "title": "Hands-on Lab: Cloud Integration Workspace & Package Lifecycle",
+                  "description": "Implement, test, and validate core patterns of Cloud Integration Workspace & Package Lifecycle in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l2-t1-2",
+                  "title": "Independent Challenge: Cloud Integration Workspace & Package Lifecycle",
+                  "description": "Build end-to-end functionality for Cloud Integration Workspace & Package Lifecycle from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Cloud Integration Workspace & Package Lifecycle",
+                  "description": "Troubleshoot a scenario where Cloud Integration Workspace & Package Lifecycle throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Cloud Integration Workspace & Package Lifecycle. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Cloud Integration Workspace & Package Lifecycle?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Cloud Integration Workspace & Package Lifecycle",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l3",
+      "order": 3,
+      "title": "Level 3 — Integration Flow (iFlow) Modeling",
+      "description": "Authoring integration flows: Step palette, sequence flows, message events, enrichers, validators, and modularization.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "cyan",
+      "subjects": [
+        {
+          "id": "cpi-l3-s1",
+          "order": 1,
+          "title": "iFlow Construction & Step Palette",
+          "description": "Core subject domain covering iFlow Construction & Step Palette.",
+          "topics": [
+            {
+              "id": "cpi-l3-t1",
+              "order": 1,
+              "title": "iFlow Steps, Sequence Flows & Local Integration Processes",
+              "description": "Construct structured iFlows with subprocesses, request-reply calls, content enrichers, and message validators.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of iFlow Steps, Sequence Flows & Local Integration Processes",
+                "Implement production-grade components using industry best practices for iFlow Steps, Sequence Flows & Local Integration Processes",
+                "Diagnose runtime errors, misconfigurations, and edge cases in iFlow Steps, Sequence Flows & Local Integration Processes",
+                "Explain design trade-offs and answer senior technical interview questions on iFlow Steps, Sequence Flows & Local Integration Processes"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l3-t1-1",
+                  "title": "Start, End, and Error Message Events",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l3-t1-2",
+                  "title": "Sequence Flows, Message Flows, and Connecting Sender/Receiver Channels",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l3-t1-3",
+                  "title": "Request-Reply Step vs Send Step vs Poll Enrich Step",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l3-t1-4",
+                  "title": "Content Enricher: Lookups, Combine vs Enrich Matching Key Algorithms",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l3-t1-5",
+                  "title": "XML / JSON Message Validator Steps & Schema Validation (XSD/JSON Schema)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l3-t1-6",
+                  "title": "Local Integration Process & Reusable Subprocesses for Clean Architecture",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l3-t1-1",
+                  "title": "Hands-on Lab: iFlow Steps, Sequence Flows & Local Integration Processes",
+                  "description": "Implement, test, and validate core patterns of iFlow Steps, Sequence Flows & Local Integration Processes in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l3-t1-2",
+                  "title": "Independent Challenge: iFlow Steps, Sequence Flows & Local Integration Processes",
+                  "description": "Build end-to-end functionality for iFlow Steps, Sequence Flows & Local Integration Processes from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in iFlow Steps, Sequence Flows & Local Integration Processes",
+                  "description": "Troubleshoot a scenario where iFlow Steps, Sequence Flows & Local Integration Processes throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for iFlow Steps, Sequence Flows & Local Integration Processes. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with iFlow Steps, Sequence Flows & Local Integration Processes?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for iFlow Steps, Sequence Flows & Local Integration Processes",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l4",
+      "order": 4,
+      "title": "Level 4 — Comprehensive Adapters Deep Dive",
+      "description": "Deep configuration, authentication, and troubleshooting for 15+ standard adapters in Cloud Integration.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "cpi-l4-s1",
+          "order": 1,
+          "title": "Synchronous & Web Protocol Adapters",
+          "description": "Core subject domain covering Synchronous & Web Protocol Adapters.",
+          "topics": [
+            {
+              "id": "cpi-l4-t1",
+              "order": 1,
+              "title": "HTTP, HTTPS, REST & OData Adapters",
+              "description": "Configure REST/HTTP/OData sender and receiver channels, query parameters, headers, and OAuth/Basic auth.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of HTTP, HTTPS, REST & OData Adapters",
+                "Implement production-grade components using industry best practices for HTTP, HTTPS, REST & OData Adapters",
+                "Diagnose runtime errors, misconfigurations, and edge cases in HTTP, HTTPS, REST & OData Adapters",
+                "Explain design trade-offs and answer senior technical interview questions on HTTP, HTTPS, REST & OData Adapters"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l4-t1-1",
+                  "title": "HTTPS / REST Sender Configuration, CSRF Protection & URL Paths",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l4-t1-2",
+                  "title": "HTTP Receiver Channel: Method, Query Parameters, Header Whitelisting",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l4-t1-3",
+                  "title": "OData V2 / V4 Receiver: Entity Operations, Query Builder, Pagination",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l4-t1-4",
+                  "title": "SOAP 1.1 / 1.2 Adapter: WSDL Import, WS-Security, SOAP Headers",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l4-t1-5",
+                  "title": "ProcessDirect Adapter: Fast In-Memory iFlow-to-iFlow Communication",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l4-t1-1",
+                  "title": "Hands-on Lab: HTTP, HTTPS, REST & OData Adapters",
+                  "description": "Implement, test, and validate core patterns of HTTP, HTTPS, REST & OData Adapters in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l4-t1-2",
+                  "title": "Independent Challenge: HTTP, HTTPS, REST & OData Adapters",
+                  "description": "Build end-to-end functionality for HTTP, HTTPS, REST & OData Adapters from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l4-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in HTTP, HTTPS, REST & OData Adapters",
+                  "description": "Troubleshoot a scenario where HTTP, HTTPS, REST & OData Adapters throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l4-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for HTTP, HTTPS, REST & OData Adapters. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l4-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with HTTP, HTTPS, REST & OData Adapters?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l4-t1-1",
+                  "title": "Official Documentation & Architecture Guide for HTTP, HTTPS, REST & OData Adapters",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cpi-l4-s2",
+          "order": 2,
+          "title": "Enterprise, File & Messaging Adapters",
+          "description": "Core subject domain covering Enterprise, File & Messaging Adapters.",
+          "topics": [
+            {
+              "id": "cpi-l4-t2",
+              "order": 1,
+              "title": "SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters",
+              "description": "Configure asynchronous and enterprise channels: SFTP file handling, IDoc/RFC backends, JMS queues, and AS2.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters",
+                "Implement production-grade components using industry best practices for SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters",
+                "Explain design trade-offs and answer senior technical interview questions on SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l4-t2-1",
+                  "title": "SFTP / FTP Adapter: File Polling, Directory Traversal, PGP Decryption, Archive",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l4-t2-2",
+                  "title": "IDoc Adapter: IDoc XML to/from S/4HANA & ECC via Cloud Connector",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l4-t2-3",
+                  "title": "RFC Adapter: BAPI & Remote Function Module Invocations",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l4-t2-4",
+                  "title": "JDBC Adapter: Database Table Inserts/Updates via Cloud Connector",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l4-t2-5",
+                  "title": "Mail Adapter: SMTP Sender/IMAP Receiver, Attachments & HTML Templates",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l4-t2-6",
+                  "title": "JMS Adapter: Cloud Integration Message Queuing, Decoupling & Retries",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l4-t2-7",
+                  "title": "AMQP & AS2 Adapters: B2B/EDI Partner Exchange & Message Disposition Notifications (MDN)",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l4-t2-1",
+                  "title": "Hands-on Lab: SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters",
+                  "description": "Implement, test, and validate core patterns of SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l4-t2-2",
+                  "title": "Independent Challenge: SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters",
+                  "description": "Build end-to-end functionality for SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l4-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters",
+                  "description": "Troubleshoot a scenario where SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l4-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l4-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l4-t2-1",
+                  "title": "Official Documentation & Architecture Guide for SFTP, IDoc, RFC, JDBC, Mail, AMQP, AS2 & JMS Adapters",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l5",
+      "order": 5,
+      "title": "Level 5 — Message Transformation & Mapping",
+      "description": "Transforming enterprise data: Graphical Message Mapping, XSLT, Content Modifiers, Converters, and Encoders.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "cpi-l5-s1",
+          "order": 1,
+          "title": "Data Transformation & Graphical Mapping",
+          "description": "Core subject domain covering Data Transformation & Graphical Mapping.",
+          "topics": [
+            {
+              "id": "cpi-l5-t1",
+              "order": 1,
+              "title": "Message Mapping, Content Modifiers & Converters",
+              "description": "Master graphical drag-and-drop mapping, standard/custom functions, and data format conversions.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Message Mapping, Content Modifiers & Converters",
+                "Implement production-grade components using industry best practices for Message Mapping, Content Modifiers & Converters",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Message Mapping, Content Modifiers & Converters",
+                "Explain design trade-offs and answer senior technical interview questions on Message Mapping, Content Modifiers & Converters"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l5-t1-1",
+                  "title": "Content Modifier: Creating/Modifying Headers, Properties, and Body Expressions",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l5-t1-2",
+                  "title": "Graphical Message Mapping (GMM): Source/Target XSD Structures & Context Queues",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l5-t1-3",
+                  "title": "Standard Mapping Functions: String, Math, Boolean, Node Functions (createIf, removeContexts)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l5-t1-4",
+                  "title": "Value Mapping Artifacts (Key-Value Cross-Reference Tables)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l5-t1-5",
+                  "title": "XML to JSON & JSON to XML Converter Steps",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l5-t1-6",
+                  "title": "CSV to XML & XML to CSV Converters with Header Handling",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l5-t1-7",
+                  "title": "Base64 & GZIP Encoders/Decoders for Binary Payloads",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l5-t1-8",
+                  "title": "XSLT 2.0 / 3.0 Transformations for High-Performance Complex Mapping",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l5-t1-1",
+                  "title": "Hands-on Lab: Message Mapping, Content Modifiers & Converters",
+                  "description": "Implement, test, and validate core patterns of Message Mapping, Content Modifiers & Converters in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l5-t1-2",
+                  "title": "Independent Challenge: Message Mapping, Content Modifiers & Converters",
+                  "description": "Build end-to-end functionality for Message Mapping, Content Modifiers & Converters from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l5-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Message Mapping, Content Modifiers & Converters",
+                  "description": "Troubleshoot a scenario where Message Mapping, Content Modifiers & Converters throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l5-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Message Mapping, Content Modifiers & Converters. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l5-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Message Mapping, Content Modifiers & Converters?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l5-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Message Mapping, Content Modifiers & Converters",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l6",
+      "order": 6,
+      "title": "Level 6 — Advanced Routing & Mediation Patterns",
+      "description": "Enterprise integration patterns: Content-Based Router, Splitters, Aggregators, Multicast, and Gather.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "cpi-l6-s1",
+          "order": 1,
+          "title": "Enterprise Routing & Splitting Patterns",
+          "description": "Core subject domain covering Enterprise Routing & Splitting Patterns.",
+          "topics": [
+            {
+              "id": "cpi-l6-t1",
+              "order": 1,
+              "title": "Router, Splitter, Multicast & Aggregator Patterns",
+              "description": "Implement complex routing, parallel/sequential multicasting, batch record splitting, and aggregation.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Router, Splitter, Multicast & Aggregator Patterns",
+                "Implement production-grade components using industry best practices for Router, Splitter, Multicast & Aggregator Patterns",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Router, Splitter, Multicast & Aggregator Patterns",
+                "Explain design trade-offs and answer senior technical interview questions on Router, Splitter, Multicast & Aggregator Patterns"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l6-t1-1",
+                  "title": "Content-Based Router: Non-XML/XML Conditions (XPath / Header Expressions)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l6-t1-2",
+                  "title": "Iterating Splitter vs General Splitter vs PKCS7 Splitter",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l6-t1-3",
+                  "title": "Gather Step: Combining Split Records back into a Consolidated Payload",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l6-t1-4",
+                  "title": "Sequential Multicast vs Parallel Multicast Steps",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l6-t1-5",
+                  "title": "Aggregator Step: Correlation Keys, Completion Conditions & Timeouts",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l6-t1-6",
+                  "title": "Filter Step: Stripping Unwanted XML/JSON Subtrees from Large Payloads",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l6-t1-7",
+                  "title": "Idempotent Process Step: Deduplicating Repetitive Inbound Messages",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l6-t1-1",
+                  "title": "Hands-on Lab: Router, Splitter, Multicast & Aggregator Patterns",
+                  "description": "Implement, test, and validate core patterns of Router, Splitter, Multicast & Aggregator Patterns in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l6-t1-2",
+                  "title": "Independent Challenge: Router, Splitter, Multicast & Aggregator Patterns",
+                  "description": "Build end-to-end functionality for Router, Splitter, Multicast & Aggregator Patterns from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l6-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Router, Splitter, Multicast & Aggregator Patterns",
+                  "description": "Troubleshoot a scenario where Router, Splitter, Multicast & Aggregator Patterns throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l6-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Router, Splitter, Multicast & Aggregator Patterns. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l6-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Router, Splitter, Multicast & Aggregator Patterns?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l6-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Router, Splitter, Multicast & Aggregator Patterns",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l7",
+      "order": 7,
+      "title": "Level 7 — Groovy Scripting for Integration Developers",
+      "description": "Production-grade Groovy scripts: Manipulating Apache Camel message objects, XML parsing (XmlSlurper), JSON parsing (JsonSlurper).",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "violet",
+      "subjects": [
+        {
+          "id": "cpi-l7-s1",
+          "order": 1,
+          "title": "Groovy Programming in Cloud Integration",
+          "description": "Core subject domain covering Groovy Programming in Cloud Integration.",
+          "topics": [
+            {
+              "id": "cpi-l7-t1",
+              "order": 1,
+              "title": "Message Object Manipulation & XML/JSON Parsing",
+              "description": "Write robust Groovy scripts to inspect and transform payloads, headers, and properties.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Message Object Manipulation & XML/JSON Parsing",
+                "Implement production-grade components using industry best practices for Message Object Manipulation & XML/JSON Parsing",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Message Object Manipulation & XML/JSON Parsing",
+                "Explain design trade-offs and answer senior technical interview questions on Message Object Manipulation & XML/JSON Parsing"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l7-t1-1",
+                  "title": "com.sap.gateway.ip.core.customdev.util.Message Object API",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l7-t1-2",
+                  "title": "Accessing and Mutating message.getBody(), setBody(), getHeaders(), getProperties()",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l7-t1-3",
+                  "title": "Parsing & Constructing XML with XmlSlurper, XmlParser & StreamingMarkupBuilder",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l7-t1-4",
+                  "title": "Parsing & Transforming JSON with JsonSlurper & JsonBuilder / JsonOutput",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l7-t1-5",
+                  "title": "Dynamic Routing & Header Injection via Scripting",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l7-t1-6",
+                  "title": "Creating Shared Reusable Script Collections in Integration Suite",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l7-t1-7",
+                  "title": "Unit Testing & Debugging Groovy Scripts Locally with IntelliJ / VS Code",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l7-t1-1",
+                  "title": "Hands-on Lab: Message Object Manipulation & XML/JSON Parsing",
+                  "description": "Implement, test, and validate core patterns of Message Object Manipulation & XML/JSON Parsing in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l7-t1-2",
+                  "title": "Independent Challenge: Message Object Manipulation & XML/JSON Parsing",
+                  "description": "Build end-to-end functionality for Message Object Manipulation & XML/JSON Parsing from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l7-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Message Object Manipulation & XML/JSON Parsing",
+                  "description": "Troubleshoot a scenario where Message Object Manipulation & XML/JSON Parsing throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l7-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Message Object Manipulation & XML/JSON Parsing. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l7-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Message Object Manipulation & XML/JSON Parsing?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l7-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Message Object Manipulation & XML/JSON Parsing",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l8",
+      "order": 8,
+      "title": "Level 8 — Security, Keystores & Authentication",
+      "description": "Enterprise security: Security Materials, Keystore, Truststore, OAuth2, Client Certificates, PGP Encryption, and Secrets.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "rose",
+      "subjects": [
+        {
+          "id": "cpi-l8-s1",
+          "order": 1,
+          "title": "Security Materials & Cryptography",
+          "description": "Core subject domain covering Security Materials & Cryptography.",
+          "topics": [
+            {
+              "id": "cpi-l8-t1",
+              "order": 1,
+              "title": "Security Artifacts, Certificates & OAuth Configuration",
+              "description": "Secure iFlow endpoints and backends with SSL/TLS, OAuth2 Client Credentials, and PGP encryption.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Security Artifacts, Certificates & OAuth Configuration",
+                "Implement production-grade components using industry best practices for Security Artifacts, Certificates & OAuth Configuration",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Security Artifacts, Certificates & OAuth Configuration",
+                "Explain design trade-offs and answer senior technical interview questions on Security Artifacts, Certificates & OAuth Configuration"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l8-t1-1",
+                  "title": "Managing Security Materials: User Credentials, Secure Parameters, OAuth2 Client Credentials",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l8-t1-2",
+                  "title": "Keystore & Truststore Management (Importing CA Certificates & Root Certs)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l8-t1-3",
+                  "title": "Client Certificate Authentication (mTLS) for Sender and Receiver Channels",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l8-t1-4",
+                  "title": "PGP Encryptor / Decryptor Steps & Keyring Management",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l8-t1-5",
+                  "title": "Signing and Verifying XML Digital Signatures (XML-DSig)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l8-t1-6",
+                  "title": "SAP Cloud Connector Setup: Principal Propagation & On-Premise Tunneling",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l8-t1-1",
+                  "title": "Hands-on Lab: Security Artifacts, Certificates & OAuth Configuration",
+                  "description": "Implement, test, and validate core patterns of Security Artifacts, Certificates & OAuth Configuration in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l8-t1-2",
+                  "title": "Independent Challenge: Security Artifacts, Certificates & OAuth Configuration",
+                  "description": "Build end-to-end functionality for Security Artifacts, Certificates & OAuth Configuration from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l8-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Security Artifacts, Certificates & OAuth Configuration",
+                  "description": "Troubleshoot a scenario where Security Artifacts, Certificates & OAuth Configuration throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l8-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Security Artifacts, Certificates & OAuth Configuration. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l8-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Security Artifacts, Certificates & OAuth Configuration?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l8-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Security Artifacts, Certificates & OAuth Configuration",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l9",
+      "order": 9,
+      "title": "Level 9 — Robust Error Handling & Exception Subprocesses",
+      "description": "Resilience engineering: Exception Subprocess, dead-letter queues, custom alert emails, retries, and correlation IDs.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "amber",
+      "subjects": [
+        {
+          "id": "cpi-l9-s1",
+          "order": 1,
+          "title": "Fault Tolerance & Error Recovery",
+          "description": "Core subject domain covering Fault Tolerance & Error Recovery.",
+          "topics": [
+            {
+              "id": "cpi-l9-t1",
+              "order": 1,
+              "title": "Exception Subprocesses & Dead-Letter Handling",
+              "description": "Capture runtime exceptions, extract root-cause stack traces, and dispatch alert notifications.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Exception Subprocesses & Dead-Letter Handling",
+                "Implement production-grade components using industry best practices for Exception Subprocesses & Dead-Letter Handling",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Exception Subprocesses & Dead-Letter Handling",
+                "Explain design trade-offs and answer senior technical interview questions on Exception Subprocesses & Dead-Letter Handling"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l9-t1-1",
+                  "title": "Exception Subprocess Architecture & Trigger Conditions",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l9-t1-2",
+                  "title": "Extracting ${exception.message} and ${exception.stacktrace} via Groovy/Headers",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l9-t1-3",
+                  "title": "Custom Error Response Construction (Standardized JSON/XML Error Bodies)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l9-t1-4",
+                  "title": "End Event vs Error End Event in Exception Handling",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l9-t1-5",
+                  "title": "Dead-Letter Queue (DLQ) Implementation using JMS & Data Store",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l9-t1-6",
+                  "title": "Automated Alert Email Notifications to IT Operations Teams",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l9-t1-7",
+                  "title": "Correlation ID & Message ID Tracking across Microservices",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l9-t1-1",
+                  "title": "Hands-on Lab: Exception Subprocesses & Dead-Letter Handling",
+                  "description": "Implement, test, and validate core patterns of Exception Subprocesses & Dead-Letter Handling in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l9-t1-2",
+                  "title": "Independent Challenge: Exception Subprocesses & Dead-Letter Handling",
+                  "description": "Build end-to-end functionality for Exception Subprocesses & Dead-Letter Handling from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l9-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Exception Subprocesses & Dead-Letter Handling",
+                  "description": "Troubleshoot a scenario where Exception Subprocesses & Dead-Letter Handling throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l9-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Exception Subprocesses & Dead-Letter Handling. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l9-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Exception Subprocesses & Dead-Letter Handling?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l9-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Exception Subprocesses & Dead-Letter Handling",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l10",
+      "order": 10,
+      "title": "Level 10 — SAP API Management",
+      "description": "API Management capabilities: API Proxies, Security Policies, Rate Limiting, Quotas, API Products, and Developer Portal.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "orange",
+      "subjects": [
+        {
+          "id": "cpi-l10-s1",
+          "order": 1,
+          "title": "API Proxies, Policies & Monetization",
+          "description": "Core subject domain covering API Proxies, Policies & Monetization.",
+          "topics": [
+            {
+              "id": "cpi-l10-t1",
+              "order": 1,
+              "title": "API Proxy Creation & Policy Flow Execution",
+              "description": "Protect backend APIs and iFlows with API Management policies and rate limits.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of API Proxy Creation & Policy Flow Execution",
+                "Implement production-grade components using industry best practices for API Proxy Creation & Policy Flow Execution",
+                "Diagnose runtime errors, misconfigurations, and edge cases in API Proxy Creation & Policy Flow Execution",
+                "Explain design trade-offs and answer senior technical interview questions on API Proxy Creation & Policy Flow Execution"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l10-t1-1",
+                  "title": "API Management Architecture: Provider, Proxy, Target Endpoint",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l10-t1-2",
+                  "title": "Policy Flow Steps: PreFlow, Conditional Flows, PostFlow, PostClientFlow",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l10-t1-3",
+                  "title": "Security Policies: VerifyAPIKey, OAuthV2, BasicAuthentication, JSONtoXML",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l10-t1-4",
+                  "title": "Traffic Management Policies: SpikeArrest, Quota, ConcurrentRateLimit",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l10-t1-5",
+                  "title": "Mediation Policies: AssignMessage, ExtractVariables, JavaScript, ServiceCallout",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l10-t1-6",
+                  "title": "Publishing API Products to Developer Portal & Application Subscriptions",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l10-t1-1",
+                  "title": "Hands-on Lab: API Proxy Creation & Policy Flow Execution",
+                  "description": "Implement, test, and validate core patterns of API Proxy Creation & Policy Flow Execution in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l10-t1-2",
+                  "title": "Independent Challenge: API Proxy Creation & Policy Flow Execution",
+                  "description": "Build end-to-end functionality for API Proxy Creation & Policy Flow Execution from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l10-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in API Proxy Creation & Policy Flow Execution",
+                  "description": "Troubleshoot a scenario where API Proxy Creation & Policy Flow Execution throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l10-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for API Proxy Creation & Policy Flow Execution. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l10-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with API Proxy Creation & Policy Flow Execution?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l10-t1-1",
+                  "title": "Official Documentation & Architecture Guide for API Proxy Creation & Policy Flow Execution",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l11",
+      "order": 11,
+      "title": "Level 11 — SAP Event Mesh & Event-Driven Architecture",
+      "description": "Asynchronous event streaming: SAP Event Mesh, Advanced Event Mesh, Queues, Topics, Webhooks, and S/4HANA Business Events.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "yellow",
+      "subjects": [
+        {
+          "id": "cpi-l11-s1",
+          "order": 1,
+          "title": "Event-Driven Messaging & Event Mesh",
+          "description": "Core subject domain covering Event-Driven Messaging & Event Mesh.",
+          "topics": [
+            {
+              "id": "cpi-l11-t1",
+              "order": 1,
+              "title": "Event Mesh Queues, Topics & CloudEvents",
+              "description": "Publish and consume standard S/4HANA business events using SAP Event Mesh.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Event Mesh Queues, Topics & CloudEvents",
+                "Implement production-grade components using industry best practices for Event Mesh Queues, Topics & CloudEvents",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Event Mesh Queues, Topics & CloudEvents",
+                "Explain design trade-offs and answer senior technical interview questions on Event Mesh Queues, Topics & CloudEvents"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l11-t1-1",
+                  "title": "Event-Driven Architecture (EDA) Principles: Decoupling & Reactive Systems",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l11-t1-2",
+                  "title": "SAP Event Mesh vs SAP Integration Suite Advanced Event Mesh (Solace-based)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l11-t1-3",
+                  "title": "Queues, Queue Subscriptions, Topic Hierarchies (sap/s4/ce/...)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l11-t1-4",
+                  "title": "CloudEvents Specification & Payload Structure",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l11-t1-5",
+                  "title": "Publishing S/4HANA Business Events (e.g. SalesOrder.Created) to Event Mesh",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l11-t1-6",
+                  "title": "Consuming Events in Cloud Integration iFlows via AMQP / Webhook Subscriptions",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l11-t1-1",
+                  "title": "Hands-on Lab: Event Mesh Queues, Topics & CloudEvents",
+                  "description": "Implement, test, and validate core patterns of Event Mesh Queues, Topics & CloudEvents in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l11-t1-2",
+                  "title": "Independent Challenge: Event Mesh Queues, Topics & CloudEvents",
+                  "description": "Build end-to-end functionality for Event Mesh Queues, Topics & CloudEvents from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l11-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Event Mesh Queues, Topics & CloudEvents",
+                  "description": "Troubleshoot a scenario where Event Mesh Queues, Topics & CloudEvents throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l11-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Event Mesh Queues, Topics & CloudEvents. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l11-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Event Mesh Queues, Topics & CloudEvents?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l11-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Event Mesh Queues, Topics & CloudEvents",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l12",
+      "order": 12,
+      "title": "Level 12 — Integration Operations, Monitoring & CI/CD",
+      "description": "Operations cockpit: Message monitoring, traces, payload logging, alerts, TMS transport, and Git CI/CD.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "cpi-l12-s1",
+          "order": 1,
+          "title": "Monitoring, Diagnostics & Lifecycle Management",
+          "description": "Core subject domain covering Monitoring, Diagnostics & Lifecycle Management.",
+          "topics": [
+            {
+              "id": "cpi-l12-t1",
+              "order": 1,
+              "title": "Message Monitoring, Tracing & Transport Management",
+              "description": "Monitor live message flows, enable trace logs, analyze performance bottlenecks, and transport artifacts.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Message Monitoring, Tracing & Transport Management",
+                "Implement production-grade components using industry best practices for Message Monitoring, Tracing & Transport Management",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Message Monitoring, Tracing & Transport Management",
+                "Explain design trade-offs and answer senior technical interview questions on Message Monitoring, Tracing & Transport Management"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l12-t1-1",
+                  "title": "Monitoring Dashboard: Completed, Failed, Escalated, and Retrying Messages",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l12-t1-2",
+                  "title": "Setting Log Levels: Info vs Debug vs Trace (Inspecting In-Flight Payloads)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l12-t1-3",
+                  "title": "Custom Header Properties for Fast Search (Search Indexing)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l12-t1-4",
+                  "title": "Cloud Integration OData API for Automated Monitoring & Metrics Extraction",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l12-t1-5",
+                  "title": "Transporting Integration Packages: Manual Export/Import vs SAP Cloud Transport Management (cTMS)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l12-t1-6",
+                  "title": "Git Integration & Automated CI/CD Pipelines with Project \"Piper\"",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l12-t1-1",
+                  "title": "Hands-on Lab: Message Monitoring, Tracing & Transport Management",
+                  "description": "Implement, test, and validate core patterns of Message Monitoring, Tracing & Transport Management in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l12-t1-2",
+                  "title": "Independent Challenge: Message Monitoring, Tracing & Transport Management",
+                  "description": "Build end-to-end functionality for Message Monitoring, Tracing & Transport Management from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l12-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Message Monitoring, Tracing & Transport Management",
+                  "description": "Troubleshoot a scenario where Message Monitoring, Tracing & Transport Management throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l12-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Message Monitoring, Tracing & Transport Management. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l12-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Message Monitoring, Tracing & Transport Management?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l12-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Message Monitoring, Tracing & Transport Management",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpi-l13",
+      "order": 13,
+      "title": "Level 13 — Enterprise Capstone Integration Projects",
+      "description": "End-to-end multi-system capstone implementations solving realistic enterprise integration challenges.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "indigo",
+      "subjects": [
+        {
+          "id": "cpi-l13-s1",
+          "order": 1,
+          "title": "Enterprise Integration Scenarios",
+          "description": "Core subject domain covering Enterprise Integration Scenarios.",
+          "topics": [
+            {
+              "id": "cpi-l13-t1",
+              "order": 1,
+              "title": "Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub",
+              "description": "Build an API Proxy and iFlow that ingests external orders, transforms JSON to OData, posts to S/4HANA with batching, and returns synchronous confirmations.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub",
+                "Implement production-grade components using industry best practices for Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub",
+                "Explain design trade-offs and answer senior technical interview questions on Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l13-t1-1",
+                  "title": "External REST Client Payload Schema & Validation",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l13-t1-2",
+                  "title": "OData Deep Insert to S/4HANA Sales Order API",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l13-t1-3",
+                  "title": "Groovy-Based Response Formatting & Status Mapping",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l13-t1-4",
+                  "title": "Exception Handling with Rollback & Standard JSON Error Responses",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l13-t1-1",
+                  "title": "Hands-on Lab: Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub",
+                  "description": "Implement, test, and validate core patterns of Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l13-t1-2",
+                  "title": "Independent Challenge: Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub",
+                  "description": "Build end-to-end functionality for Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l13-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub",
+                  "description": "Troubleshoot a scenario where Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l13-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l13-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l13-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Project 1: REST API to SAP S/4HANA OData Synchronous Order Hub",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "cpi-l13-t2",
+              "order": 2,
+              "title": "Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing",
+              "description": "Build an asynchronous iFlow that polls an encrypted SFTP server, decrypts PGP files, converts CSV to IDoc XML, sends via Cloud Connector, and archives files.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing",
+                "Implement production-grade components using industry best practices for Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing",
+                "Explain design trade-offs and answer senior technical interview questions on Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l13-t2-1",
+                  "title": "SFTP Polling with PGP Decryption and Dynamic Filename Parsing",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l13-t2-2",
+                  "title": "CSV to XML Conversion and Graphical Mapping to INVOIC02 IDoc",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l13-t2-3",
+                  "title": "Asynchronous Queueing with JMS Adapter for High Volume Throttling",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l13-t2-4",
+                  "title": "Dead-Letter Handling and Email Alerts for Malformed Records",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l13-t2-1",
+                  "title": "Hands-on Lab: Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing",
+                  "description": "Implement, test, and validate core patterns of Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l13-t2-2",
+                  "title": "Independent Challenge: Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing",
+                  "description": "Build end-to-end functionality for Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l13-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing",
+                  "description": "Troubleshoot a scenario where Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l13-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l13-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l13-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Project 2: SFTP CSV to S/4HANA IDoc Asynchronous Invoice Processing",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "cpi-l13-t3",
+              "order": 3,
+              "title": "Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast",
+              "description": "Ingest Customer.Created business events from Event Mesh, multicast to Salesforce and Snowflake with parallel enrichments, transformations, and rate-limiting.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast",
+                "Implement production-grade components using industry best practices for Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast",
+                "Explain design trade-offs and answer senior technical interview questions on Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-cpi-l13-t3-1",
+                  "title": "Webhook Subscription to SAP Event Mesh Queue",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l13-t3-2",
+                  "title": "Parallel Multicast to Salesforce REST API and Snowflake Ingestion API",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-cpi-l13-t3-3",
+                  "title": "Content-Enricher Request-Reply to Fetch Additional Master Data",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-cpi-l13-t3-4",
+                  "title": "Idempotent Message Processing & End-to-End Latency Logging",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-cpi-l13-t3-1",
+                  "title": "Hands-on Lab: Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast",
+                  "description": "Implement, test, and validate core patterns of Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-cpi-l13-t3-2",
+                  "title": "Independent Challenge: Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast",
+                  "description": "Build end-to-end functionality for Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-cpi-l13-t3-1",
+                  "title": "Diagnose & Resolve Production Issue in Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast",
+                  "description": "Troubleshoot a scenario where Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-cpi-l13-t3-1",
+                  "question": "Explain the fundamental architecture and best practices for Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-cpi-l13-t3-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-cpi-l13-t3-1",
+                  "title": "Official Documentation & Architecture Guide for Project 3: S/4HANA Event Mesh to Third-Party CRM Multi-System Broadcast",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

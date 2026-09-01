@@ -1,0 +1,178 @@
+{
+  "id": "sap-bas-developer",
+  "name": "SAP Business Application Studio (BAS) Specialist",
+  "title": "SAP Business Application Studio (BAS) Specialist",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Mastering SAP Business Application Studio (BAS) as the standard enterprise cloud IDE on SAP BTP. Dev Space configurations, extension ecosystems, Git integration, local mock testing, and deployment to BTP.",
+  "targetRoles": [
+    "SAP Cloud Tooling Specialist",
+    "SAP Full-Stack Developer"
+  ],
+  "prerequisites": [
+    "Basic web & terminal literacy"
+  ],
+  "difficulty": "Beginner to Intermediate",
+  "estimatedDuration": "2-3 months",
+  "estimatedHours": 120,
+  "technologies": [
+    "SAP Business Application Studio (BAS)",
+    "Dev Spaces",
+    "UI5 Tooling",
+    "CAP Tools",
+    "BTP CLI",
+    "Git",
+    "MTA Build Tool"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "bas-l0",
+      "order": 0,
+      "title": "Level 0 — BAS Dev Spaces, Extensions & Cloud Development",
+      "description": "Dev Space types (SAP Fiori, Full-Stack Cloud, SAP HANA), extensions, terminal, Git workflow, and deployment.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "bas-l0-s1",
+          "order": 1,
+          "title": "BAS Architecture & Tooling",
+          "description": "Core subject domain covering BAS Architecture & Tooling.",
+          "topics": [
+            {
+              "id": "bas-l0-t1",
+              "order": 1,
+              "title": "Dev Spaces, Extension Ecosystem & BTP Integration in BAS",
+              "description": "Configure and optimize your cloud IDE environment for SAPUI5, CAP, and HANA development.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Dev Spaces, Extension Ecosystem & BTP Integration in BAS",
+                "Implement production-grade components using industry best practices for Dev Spaces, Extension Ecosystem & BTP Integration in BAS",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Dev Spaces, Extension Ecosystem & BTP Integration in BAS",
+                "Explain design trade-offs and answer senior technical interview questions on Dev Spaces, Extension Ecosystem & BTP Integration in BAS"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-bas-l0-t1-1",
+                  "title": "SAP Business Application Studio Architecture (Theia / VS Code Cloud Foundation)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-bas-l0-t1-2",
+                  "title": "Dev Space Profiles: SAP Fiori, Full-Stack Cloud Application (CAP), SAP HANA Native Modeling",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-bas-l0-t1-3",
+                  "title": "Managing Extensions, Integrated Terminal, Node.js, and npm in Dev Spaces",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-bas-l0-t1-4",
+                  "title": "Git Source Control Integration, Branching & Merge Conflicts in BAS",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-bas-l0-t1-5",
+                  "title": "Connecting BAS to BTP Cloud Foundry Spaces & Service Bindings",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-bas-l0-t1-6",
+                  "title": "Deploying Multi-Target Applications (MTA) directly from BAS to Cloud Foundry and Kyma",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-bas-l0-t1-1",
+                  "title": "Hands-on Lab: Dev Spaces, Extension Ecosystem & BTP Integration in BAS",
+                  "description": "Implement, test, and validate core patterns of Dev Spaces, Extension Ecosystem & BTP Integration in BAS in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-bas-l0-t1-2",
+                  "title": "Independent Challenge: Dev Spaces, Extension Ecosystem & BTP Integration in BAS",
+                  "description": "Build end-to-end functionality for Dev Spaces, Extension Ecosystem & BTP Integration in BAS from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-bas-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Dev Spaces, Extension Ecosystem & BTP Integration in BAS",
+                  "description": "Troubleshoot a scenario where Dev Spaces, Extension Ecosystem & BTP Integration in BAS throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-bas-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Dev Spaces, Extension Ecosystem & BTP Integration in BAS. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-bas-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Dev Spaces, Extension Ecosystem & BTP Integration in BAS?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-bas-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Dev Spaces, Extension Ecosystem & BTP Integration in BAS",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

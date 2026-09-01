@@ -1,0 +1,619 @@
+{
+  "id": "python-automation-developer",
+  "name": "Python Automation Developer",
+  "title": "Python Automation Developer",
+  "category": "Automation & Quality",
+  "status": "Production Standard",
+  "description": "Master enterprise test automation and scripting with Python. Advanced language features (decorators, generators, async), Pytest framework mastery, Playwright browser automation, API automation, CI/CD execution, test data management, and the bridge to AI-assisted automation.",
+  "targetRoles": [
+    "Python Automation Engineer",
+    "SDET",
+    "Test Automation Architect",
+    "Automation Solutions Developer"
+  ],
+  "prerequisites": [
+    "Basic Python programming syntax"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "6-8 months",
+  "estimatedHours": 350,
+  "technologies": [
+    "Python 3.12+",
+    "Pytest",
+    "Playwright",
+    "Selenium",
+    "Requests / HTTPX",
+    "CI/CD GitHub Actions",
+    "Docker",
+    "Automation Architecture"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "pyauto-l0",
+      "order": 0,
+      "title": "Level 0 — Advanced Python for Automation Engineers",
+      "description": "Advanced Python idioms: Decorators, context managers, generators, custom exceptions, typing, and async execution.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "pyauto-l0-s1",
+          "order": 1,
+          "title": "Advanced Python Mechanics",
+          "description": "Core subject domain covering Advanced Python Mechanics.",
+          "topics": [
+            {
+              "id": "pyauto-l0-t1",
+              "order": 1,
+              "title": "Decorators, Context Managers & Generators",
+              "description": "Write custom decorators for retries, timing, logging, and context managers for resource handling.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Decorators, Context Managers & Generators",
+                "Implement production-grade components using industry best practices for Decorators, Context Managers & Generators",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Decorators, Context Managers & Generators",
+                "Explain design trade-offs and answer senior technical interview questions on Decorators, Context Managers & Generators"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pyauto-l0-t1-1",
+                  "title": "Function & Class Decorators (@retry, @timing, @log_step)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l0-t1-2",
+                  "title": "Custom Context Managers with contextlib and __enter__/__exit__",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pyauto-l0-t1-3",
+                  "title": "Generators, yield from, and Memory-Efficient Stream Processing",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l0-t1-4",
+                  "title": "Type Hinting & Static Analysis with MyPy / Pydantic V2",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pyauto-l0-t1-5",
+                  "title": "Asyncio Fundamentals: Event Loops, coroutines, tasks, and concurrency",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pyauto-l0-t1-1",
+                  "title": "Hands-on Lab: Decorators, Context Managers & Generators",
+                  "description": "Implement, test, and validate core patterns of Decorators, Context Managers & Generators in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pyauto-l0-t1-2",
+                  "title": "Independent Challenge: Decorators, Context Managers & Generators",
+                  "description": "Build end-to-end functionality for Decorators, Context Managers & Generators from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pyauto-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Decorators, Context Managers & Generators",
+                  "description": "Troubleshoot a scenario where Decorators, Context Managers & Generators throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pyauto-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Decorators, Context Managers & Generators. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pyauto-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Decorators, Context Managers & Generators?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pyauto-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Decorators, Context Managers & Generators",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pyauto-l1",
+      "order": 1,
+      "title": "Level 1 — Pytest Enterprise Testing Framework",
+      "description": "Pytest mastery: Fixtures (scopes, autouse, teardown), parameterization, marks, plugins, and custom hooks.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "pyauto-l1-s1",
+          "order": 1,
+          "title": "Pytest Architecture & Test Suites",
+          "description": "Core subject domain covering Pytest Architecture & Test Suites.",
+          "topics": [
+            {
+              "id": "pyauto-l1-t1",
+              "order": 1,
+              "title": "Fixtures, Parameterization & Custom Pytest Plugins",
+              "description": "Build enterprise test architectures using dependency-injected fixtures and conftest.py hierarchies.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Fixtures, Parameterization & Custom Pytest Plugins",
+                "Implement production-grade components using industry best practices for Fixtures, Parameterization & Custom Pytest Plugins",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Fixtures, Parameterization & Custom Pytest Plugins",
+                "Explain design trade-offs and answer senior technical interview questions on Fixtures, Parameterization & Custom Pytest Plugins"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pyauto-l1-t1-1",
+                  "title": "Fixture Scopes (function, class, module, package, session) and yield Teardowns",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l1-t1-2",
+                  "title": "Dynamic Parameterization with @pytest.mark.parametrize and pytest_generate_tests",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pyauto-l1-t1-3",
+                  "title": "conftest.py Hook Functions (pytest_runtest_makereport, pytest_collection_modifyitems)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l1-t1-4",
+                  "title": "Custom Marks, Test Filtering, and Parallel Execution with pytest-xdist",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pyauto-l1-t1-5",
+                  "title": "Generating Enterprise HTML & Allure Test Reports with Screenshots on Failure",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pyauto-l1-t1-1",
+                  "title": "Hands-on Lab: Fixtures, Parameterization & Custom Pytest Plugins",
+                  "description": "Implement, test, and validate core patterns of Fixtures, Parameterization & Custom Pytest Plugins in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pyauto-l1-t1-2",
+                  "title": "Independent Challenge: Fixtures, Parameterization & Custom Pytest Plugins",
+                  "description": "Build end-to-end functionality for Fixtures, Parameterization & Custom Pytest Plugins from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pyauto-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Fixtures, Parameterization & Custom Pytest Plugins",
+                  "description": "Troubleshoot a scenario where Fixtures, Parameterization & Custom Pytest Plugins throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pyauto-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Fixtures, Parameterization & Custom Pytest Plugins. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pyauto-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Fixtures, Parameterization & Custom Pytest Plugins?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pyauto-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Fixtures, Parameterization & Custom Pytest Plugins",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pyauto-l2",
+      "order": 2,
+      "title": "Level 2 — Web & Browser Automation with Playwright",
+      "description": "Modern end-to-end browser automation: Playwright async API, locators, auto-waiting, network mocking, and Page Object Model (POM).",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "pyauto-l2-s1",
+          "order": 1,
+          "title": "Playwright Framework Architecture",
+          "description": "Core subject domain covering Playwright Framework Architecture.",
+          "topics": [
+            {
+              "id": "pyauto-l2-t1",
+              "order": 1,
+              "title": "Playwright Locators, Auto-Waiting & Page Object Model",
+              "description": "Create resilient, flaky-free UI tests using Playwright semantic locators and clean Page Object architectures.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Playwright Locators, Auto-Waiting & Page Object Model",
+                "Implement production-grade components using industry best practices for Playwright Locators, Auto-Waiting & Page Object Model",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Playwright Locators, Auto-Waiting & Page Object Model",
+                "Explain design trade-offs and answer senior technical interview questions on Playwright Locators, Auto-Waiting & Page Object Model"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pyauto-l2-t1-1",
+                  "title": "Playwright Architecture: Chromium, Firefox, WebKit under Single Protocol",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l2-t1-2",
+                  "title": "Resilient User-Facing Locators (getByRole, getByText, getByTestId)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pyauto-l2-t1-3",
+                  "title": "Built-in Auto-Waiting & Eliminating Explicit/Hardcoded Sleep Anti-Patterns",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l2-t1-4",
+                  "title": "Network Interception: Mocking API Responses, Header Modification & Throttling",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pyauto-l2-t1-5",
+                  "title": "Page Object Model (POM) & Component Object Pattern Architecture",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l2-t1-6",
+                  "title": "Trace Viewer, Video Recording & Debugging Failed CI Runs with Playwright Inspector",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pyauto-l2-t1-1",
+                  "title": "Hands-on Lab: Playwright Locators, Auto-Waiting & Page Object Model",
+                  "description": "Implement, test, and validate core patterns of Playwright Locators, Auto-Waiting & Page Object Model in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pyauto-l2-t1-2",
+                  "title": "Independent Challenge: Playwright Locators, Auto-Waiting & Page Object Model",
+                  "description": "Build end-to-end functionality for Playwright Locators, Auto-Waiting & Page Object Model from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pyauto-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Playwright Locators, Auto-Waiting & Page Object Model",
+                  "description": "Troubleshoot a scenario where Playwright Locators, Auto-Waiting & Page Object Model throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pyauto-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Playwright Locators, Auto-Waiting & Page Object Model. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pyauto-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Playwright Locators, Auto-Waiting & Page Object Model?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pyauto-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Playwright Locators, Auto-Waiting & Page Object Model",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pyauto-l3",
+      "order": 3,
+      "title": "Level 3 — API Automation & Contract Testing",
+      "description": "REST & GraphQL test automation with Requests / HTTPX, JSON schema validation, auth workflows, and performance checks.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "pyauto-l3-s1",
+          "order": 1,
+          "title": "API Testing Frameworks & Schema Validation",
+          "description": "Core subject domain covering API Testing Frameworks & Schema Validation.",
+          "topics": [
+            {
+              "id": "pyauto-l3-t1",
+              "order": 1,
+              "title": "REST/GraphQL Automation with HTTPX & Pydantic",
+              "description": "Build fast, type-safe API automation suites with schema validation and auth token reuse.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of REST/GraphQL Automation with HTTPX & Pydantic",
+                "Implement production-grade components using industry best practices for REST/GraphQL Automation with HTTPX & Pydantic",
+                "Diagnose runtime errors, misconfigurations, and edge cases in REST/GraphQL Automation with HTTPX & Pydantic",
+                "Explain design trade-offs and answer senior technical interview questions on REST/GraphQL Automation with HTTPX & Pydantic"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pyauto-l3-t1-1",
+                  "title": "HTTP Client Wrapper: Logging, Retries, Custom Headers, Cookie Jar",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l3-t1-2",
+                  "title": "Pydantic Model Validation for Response Payloads & Contract Testing",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pyauto-l3-t1-3",
+                  "title": "Automating Complex OAuth2, JWT, and Session-Based Auth Flows",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l3-t1-4",
+                  "title": "Data-Driven API Testing with CSV/JSON/Database Fixtures",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pyauto-l3-t1-1",
+                  "title": "Hands-on Lab: REST/GraphQL Automation with HTTPX & Pydantic",
+                  "description": "Implement, test, and validate core patterns of REST/GraphQL Automation with HTTPX & Pydantic in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pyauto-l3-t1-2",
+                  "title": "Independent Challenge: REST/GraphQL Automation with HTTPX & Pydantic",
+                  "description": "Build end-to-end functionality for REST/GraphQL Automation with HTTPX & Pydantic from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pyauto-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in REST/GraphQL Automation with HTTPX & Pydantic",
+                  "description": "Troubleshoot a scenario where REST/GraphQL Automation with HTTPX & Pydantic throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pyauto-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for REST/GraphQL Automation with HTTPX & Pydantic. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pyauto-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with REST/GraphQL Automation with HTTPX & Pydantic?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pyauto-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for REST/GraphQL Automation with HTTPX & Pydantic",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pyauto-l4",
+      "order": 4,
+      "title": "Level 4 — CI/CD Pipelines & Dockerized Test Execution",
+      "description": "Automated test execution in GitHub Actions / GitLab CI, containerization with Docker, and cloud grids.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "pyauto-l4-s1",
+          "order": 1,
+          "title": "Test Infrastructure & CI/CD",
+          "description": "Core subject domain covering Test Infrastructure & CI/CD.",
+          "topics": [
+            {
+              "id": "pyauto-l4-t1",
+              "order": 1,
+              "title": "GitHub Actions Workflows, Docker Containers & Test Sharding",
+              "description": "Run distributed parallel test suites on ephemeral containers on every pull request.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of GitHub Actions Workflows, Docker Containers & Test Sharding",
+                "Implement production-grade components using industry best practices for GitHub Actions Workflows, Docker Containers & Test Sharding",
+                "Diagnose runtime errors, misconfigurations, and edge cases in GitHub Actions Workflows, Docker Containers & Test Sharding",
+                "Explain design trade-offs and answer senior technical interview questions on GitHub Actions Workflows, Docker Containers & Test Sharding"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pyauto-l4-t1-1",
+                  "title": "Dockerizing Python & Playwright Environments (playwright-python Docker Images)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l4-t1-2",
+                  "title": "GitHub Actions CI/CD Matrix Execution and Test Sharding for Fast Feedback",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pyauto-l4-t1-3",
+                  "title": "Uploading Artifacts: Test Logs, Allure HTML Reports & Failure Screenshots",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pyauto-l4-t1-4",
+                  "title": "Slack & Teams Webhook Integration for Instant Test Failure Alerts",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pyauto-l4-t1-1",
+                  "title": "Hands-on Lab: GitHub Actions Workflows, Docker Containers & Test Sharding",
+                  "description": "Implement, test, and validate core patterns of GitHub Actions Workflows, Docker Containers & Test Sharding in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pyauto-l4-t1-2",
+                  "title": "Independent Challenge: GitHub Actions Workflows, Docker Containers & Test Sharding",
+                  "description": "Build end-to-end functionality for GitHub Actions Workflows, Docker Containers & Test Sharding from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pyauto-l4-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in GitHub Actions Workflows, Docker Containers & Test Sharding",
+                  "description": "Troubleshoot a scenario where GitHub Actions Workflows, Docker Containers & Test Sharding throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pyauto-l4-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for GitHub Actions Workflows, Docker Containers & Test Sharding. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pyauto-l4-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with GitHub Actions Workflows, Docker Containers & Test Sharding?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pyauto-l4-t1-1",
+                  "title": "Official Documentation & Architecture Guide for GitHub Actions Workflows, Docker Containers & Test Sharding",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

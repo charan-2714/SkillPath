@@ -1,0 +1,2525 @@
+{
+  "id": "sap-fiori-developer",
+  "name": "SAP Fiori / SAPUI5 Developer",
+  "title": "SAP Fiori / SAPUI5 Developer",
+  "category": "SAP Ecosystem",
+  "status": "Production Standard",
+  "description": "Complete, production-grade learning path for mastering SAP Fiori and SAPUI5 front-end enterprise engineering. Drills down through SAP & Web fundamentals, deep MVC & SAPUI5 mechanics, Fiori UX & Launchpad, OData V2/V4, Advanced Fiori Elements, Smart Controls, Cloud Deployment on SAP BTP, and Senior Debugging/Performance optimization.",
+  "targetRoles": [
+    "SAP Fiori Developer",
+    "SAPUI5 Frontend Engineer",
+    "SAP Technical Consultant",
+    "SAP S/4HANA UX Specialist"
+  ],
+  "prerequisites": [
+    "Basic web development understanding",
+    "Basic understanding of enterprise business software"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "6-8 months",
+  "estimatedHours": 400,
+  "technologies": [
+    "SAPUI5",
+    "SAP Fiori",
+    "OData",
+    "JavaScript ES6+",
+    "SAP BTP",
+    "SAP Business Application Studio",
+    "Fiori Elements",
+    "Smart Controls",
+    "SAP S/4HANA"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "fiori-l0",
+      "order": 0,
+      "title": "Level 0 — SAP Fundamentals & Architecture",
+      "description": "Core concepts of the SAP enterprise landscape, ERP evolution, S/4HANA, BTP, and Fiori user experience paradigm.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "fiori-l0-s1",
+          "order": 1,
+          "title": "SAP Enterprise Landscape & ERP",
+          "description": "Core subject domain covering SAP Enterprise Landscape & ERP.",
+          "topics": [
+            {
+              "id": "fiori-l0-t1",
+              "order": 1,
+              "title": "SAP Ecosystem & ERP Overview",
+              "description": "Understand the SAP product suite, enterprise architecture, client-server model, and ERP evolution from R/3 to ECC and S/4HANA.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAP Ecosystem & ERP Overview",
+                "Implement production-grade components using industry best practices for SAP Ecosystem & ERP Overview",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAP Ecosystem & ERP Overview",
+                "Explain design trade-offs and answer senior technical interview questions on SAP Ecosystem & ERP Overview"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l0-t1-1",
+                  "title": "SAP Ecosystem & Product Landscape",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t1-2",
+                  "title": "Evolution from SAP R/3 to ECC to SAP S/4HANA",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l0-t1-3",
+                  "title": "SAP Business Suite & Industry Solutions",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t1-4",
+                  "title": "Three-Tier Architecture (Presentation, Application, Database)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l0-t1-5",
+                  "title": "SAP NetWeaver Application Server (AS ABAP / AS Java)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t1-6",
+                  "title": "SAP Release Cycles & Enhancement Packages (EhP)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l0-t1-1",
+                  "title": "Hands-on Lab: SAP Ecosystem & ERP Overview",
+                  "description": "Implement, test, and validate core patterns of SAP Ecosystem & ERP Overview in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l0-t1-2",
+                  "title": "Independent Challenge: SAP Ecosystem & ERP Overview",
+                  "description": "Build end-to-end functionality for SAP Ecosystem & ERP Overview from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in SAP Ecosystem & ERP Overview",
+                  "description": "Troubleshoot a scenario where SAP Ecosystem & ERP Overview throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for SAP Ecosystem & ERP Overview. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAP Ecosystem & ERP Overview?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for SAP Ecosystem & ERP Overview",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l0-t2",
+              "order": 2,
+              "title": "SAP S/4HANA & SAP BTP Core Concepts",
+              "description": "Master the architectural foundations of modern S/4HANA, in-memory computing, and SAP Business Technology Platform (BTP).",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAP S/4HANA & SAP BTP Core Concepts",
+                "Implement production-grade components using industry best practices for SAP S/4HANA & SAP BTP Core Concepts",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAP S/4HANA & SAP BTP Core Concepts",
+                "Explain design trade-offs and answer senior technical interview questions on SAP S/4HANA & SAP BTP Core Concepts"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l0-t2-1",
+                  "title": "SAP S/4HANA In-Memory Database & Simplified Data Model",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t2-2",
+                  "title": "On-Premise vs Private Cloud vs Public Cloud Editions",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l0-t2-3",
+                  "title": "Clean Core Strategy & Side-by-Side Extensibility",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t2-4",
+                  "title": "SAP Business Technology Platform (BTP) Role in Enterprise UX",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l0-t2-5",
+                  "title": "Multi-Cloud Foundation (Cloud Foundry, Kyma Runtimes)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t2-6",
+                  "title": "Cloud Security, Tenant Separation & Service Subscriptions",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l0-t2-1",
+                  "title": "Hands-on Lab: SAP S/4HANA & SAP BTP Core Concepts",
+                  "description": "Implement, test, and validate core patterns of SAP S/4HANA & SAP BTP Core Concepts in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l0-t2-2",
+                  "title": "Independent Challenge: SAP S/4HANA & SAP BTP Core Concepts",
+                  "description": "Build end-to-end functionality for SAP S/4HANA & SAP BTP Core Concepts from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l0-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in SAP S/4HANA & SAP BTP Core Concepts",
+                  "description": "Troubleshoot a scenario where SAP S/4HANA & SAP BTP Core Concepts throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l0-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for SAP S/4HANA & SAP BTP Core Concepts. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l0-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAP S/4HANA & SAP BTP Core Concepts?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l0-t2-1",
+                  "title": "Official Documentation & Architecture Guide for SAP S/4HANA & SAP BTP Core Concepts",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fiori-l0-s2",
+          "order": 2,
+          "title": "SAP UX Paradigm & Fiori Launchpad",
+          "description": "Core subject domain covering SAP UX Paradigm & Fiori Launchpad.",
+          "topics": [
+            {
+              "id": "fiori-l0-t3",
+              "order": 1,
+              "title": "SAP GUI vs SAP Fiori Architecture",
+              "description": "Contrast monolithic SAP GUI transactions with role-based, responsive, modern Fiori web applications.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAP GUI vs SAP Fiori Architecture",
+                "Implement production-grade components using industry best practices for SAP GUI vs SAP Fiori Architecture",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAP GUI vs SAP Fiori Architecture",
+                "Explain design trade-offs and answer senior technical interview questions on SAP GUI vs SAP Fiori Architecture"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l0-t3-1",
+                  "title": "Traditional SAP GUI Limitations & Dynpro Screens",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t3-2",
+                  "title": "SAP Fiori Design Paradigm: Role-Based, Adaptive, Simple, Coherent, Delightful",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l0-t3-3",
+                  "title": "Evolution: Fiori 1.0, Fiori 2.0, Fiori 3.0 (Quartz Theme) & Horizon Theme",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t3-4",
+                  "title": "Fiori Launchpad (FLP) as Single Entry Point",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l0-t3-5",
+                  "title": "Business Catalogs, Groups, Spaces, and Pages Architecture",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l0-t3-6",
+                  "title": "SAP Business Roles & Authorization Profiles (PFCG Integration)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l0-t3-1",
+                  "title": "Hands-on Lab: SAP GUI vs SAP Fiori Architecture",
+                  "description": "Implement, test, and validate core patterns of SAP GUI vs SAP Fiori Architecture in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l0-t3-2",
+                  "title": "Independent Challenge: SAP GUI vs SAP Fiori Architecture",
+                  "description": "Build end-to-end functionality for SAP GUI vs SAP Fiori Architecture from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l0-t3-1",
+                  "title": "Diagnose & Resolve Production Issue in SAP GUI vs SAP Fiori Architecture",
+                  "description": "Troubleshoot a scenario where SAP GUI vs SAP Fiori Architecture throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l0-t3-1",
+                  "question": "Explain the fundamental architecture and best practices for SAP GUI vs SAP Fiori Architecture. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l0-t3-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAP GUI vs SAP Fiori Architecture?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l0-t3-1",
+                  "title": "Official Documentation & Architecture Guide for SAP GUI vs SAP Fiori Architecture",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiori-l1",
+      "order": 1,
+      "title": "Level 1 — Modern Web Foundations for UI5",
+      "description": "Mastery of modern JavaScript (ES6+), DOM, asynchronous programming, HTTP/REST, and JSON required for high-performance UI5.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "fiori-l1-s1",
+          "order": 1,
+          "title": "Modern JavaScript (ES6+) & Web Standards",
+          "description": "Core subject domain covering Modern JavaScript (ES6+) & Web Standards.",
+          "topics": [
+            {
+              "id": "fiori-l1-t1",
+              "order": 1,
+              "title": "ES6+ Syntax, Modules & Scoping",
+              "description": "Deep dive into modern JavaScript features essential for UI5 and modern web tooling.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of ES6+ Syntax, Modules & Scoping",
+                "Implement production-grade components using industry best practices for ES6+ Syntax, Modules & Scoping",
+                "Diagnose runtime errors, misconfigurations, and edge cases in ES6+ Syntax, Modules & Scoping",
+                "Explain design trade-offs and answer senior technical interview questions on ES6+ Syntax, Modules & Scoping"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l1-t1-1",
+                  "title": "let, const, Variable Scoping & Hoisting Rules",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t1-2",
+                  "title": "Arrow Functions, Lexical this & Execution Contexts",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l1-t1-3",
+                  "title": "Destructuring, Rest/Spread Operators, Template Literals",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t1-4",
+                  "title": "ES Modules (import/export) vs AMD (sap.ui.define)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l1-t1-5",
+                  "title": "Classes, Prototypes, and Inheritance Patterns in JS",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t1-6",
+                  "title": "Array Functional Methods (map, filter, reduce, find, some, every)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l1-t1-1",
+                  "title": "Hands-on Lab: ES6+ Syntax, Modules & Scoping",
+                  "description": "Implement, test, and validate core patterns of ES6+ Syntax, Modules & Scoping in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l1-t1-2",
+                  "title": "Independent Challenge: ES6+ Syntax, Modules & Scoping",
+                  "description": "Build end-to-end functionality for ES6+ Syntax, Modules & Scoping from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in ES6+ Syntax, Modules & Scoping",
+                  "description": "Troubleshoot a scenario where ES6+ Syntax, Modules & Scoping throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for ES6+ Syntax, Modules & Scoping. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with ES6+ Syntax, Modules & Scoping?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for ES6+ Syntax, Modules & Scoping",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l1-t2",
+              "order": 2,
+              "title": "Asynchronous JavaScript & Event Loop",
+              "description": "Master async execution, promises, and network requests essential for non-blocking UI5 applications.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Asynchronous JavaScript & Event Loop",
+                "Implement production-grade components using industry best practices for Asynchronous JavaScript & Event Loop",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Asynchronous JavaScript & Event Loop",
+                "Explain design trade-offs and answer senior technical interview questions on Asynchronous JavaScript & Event Loop"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l1-t2-1",
+                  "title": "JavaScript Single-Threaded Event Loop, Call Stack & Microtask Queue",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t2-2",
+                  "title": "Promises: States, Chaining, Promise.all, Promise.allSettled",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l1-t2-3",
+                  "title": "Async/Await Syntax, Error Handling with try/catch",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t2-4",
+                  "title": "Fetch API & XMLHttpRequest Internals",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l1-t2-5",
+                  "title": "HTTP Headers, Status Codes (200, 201, 400, 401, 403, 404, 500)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t2-6",
+                  "title": "REST Principles, JSON Serialization & Data Parsing",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l1-t2-1",
+                  "title": "Hands-on Lab: Asynchronous JavaScript & Event Loop",
+                  "description": "Implement, test, and validate core patterns of Asynchronous JavaScript & Event Loop in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l1-t2-2",
+                  "title": "Independent Challenge: Asynchronous JavaScript & Event Loop",
+                  "description": "Build end-to-end functionality for Asynchronous JavaScript & Event Loop from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l1-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Asynchronous JavaScript & Event Loop",
+                  "description": "Troubleshoot a scenario where Asynchronous JavaScript & Event Loop throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l1-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Asynchronous JavaScript & Event Loop. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l1-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Asynchronous JavaScript & Event Loop?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l1-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Asynchronous JavaScript & Event Loop",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fiori-l1-s2",
+          "order": 2,
+          "title": "HTML5, CSS3 & Browser Internals",
+          "description": "Core subject domain covering HTML5, CSS3 & Browser Internals.",
+          "topics": [
+            {
+              "id": "fiori-l1-t3",
+              "order": 1,
+              "title": "DOM Manipulation, Events & CSS Flexbox/Grid",
+              "description": "Understand browser layout engines, event propagation, and custom CSS styling for SAP Fiori themes.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of DOM Manipulation, Events & CSS Flexbox/Grid",
+                "Implement production-grade components using industry best practices for DOM Manipulation, Events & CSS Flexbox/Grid",
+                "Diagnose runtime errors, misconfigurations, and edge cases in DOM Manipulation, Events & CSS Flexbox/Grid",
+                "Explain design trade-offs and answer senior technical interview questions on DOM Manipulation, Events & CSS Flexbox/Grid"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l1-t3-1",
+                  "title": "DOM Tree, Virtual DOM vs UI5 Control Tree",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t3-2",
+                  "title": "Event Bubbling, Capturing, and Delegation",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l1-t3-3",
+                  "title": "CSS Flexbox & CSS Grid for Responsive Enterprise Layouts",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t3-4",
+                  "title": "CSS Custom Properties (Variables) & Theme Overrides",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l1-t3-5",
+                  "title": "Browser DevTools: Elements, Console, Network, Performance Profiling",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l1-t3-6",
+                  "title": "CORS (Cross-Origin Resource Sharing) Mechanics & Prevention",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l1-t3-1",
+                  "title": "Hands-on Lab: DOM Manipulation, Events & CSS Flexbox/Grid",
+                  "description": "Implement, test, and validate core patterns of DOM Manipulation, Events & CSS Flexbox/Grid in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l1-t3-2",
+                  "title": "Independent Challenge: DOM Manipulation, Events & CSS Flexbox/Grid",
+                  "description": "Build end-to-end functionality for DOM Manipulation, Events & CSS Flexbox/Grid from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l1-t3-1",
+                  "title": "Diagnose & Resolve Production Issue in DOM Manipulation, Events & CSS Flexbox/Grid",
+                  "description": "Troubleshoot a scenario where DOM Manipulation, Events & CSS Flexbox/Grid throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l1-t3-1",
+                  "question": "Explain the fundamental architecture and best practices for DOM Manipulation, Events & CSS Flexbox/Grid. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l1-t3-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with DOM Manipulation, Events & CSS Flexbox/Grid?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l1-t3-1",
+                  "title": "Official Documentation & Architecture Guide for DOM Manipulation, Events & CSS Flexbox/Grid",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiori-l2",
+      "order": 2,
+      "title": "Level 2 — SAPUI5 Core Architecture & Controls",
+      "description": "Comprehensive mastery of SAPUI5 Model-View-Controller (MVC), Data Binding, Controls, Views, and Application Descriptors.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "fiori-l2-s1",
+          "order": 1,
+          "title": "MVC Architecture & Data Binding in UI5",
+          "description": "Core subject domain covering MVC Architecture & Data Binding in UI5.",
+          "topics": [
+            {
+              "id": "fiori-l2-t1",
+              "order": 1,
+              "title": "SAPUI5 MVC Architecture & Component.js",
+              "description": "Understand the core bootstrap lifecycle, Component.js, manifest.json, and MVC separation.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAPUI5 MVC Architecture & Component.js",
+                "Implement production-grade components using industry best practices for SAPUI5 MVC Architecture & Component.js",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAPUI5 MVC Architecture & Component.js",
+                "Explain design trade-offs and answer senior technical interview questions on SAPUI5 MVC Architecture & Component.js"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l2-t1-1",
+                  "title": "UI5 Bootstrap (sap-ui-core.js) Configuration & Resource Roots",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t1-2",
+                  "title": "Component.js Lifecycle (init, destroy, createContent)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t1-3",
+                  "title": "manifest.json (App Descriptor): sap.app, sap.ui5, models, routing",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t1-4",
+                  "title": "XML Views vs JSON Views vs JavaScript Views",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t1-5",
+                  "title": "Controller Architecture & Lifecycle Hooks (onInit, onBeforeRendering, onAfterRendering, onExit)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t1-6",
+                  "title": "BaseController Pattern & Dependency Injection with sap.ui.define",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l2-t1-1",
+                  "title": "Hands-on Lab: SAPUI5 MVC Architecture & Component.js",
+                  "description": "Implement, test, and validate core patterns of SAPUI5 MVC Architecture & Component.js in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l2-t1-2",
+                  "title": "Independent Challenge: SAPUI5 MVC Architecture & Component.js",
+                  "description": "Build end-to-end functionality for SAPUI5 MVC Architecture & Component.js from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in SAPUI5 MVC Architecture & Component.js",
+                  "description": "Troubleshoot a scenario where SAPUI5 MVC Architecture & Component.js throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for SAPUI5 MVC Architecture & Component.js. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAPUI5 MVC Architecture & Component.js?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for SAPUI5 MVC Architecture & Component.js",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l2-t2",
+              "order": 2,
+              "title": "Data Binding Models & Expressions",
+              "description": "Master JSONModel, ODataModel, ResourceModel, binding modes, and complex expression bindings.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Data Binding Models & Expressions",
+                "Implement production-grade components using industry best practices for Data Binding Models & Expressions",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Data Binding Models & Expressions",
+                "Explain design trade-offs and answer senior technical interview questions on Data Binding Models & Expressions"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l2-t2-1",
+                  "title": "JSONModel for Client-Side State Management",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t2-2",
+                  "title": "ResourceModel (i18n.properties) for Localization & Multilingual Support",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t2-3",
+                  "title": "ODataModel (v2 vs v4) Fundamentals & Metadata Loading",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t2-4",
+                  "title": "One-Way, Two-Way, and One-Time Data Binding Modes",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t2-5",
+                  "title": "Property Binding, Context Binding, and Aggregation Binding",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t2-6",
+                  "title": "Expression Binding ({= ${status} === \"A\" ? \"Active\" : \"Inactive\" })",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t2-7",
+                  "title": "Custom Formatters (Formatter.js) for Enterprise Formatting",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l2-t2-1",
+                  "title": "Hands-on Lab: Data Binding Models & Expressions",
+                  "description": "Implement, test, and validate core patterns of Data Binding Models & Expressions in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l2-t2-2",
+                  "title": "Independent Challenge: Data Binding Models & Expressions",
+                  "description": "Build end-to-end functionality for Data Binding Models & Expressions from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l2-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Data Binding Models & Expressions",
+                  "description": "Troubleshoot a scenario where Data Binding Models & Expressions throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l2-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Data Binding Models & Expressions. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l2-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Data Binding Models & Expressions?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l2-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Data Binding Models & Expressions",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fiori-l2-s2",
+          "order": 2,
+          "title": "SAPUI5 Controls, Layouts & Fragments",
+          "description": "Core subject domain covering SAPUI5 Controls, Layouts & Fragments.",
+          "topics": [
+            {
+              "id": "fiori-l2-t3",
+              "order": 1,
+              "title": "Standard UI5 Controls, Tables & Forms",
+              "description": "Build enterprise layouts using sap.m controls, responsive tables, forms, and dialogs.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Standard UI5 Controls, Tables & Forms",
+                "Implement production-grade components using industry best practices for Standard UI5 Controls, Tables & Forms",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Standard UI5 Controls, Tables & Forms",
+                "Explain design trade-offs and answer senior technical interview questions on Standard UI5 Controls, Tables & Forms"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l2-t3-1",
+                  "title": "sap.m Library Controls (Text, Input, Select, DatePicker, Button, Icon)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t3-2",
+                  "title": "Layouts: DynamicPage, ObjectPageLayout, FlexBox, Grid, SimpleForm",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t3-3",
+                  "title": "Responsive Tables (sap.m.Table) & Analytical Tables (sap.ui.table.Table)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t3-4",
+                  "title": "List Controls (sap.m.List, StandardListItem, ObjectListItem, CustomListItem)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t3-5",
+                  "title": "SearchField, Filtering, Sorting, and Grouping on Lists/Tables",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t3-6",
+                  "title": "Fragments (sap.ui.core.Fragment) for Reusable Modals & Popovers",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t3-7",
+                  "title": "Dialogs, ValueHelpDialog, MessageToast, and MessageBox",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l2-t3-1",
+                  "title": "Hands-on Lab: Standard UI5 Controls, Tables & Forms",
+                  "description": "Implement, test, and validate core patterns of Standard UI5 Controls, Tables & Forms in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l2-t3-2",
+                  "title": "Independent Challenge: Standard UI5 Controls, Tables & Forms",
+                  "description": "Build end-to-end functionality for Standard UI5 Controls, Tables & Forms from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l2-t3-1",
+                  "title": "Diagnose & Resolve Production Issue in Standard UI5 Controls, Tables & Forms",
+                  "description": "Troubleshoot a scenario where Standard UI5 Controls, Tables & Forms throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l2-t3-1",
+                  "question": "Explain the fundamental architecture and best practices for Standard UI5 Controls, Tables & Forms. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l2-t3-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Standard UI5 Controls, Tables & Forms?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l2-t3-1",
+                  "title": "Official Documentation & Architecture Guide for Standard UI5 Controls, Tables & Forms",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l2-t4",
+              "order": 2,
+              "title": "Routing, Navigation & Reusable Custom Controls",
+              "description": "Configure declarative routing, query parameters, cross-view navigation, and custom control authoring.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Routing, Navigation & Reusable Custom Controls",
+                "Implement production-grade components using industry best practices for Routing, Navigation & Reusable Custom Controls",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Routing, Navigation & Reusable Custom Controls",
+                "Explain design trade-offs and answer senior technical interview questions on Routing, Navigation & Reusable Custom Controls"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l2-t4-1",
+                  "title": "Routing Configuration in manifest.json (routes, targets, config)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t4-2",
+                  "title": "Pattern Matching, Route Parameters & Query Strings (subroutes)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t4-3",
+                  "title": "Router Navigation: navTo, getURL, getRouter, History Traversal",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t4-4",
+                  "title": "Handling Nested Views & Flexible Column Layout (FCL) Basics",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l2-t4-5",
+                  "title": "Authoring Custom UI5 Controls (metadata, properties, aggregations, renderer)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l2-t4-6",
+                  "title": "Extending Standard Controls & Custom CSS Class Hooks",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l2-t4-1",
+                  "title": "Hands-on Lab: Routing, Navigation & Reusable Custom Controls",
+                  "description": "Implement, test, and validate core patterns of Routing, Navigation & Reusable Custom Controls in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l2-t4-2",
+                  "title": "Independent Challenge: Routing, Navigation & Reusable Custom Controls",
+                  "description": "Build end-to-end functionality for Routing, Navigation & Reusable Custom Controls from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l2-t4-1",
+                  "title": "Diagnose & Resolve Production Issue in Routing, Navigation & Reusable Custom Controls",
+                  "description": "Troubleshoot a scenario where Routing, Navigation & Reusable Custom Controls throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l2-t4-1",
+                  "question": "Explain the fundamental architecture and best practices for Routing, Navigation & Reusable Custom Controls. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l2-t4-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Routing, Navigation & Reusable Custom Controls?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l2-t4-1",
+                  "title": "Official Documentation & Architecture Guide for Routing, Navigation & Reusable Custom Controls",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiori-l3",
+      "order": 3,
+      "title": "Level 3 — SAP Fiori UX & Launchpad Integration",
+      "description": "Design principles, Fiori Launchpad administration, Intent-Based Navigation, Tiles, Spaces, Pages, and Catalogs.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "cyan",
+      "subjects": [
+        {
+          "id": "fiori-l3-s1",
+          "order": 1,
+          "title": "Fiori Design Principles & Launchpad Architecture",
+          "description": "Core subject domain covering Fiori Design Principles & Launchpad Architecture.",
+          "topics": [
+            {
+              "id": "fiori-l3-t1",
+              "order": 1,
+              "title": "Fiori Design Guidelines & Floorplans",
+              "description": "Learn official SAP Fiori design guidelines, responsive typography, icon sets, and standard floorplans.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Fiori Design Guidelines & Floorplans",
+                "Implement production-grade components using industry best practices for Fiori Design Guidelines & Floorplans",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Fiori Design Guidelines & Floorplans",
+                "Explain design trade-offs and answer senior technical interview questions on Fiori Design Guidelines & Floorplans"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l3-t1-1",
+                  "title": "SAP Fiori Design Guidelines (Fiori 3 Quartz & Horizon Themes)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l3-t1-2",
+                  "title": "Standard Floorplans: Worklist, List Report, Object Page, Wizard",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l3-t1-3",
+                  "title": "Responsive Behavior on Desktop, Tablet, and Mobile Form Factors",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l3-t1-4",
+                  "title": "Enterprise Accessibility (WCAG 2.1, Screen Readers, Keyboard Navigation)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l3-t1-5",
+                  "title": "Fiori Tile Types: Static, Dynamic (KPI Count), Numeric, Chart Tiles",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l3-t1-6",
+                  "title": "Fiori Launchpad Configuration Cockpit & Administration",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l3-t1-1",
+                  "title": "Hands-on Lab: Fiori Design Guidelines & Floorplans",
+                  "description": "Implement, test, and validate core patterns of Fiori Design Guidelines & Floorplans in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l3-t1-2",
+                  "title": "Independent Challenge: Fiori Design Guidelines & Floorplans",
+                  "description": "Build end-to-end functionality for Fiori Design Guidelines & Floorplans from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Fiori Design Guidelines & Floorplans",
+                  "description": "Troubleshoot a scenario where Fiori Design Guidelines & Floorplans throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Fiori Design Guidelines & Floorplans. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Fiori Design Guidelines & Floorplans?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Fiori Design Guidelines & Floorplans",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l3-t2",
+              "order": 2,
+              "title": "Intent-Based Navigation & Business Roles",
+              "description": "Master semantic objects, actions, cross-application navigation, target mappings, and PFCG roles.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Intent-Based Navigation & Business Roles",
+                "Implement production-grade components using industry best practices for Intent-Based Navigation & Business Roles",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Intent-Based Navigation & Business Roles",
+                "Explain design trade-offs and answer senior technical interview questions on Intent-Based Navigation & Business Roles"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l3-t2-1",
+                  "title": "Semantic Objects and Actions Concept (#SalesOrder-display)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l3-t2-2",
+                  "title": "Target Mappings & Inbound/Outbound Navigation Parameters",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l3-t2-3",
+                  "title": "CrossApplicationNavigation Service (sap.ushell.services)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l3-t2-4",
+                  "title": "Passing Parameters & Context across Fiori Apps",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l3-t2-5",
+                  "title": "Spaces and Pages Concept in Modern S/4HANA Launchpad",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l3-t2-6",
+                  "title": "Catalogs, Groups, and PFCG Role Assignment in Backend",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l3-t2-1",
+                  "title": "Hands-on Lab: Intent-Based Navigation & Business Roles",
+                  "description": "Implement, test, and validate core patterns of Intent-Based Navigation & Business Roles in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l3-t2-2",
+                  "title": "Independent Challenge: Intent-Based Navigation & Business Roles",
+                  "description": "Build end-to-end functionality for Intent-Based Navigation & Business Roles from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l3-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Intent-Based Navigation & Business Roles",
+                  "description": "Troubleshoot a scenario where Intent-Based Navigation & Business Roles throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l3-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Intent-Based Navigation & Business Roles. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l3-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Intent-Based Navigation & Business Roles?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l3-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Intent-Based Navigation & Business Roles",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiori-l4",
+      "order": 4,
+      "title": "Level 4 — OData Protocol Mastery (V2 & V4)",
+      "description": "Comprehensive protocol mastery: Entity sets, associations, CRUDQ operations, query options, batch requests, and pagination.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "fiori-l4-s1",
+          "order": 1,
+          "title": "OData V2 vs V4 Protocol & Data Operations",
+          "description": "Core subject domain covering OData V2 vs V4 Protocol & Data Operations.",
+          "topics": [
+            {
+              "id": "fiori-l4-t1",
+              "order": 1,
+              "title": "OData Service Architecture & Metadata",
+              "description": "Explore OData metadata ($metadata), EntityTypes, EntitySets, NavigationProperties, and Associations.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of OData Service Architecture & Metadata",
+                "Implement production-grade components using industry best practices for OData Service Architecture & Metadata",
+                "Diagnose runtime errors, misconfigurations, and edge cases in OData Service Architecture & Metadata",
+                "Explain design trade-offs and answer senior technical interview questions on OData Service Architecture & Metadata"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l4-t1-1",
+                  "title": "OData Protocol Foundations (OASIS Standard, REST on Steroids)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l4-t1-2",
+                  "title": "OData V2 vs OData V4 Core Differences & Advancements",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l4-t1-3",
+                  "title": "Metadata Document ($metadata): EntityType, EntitySet, Associations, Annotations",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l4-t1-4",
+                  "title": "Reading Single Entities & Entity Sets (GET requests)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l4-t1-5",
+                  "title": "Creating, Updating, and Deleting (POST, PUT, PATCH, DELETE)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l4-t1-6",
+                  "title": "ETags & Concurrency Control (Optimistic Locking via If-Match)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l4-t1-1",
+                  "title": "Hands-on Lab: OData Service Architecture & Metadata",
+                  "description": "Implement, test, and validate core patterns of OData Service Architecture & Metadata in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l4-t1-2",
+                  "title": "Independent Challenge: OData Service Architecture & Metadata",
+                  "description": "Build end-to-end functionality for OData Service Architecture & Metadata from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l4-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in OData Service Architecture & Metadata",
+                  "description": "Troubleshoot a scenario where OData Service Architecture & Metadata throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l4-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for OData Service Architecture & Metadata. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l4-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with OData Service Architecture & Metadata?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l4-t1-1",
+                  "title": "Official Documentation & Architecture Guide for OData Service Architecture & Metadata",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l4-t2",
+              "order": 2,
+              "title": "System Query Options, Batching & Pagination",
+              "description": "Master URL query options, server-side pagination, batch operations ($batch), and deep inserts.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of System Query Options, Batching & Pagination",
+                "Implement production-grade components using industry best practices for System Query Options, Batching & Pagination",
+                "Diagnose runtime errors, misconfigurations, and edge cases in System Query Options, Batching & Pagination",
+                "Explain design trade-offs and answer senior technical interview questions on System Query Options, Batching & Pagination"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l4-t2-1",
+                  "title": "System Query Options: $filter, $select, $expand, $orderby, $top, $skip, $count",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l4-t2-2",
+                  "title": "Complex Filter Expressions (eq, ne, gt, lt, substringof, contains, startswith)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l4-t2-3",
+                  "title": "Deep Reads & Expands across Navigation Properties",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l4-t2-4",
+                  "title": "Batch Processing ($batch): ChangeSets, Content-ID Referencing, Performance",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l4-t2-5",
+                  "title": "Server-Side vs Client-Side Paging (Growing Table, Paging Bar)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l4-t2-6",
+                  "title": "OData Function Imports & Action Imports Execution",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l4-t2-1",
+                  "title": "Hands-on Lab: System Query Options, Batching & Pagination",
+                  "description": "Implement, test, and validate core patterns of System Query Options, Batching & Pagination in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l4-t2-2",
+                  "title": "Independent Challenge: System Query Options, Batching & Pagination",
+                  "description": "Build end-to-end functionality for System Query Options, Batching & Pagination from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l4-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in System Query Options, Batching & Pagination",
+                  "description": "Troubleshoot a scenario where System Query Options, Batching & Pagination throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l4-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for System Query Options, Batching & Pagination. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l4-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with System Query Options, Batching & Pagination?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l4-t2-1",
+                  "title": "Official Documentation & Architecture Guide for System Query Options, Batching & Pagination",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiori-l5",
+      "order": 5,
+      "title": "Level 5 — Production Fiori Application Development",
+      "description": "Building end-to-end robust Fiori apps: State management, validation, message handling, error logging, and performance.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "fiori-l5-s1",
+          "order": 1,
+          "title": "Production State & Message Management",
+          "description": "Core subject domain covering Production State & Message Management.",
+          "topics": [
+            {
+              "id": "fiori-l5-t1",
+              "order": 1,
+              "title": "Message Handling, Popovers & Validation",
+              "description": "Implement enterprise message manager, field validation, and popover error messaging.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Message Handling, Popovers & Validation",
+                "Implement production-grade components using industry best practices for Message Handling, Popovers & Validation",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Message Handling, Popovers & Validation",
+                "Explain design trade-offs and answer senior technical interview questions on Message Handling, Popovers & Validation"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l5-t1-1",
+                  "title": "sap.ui.core.message.MessageManager Architecture",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l5-t1-2",
+                  "title": "Automatic Target Binding & Input Validation States (Error, Warning, Success)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l5-t1-3",
+                  "title": "MessagePopover Implementation & Display of Backend RFC/OData Messages",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l5-t1-4",
+                  "title": "Client-Side Form Validation Rules before Submitting Requests",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l5-t1-5",
+                  "title": "BusyDialog, BusyIndicator & Skeleton Screen Loading States",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l5-t1-6",
+                  "title": "Global Error Handling in Component.js for Failed Network Calls",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l5-t1-1",
+                  "title": "Hands-on Lab: Message Handling, Popovers & Validation",
+                  "description": "Implement, test, and validate core patterns of Message Handling, Popovers & Validation in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l5-t1-2",
+                  "title": "Independent Challenge: Message Handling, Popovers & Validation",
+                  "description": "Build end-to-end functionality for Message Handling, Popovers & Validation from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l5-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Message Handling, Popovers & Validation",
+                  "description": "Troubleshoot a scenario where Message Handling, Popovers & Validation throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l5-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Message Handling, Popovers & Validation. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l5-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Message Handling, Popovers & Validation?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l5-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Message Handling, Popovers & Validation",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l5-t2",
+              "order": 2,
+              "title": "Fiori Performance Optimization & Caching",
+              "description": "Techniques for sub-second load times, component preload, bundle minification, and metadata caching.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Fiori Performance Optimization & Caching",
+                "Implement production-grade components using industry best practices for Fiori Performance Optimization & Caching",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Fiori Performance Optimization & Caching",
+                "Explain design trade-offs and answer senior technical interview questions on Fiori Performance Optimization & Caching"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l5-t2-1",
+                  "title": "Component-preload.js Generation & Minification",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l5-t2-2",
+                  "title": "Asynchronous Module Definition & Lazy Loading of Heavy Views/Dialogs",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l5-t2-3",
+                  "title": "OData Model Metadata Caching & Batch Grouping Optimization",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l5-t2-4",
+                  "title": "Reducing DOM Nodes & Virtual Scrolling for Huge Tables",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l5-t2-5",
+                  "title": "Network Waterfall Analysis & Eliminating Duplicate OData Roundtrips",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l5-t2-6",
+                  "title": "Gzip Compression, Content Delivery Networks (CDN) & Cache Busters",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l5-t2-1",
+                  "title": "Hands-on Lab: Fiori Performance Optimization & Caching",
+                  "description": "Implement, test, and validate core patterns of Fiori Performance Optimization & Caching in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l5-t2-2",
+                  "title": "Independent Challenge: Fiori Performance Optimization & Caching",
+                  "description": "Build end-to-end functionality for Fiori Performance Optimization & Caching from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l5-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Fiori Performance Optimization & Caching",
+                  "description": "Troubleshoot a scenario where Fiori Performance Optimization & Caching throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l5-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Fiori Performance Optimization & Caching. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l5-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Fiori Performance Optimization & Caching?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l5-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Fiori Performance Optimization & Caching",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiori-l6",
+      "order": 6,
+      "title": "Level 6 — Advanced Fiori Elements & Smart Controls",
+      "description": "Annotation-driven enterprise applications: Fiori Elements, SmartForm, SmartTable, SmartFilterBar, and Extensions.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "purple",
+      "subjects": [
+        {
+          "id": "fiori-l6-s1",
+          "order": 1,
+          "title": "SAP Fiori Elements & Floorplans",
+          "description": "Core subject domain covering SAP Fiori Elements & Floorplans.",
+          "topics": [
+            {
+              "id": "fiori-l6-t1",
+              "order": 1,
+              "title": "Fiori Elements List Report & Object Page",
+              "description": "Build enterprise apps rapidly without code using CDS/OData annotations and Fiori Elements floorplans.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Fiori Elements List Report & Object Page",
+                "Implement production-grade components using industry best practices for Fiori Elements List Report & Object Page",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Fiori Elements List Report & Object Page",
+                "Explain design trade-offs and answer senior technical interview questions on Fiori Elements List Report & Object Page"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l6-t1-1",
+                  "title": "Fiori Elements Architecture & Benefits over Freestyle UI5",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t1-2",
+                  "title": "List Report Floorplan: SelectionFields, LineItem Annotations",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l6-t1-3",
+                  "title": "Object Page Floorplan: HeaderInfo, Facets, FieldGroups, Sub-Sections",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t1-4",
+                  "title": "Analytical List Page (ALP) with Interactive Visual Filters & Charts",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l6-t1-5",
+                  "title": "Overview Page (OVP) & Analytical Cards Configuration",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t1-6",
+                  "title": "Worklist Template for High-Volume Operational Tasks",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l6-t1-1",
+                  "title": "Hands-on Lab: Fiori Elements List Report & Object Page",
+                  "description": "Implement, test, and validate core patterns of Fiori Elements List Report & Object Page in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l6-t1-2",
+                  "title": "Independent Challenge: Fiori Elements List Report & Object Page",
+                  "description": "Build end-to-end functionality for Fiori Elements List Report & Object Page from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l6-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Fiori Elements List Report & Object Page",
+                  "description": "Troubleshoot a scenario where Fiori Elements List Report & Object Page throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l6-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Fiori Elements List Report & Object Page. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l6-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Fiori Elements List Report & Object Page?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l6-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Fiori Elements List Report & Object Page",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l6-t2",
+              "order": 2,
+              "title": "Smart Controls & CDS Annotations",
+              "description": "Leverage SmartField, SmartTable, SmartFilterBar, and OData UI/Common annotations.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Smart Controls & CDS Annotations",
+                "Implement production-grade components using industry best practices for Smart Controls & CDS Annotations",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Smart Controls & CDS Annotations",
+                "Explain design trade-offs and answer senior technical interview questions on Smart Controls & CDS Annotations"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l6-t2-1",
+                  "title": "sap.ui.comp Library Overview (Smart Controls Ecosystem)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t2-2",
+                  "title": "SmartTable with Automatic Personalization (P13n), Sorting & Export to Excel",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l6-t2-3",
+                  "title": "SmartFilterBar with Automated Value Help & Dropdown Lookups",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t2-4",
+                  "title": "SmartForm & SmartField with Dynamic Read/Edit Mode Switching",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l6-t2-5",
+                  "title": "UI Annotations: UI.SelectionFields, UI.LineItem, UI.HeaderInfo, UI.Facets",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t2-6",
+                  "title": "Common Annotations: TextArrangement, ValueList, SemanticKey",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l6-t2-1",
+                  "title": "Hands-on Lab: Smart Controls & CDS Annotations",
+                  "description": "Implement, test, and validate core patterns of Smart Controls & CDS Annotations in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l6-t2-2",
+                  "title": "Independent Challenge: Smart Controls & CDS Annotations",
+                  "description": "Build end-to-end functionality for Smart Controls & CDS Annotations from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l6-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Smart Controls & CDS Annotations",
+                  "description": "Troubleshoot a scenario where Smart Controls & CDS Annotations throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l6-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Smart Controls & CDS Annotations. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l6-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Smart Controls & CDS Annotations?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l6-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Smart Controls & CDS Annotations",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l6-t3",
+              "order": 3,
+              "title": "Fiori Elements Extensions & Custom Actions",
+              "description": "Extend standard Fiori Elements with custom controller logic, custom columns, and custom sections.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Fiori Elements Extensions & Custom Actions",
+                "Implement production-grade components using industry best practices for Fiori Elements Extensions & Custom Actions",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Fiori Elements Extensions & Custom Actions",
+                "Explain design trade-offs and answer senior technical interview questions on Fiori Elements Extensions & Custom Actions"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l6-t3-1",
+                  "title": "Controller Extensions (sap.ui.core.mvc.ControllerExtension)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t3-2",
+                  "title": "Custom Actions in List Report Table Toolbar & Object Page Header",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l6-t3-3",
+                  "title": "Adding Custom Columns to Fiori Elements SmartTable",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t3-4",
+                  "title": "Custom Object Page Sections & Custom Views Integration",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l6-t3-5",
+                  "title": "ExtensionAPI Usage for Navigation & Draft Handling",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l6-t3-6",
+                  "title": "Flexible Column Layout (FCL) Master-Detail-Detail Navigation",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l6-t3-1",
+                  "title": "Hands-on Lab: Fiori Elements Extensions & Custom Actions",
+                  "description": "Implement, test, and validate core patterns of Fiori Elements Extensions & Custom Actions in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l6-t3-2",
+                  "title": "Independent Challenge: Fiori Elements Extensions & Custom Actions",
+                  "description": "Build end-to-end functionality for Fiori Elements Extensions & Custom Actions from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l6-t3-1",
+                  "title": "Diagnose & Resolve Production Issue in Fiori Elements Extensions & Custom Actions",
+                  "description": "Troubleshoot a scenario where Fiori Elements Extensions & Custom Actions throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l6-t3-1",
+                  "question": "Explain the fundamental architecture and best practices for Fiori Elements Extensions & Custom Actions. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l6-t3-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Fiori Elements Extensions & Custom Actions?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l6-t3-1",
+                  "title": "Official Documentation & Architecture Guide for Fiori Elements Extensions & Custom Actions",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiori-l7",
+      "order": 7,
+      "title": "Level 7 — Development Tooling & BTP Deployment",
+      "description": "Modern development workflow: Business Application Studio, UI5 Tooling, BTP HTML5 Repository, and MTA Deployment.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "violet",
+      "subjects": [
+        {
+          "id": "fiori-l7-s1",
+          "order": 1,
+          "title": "Modern Tooling & Cloud Deployment",
+          "description": "Core subject domain covering Modern Tooling & Cloud Deployment.",
+          "topics": [
+            {
+              "id": "fiori-l7-t1",
+              "order": 1,
+              "title": "SAP Business Application Studio & UI5 Tooling",
+              "description": "Modern cloud IDE setup, extensions, UI5 CLI, and local mock servers.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of SAP Business Application Studio & UI5 Tooling",
+                "Implement production-grade components using industry best practices for SAP Business Application Studio & UI5 Tooling",
+                "Diagnose runtime errors, misconfigurations, and edge cases in SAP Business Application Studio & UI5 Tooling",
+                "Explain design trade-offs and answer senior technical interview questions on SAP Business Application Studio & UI5 Tooling"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l7-t1-1",
+                  "title": "SAP Business Application Studio (BAS) Dev Spaces Configuration",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l7-t1-2",
+                  "title": "Local Development with VS Code & SAP Fiori Tools Extension Pack",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l7-t1-3",
+                  "title": "UI5 Tooling (ui5.yaml, ui5-tooling CLI, custom middlewares)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l7-t1-4",
+                  "title": "Local OData Mock Server (sap.ui.core.util.MockServer) with JSON Data",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l7-t1-5",
+                  "title": "Fiori Application Generator Wizard in BAS",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l7-t1-6",
+                  "title": "Git Version Control & CI/CD Pipelines for UI5 Apps",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l7-t1-1",
+                  "title": "Hands-on Lab: SAP Business Application Studio & UI5 Tooling",
+                  "description": "Implement, test, and validate core patterns of SAP Business Application Studio & UI5 Tooling in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l7-t1-2",
+                  "title": "Independent Challenge: SAP Business Application Studio & UI5 Tooling",
+                  "description": "Build end-to-end functionality for SAP Business Application Studio & UI5 Tooling from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l7-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in SAP Business Application Studio & UI5 Tooling",
+                  "description": "Troubleshoot a scenario where SAP Business Application Studio & UI5 Tooling throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l7-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for SAP Business Application Studio & UI5 Tooling. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l7-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with SAP Business Application Studio & UI5 Tooling?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l7-t1-1",
+                  "title": "Official Documentation & Architecture Guide for SAP Business Application Studio & UI5 Tooling",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l7-t2",
+              "order": 2,
+              "title": "BTP Deployment, Destinations & Launchpad Integration",
+              "description": "Package, deploy to BTP Cloud Foundry/Kyma, configure Managed Approuter, and publish to FLP.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of BTP Deployment, Destinations & Launchpad Integration",
+                "Implement production-grade components using industry best practices for BTP Deployment, Destinations & Launchpad Integration",
+                "Diagnose runtime errors, misconfigurations, and edge cases in BTP Deployment, Destinations & Launchpad Integration",
+                "Explain design trade-offs and answer senior technical interview questions on BTP Deployment, Destinations & Launchpad Integration"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l7-t2-1",
+                  "title": "Multi-Target Application (MTA) Architecture (mta.yaml)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l7-t2-2",
+                  "title": "SAP BTP HTML5 Application Repository & Managed Approuter",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l7-t2-3",
+                  "title": "BTP Destinations Configuration (OAuth2, Principal Propagation, Basic)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l7-t2-4",
+                  "title": "Building and Deploying with Cloud MTA Build Tool (mbt)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l7-t2-5",
+                  "title": "Deploying to On-Premise ABAP Repository (/UI5/UI5_REPOSITORY_LOAD)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l7-t2-6",
+                  "title": "Integrating Deployed Apps into SAP Build Work Zone / Fiori Launchpad",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l7-t2-1",
+                  "title": "Hands-on Lab: BTP Deployment, Destinations & Launchpad Integration",
+                  "description": "Implement, test, and validate core patterns of BTP Deployment, Destinations & Launchpad Integration in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l7-t2-2",
+                  "title": "Independent Challenge: BTP Deployment, Destinations & Launchpad Integration",
+                  "description": "Build end-to-end functionality for BTP Deployment, Destinations & Launchpad Integration from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l7-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in BTP Deployment, Destinations & Launchpad Integration",
+                  "description": "Troubleshoot a scenario where BTP Deployment, Destinations & Launchpad Integration throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l7-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for BTP Deployment, Destinations & Launchpad Integration. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l7-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with BTP Deployment, Destinations & Launchpad Integration?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l7-t2-1",
+                  "title": "Official Documentation & Architecture Guide for BTP Deployment, Destinations & Launchpad Integration",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fiori-l8",
+      "order": 8,
+      "title": "Level 8 — Enterprise Debugging, Diagnostics & Troubleshooting",
+      "description": "Advanced diagnostic skills: Browser DevTools, UI5 Inspector, Network diagnostics, Binding debugging, and Error taxonomy.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "rose",
+      "subjects": [
+        {
+          "id": "fiori-l8-s1",
+          "order": 1,
+          "title": "Enterprise Debugging Tools & Error Taxonomies",
+          "description": "Core subject domain covering Enterprise Debugging Tools & Error Taxonomies.",
+          "topics": [
+            {
+              "id": "fiori-l8-t1",
+              "order": 1,
+              "title": "UI5 Diagnostics Window & UI5 Inspector Extension",
+              "description": "Use specialized SAP diagnostic tools to inspect control trees, model bindings, and performance logs.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of UI5 Diagnostics Window & UI5 Inspector Extension",
+                "Implement production-grade components using industry best practices for UI5 Diagnostics Window & UI5 Inspector Extension",
+                "Diagnose runtime errors, misconfigurations, and edge cases in UI5 Diagnostics Window & UI5 Inspector Extension",
+                "Explain design trade-offs and answer senior technical interview questions on UI5 Diagnostics Window & UI5 Inspector Extension"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l8-t1-1",
+                  "title": "Technical Information Dialog (Ctrl+Shift+Alt+P) & UI5 Version Checks",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l8-t1-2",
+                  "title": "UI5 Diagnostics Window (Ctrl+Shift+Alt+S) & Control Tree Explorer",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l8-t1-3",
+                  "title": "UI5 Inspector Chrome Extension (Control Tree, Binding Model Inspector)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l8-t1-4",
+                  "title": "Support Assistant (sap.ui.core.support) & Automated Rule Checks",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l8-t1-5",
+                  "title": "Debugging Two-Way Binding & Unsynchronized Model Properties",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l8-t1-6",
+                  "title": "Tracing Event Listeners, Control Destroy Cycles & Memory Leaks",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l8-t1-1",
+                  "title": "Hands-on Lab: UI5 Diagnostics Window & UI5 Inspector Extension",
+                  "description": "Implement, test, and validate core patterns of UI5 Diagnostics Window & UI5 Inspector Extension in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l8-t1-2",
+                  "title": "Independent Challenge: UI5 Diagnostics Window & UI5 Inspector Extension",
+                  "description": "Build end-to-end functionality for UI5 Diagnostics Window & UI5 Inspector Extension from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l8-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in UI5 Diagnostics Window & UI5 Inspector Extension",
+                  "description": "Troubleshoot a scenario where UI5 Diagnostics Window & UI5 Inspector Extension throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l8-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for UI5 Diagnostics Window & UI5 Inspector Extension. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l8-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with UI5 Diagnostics Window & UI5 Inspector Extension?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l8-t1-1",
+                  "title": "Official Documentation & Architecture Guide for UI5 Diagnostics Window & UI5 Inspector Extension",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "fiori-l8-t2",
+              "order": 2,
+              "title": "Network, OData & HTTP Error Taxonomy",
+              "description": "Systematic diagnosis of 400, 401, 403, 404, 500, CORS, and CSRF token failures.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Network, OData & HTTP Error Taxonomy",
+                "Implement production-grade components using industry best practices for Network, OData & HTTP Error Taxonomy",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Network, OData & HTTP Error Taxonomy",
+                "Explain design trade-offs and answer senior technical interview questions on Network, OData & HTTP Error Taxonomy"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-fiori-l8-t2-1",
+                  "title": "Diagnosing 400 Bad Request & OData Payload Formatting Mismatches",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l8-t2-2",
+                  "title": "Resolving 401 Unauthorized & 403 Forbidden (BTP Destination & SAML Issues)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l8-t2-3",
+                  "title": "404 Not Found: Service URL, Destination Mapping & Subroute Misconfiguration",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l8-t2-4",
+                  "title": "500 Internal Server Error: SAP Backend ABAP Dumps (ST22) & Gateway Traces (/IWFND/ERROR_LOG)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-fiori-l8-t2-5",
+                  "title": "CSRF Token Fetching (x-csrf-token) Failures on POST/PUT/DELETE Requests",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-fiori-l8-t2-6",
+                  "title": "CORS Errors in Local Development & Proxy Middleware Fixes",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-fiori-l8-t2-1",
+                  "title": "Hands-on Lab: Network, OData & HTTP Error Taxonomy",
+                  "description": "Implement, test, and validate core patterns of Network, OData & HTTP Error Taxonomy in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-fiori-l8-t2-2",
+                  "title": "Independent Challenge: Network, OData & HTTP Error Taxonomy",
+                  "description": "Build end-to-end functionality for Network, OData & HTTP Error Taxonomy from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-fiori-l8-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Network, OData & HTTP Error Taxonomy",
+                  "description": "Troubleshoot a scenario where Network, OData & HTTP Error Taxonomy throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-fiori-l8-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Network, OData & HTTP Error Taxonomy. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-fiori-l8-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Network, OData & HTTP Error Taxonomy?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-fiori-l8-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Network, OData & HTTP Error Taxonomy",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

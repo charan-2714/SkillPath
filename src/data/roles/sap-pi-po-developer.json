@@ -1,0 +1,958 @@
+{
+  "id": "sap-pi-po-developer",
+  "name": "SAP PI/PO Developer (Legacy & Migration to Integration Suite)",
+  "title": "SAP PI/PO Developer (Legacy & Migration to Integration Suite)",
+  "category": "SAP Ecosystem",
+  "status": "Legacy / Migration",
+  "description": "Specialized learning path for supporting, maintaining, and migrating legacy SAP Process Integration (PI) and SAP Process Orchestration (PO) landscapes. Covers ESR, Integration Directory, Dual-Stack vs Single-Stack Java (AEX), Message Mapping, Java Mappings, BPM, classic adapters (RFC, IDoc, File, JDBC, SOAP), message monitoring, and the complete step-by-step migration methodology to SAP Integration Suite on BTP.",
+  "targetRoles": [
+    "SAP PI/PO Consultant",
+    "Legacy SAP Integration Specialist",
+    "SAP Migration Consultant",
+    "Integration Architect"
+  ],
+  "prerequisites": [
+    "Basic enterprise integration understanding",
+    "XML & Java concepts"
+  ],
+  "difficulty": "Intermediate to Advanced",
+  "estimatedDuration": "5-7 months",
+  "estimatedHours": 320,
+  "technologies": [
+    "SAP Process Integration (PI)",
+    "SAP Process Orchestration (PO)",
+    "Enterprise Services Repository (ESR)",
+    "Integration Directory (ID)",
+    "SLD",
+    "Advanced Adapter Engine (AEX)",
+    "Java Mapping",
+    "SAP Integration Suite Migration"
+  ],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    {
+      "id": "understanding",
+      "name": "Conceptual Understanding",
+      "maxScore": 5
+    },
+    {
+      "id": "implementation",
+      "name": "Hands-on Implementation",
+      "maxScore": 5
+    },
+    {
+      "id": "debugging",
+      "name": "Debugging & Diagnostics",
+      "maxScore": 5
+    },
+    {
+      "id": "practice",
+      "name": "Practice Challenges",
+      "maxScore": 5
+    },
+    {
+      "id": "interview",
+      "name": "Interview Readiness",
+      "maxScore": 5
+    }
+  ],
+  "version": "1.0.0",
+  "createdAt": "2026-09-01T00:00:00.000Z",
+  "updatedAt": "2026-09-01T00:00:00.000Z",
+  "lastReviewed": "2026-09-01",
+  "levels": [
+    {
+      "id": "pipo-l0",
+      "order": 0,
+      "title": "Level 0 — SAP PI/PO Architecture & Landscape Foundations",
+      "description": "System landscape directory, architecture evolution from XI to PI to PO, dual-stack vs single-stack Java.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "pipo-l0-s1",
+          "order": 1,
+          "title": "PI/PO Architecture & System Landscape",
+          "description": "Core subject domain covering PI/PO Architecture & System Landscape.",
+          "topics": [
+            {
+              "id": "pipo-l0-t1",
+              "order": 1,
+              "title": "Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)",
+              "description": "Understand the historical evolution, Integration Engine (ABAP) vs Adapter Engine (Java), and components.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)",
+                "Implement production-grade components using industry best practices for Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)",
+                "Explain design trade-offs and answer senior technical interview questions on Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pipo-l0-t1-1",
+                  "title": "Evolution: SAP Exchange Infrastructure (XI) to Process Integration (PI) to Process Orchestration (PO)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l0-t1-2",
+                  "title": "Dual-Stack (ABAP + Java) vs Single-Stack Java Advanced Adapter Engine Extended (AEX)",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l0-t1-3",
+                  "title": "System Landscape Directory (SLD): Technical Systems, Business Systems, Products, Software Components",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l0-t1-4",
+                  "title": "Enterprise Services Repository (ESR) Design-Time vs Integration Directory (ID) Configuration-Time",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l0-t1-5",
+                  "title": "Integration Server, Advanced Adapter Engine (AAE), Business Process Management (BPM), Business Rules (BRM)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l0-t1-6",
+                  "title": "Comparing SAP PI/PO Architecture vs Cloud-Native SAP Integration Suite",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pipo-l0-t1-1",
+                  "title": "Hands-on Lab: Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)",
+                  "description": "Implement, test, and validate core patterns of Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX) in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pipo-l0-t1-2",
+                  "title": "Independent Challenge: Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)",
+                  "description": "Build end-to-end functionality for Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX) from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pipo-l0-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)",
+                  "description": "Troubleshoot a scenario where Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX) throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pipo-l0-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX). What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pipo-l0-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pipo-l0-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Architecture Evolution: XI, PI (Dual-Stack) vs PO (Single-Stack Java AEX)",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pipo-l1",
+      "order": 1,
+      "title": "Level 1 — Enterprise Services Repository (ESR) Design-Time",
+      "description": "Data types, message types, service interfaces, message mappings, operation mappings, and mapping programs.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "sky",
+      "subjects": [
+        {
+          "id": "pipo-l1-s1",
+          "order": 1,
+          "title": "ESR Design Objects & Mappings",
+          "description": "Core subject domain covering ESR Design Objects & Mappings.",
+          "topics": [
+            {
+              "id": "pipo-l1-t1",
+              "order": 1,
+              "title": "Data Types, Service Interfaces & Message Mappings",
+              "description": "Define interface contracts and create graphical message mappings in ESR.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Data Types, Service Interfaces & Message Mappings",
+                "Implement production-grade components using industry best practices for Data Types, Service Interfaces & Message Mappings",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Data Types, Service Interfaces & Message Mappings",
+                "Explain design trade-offs and answer senior technical interview questions on Data Types, Service Interfaces & Message Mappings"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pipo-l1-t1-1",
+                  "title": "Software Component Versions (SWCV) and Namespace Management in ESR",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l1-t1-2",
+                  "title": "Data Types, Message Types, and Fault Message Types Definition",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l1-t1-3",
+                  "title": "Service Interfaces: Inbound, Outbound, Abstract; Synchronous vs Asynchronous",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l1-t1-4",
+                  "title": "Imported Objects: RFCs, IDocs (IDoc Types and Segments), External WSDLs/XSDs",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l1-t1-5",
+                  "title": "Graphical Message Mapping: Context Queues, Standard Functions, User-Defined Functions (UDFs)",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l1-t1-6",
+                  "title": "Operation Mapping & Multi-Mapping (1:N, N:1, N:M Transformation Scenarios)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pipo-l1-t1-1",
+                  "title": "Hands-on Lab: Data Types, Service Interfaces & Message Mappings",
+                  "description": "Implement, test, and validate core patterns of Data Types, Service Interfaces & Message Mappings in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pipo-l1-t1-2",
+                  "title": "Independent Challenge: Data Types, Service Interfaces & Message Mappings",
+                  "description": "Build end-to-end functionality for Data Types, Service Interfaces & Message Mappings from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pipo-l1-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Data Types, Service Interfaces & Message Mappings",
+                  "description": "Troubleshoot a scenario where Data Types, Service Interfaces & Message Mappings throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pipo-l1-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Data Types, Service Interfaces & Message Mappings. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pipo-l1-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Data Types, Service Interfaces & Message Mappings?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pipo-l1-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Data Types, Service Interfaces & Message Mappings",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "pipo-l1-t2",
+              "order": 2,
+              "title": "Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings",
+              "description": "Write custom Java mappings implementing StreamTransformation and parameterized mappings.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings",
+                "Implement production-grade components using industry best practices for Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings",
+                "Explain design trade-offs and answer senior technical interview questions on Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pipo-l1-t2-1",
+                  "title": "Java Mapping in Eclipse / NWDS: Implementing StreamTransformation Interface",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l1-t2-2",
+                  "title": "Accessing Dynamic Configuration (Header Properties) in Java Mapping",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l1-t2-3",
+                  "title": "XSLT Mapping in ESR: Importing Zip Archives with Stylesheets",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l1-t2-4",
+                  "title": "Parameterized Message Mappings & Passing Parameters from Integration Directory",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l1-t2-5",
+                  "title": "Mapping Lookup APIs (RFC Lookup, JDBC Lookup in UDFs)",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pipo-l1-t2-1",
+                  "title": "Hands-on Lab: Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings",
+                  "description": "Implement, test, and validate core patterns of Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pipo-l1-t2-2",
+                  "title": "Independent Challenge: Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings",
+                  "description": "Build end-to-end functionality for Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pipo-l1-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings",
+                  "description": "Troubleshoot a scenario where Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pipo-l1-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pipo-l1-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pipo-l1-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Advanced Mappings: Java Mapping, XSLT Mapping & Parameterized Mappings",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pipo-l2",
+      "order": 2,
+      "title": "Level 2 — Integration Directory (ID) Configuration-Time",
+      "description": "Communication channels, integrated configurations (ICO), classic routing objects, and security profiles.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "blue",
+      "subjects": [
+        {
+          "id": "pipo-l2-s1",
+          "order": 1,
+          "title": "Directory Configuration & Integrated Configuration Objects (ICO)",
+          "description": "Core subject domain covering Directory Configuration & Integrated Configuration Objects (ICO).",
+          "topics": [
+            {
+              "id": "pipo-l2-t1",
+              "order": 1,
+              "title": "Business Components, Communication Channels & ICOs",
+              "description": "Configure sender and receiver channels and single-stack Integrated Configuration (ICO) objects.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Business Components, Communication Channels & ICOs",
+                "Implement production-grade components using industry best practices for Business Components, Communication Channels & ICOs",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Business Components, Communication Channels & ICOs",
+                "Explain design trade-offs and answer senior technical interview questions on Business Components, Communication Channels & ICOs"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pipo-l2-t1-1",
+                  "title": "Business Systems vs Business Components in Integration Directory",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l2-t1-2",
+                  "title": "Communication Channels: Adapter Types, Modules, Processing Parameters",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l2-t1-3",
+                  "title": "Integrated Configuration (ICO) in Single-Stack PO: Inbound, Receiver, Interface, Outbound Tabs",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l2-t1-4",
+                  "title": "Classic Dual-Stack Objects: Sender Agreement, Receiver Determination, Interface Determination, Receiver Agreement",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l2-t1-5",
+                  "title": "Content-Based Routing & XPath Conditions in ICO Receiver Determination",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l2-t1-6",
+                  "title": "Adapter Module Chains & Custom Adapter Modules (EJB in Java EE)",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pipo-l2-t1-1",
+                  "title": "Hands-on Lab: Business Components, Communication Channels & ICOs",
+                  "description": "Implement, test, and validate core patterns of Business Components, Communication Channels & ICOs in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pipo-l2-t1-2",
+                  "title": "Independent Challenge: Business Components, Communication Channels & ICOs",
+                  "description": "Build end-to-end functionality for Business Components, Communication Channels & ICOs from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pipo-l2-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in Business Components, Communication Channels & ICOs",
+                  "description": "Troubleshoot a scenario where Business Components, Communication Channels & ICOs throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pipo-l2-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for Business Components, Communication Channels & ICOs. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pipo-l2-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Business Components, Communication Channels & ICOs?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pipo-l2-t1-1",
+                  "title": "Official Documentation & Architecture Guide for Business Components, Communication Channels & ICOs",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pipo-l3",
+      "order": 3,
+      "title": "Level 3 — Classic SAP PI/PO Adapters",
+      "description": "Configuring standard PI/PO adapters: File/FTP, JDBC, RFC, IDoc_AAE, SOAP, REST, HTTP_AAE, Mail.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "cyan",
+      "subjects": [
+        {
+          "id": "pipo-l3-s1",
+          "order": 1,
+          "title": "Adapter Configuration & Channel Processing",
+          "description": "Core subject domain covering Adapter Configuration & Channel Processing.",
+          "topics": [
+            {
+              "id": "pipo-l3-t1",
+              "order": 1,
+              "title": "File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO",
+              "description": "Deep configuration of classic adapter engine channels and conversion parameters.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO",
+                "Implement production-grade components using industry best practices for File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO",
+                "Diagnose runtime errors, misconfigurations, and edge cases in File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO",
+                "Explain design trade-offs and answer senior technical interview questions on File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pipo-l3-t1-1",
+                  "title": "File/FTP Adapter: Content Conversion (FCC), Advanced Selection, File Processing Parameters",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l3-t1-2",
+                  "title": "JDBC Adapter: Synchronous/Asynchronous SQL Operations, XML SQL Document Structure",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l3-t1-3",
+                  "title": "RFC Adapter: Sender/Receiver RFC Channels, RFC Server Configuration in JCo",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l3-t1-4",
+                  "title": "IDoc_AAE Adapter: Inbound/Outbound IDoc Processing via Java Resource Adapter",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l3-t1-5",
+                  "title": "SOAP Adapter: Web Service Addressing, WS-Security, XI 3.0 Message Protocol",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l3-t1-6",
+                  "title": "REST Adapter in PO: REST Poller, URL Patterns, JSON/XML Transformations",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pipo-l3-t1-1",
+                  "title": "Hands-on Lab: File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO",
+                  "description": "Implement, test, and validate core patterns of File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pipo-l3-t1-2",
+                  "title": "Independent Challenge: File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO",
+                  "description": "Build end-to-end functionality for File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pipo-l3-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO",
+                  "description": "Troubleshoot a scenario where File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pipo-l3-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pipo-l3-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pipo-l3-t1-1",
+                  "title": "Official Documentation & Architecture Guide for File/FTP, JDBC, RFC, IDoc_AAE & SOAP Adapters in PI/PO",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pipo-l4",
+      "order": 4,
+      "title": "Level 4 — PI/PO Monitoring, Administration & Troubleshooting",
+      "description": "Runtime monitoring: PIMON, NWA, Message Monitoring, Component Monitoring, SXMB_MONI, and Error Logs.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "pipo-l4-s1",
+          "order": 1,
+          "title": "Message Monitoring & Runtime Diagnostics",
+          "description": "Core subject domain covering Message Monitoring & Runtime Diagnostics.",
+          "topics": [
+            {
+              "id": "pipo-l4-t1",
+              "order": 1,
+              "title": "PIMON, NWA, SXMB_MONI & Performance Troubleshooting",
+              "description": "Troubleshoot stuck messages, queue locks, communication channel errors, and memory dumps.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of PIMON, NWA, SXMB_MONI & Performance Troubleshooting",
+                "Implement production-grade components using industry best practices for PIMON, NWA, SXMB_MONI & Performance Troubleshooting",
+                "Diagnose runtime errors, misconfigurations, and edge cases in PIMON, NWA, SXMB_MONI & Performance Troubleshooting",
+                "Explain design trade-offs and answer senior technical interview questions on PIMON, NWA, SXMB_MONI & Performance Troubleshooting"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pipo-l4-t1-1",
+                  "title": "Process Integration Monitoring (PIMON) Cockpit Overview",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l4-t1-2",
+                  "title": "Message Monitoring: Status Codes, Payloads, Header Logs, Trace Inspection",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l4-t1-3",
+                  "title": "Communication Channel Monitoring: Automatic Channel Control, Availability Time Planning",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l4-t1-4",
+                  "title": "NetWeaver Administrator (NWA): Java Logs, Thread Dumps, JCo Destinations",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l4-t1-5",
+                  "title": "Classic Dual-Stack ABAP Monitoring: SXMB_MONI, SM58, SMQ1/SMQ2 Queue Analysis",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l4-t1-6",
+                  "title": "Resolving Common Errors: Mapping Failures, Adapter Timeouts, Certificate Expiry",
+                  "type": "implementation"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pipo-l4-t1-1",
+                  "title": "Hands-on Lab: PIMON, NWA, SXMB_MONI & Performance Troubleshooting",
+                  "description": "Implement, test, and validate core patterns of PIMON, NWA, SXMB_MONI & Performance Troubleshooting in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pipo-l4-t1-2",
+                  "title": "Independent Challenge: PIMON, NWA, SXMB_MONI & Performance Troubleshooting",
+                  "description": "Build end-to-end functionality for PIMON, NWA, SXMB_MONI & Performance Troubleshooting from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pipo-l4-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in PIMON, NWA, SXMB_MONI & Performance Troubleshooting",
+                  "description": "Troubleshoot a scenario where PIMON, NWA, SXMB_MONI & Performance Troubleshooting throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pipo-l4-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for PIMON, NWA, SXMB_MONI & Performance Troubleshooting. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pipo-l4-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with PIMON, NWA, SXMB_MONI & Performance Troubleshooting?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pipo-l4-t1-1",
+                  "title": "Official Documentation & Architecture Guide for PIMON, NWA, SXMB_MONI & Performance Troubleshooting",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pipo-l5",
+      "order": 5,
+      "title": "Level 5 — Complete PI/PO to SAP Integration Suite Migration Path",
+      "description": "Strategic and technical migration: Migration Assessment tool, automated artifact migration, mapping conversion, and architectural paradigm shifts.",
+      "estimatedDuration": "2-4 weeks",
+      "estimatedHours": 30,
+      "color": "emerald",
+      "subjects": [
+        {
+          "id": "pipo-l5-s1",
+          "order": 1,
+          "title": "End-to-End Migration Methodology & Tooling",
+          "description": "Core subject domain covering End-to-End Migration Methodology & Tooling.",
+          "topics": [
+            {
+              "id": "pipo-l5-t1",
+              "order": 1,
+              "title": "PI/PO vs Integration Suite: Architecture & Migration Assessment",
+              "description": "Analyze legacy landscapes using SAP Migration Assessment tool and evaluate scenario readiness.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of PI/PO vs Integration Suite: Architecture & Migration Assessment",
+                "Implement production-grade components using industry best practices for PI/PO vs Integration Suite: Architecture & Migration Assessment",
+                "Diagnose runtime errors, misconfigurations, and edge cases in PI/PO vs Integration Suite: Architecture & Migration Assessment",
+                "Explain design trade-offs and answer senior technical interview questions on PI/PO vs Integration Suite: Architecture & Migration Assessment"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pipo-l5-t1-1",
+                  "title": "Business Case for Migration: PI/PO End of Mainstream Maintenance & Cloud Modernization",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l5-t1-2",
+                  "title": "Architectural Comparison: On-Premise Monolith vs Cloud-Native Micro-iFlows",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l5-t1-3",
+                  "title": "SAP Migration Assessment Tool: Extracting PI/PO Landscape & Generating Effort Estimates",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l5-t1-4",
+                  "title": "Evaluation Categories: Automated Migration, Semi-Automated, Manual Redesign Required",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l5-t1-5",
+                  "title": "Handling Unsupported Scenarios (e.g. Complex ccBPM -> Workflow / Integration Suite)",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pipo-l5-t1-1",
+                  "title": "Hands-on Lab: PI/PO vs Integration Suite: Architecture & Migration Assessment",
+                  "description": "Implement, test, and validate core patterns of PI/PO vs Integration Suite: Architecture & Migration Assessment in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pipo-l5-t1-2",
+                  "title": "Independent Challenge: PI/PO vs Integration Suite: Architecture & Migration Assessment",
+                  "description": "Build end-to-end functionality for PI/PO vs Integration Suite: Architecture & Migration Assessment from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pipo-l5-t1-1",
+                  "title": "Diagnose & Resolve Production Issue in PI/PO vs Integration Suite: Architecture & Migration Assessment",
+                  "description": "Troubleshoot a scenario where PI/PO vs Integration Suite: Architecture & Migration Assessment throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pipo-l5-t1-1",
+                  "question": "Explain the fundamental architecture and best practices for PI/PO vs Integration Suite: Architecture & Migration Assessment. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pipo-l5-t1-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with PI/PO vs Integration Suite: Architecture & Migration Assessment?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pipo-l5-t1-1",
+                  "title": "Official Documentation & Architecture Guide for PI/PO vs Integration Suite: Architecture & Migration Assessment",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            },
+            {
+              "id": "pipo-l5-t2",
+              "order": 2,
+              "title": "Technical Artifact Migration, Testing & Cutover",
+              "description": "Migrate ICOs to iFlows, convert Java Mappings to Groovy, migrate Keystores, and execute parallel testing.",
+              "priority": "core",
+              "estimatedHours": 4,
+              "prerequisites": [],
+              "tags": [],
+              "learningObjectives": [
+                "Understand internal architecture and core mechanics of Technical Artifact Migration, Testing & Cutover",
+                "Implement production-grade components using industry best practices for Technical Artifact Migration, Testing & Cutover",
+                "Diagnose runtime errors, misconfigurations, and edge cases in Technical Artifact Migration, Testing & Cutover",
+                "Explain design trade-offs and answer senior technical interview questions on Technical Artifact Migration, Testing & Cutover"
+              ],
+              "learningItems": [
+                {
+                  "id": "item-pipo-l5-t2-1",
+                  "title": "Automated ICO-to-iFlow Migration Tool in SAP Integration Suite",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l5-t2-2",
+                  "title": "Migrating ESR Message Mappings to Cloud Integration Message Mappings",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l5-t2-3",
+                  "title": "Refactoring Java Mappings and UDFs to Groovy Scripts",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l5-t2-4",
+                  "title": "Adapter Migration Matrix: File/FTP -> SFTP, RFC/IDoc -> Cloud Connector Channels",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l5-t2-5",
+                  "title": "Security Migration: Keystores, SSL Certificates, User Accounts -> OAuth/Certificates",
+                  "type": "concept"
+                },
+                {
+                  "id": "item-pipo-l5-t2-6",
+                  "title": "Regression & Parallel Testing Strategies: Comparing XML Payloads between PI/PO and CPI",
+                  "type": "implementation"
+                },
+                {
+                  "id": "item-pipo-l5-t2-7",
+                  "title": "Cutover Strategy, Rollback Planning & Decommissioning Legacy PI/PO Systems",
+                  "type": "concept"
+                }
+              ],
+              "practice": [
+                {
+                  "id": "prac-pipo-l5-t2-1",
+                  "title": "Hands-on Lab: Technical Artifact Migration, Testing & Cutover",
+                  "description": "Implement, test, and validate core patterns of Technical Artifact Migration, Testing & Cutover in a realistic workspace environment.",
+                  "difficulty": "medium",
+                  "type": "coding",
+                  "aiMode": "ai-restricted"
+                },
+                {
+                  "id": "prac-pipo-l5-t2-2",
+                  "title": "Independent Challenge: Technical Artifact Migration, Testing & Cutover",
+                  "description": "Build end-to-end functionality for Technical Artifact Migration, Testing & Cutover from scratch and verify production error handling.",
+                  "difficulty": "hard",
+                  "type": "coding",
+                  "aiMode": "no-ai"
+                }
+              ],
+              "debugging": [
+                {
+                  "id": "dbg-pipo-l5-t2-1",
+                  "title": "Diagnose & Resolve Production Issue in Technical Artifact Migration, Testing & Cutover",
+                  "description": "Troubleshoot a scenario where Technical Artifact Migration, Testing & Cutover throws unexpected exceptions or fails under high load / invalid payload.",
+                  "errorType": "runtime",
+                  "difficulty": "medium",
+                  "status": "unsolved"
+                }
+              ],
+              "assessments": [
+                {
+                  "id": "assess-pipo-l5-t2-1",
+                  "question": "Explain the fundamental architecture and best practices for Technical Artifact Migration, Testing & Cutover. What are common architectural pitfalls?",
+                  "difficulty": "medium",
+                  "type": "interview"
+                },
+                {
+                  "id": "assess-pipo-l5-t2-2",
+                  "question": "How do you diagnose and fix performance bottlenecks or security vulnerabilities when working with Technical Artifact Migration, Testing & Cutover?",
+                  "difficulty": "hard",
+                  "type": "interview"
+                }
+              ],
+              "resources": [
+                {
+                  "id": "res-pipo-l5-t2-1",
+                  "title": "Official Documentation & Architecture Guide for Technical Artifact Migration, Testing & Cutover",
+                  "url": "https://help.sap.com/",
+                  "type": "Documentation"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

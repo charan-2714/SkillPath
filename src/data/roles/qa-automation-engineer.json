@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "id": "qa-automation-engineer",
+  "name": "QA Automation Engineer",
+  "description": "Master automated software testing: UI automation with Playwright/Selenium, API testing, Pytest/Jest frameworks, CI/CD integration, and performance testing.",
+  "category": "Software Development",
+  "difficulty": "Intermediate",
+  "estimatedDuration": "6-8 months",
+  "tags": ["QA", "Testing", "Playwright", "Selenium", "Pytest", "API Testing", "CI/CD"],
+  "trackingModel": "skill-development",
+  "skillDimensions": [
+    { "id": "understanding", "name": "Understanding", "maxScore": 5 },
+    { "id": "implementation", "name": "Implementation", "maxScore": 5 },
+    { "id": "debugging", "name": "Debugging", "maxScore": 5 },
+    { "id": "practice", "name": "Practice", "maxScore": 5 },
+    { "id": "interview", "name": "Interview Readiness", "maxScore": 5 }
+  ],
+  "enableAIDependency": true,
+  "levels": [
+    {
+      "id": "qa-l0",
+      "order": 0,
+      "title": "Software Testing Fundamentals & Python/JS",
+      "description": "Test design techniques, boundary value analysis, test pyramids, and scripting basics.",
+      "estimatedDuration": "3 weeks",
+      "color": "slate",
+      "subjects": [
+        {
+          "id": "testing-principles",
+          "order": 1,
+          "title": "Test Theory & Methodology",
+          "topics": [
+            {
+              "id": "test-pyramid-design",
+              "order": 1,
+              "title": "Test Pyramid & Test Case Design",
+              "description": "Equivalence partitioning, boundary value analysis, and test pyramid distribution.",
+              "priority": "core",
+              "tags": ["qa", "testing"],
+              "estimatedHours": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qa-l1",
+      "order": 1,
+      "title": "API Testing & Automation",
+      "description": "Automated REST API testing with Postman/Newman, Requests, and Pytest/Jest.",
+      "estimatedDuration": "4 weeks",
+      "color": "teal",
+      "subjects": [
+        {
+          "id": "api-test-automation",
+          "order": 1,
+          "title": "API Automation Frameworks",
+          "topics": [
+            {
+              "id": "pytest-api-testing",
+              "order": 1,
+              "title": "REST API Automation with Pytest & Requests",
+              "description": "Schema validation with Pydantic/Zod, status checks, auth headers, and parameterized tests.",
+              "priority": "core",
+              "tags": ["api", "pytest", "automation"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qa-l2",
+      "order": 2,
+      "title": "Web UI Automation (Playwright)",
+      "description": "Modern browser testing with Playwright: auto-waiting, Page Object Model, parallel execution.",
+      "estimatedDuration": "5 weeks",
+      "color": "green",
+      "subjects": [
+        {
+          "id": "playwright-frameworks",
+          "order": 1,
+          "title": "Playwright UI Automation",
+          "topics": [
+            {
+              "id": "playwright-pom-design",
+              "order": 1,
+              "title": "Page Object Model (POM) Architecture",
+              "description": "Building maintainable, robust page objects with custom fixtures and auto-waiting assertions.",
+              "priority": "core",
+              "tags": ["playwright", "pom", "ui-testing"],
+              "estimatedHours": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qa-l3",
+      "order": 3,
+      "title": "CI/CD Test Pipelines & Reporting",
+      "description": "GitHub Actions automated test runs, Allure reporting dashboards, and flaky test mitigation.",
+      "estimatedDuration": "3 weeks",
+      "color": "indigo",
+      "subjects": [
+        {
+          "id": "cicd-reporting",
+          "order": 1,
+          "title": "Continuous Testing in CI/CD",
+          "topics": [
+            {
+              "id": "github-actions-allure",
+              "order": 1,
+              "title": "GitHub Actions & Allure Test Reports",
+              "description": "Running headlessly on pull requests, publishing artifact HTML reports, and parallel matrix runs.",
+              "priority": "core",
+              "tags": ["cicd", "allure", "devops"],
+              "estimatedHours": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
