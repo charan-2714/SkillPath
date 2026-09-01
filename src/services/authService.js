@@ -23,6 +23,12 @@ export async function signInWithGoogle() {
         message = 'Sign-in popup was blocked by your browser. Please allow popups for this site.';
       } else if (err.code === 'auth/network-request-failed') {
         message = 'Network error during sign-in. Please check your internet connection.';
+      } else if (err.code === 'auth/unauthorized-domain') {
+        message = `Domain "${window.location.hostname}" is not authorized in Firebase. Add it in Firebase Console -> Authentication -> Settings -> Authorized domains.`;
+      } else if (err.code === 'auth/operation-not-allowed' || err.code === 'auth/configuration-not-found') {
+        message = 'Google Sign-In is disabled. Enable Google under Firebase Console -> Authentication -> Sign-in method.';
+      } else if (err.message) {
+        message = `Sign-in error (${err.code || 'unknown'}): ${err.message}`;
       }
       return { success: false, error: message };
     }
