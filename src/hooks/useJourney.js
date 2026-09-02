@@ -21,8 +21,44 @@ export function useJourney(journeyId) {
   const { state, dispatch, activeJourney, softDeleteItem } = useAppState();
 
   const journey = useMemo(() => {
-    if (!journeyId) return activeJourney;
-    return (state.journeys || []).find((j) => j.id === journeyId) || null;
+    let target = null;
+    if (!journeyId) target = activeJourney;
+    else target = (state.journeys || []).find((j) => j.id === journeyId) || null;
+    if (!target) return null;
+
+    // Normalize any Level 39 containing foundational/basic subjects to Level 00
+    const normalizedLevels = (target.levels || []).map((lvl) => {
+      const isBasics =
+        (lvl.title || '').toLowerCase().includes('foundation') ||
+        (lvl.title || '').toLowerCase().includes('fundamental') ||
+        (lvl.title || '').toLowerCase().includes('basics') ||
+        (lvl.subjects || []).some(
+          (s) =>
+            (s.title || '').toLowerCase().includes('computer architecture') ||
+            (s.title || '').toLowerCase().includes('operating system') ||
+            (s.title || '').toLowerCase().includes('terminal')
+        );
+
+      const isTagged39 =
+        (lvl.id || '').toLowerCase().includes('39') ||
+        Boolean((lvl.title || '').match(/^(?:Level|L)\s*39\b/i)) ||
+        lvl.order === 39;
+
+      if (isBasics && isTagged39) {
+        return {
+          ...lvl,
+          id: lvl.id.replace(/39/g, '0'),
+          order: 0,
+          title: lvl.title.replace(/39/g, '0'),
+        };
+      }
+      return lvl;
+    });
+
+    return {
+      ...target,
+      levels: normalizedLevels,
+    };
   }, [state.journeys, journeyId, activeJourney]);
 
   const stats = useMemo(() => getJourneyStats(journey), [journey]);

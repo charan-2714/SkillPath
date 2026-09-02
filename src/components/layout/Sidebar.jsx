@@ -6,25 +6,15 @@ import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard,
   Compass,
-  FolderTree,
   Sparkles,
-  Code2,
-  FolderKanban,
-  CheckCircle2,
-  Library,
   BarChart3,
-  BookOpenCheck,
-  BrainCircuit,
   Settings,
-  Download,
-  Info,
   Flame,
   ChevronLeft,
   ChevronRight,
-  Route,
-  Trash2,
   ShieldCheck,
   Binary,
+  Route,
 } from 'lucide-react';
 import { useAppState, ACTIONS } from '../../context/AppContext';
 import { useAuth } from '../../context/AuthContext';
@@ -36,10 +26,6 @@ export function Sidebar({ collapsed, onToggle }) {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const showAIDependency = useMemo(() => {
-    return (state.journeys || []).some((j) => j.enableAIDependency);
-  }, [state.journeys]);
-
   const activeJourneys = useMemo(() => {
     return (state.journeys || []).filter((j) => !j.isArchived);
   }, [state.journeys]);
@@ -48,39 +34,13 @@ export function Sidebar({ collapsed, onToggle }) {
     const mainItems = [
       { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
       { to: '/journeys', icon: Compass, label: 'My Journeys' },
+      { to: '/dsa', icon: Binary, label: 'DSA & LeetCode' },
       { to: '/templates', icon: Sparkles, label: 'Templates' },
-    ];
-
-    if (activeJourney) {
-      mainItems.splice(2, 0, {
-        to: `/journeys/${activeJourney.id}/manage`,
-        icon: FolderTree,
-        label: 'Journey Builder',
-      });
-    }
-
-    const learningItems = [
-      { to: '/dsa', icon: Binary, label: 'DSA / LeetCode' },
-      { to: '/practice', icon: Code2, label: 'Practice' },
-      { to: '/projects', icon: FolderKanban, label: 'Projects' },
-      { to: '/assessments', icon: CheckCircle2, label: 'Assessments' },
-      { to: '/resources', icon: Library, label: 'Resources' },
-    ];
-
-    const analyticsItems = [
       { to: '/analytics', icon: BarChart3, label: 'Analytics' },
-      { to: '/learning-log', icon: BookOpenCheck, label: 'Learning Log' },
     ];
-
-    if (showAIDependency) {
-      analyticsItems.push({ to: '/ai-dependency', icon: BrainCircuit, label: 'AI Independence' });
-    }
 
     const systemItems = [
-      { to: '/recycle-bin', icon: Trash2, label: `Recycle Bin (${state.recycleBin?.length || 0})` },
       { to: '/settings', icon: Settings, label: 'Settings' },
-      { to: '/export', icon: Download, label: 'Export / Import' },
-      { to: '/about', icon: Info, label: 'About' },
     ];
 
     if (isAdmin) {
@@ -88,12 +48,10 @@ export function Sidebar({ collapsed, onToggle }) {
     }
 
     return [
-      { title: 'Overview', items: mainItems },
-      { title: 'Learning', items: learningItems },
-      { title: 'Insights', items: analyticsItems },
+      { title: 'Navigation', items: mainItems },
       { title: 'System', items: systemItems },
     ];
-  }, [activeJourney, showAIDependency, isAdmin, state.recycleBin?.length]);
+  }, [isAdmin]);
 
   const isActive = (to) => {
     if (to === '/dashboard' && (location.pathname === '/' || location.pathname === '/dashboard')) return true;

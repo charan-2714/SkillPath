@@ -41,11 +41,11 @@ export function AppLayout({ children, pageTitle }) {
 
       {/* Main content */}
       <main
-        className={`pt-14 pb-24 md:pb-8 transition-all duration-200 ml-0 ${
+        className={`pt-14 pb-24 md:pb-8 transition-all duration-200 ml-0 overflow-x-hidden ${
           sidebarCollapsed ? 'md:ml-16' : 'md:ml-[230px]'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 w-full">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 w-full min-w-0">
           {children}
         </div>
       </main>

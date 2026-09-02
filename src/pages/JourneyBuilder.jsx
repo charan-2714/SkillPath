@@ -1,5 +1,5 @@
 // src/pages/JourneyBuilder.jsx
-// Dedicated hierarchy manager for Levels, Subjects, and Topics
+// Premium, state-of-the-art curriculum builder: Collapsible milestone levels, organized subjects, topic cards, and reordering controls
 
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -19,6 +19,9 @@ import {
   MoveDown,
   Tags,
   Clock,
+  Boxes,
+  Check,
+  Zap,
 } from 'lucide-react';
 import { AppLayout, PageHeader } from '../components/layout/AppLayout';
 import { Modal, ConfirmDialog } from '../components/common/Modal';
@@ -27,22 +30,57 @@ import { EmptyState } from '../components/common/EmptyState';
 import { useJourney } from '../hooks/useJourney';
 import { TOPIC_PRIORITIES } from '../models/journeySchema';
 
-const LEVEL_COLORS = [
-  { id: 'indigo', label: 'Indigo', bg: 'bg-indigo-500' },
-  { id: 'blue', label: 'Blue', bg: 'bg-blue-500' },
-  { id: 'purple', label: 'Purple', bg: 'bg-purple-500' },
-  { id: 'emerald', label: 'Emerald', bg: 'bg-emerald-500' },
-  { id: 'teal', label: 'Teal', bg: 'bg-teal-500' },
-  { id: 'amber', label: 'Amber', bg: 'bg-amber-500' },
-  { id: 'rose', label: 'Rose', bg: 'bg-rose-500' },
-  { id: 'slate', label: 'Slate', bg: 'bg-slate-500' },
+const LEVEL_COLOR_PALETTES = [
+  {
+    gradient: 'from-sky-500 to-blue-600',
+    badge: 'bg-gradient-to-br from-sky-500 to-blue-600 text-white shadow-md shadow-sky-500/25',
+    border: 'border-sky-200/80 dark:border-sky-800/80',
+    headerBg: 'bg-gradient-to-r from-sky-50/80 via-blue-50/30 to-transparent dark:from-sky-950/40 dark:via-blue-950/20',
+  },
+  {
+    gradient: 'from-violet-500 to-purple-600',
+    badge: 'bg-gradient-to-br from-violet-500 to-purple-600 text-white shadow-md shadow-violet-500/25',
+    border: 'border-violet-200/80 dark:border-violet-800/80',
+    headerBg: 'bg-gradient-to-r from-violet-50/80 via-purple-50/30 to-transparent dark:from-violet-950/40 dark:via-purple-950/20',
+  },
+  {
+    gradient: 'from-emerald-500 to-teal-600',
+    badge: 'bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/25',
+    border: 'border-emerald-200/80 dark:border-emerald-800/80',
+    headerBg: 'bg-gradient-to-r from-emerald-50/80 via-teal-50/30 to-transparent dark:from-emerald-950/40 dark:via-teal-950/20',
+  },
+  {
+    gradient: 'from-amber-500 to-orange-600',
+    badge: 'bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-md shadow-amber-500/25',
+    border: 'border-amber-200/80 dark:border-amber-800/80',
+    headerBg: 'bg-gradient-to-r from-amber-50/80 via-orange-50/30 to-transparent dark:from-amber-950/40 dark:via-orange-950/20',
+  },
+  {
+    gradient: 'from-rose-500 to-pink-600',
+    badge: 'bg-gradient-to-br from-rose-500 to-pink-600 text-white shadow-md shadow-rose-500/25',
+    border: 'border-rose-200/80 dark:border-rose-800/80',
+    headerBg: 'bg-gradient-to-r from-rose-50/80 via-pink-50/30 to-transparent dark:from-rose-950/40 dark:via-pink-950/20',
+  },
+  {
+    gradient: 'from-cyan-500 to-teal-600',
+    badge: 'bg-gradient-to-br from-cyan-500 to-teal-600 text-white shadow-md shadow-cyan-500/25',
+    border: 'border-cyan-200/80 dark:border-cyan-800/80',
+    headerBg: 'bg-gradient-to-r from-cyan-50/80 via-teal-50/30 to-transparent dark:from-cyan-950/40 dark:via-teal-950/20',
+  },
 ];
+
+function getLevelTheme(index) {
+  return LEVEL_COLOR_PALETTES[index % LEVEL_COLOR_PALETTES.length];
+}
+
+function getLevelBadgeLabel(level, index) {
+  return `L${index < 10 ? `0${index}` : index}`;
+}
 
 function LevelModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 1 }) {
   const [title, setTitle] = useState(initial?.title || `Level ${defaultOrder}`);
   const [description, setDescription] = useState(initial?.description || '');
   const [estimatedDuration, setEstimatedDuration] = useState(initial?.estimatedDuration || '');
-  const [color, setColor] = useState(initial?.color || 'indigo');
   const [targetDate, setTargetDate] = useState(initial?.targetDate || '');
 
   const handleSubmit = (e) => {
@@ -52,7 +90,6 @@ function LevelModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 1 
       title: title.trim(),
       description: description.trim(),
       estimatedDuration: estimatedDuration.trim(),
-      color,
       targetDate,
     });
     onClose();
@@ -62,7 +99,7 @@ function LevelModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 1 
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={initial ? 'Edit Level' : 'Add New Level'}
+      title={initial ? 'Edit Milestone Level' : 'Add New Milestone Level'}
       size="md"
     >
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -75,7 +112,7 @@ function LevelModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 1 
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="e.g. L0 — Engineering Foundations, Beginner, Advanced"
+            placeholder="e.g. L0 — Engineering Foundations, Core Mechanics"
             className="input"
             autoFocus
           />
@@ -86,7 +123,7 @@ function LevelModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 1 
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="What does this level cover?"
+            placeholder="What concepts and engineering outcomes does this level cover?"
             rows={2}
             className="input"
           />
@@ -114,29 +151,12 @@ function LevelModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 1 
           </div>
         </div>
 
-        <div>
-          <label className="label">Accent Color</label>
-          <div className="flex gap-2 flex-wrap">
-            {LEVEL_COLORS.map((c) => (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => setColor(c.id)}
-                className={`w-7 h-7 rounded-full ${c.bg} flex items-center justify-center transition-all ${
-                  color === c.id ? 'ring-2 ring-offset-2 ring-indigo-600 scale-110' : 'opacity-80 hover:opacity-100'
-                }`}
-                title={c.label}
-              />
-            ))}
-          </div>
-        </div>
-
         <div className="flex justify-end gap-2 pt-3 border-t border-gray-100 dark:border-gray-800">
           <button type="button" onClick={onClose} className="btn-secondary text-xs">
             Cancel
           </button>
           <button type="submit" className="btn-primary text-xs" disabled={!title.trim()}>
-            {initial ? 'Save Changes' : 'Add Level'}
+            {initial ? 'Save Changes' : 'Create Level'}
           </button>
         </div>
       </form>
@@ -144,8 +164,8 @@ function LevelModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 1 
   );
 }
 
-function SubjectModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 1 }) {
-  const [title, setTitle] = useState(initial?.title || `Subject ${defaultOrder}`);
+function SubjectModal({ isOpen, onClose, onSave, initial = null }) {
+  const [title, setTitle] = useState(initial?.title || '');
   const [description, setDescription] = useState(initial?.description || '');
 
   const handleSubmit = (e) => {
@@ -162,20 +182,20 @@ function SubjectModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title={initial ? 'Edit Subject' : 'Add New Subject'}
+      title={initial ? 'Edit Module' : 'Add New Module / Subject'}
       size="md"
     >
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="label">
-            Subject Title <span className="text-red-500">*</span>
+            Module Title <span className="text-red-500">*</span>
           </label>
           <input
             type="text"
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="e.g. Python Fundamentals, Frontend Architecture, SQL"
+            placeholder="e.g. Computer Architecture, Message Transformations"
             className="input"
             autoFocus
           />
@@ -186,7 +206,7 @@ function SubjectModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            placeholder="Subject overview..."
+            placeholder="Overview of this module domain..."
             rows={2}
             className="input"
           />
@@ -197,7 +217,7 @@ function SubjectModal({ isOpen, onClose, onSave, initial = null, defaultOrder = 
             Cancel
           </button>
           <button type="submit" className="btn-primary text-xs" disabled={!title.trim()}>
-            {initial ? 'Save Changes' : 'Add Subject'}
+            {initial ? 'Save Changes' : 'Add Module'}
           </button>
         </div>
       </form>
@@ -210,14 +230,11 @@ function TopicModal({ isOpen, onClose, onSave, initial = null }) {
   const [description, setDescription] = useState(initial?.description || '');
   const [priority, setPriority] = useState(initial?.priority || 'core');
   const [estimatedHours, setEstimatedHours] = useState(initial?.estimatedHours || 4);
-  const [tagsInput, setTagsInput] = useState(
-    Array.isArray(initial?.tags) ? initial.tags.join(', ') : ''
-  );
+  const [tagsInput, setTagsInput] = useState((initial?.tags || []).join(', '));
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!title.trim()) return;
-
     const tags = tagsInput
       .split(',')
       .map((t) => t.trim().toLowerCase())
@@ -229,7 +246,6 @@ function TopicModal({ isOpen, onClose, onSave, initial = null }) {
       priority,
       estimatedHours: Number(estimatedHours) || 4,
       tags,
-      source: initial?.source || 'custom',
     });
     onClose();
   };
@@ -251,7 +267,7 @@ function TopicModal({ isOpen, onClose, onSave, initial = null }) {
             required
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="e.g. Decorators, Transformers, Async/Await"
+            placeholder="e.g. CPU & Memory Hierarchy, Decorators, Async/Await"
             className="input"
             autoFocus
           />
@@ -303,7 +319,7 @@ function TopicModal({ isOpen, onClose, onSave, initial = null }) {
             type="text"
             value={tagsInput}
             onChange={(e) => setTagsInput(e.target.value)}
-            placeholder="e.g. python, closures, advanced"
+            placeholder="e.g. hardware, memory, async"
             className="input"
           />
         </div>
@@ -340,6 +356,11 @@ export default function JourneyBuilder() {
     reorderTopic,
   } = useJourney(journeyId);
 
+  // Collapsible state for levels and subjects (collapsed by default)
+  const [expandedLevels, setExpandedLevels] = useState({});
+  const [expandedSubjects, setExpandedSubjects] = useState({});
+  const [allExpanded, setAllExpanded] = useState(false);
+
   // Modal States
   const [levelModal, setLevelModal] = useState({ open: false, initial: null });
   const [subjectModal, setSubjectModal] = useState({ open: false, levelId: null, initial: null });
@@ -363,7 +384,7 @@ export default function JourneyBuilder() {
 
   if (!journey) {
     return (
-      <AppLayout pageTitle="Journey Builder">
+      <AppLayout pageTitle="Curriculum Builder">
         <EmptyState
           icon="book"
           title="Journey Not Found"
@@ -380,6 +401,29 @@ export default function JourneyBuilder() {
 
   const levels = journey.levels || [];
 
+  const toggleLevel = (lvlId) => {
+    setExpandedLevels((prev) => ({ ...prev, [lvlId]: !Boolean(prev[lvlId]) }));
+  };
+
+  const toggleSubject = (subId) => {
+    setExpandedSubjects((prev) => ({ ...prev, [subId]: !Boolean(prev[subId]) }));
+  };
+
+  const toggleAll = () => {
+    const nextState = !allExpanded;
+    setAllExpanded(nextState);
+    const lvlMap = {};
+    const subMap = {};
+    levels.forEach((lvl) => {
+      lvlMap[lvl.id] = nextState;
+      (lvl.subjects || []).forEach((sub) => {
+        subMap[sub.id] = nextState;
+      });
+    });
+    setExpandedLevels(lvlMap);
+    setExpandedSubjects(subMap);
+  };
+
   const handleConfirmDelete = () => {
     if (deleteConfirm.type === 'level') {
       deleteLevel(deleteConfirm.levelId);
@@ -392,20 +436,23 @@ export default function JourneyBuilder() {
   };
 
   return (
-    <AppLayout pageTitle="Journey Builder">
+    <AppLayout pageTitle="Curriculum Builder">
       <Breadcrumbs
         items={[
           { label: 'My Journeys', to: '/journeys' },
           { label: journey.name, to: `/journeys/${journey.id}` },
-          { label: 'Journey Builder' },
+          { label: 'Curriculum Builder' },
         ]}
       />
 
       <PageHeader
-        title="Journey Hierarchy Builder"
-        subtitle={`Construct and customize ${journey.name} levels, subjects, and topics.`}
+        title="Curriculum & Hierarchy Builder"
+        subtitle={`Organize and edit milestone levels, modules, and topics for ${journey.name}.`}
         actions={
           <div className="flex items-center gap-2">
+            <button onClick={toggleAll} className="btn-secondary text-xs">
+              {allExpanded ? 'Collapse All' : 'Expand All'}
+            </button>
             <button
               onClick={() => navigate(`/journeys/${journey.id}`)}
               className="btn-secondary text-xs"
@@ -429,38 +476,46 @@ export default function JourneyBuilder() {
         <div className="space-y-6">
           {levels.map((level, lIdx) => {
             const subjects = level.subjects || [];
+            const levelTheme = getLevelTheme(lIdx);
+            const levelBadge = getLevelBadgeLabel(level, lIdx);
+            const isLvlOpen = Boolean(expandedLevels[level.id]);
 
             return (
               <div
                 key={level.id}
-                className="card p-5 border-l-4 border-l-indigo-500 space-y-4 shadow-sm"
+                className={`card overflow-hidden border transition-all ${levelTheme.border} shadow-sm`}
               >
                 {/* Level Controls Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-gray-100 dark:border-gray-800">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 font-bold text-xs flex items-center justify-center flex-shrink-0">
-                      {level.order || lIdx + 1}
+                <div
+                  className={`p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 ${levelTheme.headerBg}`}
+                >
+                  <div
+                    onClick={() => toggleLevel(level.id)}
+                    className="flex items-center gap-3.5 min-w-0 cursor-pointer flex-1"
+                  >
+                    <div
+                      className={`w-10 h-10 rounded-2xl flex items-center justify-center font-black text-xs flex-shrink-0 ${levelTheme.badge}`}
+                    >
+                      {levelBadge}
                     </div>
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h2 className="text-base font-bold text-gray-900 dark:text-gray-100">
+                    <div className="min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <h2 className="text-base font-black text-gray-900 dark:text-gray-100 truncate">
                           {level.title}
                         </h2>
                         {level.estimatedDuration && (
-                          <span className="badge bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-400 text-[10px]">
+                          <span className="badge bg-white/80 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 text-[10px]">
                             {level.estimatedDuration}
                           </span>
                         )}
                       </div>
-                      {level.description && (
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-                          {level.description}
-                        </p>
-                      )}
+                      <p className="text-xs text-gray-500 dark:text-gray-400 line-clamp-1 mt-0.5">
+                        {level.description || `${subjects.length} Modules in this level`}
+                      </p>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-1.5 self-end sm:self-auto">
+                  <div className="flex items-center gap-1.5 self-end sm:self-auto flex-shrink-0">
                     {/* Reorder Buttons */}
                     <button
                       disabled={lIdx === 0}
@@ -481,7 +536,7 @@ export default function JourneyBuilder() {
 
                     <button
                       onClick={() => setLevelModal({ open: true, initial: level })}
-                      className="btn-ghost p-1.5 text-gray-600 hover:text-indigo-600"
+                      className="btn-ghost p-1.5 text-gray-600 hover:text-sky-600"
                       title="Edit Level"
                     >
                       <Edit2 className="w-3.5 h-3.5" />
@@ -495,7 +550,7 @@ export default function JourneyBuilder() {
                           levelId: level.id,
                           title: `Delete Level: ${level.title}?`,
                           message:
-                            'This will delete this level along with all of its nested subjects and topics. This cannot be undone.',
+                            'This will delete this milestone level along with all its modules and topics. This cannot be undone.',
                         })
                       }
                       className="btn-ghost p-1.5 text-gray-400 hover:text-red-600"
@@ -508,299 +563,348 @@ export default function JourneyBuilder() {
                       onClick={() =>
                         setSubjectModal({ open: true, levelId: level.id, initial: null })
                       }
-                      className="btn-secondary text-xs px-2.5 py-1 ml-1"
+                      className="btn-primary text-xs px-3 py-1.5 ml-1.5"
                     >
                       <Plus className="w-3 h-3" />
-                      Add Subject
+                      Add Module
+                    </button>
+
+                    <button
+                      onClick={() => toggleLevel(level.id)}
+                      className="btn-ghost p-1.5 text-gray-400"
+                    >
+                      <ChevronDown
+                        className={`w-4 h-4 transition-transform duration-200 ${
+                          isLvlOpen ? 'rotate-180' : ''
+                        }`}
+                      />
                     </button>
                   </div>
                 </div>
 
-                {/* Subjects under this level */}
-                <div className="space-y-3 pl-2 sm:pl-4">
-                  {subjects.length > 0 ? (
-                    subjects.map((subject, sIdx) => {
-                      const topics = subject.topics || [];
+                {/* Subjects (Modules) Container */}
+                {isLvlOpen && (
+                  <div className="p-4 sm:p-5 border-t border-gray-150 dark:border-gray-800 bg-white dark:bg-gray-900 space-y-4">
+                    {subjects.length > 0 ? (
+                      subjects.map((subject, sIdx) => {
+                        const topics = subject.topics || [];
+                        const isSubOpen = Boolean(expandedSubjects[subject.id]);
 
-                      return (
-                        <div
-                          key={subject.id}
-                          className="p-3.5 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/40 space-y-3"
-                        >
-                          {/* Subject Header */}
-                          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                            <div className="flex items-center gap-2">
-                              <span className="w-2 h-2 rounded-full bg-indigo-400" />
-                              <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-200">
-                                {subject.title}
-                              </h3>
-                              <span className="text-xs text-gray-400">
-                                ({topics.length} topics)
-                              </span>
-                            </div>
-
-                            <div className="flex items-center gap-1 self-end sm:self-auto">
-                              <button
-                                disabled={sIdx === 0}
-                                onClick={() => reorderSubject(level.id, subject.id, 'up')}
-                                className="btn-ghost p-1 text-gray-400 disabled:opacity-30"
-                                title="Move Subject Up"
+                        return (
+                          <div
+                            key={subject.id}
+                            className="rounded-2xl border border-gray-200/90 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850/50 overflow-hidden shadow-2xs"
+                          >
+                            {/* Subject Header */}
+                            <div className="p-3.5 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5 bg-gray-100/60 dark:bg-gray-800/60 border-b border-gray-200/70 dark:border-gray-750">
+                              <div
+                                onClick={() => toggleSubject(subject.id)}
+                                className="flex items-center gap-2.5 min-w-0 cursor-pointer flex-1"
                               >
-                                <ChevronUp className="w-3.5 h-3.5" />
-                              </button>
-                              <button
-                                disabled={sIdx === subjects.length - 1}
-                                onClick={() => reorderSubject(level.id, subject.id, 'down')}
-                                className="btn-ghost p-1 text-gray-400 disabled:opacity-30"
-                                title="Move Subject Down"
-                              >
-                                <ChevronDown className="w-3.5 h-3.5" />
-                              </button>
-
-                              <button
-                                onClick={() =>
-                                  setSubjectModal({
-                                    open: true,
-                                    levelId: level.id,
-                                    initial: subject,
-                                  })
-                                }
-                                className="btn-ghost p-1 text-gray-500 hover:text-indigo-600"
-                                title="Edit Subject"
-                              >
-                                <Edit2 className="w-3 h-3" />
-                              </button>
-
-                              <button
-                                onClick={() =>
-                                  setDeleteConfirm({
-                                    open: true,
-                                    type: 'subject',
-                                    levelId: level.id,
-                                    subjectId: subject.id,
-                                    title: `Delete Subject: ${subject.title}?`,
-                                    message:
-                                      'This will remove this subject and all its topics. This cannot be undone.',
-                                  })
-                                }
-                                className="btn-ghost p-1 text-gray-400 hover:text-red-500"
-                                title="Delete Subject"
-                              >
-                                <Trash2 className="w-3 h-3" />
-                              </button>
-
-                              <button
-                                onClick={() =>
-                                  setTopicModal({
-                                    open: true,
-                                    levelId: level.id,
-                                    subjectId: subject.id,
-                                    initial: null,
-                                  })
-                                }
-                                className="btn-secondary text-[11px] px-2 py-0.5 ml-1"
-                              >
-                                <Plus className="w-3 h-3" /> Topic
-                              </button>
-                            </div>
-                          </div>
-
-                          {/* Topics List under Subject */}
-                          <div className="space-y-1.5 pl-2 sm:pl-3 border-l-2 border-indigo-100 dark:border-indigo-900/40">
-                            {topics.length > 0 ? (
-                              topics.map((topic, tIdx) => (
-                                <div
-                                  key={topic.id}
-                                  className="flex items-center justify-between p-2 rounded-lg bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700/60 hover:border-indigo-200 dark:hover:border-indigo-800 transition-colors"
-                                >
-                                  <div className="flex items-center gap-2 flex-1 min-w-0">
-                                    <span
-                                      className={`badge text-[10px] ${
-                                        topic.priority === 'core'
-                                          ? 'bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300'
-                                          : 'bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300'
-                                      }`}
-                                    >
-                                      {topic.priority}
-                                    </span>
-
-                                    {topic.source === 'template' ? (
-                                      <span className="badge bg-indigo-50 text-indigo-600 dark:bg-indigo-950/50 dark:text-indigo-300 text-[10px] font-medium">
-                                        Recommended
-                                      </span>
-                                    ) : (
-                                      <span className="badge bg-amber-50 text-amber-600 dark:bg-amber-950/50 dark:text-amber-300 text-[10px] font-medium">
-                                        Custom
-                                      </span>
-                                    )}
-
-                                    <span className="text-xs font-medium text-gray-800 dark:text-gray-200 truncate">
-                                      {topic.title}
-                                    </span>
-                                  </div>
-
-                                  <div className="flex items-center gap-1 flex-shrink-0">
-                                    <button
-                                      disabled={tIdx === 0}
-                                      onClick={() =>
-                                        reorderTopic(level.id, subject.id, topic.id, 'up')
-                                      }
-                                      className="btn-ghost p-1 text-gray-400 disabled:opacity-30"
-                                      title="Move Topic Up"
-                                    >
-                                      <ChevronUp className="w-3 h-3" />
-                                    </button>
-                                    <button
-                                      disabled={tIdx === topics.length - 1}
-                                      onClick={() =>
-                                        reorderTopic(level.id, subject.id, topic.id, 'down')
-                                      }
-                                      className="btn-ghost p-1 text-gray-400 disabled:opacity-30"
-                                      title="Move Topic Down"
-                                    >
-                                      <ChevronDown className="w-3 h-3" />
-                                    </button>
-
-                                    <button
-                                      onClick={() =>
-                                        setTopicModal({
-                                          open: true,
-                                          levelId: level.id,
-                                          subjectId: subject.id,
-                                          initial: topic,
-                                        })
-                                      }
-                                      className="btn-ghost p-1 text-gray-500 hover:text-indigo-600"
-                                      title="Edit Topic"
-                                    >
-                                      <Edit2 className="w-3 h-3" />
-                                    </button>
-
-                                    <button
-                                      onClick={() =>
-                                        navigate(
-                                          `/journeys/${journey.id}/topics/${topic.id}`
-                                        )
-                                      }
-                                      className="btn-ghost p-1 text-gray-500 hover:text-indigo-600"
-                                      title="Open Topic Workspace"
-                                    >
-                                      <ExternalLink className="w-3 h-3" />
-                                    </button>
-
-                                    <button
-                                      onClick={() =>
-                                        setDeleteConfirm({
-                                          open: true,
-                                          type: 'topic',
-                                          levelId: level.id,
-                                          subjectId: subject.id,
-                                          topicId: topic.id,
-                                          title: `Delete Topic: ${topic.title}?`,
-                                          message:
-                                            'This will remove this topic and all its learning tasks. This cannot be undone.',
-                                        })
-                                      }
-                                      className="btn-ghost p-1 text-gray-400 hover:text-red-500"
-                                      title="Delete Topic"
-                                    >
-                                      <Trash2 className="w-3 h-3" />
-                                    </button>
-                                  </div>
+                                <div className="w-7 h-7 rounded-lg bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 flex items-center justify-center flex-shrink-0">
+                                  <Boxes className="w-3.5 h-3.5" />
                                 </div>
-                              ))
-                            ) : (
-                              <div className="py-2 text-center text-xs text-gray-400 italic">
-                                No topics in this subject. Click "+ Topic" above.
+                                <div className="min-w-0">
+                                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100 truncate">
+                                    {subject.title}
+                                  </h3>
+                                  <span className="text-[11px] text-gray-400">
+                                    {topics.length} {topics.length === 1 ? 'Topic' : 'Topics'}
+                                  </span>
+                                </div>
+                              </div>
+
+                              <div className="flex items-center gap-1 self-end sm:self-auto flex-shrink-0">
+                                <button
+                                  disabled={sIdx === 0}
+                                  onClick={() => reorderSubject(level.id, subject.id, 'up')}
+                                  className="btn-ghost p-1 text-gray-400 disabled:opacity-30"
+                                  title="Move Module Up"
+                                >
+                                  <MoveUp className="w-3 h-3" />
+                                </button>
+                                <button
+                                  disabled={sIdx === subjects.length - 1}
+                                  onClick={() => reorderSubject(level.id, subject.id, 'down')}
+                                  className="btn-ghost p-1 text-gray-400 disabled:opacity-30"
+                                  title="Move Module Down"
+                                >
+                                  <MoveDown className="w-3 h-3" />
+                                </button>
+
+                                <button
+                                  onClick={() =>
+                                    setSubjectModal({
+                                      open: true,
+                                      levelId: level.id,
+                                      initial: subject,
+                                    })
+                                  }
+                                  className="btn-ghost p-1 text-gray-600 hover:text-sky-600"
+                                  title="Edit Module"
+                                >
+                                  <Edit2 className="w-3 h-3" />
+                                </button>
+
+                                <button
+                                  onClick={() =>
+                                    setDeleteConfirm({
+                                      open: true,
+                                      type: 'subject',
+                                      levelId: level.id,
+                                      subjectId: subject.id,
+                                      title: `Delete Module: ${subject.title}?`,
+                                      message:
+                                        'This will delete this module and all nested topics. This cannot be undone.',
+                                    })
+                                  }
+                                  className="btn-ghost p-1 text-gray-400 hover:text-red-600"
+                                  title="Delete Module"
+                                >
+                                  <Trash2 className="w-3 h-3" />
+                                </button>
+
+                                <button
+                                  onClick={() =>
+                                    setTopicModal({
+                                      open: true,
+                                      levelId: level.id,
+                                      subjectId: subject.id,
+                                      initial: null,
+                                    })
+                                  }
+                                  className="btn-secondary text-xs py-1 px-2 ml-1 font-bold"
+                                >
+                                  <Plus className="w-3 h-3" />
+                                  Add Topic
+                                </button>
+
+                                <button
+                                  onClick={() => toggleSubject(subject.id)}
+                                  className="btn-ghost p-1 text-gray-400"
+                                >
+                                  <ChevronDown
+                                    className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                                      isSubOpen ? 'rotate-180' : ''
+                                    }`}
+                                  />
+                                </button>
+                              </div>
+                            </div>
+
+                            {/* Topics List under Subject */}
+                            {isSubOpen && (
+                              <div className="p-3 space-y-2 bg-white dark:bg-gray-900/40">
+                                {topics.length > 0 ? (
+                                  topics.map((topic, tIdx) => (
+                                    <div
+                                      key={topic.id}
+                                      className="p-3 rounded-xl border border-gray-150 dark:border-gray-800 bg-white dark:bg-gray-850 flex items-center justify-between gap-3 hover:border-sky-300 dark:hover:border-sky-700 transition-all"
+                                    >
+                                      <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                                        <div className="w-2 h-2 rounded-full bg-sky-500 flex-shrink-0" />
+                                        <div className="min-w-0">
+                                          <div className="flex items-center gap-2 flex-wrap">
+                                            <span className="text-xs font-bold text-gray-900 dark:text-gray-100 truncate">
+                                              {topic.title}
+                                            </span>
+                                            {topic.priority === 'core' && (
+                                              <span className="text-[9px] font-bold px-1.5 py-0.2 rounded bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800">
+                                                Core
+                                              </span>
+                                            )}
+                                            {topic.estimatedHours && (
+                                              <span className="text-[10px] text-gray-400">
+                                                ~{topic.estimatedHours}h
+                                              </span>
+                                            )}
+                                          </div>
+                                          {topic.description && (
+                                            <p className="text-[11px] text-gray-400 line-clamp-1 mt-0.5">
+                                              {topic.description}
+                                            </p>
+                                          )}
+                                        </div>
+                                      </div>
+
+                                      <div className="flex items-center gap-1 flex-shrink-0">
+                                        <button
+                                          disabled={tIdx === 0}
+                                          onClick={() =>
+                                            reorderTopic(level.id, subject.id, topic.id, 'up')
+                                          }
+                                          className="btn-ghost p-1 text-gray-400 disabled:opacity-30"
+                                          title="Move Topic Up"
+                                        >
+                                          <MoveUp className="w-3 h-3" />
+                                        </button>
+                                        <button
+                                          disabled={tIdx === topics.length - 1}
+                                          onClick={() =>
+                                            reorderTopic(level.id, subject.id, topic.id, 'down')
+                                          }
+                                          className="btn-ghost p-1 text-gray-400 disabled:opacity-30"
+                                          title="Move Topic Down"
+                                        >
+                                          <MoveDown className="w-3 h-3" />
+                                        </button>
+
+                                        <button
+                                          onClick={() =>
+                                            setTopicModal({
+                                              open: true,
+                                              levelId: level.id,
+                                              subjectId: subject.id,
+                                              initial: topic,
+                                            })
+                                          }
+                                          className="btn-ghost p-1 text-gray-600 hover:text-sky-600"
+                                          title="Edit Topic"
+                                        >
+                                          <Edit2 className="w-3 h-3" />
+                                        </button>
+
+                                        <button
+                                          onClick={() =>
+                                            navigate(`/journeys/${journey.id}/topics/${topic.id}`)
+                                          }
+                                          className="btn-ghost p-1 text-sky-600 hover:text-sky-700"
+                                          title="Open Topic Workspace"
+                                        >
+                                          <ExternalLink className="w-3 h-3" />
+                                        </button>
+
+                                        <button
+                                          onClick={() =>
+                                            setDeleteConfirm({
+                                              open: true,
+                                              type: 'topic',
+                                              levelId: level.id,
+                                              subjectId: subject.id,
+                                              topicId: topic.id,
+                                              title: `Delete Topic: ${topic.title}?`,
+                                              message:
+                                                'This will delete this topic and all of its progress. This cannot be undone.',
+                                            })
+                                          }
+                                          className="btn-ghost p-1 text-gray-400 hover:text-red-600"
+                                          title="Delete Topic"
+                                        >
+                                          <Trash2 className="w-3 h-3" />
+                                        </button>
+                                      </div>
+                                    </div>
+                                  ))
+                                ) : (
+                                  <div className="p-3 text-center text-xs text-gray-400">
+                                    No topics in this module yet. Click "+ Add Topic" above.
+                                  </div>
+                                )}
                               </div>
                             )}
                           </div>
-                        </div>
-                      );
-                    })
-                  ) : (
-                    <div className="py-3 text-center text-xs text-gray-400 italic bg-gray-50 dark:bg-gray-800/30 rounded-xl">
-                      No subjects in this level. Click "+ Add Subject" above.
-                    </div>
-                  )}
-                </div>
+                        );
+                      })
+                    ) : (
+                      <div className="p-4 text-center text-xs text-gray-400">
+                        No modules in this level yet. Click "+ Add Module" above.
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
       ) : (
         <EmptyState
-          icon="book"
+          icon="layers"
           title="No Levels in this Journey"
-          description="Start constructing your learning roadmap by adding your first level."
+          description="Click '+ Add Level' to begin building your curriculum."
           action={
             <button
               onClick={() => setLevelModal({ open: true, initial: null })}
               className="btn-primary text-xs"
             >
-              <Plus className="w-3.5 h-3.5" /> Add Level
+              <Plus className="w-3.5 h-3.5" /> Add First Level
             </button>
           }
         />
       )}
 
-      {/* Level Modal */}
-      <LevelModal
-        isOpen={levelModal.open}
-        onClose={() => setLevelModal({ open: false, initial: null })}
-        initial={levelModal.initial}
-        defaultOrder={levels.length + 1}
-        onSave={(data) => {
-          if (levelModal.initial) {
-            updateLevel(levelModal.initial.id, data);
-          } else {
-            addLevel(data);
-          }
-        }}
-      />
+      {/* Modals */}
+      {levelModal.open && (
+        <LevelModal
+          isOpen={levelModal.open}
+          onClose={() => setLevelModal({ open: false, initial: null })}
+          onSave={(data) => {
+            if (levelModal.initial) {
+              updateLevel(levelModal.initial.id, data);
+            } else {
+              addLevel(data);
+            }
+          }}
+          initial={levelModal.initial}
+          defaultOrder={levels.length}
+        />
+      )}
 
-      {/* Subject Modal */}
-      <SubjectModal
-        isOpen={subjectModal.open}
-        onClose={() => setSubjectModal({ open: false, levelId: null, initial: null })}
-        initial={subjectModal.initial}
-        onSave={(data) => {
-          if (subjectModal.initial) {
-            updateSubject(subjectModal.levelId, subjectModal.initial.id, data);
-          } else {
-            addSubject(subjectModal.levelId, data);
-          }
-        }}
-      />
+      {subjectModal.open && (
+        <SubjectModal
+          isOpen={subjectModal.open}
+          onClose={() => setSubjectModal({ open: false, levelId: null, initial: null })}
+          onSave={(data) => {
+            if (subjectModal.initial) {
+              updateSubject(subjectModal.levelId, subjectModal.initial.id, data);
+            } else {
+              addSubject(subjectModal.levelId, data);
+            }
+          }}
+          initial={subjectModal.initial}
+        />
+      )}
 
-      {/* Topic Modal */}
-      <TopicModal
-        isOpen={topicModal.open}
-        onClose={() =>
-          setTopicModal({ open: false, levelId: null, subjectId: null, initial: null })
-        }
-        initial={topicModal.initial}
-        onSave={(data) => {
-          if (topicModal.initial) {
-            updateTopic(topicModal.initial.id, data);
-          } else {
-            addTopic(topicModal.levelId, topicModal.subjectId, data);
+      {topicModal.open && (
+        <TopicModal
+          isOpen={topicModal.open}
+          onClose={() =>
+            setTopicModal({
+              open: false,
+              levelId: null,
+              subjectId: null,
+              initial: null,
+            })
           }
-        }}
-      />
+          onSave={(data) => {
+            if (topicModal.initial) {
+              updateTopic(topicModal.levelId, topicModal.subjectId, topicModal.initial.id, data);
+            } else {
+              addTopic(topicModal.levelId, topicModal.subjectId, data);
+            }
+          }}
+          initial={topicModal.initial}
+        />
+      )}
 
-      {/* Delete Confirmation Dialog */}
-      <ConfirmDialog
-        isOpen={deleteConfirm.open}
-        onClose={() =>
-          setDeleteConfirm({ open: false, type: null, levelId: null, subjectId: null, topicId: null })
-        }
-        onConfirm={handleConfirmDelete}
-        title={deleteConfirm.title || 'Delete Item'}
-        message={deleteConfirm.message || 'Are you sure? This cannot be undone.'}
-        confirmLabel="Delete"
-        danger
-      />
+      {deleteConfirm.open && (
+        <ConfirmDialog
+          isOpen={deleteConfirm.open}
+          onClose={() =>
+            setDeleteConfirm({
+              open: false,
+              type: null,
+              levelId: null,
+              subjectId: null,
+              topicId: null,
+            })
+          }
+          onConfirm={handleConfirmDelete}
+          title={deleteConfirm.title}
+          message={deleteConfirm.message}
+          confirmLabel="Delete"
+          danger
+        />
+      )}
     </AppLayout>
   );
 }

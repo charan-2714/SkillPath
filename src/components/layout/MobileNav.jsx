@@ -6,41 +6,26 @@ import { NavLink, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard,
   Compass,
-  FolderTree,
   Sparkles,
-  Code2,
-  FolderKanban,
-  CheckCircle2,
-  Library,
   BarChart3,
-  BookOpenCheck,
-  BrainCircuit,
   Settings,
-  Download,
-  Info,
   X,
-  Route,
   Flame,
-  Trash2,
   ShieldCheck,
   Binary,
+  Route,
 } from 'lucide-react';
 import { useAppState } from '../../context/AppContext';
 import { useAuth } from '../../context/AuthContext';
 
 export function MobileBottomNav() {
   const location = useLocation();
-  const { activeJourney } = useAppState();
 
   const bottomItems = [
     { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { to: '/journeys', icon: Compass, label: 'Journeys' },
-    {
-      to: activeJourney ? `/journeys/${activeJourney.id}/manage` : '/templates',
-      icon: activeJourney ? FolderTree : Sparkles,
-      label: activeJourney ? 'Builder' : 'Templates',
-    },
-    { to: '/practice', icon: Code2, label: 'Practice' },
+    { to: '/dsa', icon: Binary, label: 'DSA' },
+    { to: '/templates', icon: Sparkles, label: 'Templates' },
     { to: '/analytics', icon: BarChart3, label: 'Analytics' },
   ];
 
@@ -78,35 +63,19 @@ export function MobileBottomNav() {
 }
 
 export function MobileDrawer({ isOpen, onClose }) {
-  const { state, activeJourney } = useAppState();
+  const { state } = useAppState();
   const { isAdmin } = useAuth();
   const streak = state.analytics?.streakDays || 0;
   const location = useLocation();
 
-  const showAIDependency = (state.journeys || []).some((j) => j.enableAIDependency);
-
   const allNav = [
     { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { to: '/journeys', icon: Compass, label: 'My Journeys' },
-    ...(activeJourney
-      ? [{ to: `/journeys/${activeJourney.id}/manage`, icon: FolderTree, label: 'Journey Builder' }]
-      : []),
-    { to: '/templates', icon: Sparkles, label: 'Templates' },
-    { to: '/dsa', icon: Binary, label: 'DSA / LeetCode' },
-    { to: '/practice', icon: Code2, label: 'Practice Tasks' },
-    { to: '/projects', icon: FolderKanban, label: 'Projects' },
-    { to: '/assessments', icon: CheckCircle2, label: 'Assessments' },
-    { to: '/resources', icon: Library, label: 'Resources' },
-    { to: '/analytics', icon: BarChart3, label: 'Progress Analytics' },
-    { to: '/learning-log', icon: BookOpenCheck, label: 'Learning Log' },
-    ...(showAIDependency
-      ? [{ to: '/ai-dependency', icon: BrainCircuit, label: 'AI Independence' }]
-      : []),
-    { to: '/recycle-bin', icon: Trash2, label: `Recycle Bin (${state.recycleBin?.length || 0})` },
+    { to: '/dsa', icon: Binary, label: 'DSA & LeetCode' },
+    { to: '/templates', icon: Sparkles, label: 'Explore Templates' },
+    { to: '/analytics', icon: BarChart3, label: 'Analytics & Logs' },
     ...(isAdmin ? [{ to: '/admin', icon: ShieldCheck, label: 'Admin Portal' }] : []),
-    { to: '/settings', icon: Settings, label: 'Settings' },
-    { to: '/export', icon: Download, label: 'Export / Import' },
-    { to: '/about', icon: Info, label: 'About' },
+    { to: '/settings', icon: Settings, label: 'Settings & Backups' },
   ];
 
   const isActive = (to) => {

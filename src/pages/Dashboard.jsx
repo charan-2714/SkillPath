@@ -1,4 +1,6 @@
 // src/pages/Dashboard.jsx
+// Professional Dashboard: Active Roadmap Hero, Unified Stat KPIs, Study Queue & DSA Practice Hub
+
 import React, { useState, useMemo } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import {
@@ -9,89 +11,54 @@ import {
   Flame,
   CheckCircle2,
   Code2,
-  AlertTriangle,
   FolderTree,
   ArrowRight,
   ChevronRight,
-  BrainCircuit,
   Compass,
   Zap,
+  Binary,
+  RotateCcw,
+  BookOpen,
+  Layers,
 } from 'lucide-react';
 import { AppLayout } from '../components/layout/AppLayout';
-import { CircularProgress, ProgressBar } from '../components/common/ProgressBar';
-import { EmptyState } from '../components/common/EmptyState';
-import { JourneyCard } from '../components/journeys/JourneyCard';
+import { ProgressBar } from '../components/common/ProgressBar';
 import { CreateJourneyModal } from '../components/journeys/CreateJourneyModal';
-import { ConfirmDialog } from '../components/common/Modal';
 import { useAppState, ACTIONS } from '../context/AppContext';
+import { useAuth } from '../context/AuthContext';
 import { useJourneys } from '../hooks/useJourneys';
-import { useJourney } from '../hooks/useJourney';
-import { getJourneyStats, calculateLevelProgress, calculateTopicProgress } from '../utils/calculations';
+import { useDSA } from '../context/DSAContext';
+import { getJourneyStats, calculateTopicProgress } from '../utils/calculations';
 import { TEMPLATES } from '../data/templates';
-
-function StatCard({ icon, label, value, sub, color = 'indigo', progress }) {
-  const colorMap = {
-    indigo: 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400',
-    blue: 'bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400',
-    green: 'bg-green-50 dark:bg-green-950/40 text-green-600 dark:text-green-400',
-    amber: 'bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400',
-    orange: 'bg-orange-50 dark:bg-orange-950/40 text-orange-600 dark:text-orange-400',
-  };
-
-  return (
-    <div className="card p-4 flex flex-col justify-between">
-      <div className="flex items-center justify-between">
-        <div className={`w-9 h-9 rounded-xl ${colorMap[color]} flex items-center justify-center`}>
-          {icon}
-        </div>
-        <span className="text-xs text-gray-400 dark:text-gray-500 font-medium">{label}</span>
-      </div>
-      <div className="mt-3">
-        <div className="text-2xl font-bold text-gray-900 dark:text-gray-100 leading-tight">
-          {value}
-        </div>
-        {sub && <div className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">{sub}</div>}
-      </div>
-      {progress !== undefined && (
-        <ProgressBar value={progress} color={color} height="h-1.5" className="mt-2.5" />
-      )}
-    </div>
-  );
-}
 
 export default function Dashboard() {
   const { state, dispatch } = useAppState();
+  const { user } = useAuth();
   const navigate = useNavigate();
   const {
     activeJourneys,
     activeJourney,
     createJourney,
     createFromTemplate,
-    deleteJourney,
-    duplicateJourney,
-    archiveJourney,
   } = useJourneys();
 
+  const dsaContext = useDSA();
+  const dsaStats = dsaContext?.overallStats || dsaContext?.stats || {
+    solved: 0,
+    total: 0,
+    easySolved: 0,
+    mediumSolved: 0,
+    hardSolved: 0,
+  };
+  const revisionQueue = dsaContext?.revisionQueue || [];
+
   const [createModalOpen, setCreateModalOpen] = useState(false);
-  const [deleteJourneyId, setDeleteJourneyId] = useState(null);
 
   const stats = useMemo(() => getJourneyStats(activeJourney), [activeJourney]);
   const streak = state.analytics?.streakDays || 0;
-  const userName = state.settings?.userName || 'Learner';
+  const userName = user?.displayName || state.settings?.userName || 'Learner';
 
-  const { weakAreas } = useJourney(activeJourney?.id);
-
-  // Motivational message
-  const motivationalMsg = useMemo(() => {
-    if (!activeJourney) return 'Start or select a journey to begin tracking your growth.';
-    if (stats.overallProgress === 0) return `Ready to begin ${activeJourney.name}? Every journey begins with a step!`;
-    if (stats.overallProgress < 25) return 'Great start! Consistency is the key to deep mastery.';
-    if (stats.overallProgress < 60) return `Solid progress in ${activeJourney.name}! You are building real ability.`;
-    if (stats.overallProgress < 90) return 'Impressive momentum! You are approaching advanced mastery.';
-    return `Incredible achievement! You have mastered almost all topics in ${activeJourney.name}.`;
-  }, [activeJourney, stats.overallProgress]);
-
-  // Next topics queue
+  // Next topics queue in active journey
   const nextTopics = useMemo(() => {
     if (!activeJourney || !activeJourney.levels) return [];
     const queue = [];
@@ -119,6 +86,14 @@ export default function Dashboard() {
     navigate(`/journeys/${journey.id}`);
   };
 
+  const handleSwitchJourney = (jId) => {
+    if (jId === 'create') {
+      navigate('/templates');
+    } else {
+      dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: jId });
+    }
+  };
+
   // FIRST RUN ONBOARDING (0 Journeys)
   if (!state.journeys || state.journeys.length === 0) {
     return (
@@ -132,8 +107,7 @@ export default function Dashboard() {
               Welcome to SkillPath
             </h1>
             <p className="text-base text-gray-600 dark:text-gray-400 mt-2 max-w-xl mx-auto">
-              Build your learning journey. Track your progress. Master your skills.
-              Create your own curriculum from scratch or start with a battle-tested template.
+              Build your learning journey. Track algorithmic problems. Master your engineering skills with structured curriculum templates.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
@@ -142,14 +116,14 @@ export default function Dashboard() {
                 className="btn-primary text-sm px-5 py-2.5 shadow-sm"
               >
                 <Plus className="w-4 h-4" />
-                Create Journey From Scratch
+                Create Custom Journey
               </button>
               <button
                 onClick={() => navigate('/templates')}
                 className="btn-secondary text-sm px-5 py-2.5"
               >
                 <Compass className="w-4 h-4" />
-                Explore All Templates
+                Explore 30+ Role Templates
               </button>
             </div>
           </div>
@@ -206,319 +180,394 @@ export default function Dashboard() {
 
   return (
     <AppLayout pageTitle="Dashboard">
-      {/* Welcome Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6">
-        <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-gray-100">
-            👋 Welcome back, {userName}!
-          </h1>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{motivationalMsg}</p>
-        </div>
+      {/* 1. HERO BANNER: Active Learning Roadmap */}
+      {activeJourney && (
+        <div className="card p-6 mb-6 bg-gradient-to-r from-indigo-900/10 via-purple-900/10 to-transparent dark:from-indigo-950/40 dark:via-purple-950/20 border-indigo-200/80 dark:border-indigo-800/60 shadow-xs">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-5">
+            <div className="space-y-2 max-w-xl">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-indigo-600 text-white shadow-xs">
+                  Active Roadmap
+                </span>
+                {stats.currentLevel && (
+                  <span className="text-xs font-medium text-indigo-700 dark:text-indigo-300 bg-indigo-50 dark:bg-indigo-950/60 px-2 py-0.5 rounded-md border border-indigo-200 dark:border-indigo-800">
+                    {stats.currentLevel.title}
+                  </span>
+                )}
+              </div>
 
-        <div className="flex items-center gap-2.5 flex-wrap">
-          {activeJourney && stats.currentTopic && (
-            <button
-              onClick={() =>
-                navigate(`/journeys/${activeJourney.id}/topics/${stats.currentTopic.id}`)
-              }
-              className="btn-primary text-xs px-4 py-2"
-            >
-              <Play className="w-3.5 h-3.5 fill-current" />
-              Continue Focus
-            </button>
-          )}
+              <h1 className="text-2xl font-black text-gray-900 dark:text-gray-100 tracking-tight">
+                {activeJourney.name}
+              </h1>
 
-          <button
-            onClick={() => setCreateModalOpen(true)}
-            className="btn-secondary text-xs px-3.5 py-2"
-          >
-            <Plus className="w-3.5 h-3.5" />
-            New Journey
-          </button>
-        </div>
-      </div>
+              <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400">
+                <span>{stats.completedTopics} of {stats.totalTopics} topics completed</span>
+                <span>•</span>
+                <span className="font-bold text-indigo-600 dark:text-indigo-400">{stats.overallProgress}% mastered</span>
+              </div>
 
-      {/* Top Stat Cards */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <div className="card p-4 flex flex-col items-center justify-center col-span-1">
-          <CircularProgress
-            value={stats.overallProgress}
-            size={76}
-            color="#6366f1"
-            label={`${stats.overallProgress}%`}
-            sublabel="Overall"
-          />
-          <div className="text-xs font-semibold text-gray-800 dark:text-gray-200 mt-2 text-center truncate max-w-[140px]">
-            {activeJourney?.name || 'Overall Progress'}
-          </div>
-          <div className="text-[11px] text-gray-400 dark:text-gray-500 mt-0.5">
-            {stats.completedTopics} / {stats.totalTopics} topics
-          </div>
-        </div>
-
-        <StatCard
-          icon={<Target className="w-5 h-5" />}
-          label="Current Level"
-          value={stats.currentLevel ? stats.currentLevel.title : 'None'}
-          sub={stats.currentLevel ? `${stats.currentLevel.subjects?.length || 0} subjects` : 'All complete'}
-          color="blue"
-          progress={
-            stats.currentLevel
-              ? calculateLevelProgress(
-                  stats.currentLevel,
-                  activeJourney?.trackingModel,
-                  activeJourney?.skillDimensions
-                )
-              : 100
-          }
-        />
-
-        <StatCard
-          icon={<CheckCircle2 className="w-5 h-5" />}
-          label="Practice & Tasks"
-          value={`${stats.practiceSolved} / ${stats.totalPractice}`}
-          sub={stats.totalPractice > 0 ? `${Math.round((stats.practiceSolved / stats.totalPractice) * 100)}% solved` : 'No practice tasks'}
-          color="green"
-          progress={stats.totalPractice > 0 ? (stats.practiceSolved / stats.totalPractice) * 100 : 0}
-        />
-
-        <StatCard
-          icon={<Flame className="w-5 h-5" />}
-          label="Daily Streak"
-          value={`${streak} Days`}
-          sub={streak > 0 ? '🔥 Keep it rolling!' : 'Start studying today!'}
-          color={streak > 0 ? 'orange' : 'amber'}
-        />
-      </div>
-
-      {/* Main Content Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
-        {/* Current Focus Card */}
-        <div className="card p-5 lg:col-span-1 bg-gradient-to-br from-indigo-50/70 to-purple-50/70 dark:from-indigo-950/20 dark:to-purple-950/20 border-indigo-100 dark:border-indigo-900/40 flex flex-col justify-between">
-          <div>
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
-                Current Focus
-              </span>
-              <Zap className="w-4 h-4 text-indigo-500" />
+              <ProgressBar value={stats.overallProgress} height="h-2" className="max-w-md" />
             </div>
 
-            {stats.currentTopic ? (
-              <>
-                <div className="text-xs text-indigo-600 dark:text-indigo-400 font-medium mb-1">
-                  {stats.currentTopic.levelTitle} / {stats.currentTopic.subjectTitle}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-2">
-                  {stats.currentTopic.title}
-                </h3>
-                {stats.currentTopic.description && (
-                  <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-3 mb-4">
-                    {stats.currentTopic.description}
-                  </p>
-                )}
-              </>
-            ) : (
-              <p className="text-xs text-gray-500 py-4">
-                No active topic in progress. You have finished your current topics or can pick a new focus!
-              </p>
-            )}
-          </div>
+            <div className="flex items-center gap-3 flex-wrap md:flex-col md:items-end">
+              {stats.currentTopic ? (
+                <button
+                  onClick={() =>
+                    navigate(`/journeys/${activeJourney.id}/topics/${stats.currentTopic.id}`)
+                  }
+                  className="btn-primary text-xs px-5 py-2.5 shadow-sm flex items-center gap-2"
+                >
+                  <Play className="w-4 h-4 fill-current" />
+                  Resume: {stats.currentTopic.title.slice(0, 22)}...
+                </button>
+              ) : (
+                <button
+                  onClick={() => navigate(`/journeys/${activeJourney.id}`)}
+                  className="btn-primary text-xs px-5 py-2.5 shadow-sm"
+                >
+                  Open Full Roadmap
+                </button>
+              )}
 
-          {activeJourney && stats.currentTopic && (
-            <button
-              onClick={() =>
-                navigate(`/journeys/${activeJourney.id}/topics/${stats.currentTopic.id}`)
-              }
-              className="btn-primary text-xs w-full justify-center py-2 mt-3"
-            >
-              <Play className="w-3.5 h-3.5 fill-current" />
-              Open Topic
-            </button>
-          )}
+              {/* Journey Switcher Dropdown */}
+              {activeJourneys.length > 1 && (
+                <div className="flex items-center gap-2 text-xs">
+                  <span className="text-gray-400">Switch:</span>
+                  <select
+                    value={activeJourney.id}
+                    onChange={(e) => handleSwitchJourney(e.target.value)}
+                    className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-xs py-1 px-2 text-gray-700 dark:text-gray-300 cursor-pointer focus:outline-none"
+                  >
+                    {activeJourneys.map((j) => (
+                      <option key={j.id} value={j.id}>
+                        {j.name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 2. THREE KEY METRIC TILES */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        {/* Roadmap Progress */}
+        <div className="card p-4 flex items-center gap-4">
+          <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-950/50 text-indigo-600 dark:text-indigo-400 flex items-center justify-center flex-shrink-0">
+            <Target className="w-6 h-6" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="text-xs text-gray-400 font-medium">Curriculum Progress</div>
+            <div className="text-xl font-black text-gray-900 dark:text-gray-100">
+              {stats.overallProgress}%
+            </div>
+            <div className="text-[11px] text-gray-500 truncate">
+              {stats.completedTopics} / {stats.totalTopics} Topics
+            </div>
+          </div>
         </div>
 
-        {/* Next Up Queue */}
-        <div className="card p-5 lg:col-span-1 flex flex-col justify-between">
+        {/* DSA Problems Solved */}
+        <div
+          onClick={() => navigate('/dsa')}
+          className="card p-4 flex items-center gap-4 hover:border-indigo-300 dark:hover:border-indigo-700 cursor-pointer transition-all"
+        >
+          <div className="w-12 h-12 rounded-xl bg-purple-50 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400 flex items-center justify-center flex-shrink-0">
+            <Binary className="w-6 h-6" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="text-xs text-gray-400 font-medium">DSA Problems Solved</div>
+            <div className="text-xl font-black text-gray-900 dark:text-gray-100">
+              {dsaStats.solved} <span className="text-xs font-normal text-gray-400">/ {dsaStats.total}</span>
+            </div>
+            <div className="text-[11px] text-purple-600 dark:text-purple-400 font-medium">
+              {dsaStats.easySolved}E • {dsaStats.mediumSolved}M • {dsaStats.hardSolved}H
+            </div>
+          </div>
+        </div>
+
+        {/* Daily Streak */}
+        <div className="card p-4 flex items-center gap-4">
+          <div className="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-950/50 text-orange-600 dark:text-orange-400 flex items-center justify-center flex-shrink-0">
+            <Flame className="w-6 h-6" />
+          </div>
+          <div className="min-w-0 flex-1">
+            <div className="text-xs text-gray-400 font-medium">Daily Streak</div>
+            <div className="text-xl font-black text-orange-600 dark:text-orange-400">
+              {streak} Days
+            </div>
+            <div className="text-[11px] text-gray-500">
+              {streak > 0 ? 'Consistent learning!' : 'Study today to build streak'}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 3. TWO BALANCED ACTIVITY COLUMNS */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+        {/* COLUMN 1: Active Roadmap Study Queue */}
+        <div className="card p-5 flex flex-col justify-between space-y-4">
           <div>
-            <div className="flex items-center justify-between mb-3">
-              <h2 className="section-title text-sm">Next in Queue</h2>
+            <div className="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-gray-800">
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-4 h-4 text-indigo-600" />
+                <h2 className="text-sm font-bold text-gray-900 dark:text-gray-100">
+                  Roadmap Study Queue
+                </h2>
+              </div>
               {activeJourney && (
                 <button
                   onClick={() => navigate(`/journeys/${activeJourney.id}`)}
                   className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-0.5"
                 >
-                  View all <ChevronRight className="w-3 h-3" />
+                  View full tree <ChevronRight className="w-3.5 h-3.5" />
                 </button>
               )}
             </div>
 
-            {nextTopics.length > 0 ? (
-              <div className="space-y-2">
-                {nextTopics.map((item, idx) => (
+            {/* Current Focus Highlight */}
+            {stats.currentTopic && (
+              <div className="mt-4 p-4 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-900/50 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
+                    Current Focus
+                  </span>
+                  <span className="text-[10px] text-indigo-600 font-mono">
+                    {stats.currentTopic.levelTitle}
+                  </span>
+                </div>
+                <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
+                  {stats.currentTopic.title}
+                </h3>
+                {stats.currentTopic.description && (
+                  <p className="text-xs text-gray-600 dark:text-gray-400 line-clamp-2">
+                    {stats.currentTopic.description}
+                  </p>
+                )}
+                <button
+                  onClick={() =>
+                    navigate(`/journeys/${activeJourney.id}/topics/${stats.currentTopic.id}`)
+                  }
+                  className="btn-primary text-xs py-1.5 px-3 w-full justify-center mt-2"
+                >
+                  <Play className="w-3 h-3 fill-current" />
+                  Continue Topic
+                </button>
+              </div>
+            )}
+
+            {/* Next in Queue */}
+            <div className="mt-4 space-y-2">
+              <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">
+                Up Next in Line
+              </h4>
+              {nextTopics.length > 0 ? (
+                nextTopics.map((item, idx) => (
                   <button
                     key={item.topic.id}
                     onClick={() =>
                       navigate(`/journeys/${activeJourney.id}/topics/${item.topic.id}`)
                     }
-                    className="w-full flex items-center gap-3 p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800/60 hover:bg-indigo-50/60 dark:hover:bg-indigo-950/30 text-left transition-colors group"
+                    className="w-full flex items-center justify-between p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800/60 hover:bg-indigo-50/50 dark:hover:bg-indigo-950/30 text-left transition-colors group"
                   >
-                    <div className="w-6 h-6 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center text-xs font-bold text-indigo-700 dark:text-indigo-300 flex-shrink-0">
-                      {idx + 1}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <div className="text-xs font-semibold text-gray-800 dark:text-gray-200 truncate group-hover:text-indigo-600 dark:group-hover:text-indigo-400">
-                        {item.topic.title}
+                    <div className="flex items-center gap-3 min-w-0">
+                      <span className="w-5 h-5 rounded-md bg-white dark:bg-gray-700 text-[10px] font-bold text-gray-600 dark:text-gray-300 flex items-center justify-center border border-gray-200 dark:border-gray-600">
+                        {idx + 1}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="text-xs font-semibold text-gray-800 dark:text-gray-200 truncate group-hover:text-indigo-600">
+                          {item.topic.title}
+                        </div>
+                        <div className="text-[10px] text-gray-400 truncate">
+                          {item.level.title}
+                        </div>
                       </div>
-                      <div className="text-[11px] text-gray-400 truncate">
-                        {item.level.title}
-                      </div>
                     </div>
-                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-indigo-500 flex-shrink-0" />
+                    <ChevronRight className="w-3.5 h-3.5 text-gray-400 group-hover:text-indigo-600 flex-shrink-0" />
                   </button>
-                ))}
-              </div>
-            ) : (
-              <div className="py-6 text-center text-xs text-gray-400">
-                All topics in queue are completed! 🎉
-              </div>
-            )}
+                ))
+              ) : (
+                <div className="p-4 text-center text-xs text-gray-400">
+                  All queued topics completed! ✨
+                </div>
+              )}
+            </div>
           </div>
-
-          {activeJourney && (
-            <button
-              onClick={() => navigate(`/journeys/${activeJourney.id}/manage`)}
-              className="btn-secondary text-xs w-full justify-center mt-3"
-            >
-              <FolderTree className="w-3.5 h-3.5" />
-              Open Journey Builder
-            </button>
-          )}
         </div>
 
-        {/* Weak Areas Quick Glance */}
-        <div className="card p-5 lg:col-span-1 flex flex-col justify-between">
+        {/* COLUMN 2: DSA & Problem Solving Studio */}
+        <div className="card p-5 flex flex-col justify-between space-y-4">
           <div>
-            <div className="flex items-center justify-between mb-3">
-              <h2 className="section-title text-sm flex items-center gap-1.5">
-                <AlertTriangle className="w-4 h-4 text-amber-500" />
-                <span>Needs Review</span>
-              </h2>
-              {activeJourney && (
-                <button
-                  onClick={() => navigate('/analytics')}
-                  className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline"
-                >
-                  Analytics
-                </button>
+            <div className="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-gray-800">
+              <div className="flex items-center gap-2">
+                <Binary className="w-4 h-4 text-purple-600" />
+                <h2 className="text-sm font-bold text-gray-900 dark:text-gray-100">
+                  DSA Problem Solving Studio
+                </h2>
+              </div>
+              <button
+                onClick={() => navigate('/dsa')}
+                className="text-xs text-purple-600 dark:text-purple-400 hover:underline flex items-center gap-0.5"
+              >
+                Open Studio <ChevronRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+
+            {/* Spaced Repetition Due Today or Mock Screen CTA */}
+            <div className="mt-4">
+              {revisionQueue && revisionQueue.length > 0 ? (
+                <div className="p-4 rounded-xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/50 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300 flex items-center gap-1.5">
+                      <RotateCcw className="w-3 h-3" />
+                      {revisionQueue.length} Problems Due for Revision
+                    </span>
+                    <span className="text-[10px] text-purple-600">Spaced Repetition</span>
+                  </div>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    Strengthen neural recall by re-attempting problems scheduled for review today.
+                  </p>
+                  <div className="space-y-1.5 pt-1">
+                    {revisionQueue.slice(0, 2).map((p) => (
+                      <div
+                        key={p.id}
+                        onClick={() => navigate(`/dsa/problems/${p.id}`)}
+                        className="p-2 rounded-lg bg-white/80 dark:bg-gray-800/80 border border-purple-200/60 dark:border-purple-800/60 flex items-center justify-between text-xs cursor-pointer hover:border-purple-400"
+                      >
+                        <span className="font-semibold text-gray-800 dark:text-gray-200 truncate">{p.title}</span>
+                        <span className="text-[10px] px-1.5 py-0.5 rounded capitalize font-medium bg-gray-100 dark:bg-gray-700">{p.difficulty}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <div className="p-4 rounded-xl bg-gradient-to-br from-purple-50/60 to-indigo-50/40 dark:from-purple-950/30 dark:to-indigo-950/20 border border-purple-100 dark:border-purple-900/50 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300">
+                      30-Min Timed Mock Screen
+                    </span>
+                    <span className="text-[10px] text-purple-600">Interview Mode</span>
+                  </div>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    Test your pattern recognition under realistic constraints with AI-free timed problem solving.
+                  </p>
+                  <button
+                    onClick={() => navigate('/dsa')}
+                    className="btn-secondary text-xs py-1.5 w-full justify-center mt-2 border-purple-200 dark:border-purple-800 hover:bg-purple-50"
+                  >
+                    Start Mock Screen
+                  </button>
+                </div>
               )}
             </div>
 
-            {weakAreas && weakAreas.length > 0 ? (
-              <div className="space-y-2.5">
-                {weakAreas.slice(0, 3).map((item) => (
-                  <div
-                    key={item.topicId}
-                    onClick={() =>
-                      navigate(`/journeys/${activeJourney.id}/topics/${item.topicId}`)
-                    }
-                    className="p-2.5 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-800/40 hover:border-indigo-300 dark:hover:border-indigo-700 cursor-pointer transition-colors"
-                  >
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs font-semibold text-gray-800 dark:text-gray-200 truncate">
-                        {item.topicTitle}
-                      </span>
-                      <span className="text-xs font-bold text-amber-600 dark:text-amber-400 ml-2">
-                        {item.progress}%
-                      </span>
-                    </div>
-                    <div className="text-[11px] text-gray-400 truncate mb-1.5">
-                      {item.reasons[0] || 'In progress'}
-                    </div>
-                    <ProgressBar value={item.progress} height="h-1" />
-                  </div>
-                ))}
+            {/* Quick Difficulty Breakdown */}
+            <div className="mt-4 pt-3 border-t border-gray-100 dark:border-gray-800 space-y-2">
+              <div className="flex items-center justify-between text-xs">
+                <span className="text-gray-500">Curated LeetCode Coverage</span>
+                <span className="font-bold text-gray-800 dark:text-gray-200">
+                  {dsaStats.solved} / {dsaStats.total} Solved
+                </span>
               </div>
-            ) : (
-              <div className="py-8 text-center text-xs text-gray-400">
-                No weak areas detected in {activeJourney?.name || 'active journey'}! ✨
-              </div>
-            )}
+              <ProgressBar
+                value={dsaStats.total > 0 ? (dsaStats.solved / dsaStats.total) * 100 : 0}
+                color="purple"
+                height="h-2"
+              />
+            </div>
           </div>
 
           <button
-            onClick={() => navigate('/practice')}
-            className="btn-secondary text-xs w-full justify-center mt-3"
+            onClick={() => navigate('/dsa')}
+            className="btn-primary text-xs w-full justify-center mt-2"
           >
-            <Code2 className="w-3.5 h-3.5" />
-            Practice Challenges
+            <Binary className="w-3.5 h-3.5" />
+            Explore 60+ LeetCode Patterns
           </button>
         </div>
       </div>
 
-      {/* All My Learning Journeys Section */}
-      <div className="mb-6">
+      {/* 4. SWITCH LEARNING JOURNEY OR EXPLORE TEMPLATES */}
+      <div className="card p-5">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-lg font-bold text-gray-900 dark:text-gray-100">
-              My Learning Journeys
-            </h2>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mt-0.5">
-              Switch between your independent learning roadmaps.
+            <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
+              My Active Roadmaps ({activeJourneys.length})
+            </h3>
+            <p className="text-xs text-gray-400">
+              Quickly jump between your custom learning tracks or adopt a new technology role.
             </p>
           </div>
 
           <div className="flex items-center gap-2">
             <button
               onClick={() => navigate('/templates')}
-              className="btn-secondary text-xs"
+              className="btn-secondary text-xs flex items-center gap-1.5"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              Templates
+              <Sparkles className="w-3.5 h-3.5 text-indigo-500" />
+              Explore Templates
             </button>
             <button
               onClick={() => setCreateModalOpen(true)}
-              className="btn-primary text-xs"
+              className="btn-primary text-xs flex items-center gap-1"
             >
               <Plus className="w-3.5 h-3.5" />
-              Create Journey
+              New Journey
             </button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {activeJourneys.map((j) => (
-            <JourneyCard
-              key={j.id}
-              journey={j}
-              isSelected={activeJourney?.id === j.id}
-              onDuplicate={duplicateJourney}
-              onArchive={archiveJourney}
-              onDelete={(id) => setDeleteJourneyId(id)}
-            />
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {activeJourneys.map((j) => {
+            const isSelected = activeJourney?.id === j.id;
+            const jStats = getJourneyStats(j);
+
+            return (
+              <div
+                key={j.id}
+                onClick={() => handleSwitchJourney(j.id)}
+                className={`p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
+                  isSelected
+                    ? 'bg-indigo-50/70 dark:bg-indigo-950/40 border-indigo-300 dark:border-indigo-700 shadow-xs'
+                    : 'bg-white dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 hover:border-indigo-200'
+                }`}
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-1">
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300">
+                      {j.category || 'Engineering'}
+                    </span>
+                    <span className="text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                      {jStats.overallProgress}%
+                    </span>
+                  </div>
+                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100 truncate">
+                    {j.name}
+                  </h4>
+                  <p className="text-[11px] text-gray-400 mt-0.5">
+                    {jStats.completedTopics} of {jStats.totalTopics} topics
+                  </p>
+                </div>
+
+                <div className="mt-2.5 pt-2 border-t border-gray-100 dark:border-gray-750 flex items-center justify-between text-[11px]">
+                  <span className={isSelected ? 'text-indigo-600 font-bold' : 'text-gray-400'}>
+                    {isSelected ? '● Currently Active' : 'Click to Switch'}
+                  </span>
+                  <ChevronRight className="w-3.5 h-3.5 text-gray-400" />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
-      {/* Modals */}
+      {/* Modal */}
       <CreateJourneyModal
         isOpen={createModalOpen}
         onClose={() => setCreateModalOpen(false)}
         onSave={createJourney}
-      />
-
-      <ConfirmDialog
-        isOpen={Boolean(deleteJourneyId)}
-        onClose={() => setDeleteJourneyId(null)}
-        onConfirm={() => {
-          if (deleteJourneyId) {
-            deleteJourney(deleteJourneyId);
-            setDeleteJourneyId(null);
-          }
-        }}
-        title="Delete Learning Journey"
-        message="Are you sure you want to delete this journey? All of its levels, subjects, topics, and progress will be permanently removed. This cannot be undone."
-        confirmLabel="Delete Journey"
-        danger
       />
     </AppLayout>
   );

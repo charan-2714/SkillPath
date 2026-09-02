@@ -498,6 +498,7 @@ export default function TopicDetail() {
   const [aiPromptModal, setAiPromptModal] = useState({ open: false, subtopic: null, mode: 'deepdive' });
   const [copiedCodeId, setCopiedCodeId] = useState(null);
   const [subtopicNotes, setSubtopicNotes] = useState({});
+  const [showSkillDimensions, setShowSkillDimensions] = useState(false);
   const [practiceModal, setPracticeModal] = useState({
     open: false,
     title: '',
@@ -684,15 +685,20 @@ export default function TopicDetail() {
   };
 
   const subtopicsList = useMemo(() => {
-    if (topic.learningItems && topic.learningItems.length > 0) return topic.learningItems;
-    if (topic.subtopics && topic.subtopics.length > 0) {
-      return topic.subtopics.map((st, idx) => ({
+    let items = [];
+    if (topic.learningItems && topic.learningItems.length > 0) {
+      items = topic.learningItems;
+    } else if (topic.subtopics && topic.subtopics.length > 0) {
+      items = topic.subtopics.map((st, idx) => ({
         id: `st-${idx}`,
         title: typeof st === 'string' ? st : st.title,
         completed: false,
       }));
     }
-    return [];
+    return items.map((item, idx) => ({
+      ...item,
+      displayIndex: idx + 1,
+    }));
   }, [topic.learningItems, topic.subtopics]);
 
   const tabs = [
@@ -744,6 +750,38 @@ export default function TopicDetail() {
           { label: topic.title },
         ]}
       />
+
+      {/* Module Topics Switcher Ribbon (when subject has multiple topics) */}
+      {(subject.topics || []).length > 1 && (
+        <div className="mb-4 overflow-x-auto pb-1 scrollbar-thin">
+          <div className="flex items-center gap-1.5 min-w-max p-1 bg-gray-100 dark:bg-gray-800/80 rounded-2xl border border-gray-200 dark:border-gray-750">
+            <span className="text-[11px] font-black text-gray-500 dark:text-gray-400 px-2.5 py-1">
+              Topics in {subject.title}:
+            </span>
+            {subject.topics.map((top, tIdx) => {
+              const isCur = top.id === topic.id;
+              const isDone = top.status === 'completed';
+
+              return (
+                <button
+                  key={top.id}
+                  onClick={() => navigate(`/journeys/${journey?.id}/topics/${top.id}`)}
+                  className={`text-xs px-3 py-1.5 rounded-xl font-bold transition-all flex items-center gap-1.5 ${
+                    isCur
+                      ? 'bg-sky-600 text-white shadow-xs'
+                      : isDone
+                      ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300 hover:bg-emerald-100 border border-emerald-200 dark:border-emerald-800'
+                      : 'text-gray-600 dark:text-gray-300 hover:bg-white dark:hover:bg-gray-700'
+                  }`}
+                >
+                  <span>{tIdx + 1}. {top.title}</span>
+                  {isDone && <Check className="w-3 h-3 text-emerald-500 stroke-[3]" />}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Header Topic Card */}
       <div className="card p-6 mb-5">
@@ -843,74 +881,41 @@ export default function TopicDetail() {
           </div>
         </div>
 
-        {/* Skill Dimensions Rating Grid */}
+        {/* Skill Dimensions Rating (Collapsible) */}
         {skillDimensions.length > 0 && (
-          <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">
-              Skill Dimensions Self-Assessment (0 to 5)
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-              {skillDimensions.map((dim) => {
-                const score = topic.skillScores?.[dim.id] ?? 0;
-                return (
-                  <SkillDimensionRating
-                    key={dim.id}
-                    dimension={dim}
-                    score={score}
-                    onChange={(newScore) => {
-                      updateTopicSkill(topic.id, dim.id, newScore);
-                      showToast(`Rated ${dim.name}: ${newScore}/5`, 'success');
-                    }}
-                  />
-                );
-              })}
-            </div>
-          </div>
-        )}
+          <div className="pt-3 border-t border-gray-100 dark:border-gray-800">
+            <button
+              type="button"
+              onClick={() => setShowSkillDimensions(!showSkillDimensions)}
+              className="flex items-center justify-between w-full text-left py-1 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+            >
+              <span className="uppercase tracking-wider">
+                Skill Dimensions Self-Assessment ({skillDimensions.length})
+              </span>
+              <span className="text-[11px] font-semibold text-indigo-600 dark:text-indigo-400 flex items-center gap-1">
+                {showSkillDimensions ? 'Hide Breakdown' : 'Rate Specific Skills'}
+                {showSkillDimensions ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+              </span>
+            </button>
 
-        {/* AI Independence Checkpoint */}
-        {journey?.features?.aiIndependence && (
-          <div className="card p-5 border border-indigo-100 dark:border-indigo-900/40 bg-gradient-to-br from-indigo-50/40 to-purple-50/20 dark:from-indigo-950/20 dark:to-purple-950/10 space-y-3 mt-4">
-            <div className="flex items-center gap-2">
-              <BrainCircuit className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-              <h3 className="text-xs font-bold uppercase tracking-wider text-indigo-900 dark:text-indigo-300">
-                Technical Learning Contract & AI Independence Checkpoint
-              </h3>
-            </div>
-            <p className="text-xs text-gray-500 dark:text-gray-400">
-              Verify your independent technical capability before marking this topic mastered without relying on AI code generation:
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 pt-1">
-              {[
-                { key: 'canExplain', label: '1. Can explain concept clearly in simple terms' },
-                { key: 'canImplement', label: '2. Can write basic implementation from memory' },
-                { key: 'canModify', label: '3. Can modify & customize existing codebase' },
-                { key: 'canDebug', label: '4. Can systematically debug broken error snippets' },
-                { key: 'canImplementWithoutAI', label: '5. Can build solution without AI assistance' },
-                { key: 'canExplainInterview', label: '6. Can defend architecture in interviews' },
-              ].map(({ key, label }) => {
-                const checked = Boolean(topic.independenceCheck?.[key]);
-                return (
-                  <label
-                    key={key}
-                    onClick={() => updateIndependenceCheck(topic.id, key, !checked)}
-                    className={`flex items-start gap-2.5 p-2.5 rounded-xl border transition-all cursor-pointer select-none text-xs font-medium ${
-                      checked
-                        ? 'bg-indigo-50/80 dark:bg-indigo-950/50 border-indigo-300 dark:border-indigo-700 text-indigo-900 dark:text-indigo-200'
-                        : 'bg-white/80 dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-indigo-200'
-                    }`}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={checked}
-                      onChange={() => {}}
-                      className="mt-0.5 rounded text-indigo-600 focus:ring-indigo-500"
+            {showSkillDimensions && (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 pt-3 animate-fade-in">
+                {skillDimensions.map((dim) => {
+                  const score = topic.skillScores?.[dim.id] ?? 0;
+                  return (
+                    <SkillDimensionRating
+                      key={dim.id}
+                      dimension={dim}
+                      score={score}
+                      onChange={(newScore) => {
+                        updateTopicSkill(topic.id, dim.id, newScore);
+                        showToast(`Rated ${dim.name}: ${newScore}/5`, 'success');
+                      }}
                     />
-                    <span>{label}</span>
-                  </label>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
+            )}
           </div>
         )}
 
@@ -1099,7 +1104,7 @@ export default function TopicDetail() {
                             >
                               <div className="flex items-center gap-2 flex-wrap">
                                 <span className="text-xs font-bold text-gray-400 dark:text-gray-500 font-mono">
-                                  #{idx + 1}
+                                  #{item.displayIndex || idx + 1}
                                 </span>
                                 <h4
                                   className={`text-sm font-semibold transition-colors ${

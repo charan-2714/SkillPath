@@ -173,7 +173,7 @@ export default function Templates() {
       />
 
       {/* Trending / Highlight Quick Bar */}
-      <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-indigo-900/10 via-purple-900/5 to-transparent dark:from-indigo-950/40 dark:via-purple-950/20 border border-indigo-100 dark:border-indigo-900/50">
+      {/* <div className="mb-6 p-4 rounded-2xl bg-gradient-to-r from-indigo-900/10 via-purple-900/5 to-transparent dark:from-indigo-950/40 dark:via-purple-950/20 border border-indigo-100 dark:border-indigo-900/50">
         <div className="flex items-center justify-between gap-2 mb-2.5">
           <div className="flex items-center gap-2">
             <Flame className="w-4 h-4 text-orange-500 animate-pulse" />
@@ -209,7 +209,7 @@ export default function Templates() {
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Search & Filter Controls */}
       <div className="space-y-3 mb-6">

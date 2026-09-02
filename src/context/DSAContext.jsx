@@ -392,6 +392,7 @@ export function DSAProvider({ children }) {
     patternStats,
     revisionQueue,
     overallStats,
+    stats: overallStats,
   };
 
   return <DSAContext.Provider value={value}>{children}</DSAContext.Provider>;
