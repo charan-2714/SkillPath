@@ -885,12 +885,14 @@ function reducer(state, action) {
       if (!action.payload || action.payload.length === 0) return state;
       const sanitized = action.payload.filter((j) => {
         const name = (j?.name || '').toLowerCase();
-        const isLegacy = name.includes('spanish') || name.includes('photography');
-        const isAutoDefault =
-          (j.templateId === 'ai-ml-engineer' || j.id?.includes('ai-ml')) &&
-          (j.name === 'My AI/ML Engineer Journey' || j.name === 'AI/ML Engineer') &&
-          (j.completedTopics === 0 || !j.completedTopics);
-        return !isLegacy && !isAutoDefault;
+        const cat = (j?.category || '').toLowerCase();
+        const isLegacyDummy =
+          j?.id === 'journey-ai-ml-engineer' ||
+          j?.id === 'default-ai-ml' ||
+          name.includes('spanish') ||
+          name.includes('photography') ||
+          cat.includes('language');
+        return !isLegacyDummy;
       });
 
       return {

@@ -60,16 +60,17 @@ export function loadAppData() {
       parsed.recycleBin = [];
     }
 
-    // Sanitize and filter out legacy removed journeys (Spanish, Photography, and default auto-seeded AI/ML journey)
+    // Sanitize and filter out only legacy hardcoded dummy journeys
     parsed.journeys = (parsed.journeys || []).filter((j) => {
       const name = (j?.name || '').toLowerCase();
       const cat = (j?.category || '').toLowerCase();
-      const isLegacyRemoved = name.includes('spanish') || name.includes('photography') || cat.includes('language');
-      const isAutoDefault =
-        (j.templateId === 'ai-ml-engineer' || j.id?.includes('ai-ml')) &&
-        (j.name === 'My AI/ML Engineer Journey' || j.name === 'AI/ML Engineer') &&
-        (j.completedTopics === 0 || !j.completedTopics);
-      return !isLegacyRemoved && !isAutoDefault;
+      const isLegacyDummy =
+        j?.id === 'journey-ai-ml-engineer' ||
+        j?.id === 'default-ai-ml' ||
+        name.includes('spanish') ||
+        name.includes('photography') ||
+        cat.includes('language');
+      return !isLegacyDummy;
     });
 
     if (parsed.journeys.length === 0) {
@@ -106,17 +107,7 @@ export function setupFirestoreSync(uid, dispatch) {
 
   const unsubJourneys = subscribeToUserJourneys(uid, (journeys) => {
     if (Array.isArray(journeys)) {
-      if (journeys.length === 0) {
-        // Automatically seed the Master AI/ML Engineer roadmap for new users in Firestore
-        const defaultTemplate = ROLE_TEMPLATES.find((t) => t.id === 'ai-ml-engineer') || ROLE_TEMPLATES[0];
-        if (defaultTemplate) {
-          const initialJourney = cloneJourneyFromTemplate(defaultTemplate, 'My AI/ML Engineer Journey');
-          saveJourneyDoc(uid, initialJourney);
-          dispatch({ type: 'SYNC_FIRESTORE_JOURNEYS', payload: [initialJourney] });
-        }
-      } else {
-        dispatch({ type: 'SYNC_FIRESTORE_JOURNEYS', payload: journeys });
-      }
+      dispatch({ type: 'SYNC_FIRESTORE_JOURNEYS', payload: journeys });
     }
   });
 
