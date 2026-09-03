@@ -2,7 +2,7 @@
   "id": "ai-ml-engineer",
   "title": "AI/ML Engineer",
   "version": "2.0.0",
-  "description": "The definitive, exhaustive learning journey and skill tracker for Python Automation Developers transitioning to modern AI/ML Engineers & GenAI Developers. Connects core software and automation foundations (Python, Git, Linux, Web/HTTP, APIs, Python Automation, Playwright Browser Automation, Web Scraping, Pandas) directly to advanced AI/ML capabilities (SQL, JS/Node basics, DSA, Mathematics for ML, Classical ML, Deep Learning & PyTorch, Transformers, LLM Fundamentals, Prompt Engineering, Structured Outputs, Embeddings & Vector DBs, Advanced RAG, Function Calling, Autonomous Agentic AI, LangChain/LangGraph, Model Context Protocol MCP, Multimodal AI, Evaluation & Observability, AI Security, Docker & CI/CD, Cloud Infrastructure, Distributed System Design, Production Reliability, AI-Powered Automation, 13 Capstone Projects, Interview Preparation, and Technology Radar).",
+  "description": "The definitive production-grade learning journey for mastering modern AI/ML Engineering, Generative AI, and Autonomous Systems. Systematically guides you from Python foundations and data science to PyTorch deep learning, LLMs, Advanced RAG, Agentic AI, MLOps, and scalable production architecture.",
   "category": "Artificial Intelligence & Engineering",
   "estimatedDuration": "9-12 months",
   "estimatedHours": 1200,

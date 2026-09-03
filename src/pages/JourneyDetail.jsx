@@ -291,6 +291,7 @@ export default function JourneyDetail() {
   const [statusFilter, setStatusFilter] = useState('all');
   const [expandedLevels, setExpandedLevels] = useState({});
   const [allExpanded, setAllExpanded] = useState(false);
+  const [showFullDesc, setShowFullDesc] = useState(false);
   const [packModal, setPackModal] = useState({ open: false, selectedPack: null, selectedSubjectIds: [] });
 
   // Sorted and filtered levels (declared before any conditional return)
@@ -404,9 +405,24 @@ export default function JourneyDetail() {
             </h1>
 
             {journey.description && (
-              <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                {journey.description}
-              </p>
+              <div className="space-y-1">
+                <p
+                  className={`text-xs sm:text-sm text-gray-600 dark:text-gray-300 leading-relaxed font-normal ${
+                    !showFullDesc && journey.description.length > 200 ? 'line-clamp-2' : ''
+                  }`}
+                >
+                  {journey.description}
+                </p>
+                {journey.description.length > 200 && (
+                  <button
+                    type="button"
+                    onClick={() => setShowFullDesc((prev) => !prev)}
+                    className="text-[11px] font-bold text-sky-600 dark:text-sky-400 hover:underline flex items-center gap-0.5"
+                  >
+                    {showFullDesc ? 'Show less ↑' : 'Read full overview ↓'}
+                  </button>
+                )}
+              </div>
             )}
 
             <div className="flex items-center gap-3 text-xs text-gray-500 dark:text-gray-400 pt-1 flex-wrap font-medium">
