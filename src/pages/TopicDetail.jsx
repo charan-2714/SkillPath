@@ -36,6 +36,13 @@ import {
   Search,
   Binary,
   ArrowRight,
+  Upload,
+  FileUp,
+  Film,
+  Download,
+  File,
+  Video,
+  Play,
 } from 'lucide-react';
 import { AppLayout } from '../components/layout/AppLayout';
 import { StatusBadge, STATUSES } from '../components/common/StatusBadge';
@@ -43,6 +50,7 @@ import { ProgressBar } from '../components/common/ProgressBar';
 import { Tabs } from '../components/common/Tabs';
 import { EmptyState } from '../components/common/EmptyState';
 import { Modal } from '../components/common/Modal';
+import { getVerifiedResources } from '../utils/verifiedResources';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { useAppState } from '../context/AppContext';
 import { useJourney } from '../hooks/useJourney';
@@ -521,8 +529,13 @@ export default function TopicDetail() {
   });
   const [resourceModal, setResourceModal] = useState({
     open: false,
+    mode: 'url', // 'url' | 'upload'
     title: '',
     url: '',
+    fileName: '',
+    fileSize: '',
+    fileType: '',
+    fileData: '',
     type: 'Documentation',
     description: '',
   });
@@ -675,16 +688,37 @@ export default function TopicDetail() {
 
   const handleAddResource = (e) => {
     e.preventDefault();
-    if (!resourceModal.title.trim() || !resourceModal.url.trim()) return;
+    if (!resourceModal.title.trim()) {
+      showToast('Please provide a title for the resource', 'error');
+      return;
+    }
+
+    const finalUrl = resourceModal.mode === 'upload' ? resourceModal.fileData : resourceModal.url.trim();
+
     addResource(topic.id, {
       title: resourceModal.title.trim(),
-      url: resourceModal.url.trim(),
+      url: finalUrl || '',
       type: resourceModal.type,
-      description: resourceModal.description.trim(),
+      description: resourceModal.description?.trim() || '',
+      fileName: resourceModal.fileName || '',
+      fileSize: resourceModal.fileSize || '',
+      isFileUpload: resourceModal.mode === 'upload' && Boolean(resourceModal.fileData),
       completed: false,
     });
-    setResourceModal({ open: false, title: '', url: '', type: 'Documentation', description: '' });
-    showToast('Resource saved', 'success');
+
+    setResourceModal({
+      open: false,
+      mode: 'url',
+      title: '',
+      url: '',
+      fileName: '',
+      fileSize: '',
+      fileType: '',
+      fileData: '',
+      type: 'Documentation',
+      description: '',
+    });
+    showToast('Resource saved successfully', 'success');
   };
 
   const subtopicsList = useMemo(() => {
@@ -703,6 +737,15 @@ export default function TopicDetail() {
       displayIndex: idx + 1,
     }));
   }, [topic.learningItems, topic.subtopics]);
+
+  const topicResources = useMemo(() => {
+    return getVerifiedResources(
+      topic?.title || '',
+      topic?.description || '',
+      subject?.title || '',
+      topic?.resources || []
+    );
+  }, [topic?.title, topic?.description, topic?.resources, subject?.title]);
 
   const tabs = [
     {
@@ -731,9 +774,9 @@ export default function TopicDetail() {
     },
     {
       id: 'resources',
-      label: 'Resources',
+      label: 'Resources & Docs',
       icon: <Library className="w-3.5 h-3.5" />,
-      count: topic.resources?.length,
+      count: topicResources.length,
     },
     {
       id: 'notes',
@@ -1310,6 +1353,41 @@ export default function TopicDetail() {
                                 </div>
                               </div>
 
+                              {/* Verified Concept References & Official Docs */}
+                              {(() => {
+                                const subtopicResources = getVerifiedResources(item.title, item.description || details.explanation, topic.title);
+                                if (!subtopicResources || subtopicResources.length === 0) return null;
+                                return (
+                                  <div className="p-3.5 rounded-xl bg-sky-50/50 dark:bg-sky-950/20 border border-sky-200/60 dark:border-sky-800/40 space-y-2">
+                                    <div className="flex items-center gap-1.5 text-xs font-bold text-sky-800 dark:text-sky-300">
+                                      <Library className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+                                      <span>Verified Reference Documentation & Guides</span>
+                                    </div>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                      {subtopicResources.slice(0, 4).map((res, rIdx) => (
+                                        <a
+                                          key={rIdx}
+                                          href={res.url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="flex items-center justify-between p-2.5 rounded-xl bg-white dark:bg-gray-800 border border-sky-100 dark:border-sky-900/50 hover:border-sky-400 dark:hover:border-sky-600 shadow-2xs group transition-all"
+                                        >
+                                          <div className="min-w-0 pr-2">
+                                            <p className="text-[11px] font-bold text-gray-800 dark:text-gray-200 truncate group-hover:text-sky-600 dark:group-hover:text-sky-400">
+                                              {res.title}
+                                            </p>
+                                            <span className="text-[10px] text-gray-400 font-medium">
+                                              {res.source || res.type}
+                                            </span>
+                                          </div>
+                                          <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-sky-500 flex-shrink-0" />
+                                        </a>
+                                      ))}
+                                    </div>
+                                  </div>
+                                );
+                              })()}
+
                               {/* Personal Notes for this Subtopic */}
                               <div className="p-3 rounded-xl bg-gray-50/80 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 space-y-2">
                                 <div className="flex items-center justify-between">
@@ -1739,107 +1817,153 @@ export default function TopicDetail() {
             </div>
           )}
 
-          {/* TAB 5: Resources */}
+          {/* TAB 5: Resources & Docs */}
           {activeTab === 'resources' && (
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-                  {(topic.resources || []).filter((r) => r.completed).length} of{' '}
-                  {(topic.resources || []).length} resources completed
-                </span>
+            <div className="space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-sky-50/50 dark:bg-sky-950/30 p-4 rounded-2xl border border-sky-100 dark:border-sky-900/40">
+                <div className="space-y-0.5">
+                  <h3 className="text-xs font-bold text-sky-900 dark:text-sky-200 flex items-center gap-1.5">
+                    <Library className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                    <span>Curated & Verified Resources for {topic.title}</span>
+                  </h3>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400">
+                    Official documentation, interactive sandboxes, and reference guides specifically for this topic.
+                  </p>
+                </div>
 
                 <button
                   onClick={() =>
                     setResourceModal({
                       open: true,
+                      mode: 'url',
                       title: '',
                       url: '',
+                      fileName: '',
+                      fileSize: '',
+                      fileType: '',
+                      fileData: '',
                       type: 'Documentation',
                       description: '',
                     })
                   }
-                  className="btn-secondary text-xs"
+                  className="btn-primary text-xs flex items-center gap-1.5 self-start sm:self-center"
                 >
-                  <Plus className="w-3.5 h-3.5" /> Add Resource
+                  <Plus className="w-3.5 h-3.5" /> Add Custom Resource
                 </button>
               </div>
 
-              {(topic.resources || []).length > 0 ? (
-                <div className="space-y-2.5">
-                  {topic.resources.map((res) => (
-                    <div
-                      key={res.id}
-                      className="flex items-center justify-between p-3.5 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-800/60 hover:shadow-sm transition-all"
-                    >
-                      <div className="flex items-start gap-3 flex-1 min-w-0">
-                        <button
-                          type="button"
-                          onClick={() => updateResource(topic.id, res.id, { completed: !res.completed })}
-                          className="mt-0.5 flex-shrink-0"
-                        >
-                          {res.completed ? (
-                            <CheckCircle className="w-4 h-4 text-green-500" />
-                          ) : (
-                            <Circle className="w-4 h-4 text-gray-300 dark:text-gray-600 hover:text-indigo-400" />
-                          )}
-                        </button>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+                {topicResources.map((res, idx) => {
+                  const isCustom = Boolean(res.id);
+                  const isUploaded = Boolean(res.isFileUpload || res.fileData || (res.url && res.url.startsWith('data:')));
+                  const isVideo = res.type === 'Video' || (res.url && (res.url.includes('youtube.com') || res.url.includes('youtu.be') || res.url.includes('vimeo') || res.url.endsWith('.mp4')));
 
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-1">
-                            <span className="badge bg-indigo-50 text-indigo-700 dark:bg-indigo-950/60 dark:text-indigo-300 text-[10px]">
-                              {res.type}
+                  return (
+                    <div
+                      key={res.id || idx}
+                      className="card p-4 flex flex-col justify-between hover:border-sky-400 dark:hover:border-sky-600 shadow-xs hover:shadow transition-all group"
+                    >
+                      <div className="space-y-2.5">
+                        <div className="flex items-center justify-between gap-2">
+                          <div className="flex items-center gap-1.5 flex-wrap">
+                            <span className="badge bg-sky-50 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300 font-bold text-[10px]">
+                              {res.type || 'Documentation'}
                             </span>
+                            {isUploaded && (
+                              <span className="badge bg-purple-50 text-purple-700 dark:bg-purple-950/60 dark:text-purple-300 font-semibold text-[10px] flex items-center gap-1">
+                                <FileUp className="w-2.5 h-2.5" /> Uploaded File
+                              </span>
+                            )}
+                            {isVideo && (
+                              <span className="badge bg-red-50 text-red-700 dark:bg-red-950/60 dark:text-red-300 font-semibold text-[10px] flex items-center gap-1">
+                                <Film className="w-2.5 h-2.5" /> Video
+                              </span>
+                            )}
                           </div>
+
+                          <span className="text-[10px] text-gray-400 dark:text-gray-500 font-semibold">
+                            {res.fileSize || res.source || 'Official Reference'}
+                          </span>
+                        </div>
+
+                        {isUploaded ? (
+                          <div>
+                            <h4 className="text-xs sm:text-sm font-bold text-gray-900 dark:text-gray-100 flex items-center gap-1.5">
+                              <File className="w-4 h-4 text-purple-500 flex-shrink-0" />
+                              <span className="line-clamp-2">{res.title}</span>
+                            </h4>
+                            {res.fileName && (
+                              <p className="text-[10px] text-purple-600 dark:text-purple-400 font-mono mt-0.5 truncate">
+                                📎 {res.fileName}
+                              </p>
+                            )}
+                          </div>
+                        ) : (
                           <a
                             href={res.url}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className={`text-sm font-semibold hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center gap-1.5 truncate ${
-                              res.completed ? 'line-through text-gray-400' : 'text-gray-900 dark:text-gray-100'
-                            }`}
+                            className="text-xs sm:text-sm font-bold text-gray-900 dark:text-gray-100 group-hover:text-sky-600 dark:group-hover:text-sky-400 flex items-center justify-between gap-2"
                           >
-                            <span>{res.title}</span>
-                            <ExternalLink className="w-3.5 h-3.5 text-gray-400 flex-shrink-0" />
+                            <span className="line-clamp-2">{res.title}</span>
+                            <ExternalLink className="w-3.5 h-3.5 text-gray-400 group-hover:text-sky-500 group-hover:translate-x-0.5 transition-all flex-shrink-0" />
                           </a>
-                          {res.description && (
-                            <p className="text-xs text-gray-500 mt-0.5 line-clamp-1">{res.description}</p>
-                          )}
-                        </div>
+                        )}
+
+                        {res.description && (
+                          <p className="text-[11px] text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed">
+                            {res.description}
+                          </p>
+                        )}
                       </div>
 
-                      <button
-                        onClick={() => deleteResource(topic.id, res.id)}
-                        className="btn-ghost p-1 text-gray-400 hover:text-red-500 ml-2"
-                        title="Delete resource"
-                      >
-                        <Trash2 className="w-3.5 h-3.5" />
-                      </button>
+                      <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-800 text-[11px] mt-2">
+                        {isUploaded ? (
+                          <div className="flex items-center gap-3">
+                            <a
+                              href={res.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="font-semibold text-sky-600 dark:text-sky-400 flex items-center gap-1 hover:underline"
+                            >
+                              <span>Preview / Open</span>
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                            <a
+                              href={res.url}
+                              download={res.fileName || `${res.title}.pdf`}
+                              className="font-semibold text-purple-600 dark:text-purple-400 flex items-center gap-1 hover:underline"
+                            >
+                              <Download className="w-3 h-3" />
+                              <span>Download</span>
+                            </a>
+                          </div>
+                        ) : (
+                          <a
+                            href={res.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-sky-600 dark:text-sky-400 flex items-center gap-1 hover:underline"
+                          >
+                            <span>Visit Resource</span>
+                            <ArrowRight className="w-3 h-3" />
+                          </a>
+                        )}
+
+                        {isCustom && (
+                          <button
+                            onClick={() => deleteResource(topic.id, res.id)}
+                            className="text-gray-400 hover:text-red-500 transition-colors p-1"
+                            title="Remove custom resource"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                          </button>
+                        )}
+                      </div>
                     </div>
-                  ))}
-                </div>
-              ) : (
-                <EmptyState
-                  icon="book"
-                  title="No resources added"
-                  description="Save articles, videos, books, or documentation links for this topic."
-                  action={
-                    <button
-                      onClick={() =>
-                        setResourceModal({
-                          open: true,
-                          title: '',
-                          url: '',
-                          type: 'Documentation',
-                          description: '',
-                        })
-                      }
-                      className="btn-primary text-xs"
-                    >
-                      <Plus className="w-3.5 h-3.5" /> Add Resource
-                    </button>
-                  }
-                />
-              )}
+                  );
+                })}
+              </div>
             </div>
           )}
 
@@ -2140,14 +2264,155 @@ export default function TopicDetail() {
         </form>
       </Modal>
 
-      {/* Modal: Resource */}
+      {/* Modal: Resource (Dual Mode: URL or Upload File/Video/Doc) */}
       <Modal
         isOpen={resourceModal.open}
-        onClose={() => setResourceModal({ open: false, title: '', url: '', type: 'Documentation', description: '' })}
-        title="Add Resource Link"
+        onClose={() =>
+          setResourceModal({
+            open: false,
+            mode: 'url',
+            title: '',
+            url: '',
+            fileName: '',
+            fileSize: '',
+            fileType: '',
+            fileData: '',
+            type: 'Documentation',
+            description: '',
+          })
+        }
+        title="Add Learning Resource"
         size="md"
       >
-        <form onSubmit={handleAddResource} className="space-y-4">
+        {(() => {
+          const isUpload = resourceModal.mode === 'upload';
+          const isUrl = !isUpload;
+
+          return (
+            <form onSubmit={handleAddResource} className="space-y-4">
+              {/* Mode Switch Tabs with clear high-contrast active styling */}
+              <div className="flex rounded-xl bg-gray-100 dark:bg-gray-800 p-1.5 border border-gray-200 dark:border-gray-700 gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setResourceModal((prev) => ({ ...prev, mode: 'url' }))}
+                  className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all ${
+                    isUrl
+                      ? 'bg-sky-600 text-white shadow-md ring-2 ring-sky-400/40'
+                      : 'text-gray-600 dark:text-gray-400 hover:bg-gray-200/70 dark:hover:bg-gray-700/60'
+                  }`}
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Web Link or Video URL</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setResourceModal((prev) => ({ ...prev, mode: 'upload' }))}
+                  className={`flex-1 py-2 px-3 rounded-lg text-xs font-bold flex items-center justify-center gap-1.5 transition-all ${
+                    isUpload
+                      ? 'bg-purple-600 text-white shadow-md ring-2 ring-purple-400/40'
+                      : 'text-gray-600 dark:text-gray-400 hover:bg-gray-200/70 dark:hover:bg-gray-700/60'
+                  }`}
+                >
+                  <FileUp className="w-3.5 h-3.5" />
+                  <span>Upload Document / Video / PDF</span>
+                </button>
+              </div>
+
+              {isUpload ? (
+                <div className="space-y-3">
+              <div>
+                <label className="label">Choose File (PDF, Video, Cheatsheet, Code, Image) *</label>
+                <div className="border-2 border-dashed border-gray-200 dark:border-gray-700 hover:border-purple-400 dark:hover:border-purple-500 rounded-xl p-4 text-center cursor-pointer transition-colors bg-gray-50/50 dark:bg-gray-900/40 relative">
+                  <input
+                    type="file"
+                    accept=".pdf,.doc,.docx,.txt,.md,.json,.py,.js,.jsx,.ts,.tsx,.zip,.png,.jpg,.jpeg,.gif,.svg,.mp4,.webm,.mov"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+                      if (!file) return;
+
+                      // Format size
+                      const sizeInMb = (file.size / (1024 * 1024)).toFixed(1);
+                      const sizeText = file.size > 1024 * 1024 ? `${sizeInMb} MB` : `${Math.round(file.size / 1024)} KB`;
+
+                      // Detect type
+                      let detectedType = 'Documentation';
+                      if (file.type.includes('video') || file.name.endsWith('.mp4') || file.name.endsWith('.webm')) {
+                        detectedType = 'Video';
+                      } else if (file.name.endsWith('.pdf')) {
+                        detectedType = 'Documentation';
+                      } else if (file.type.includes('image')) {
+                        detectedType = 'Other';
+                      } else if (file.name.endsWith('.zip') || file.name.endsWith('.py') || file.name.endsWith('.js')) {
+                        detectedType = 'Practice';
+                      }
+
+                      const reader = new FileReader();
+                      reader.onload = (uploadEvt) => {
+                        const base64Data = uploadEvt.target?.result;
+                        setResourceModal((prev) => ({
+                          ...prev,
+                          title: prev.title.trim() ? prev.title : file.name.replace(/\.[^/.]+$/, ''),
+                          fileName: file.name,
+                          fileSize: sizeText,
+                          fileType: file.type || 'application/octet-stream',
+                          fileData: base64Data,
+                          type: detectedType,
+                        }));
+                      };
+                      reader.readAsDataURL(file);
+                    }}
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                  />
+                  <div className="flex flex-col items-center justify-center gap-1.5 pointer-events-none">
+                    <div className="w-9 h-9 rounded-full bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center">
+                      <Upload className="w-4 h-4" />
+                    </div>
+                    {resourceModal.fileName ? (
+                      <div>
+                        <p className="text-xs font-bold text-gray-900 dark:text-gray-100 truncate max-w-[280px]">
+                          {resourceModal.fileName}
+                        </p>
+                        <p className="text-[10px] text-purple-600 dark:text-purple-400 font-semibold">
+                          {resourceModal.fileSize} • Ready to save
+                        </p>
+                      </div>
+                    ) : (
+                      <div>
+                        <p className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                          Click to browse or drag & drop file
+                        </p>
+                        <p className="text-[10px] text-gray-400">
+                          PDFs, Video clips (MP4), Cheatsheets, Code, Diagrams
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <label className="label">Web URL or Video Link (Optional)</label>
+              <input
+                type="url"
+                value={resourceModal.url}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  let autoType = resourceModal.type;
+                  if (val.includes('youtube.com') || val.includes('youtu.be') || val.includes('vimeo')) {
+                    autoType = 'Video';
+                  } else if (val.includes('github.com')) {
+                    autoType = 'GitHub';
+                  }
+                  setResourceModal({ ...resourceModal, url: val, type: autoType });
+                }}
+                placeholder="https://docs.python.org/... or https://youtube.com/..."
+                className="input"
+                autoFocus
+              />
+            </div>
+          )}
+
           <div>
             <label className="label">Resource Title *</label>
             <input
@@ -2155,60 +2420,67 @@ export default function TopicDetail() {
               required
               value={resourceModal.title}
               onChange={(e) => setResourceModal({ ...resourceModal, title: e.target.value })}
-              placeholder="e.g. Official Documentation, Real Python Guide"
-              className="input"
-              autoFocus
-            />
-          </div>
-          <div>
-            <label className="label">URL *</label>
-            <input
-              type="url"
-              required
-              value={resourceModal.url}
-              onChange={(e) => setResourceModal({ ...resourceModal, url: e.target.value })}
-              placeholder="https://..."
+              placeholder={resourceModal.mode === 'upload' ? 'e.g. Chapter 3 Summary Notes PDF' : 'e.g. Official Documentation, Real Python Guide, or Book Title'}
               className="input"
             />
           </div>
-          <div>
-            <label className="label">Type</label>
-            <select
-              value={resourceModal.type}
-              onChange={(e) => setResourceModal({ ...resourceModal, type: e.target.value })}
-              className="input"
-            >
-              {RESOURCE_TYPES.map((t) => (
-                <option key={t} value={t}>
-                  {t}
-                </option>
-              ))}
-            </select>
+
+          <div className="grid grid-cols-2 gap-3">
+            <div>
+              <label className="label">Category / Type</label>
+              <select
+                value={resourceModal.type}
+                onChange={(e) => setResourceModal({ ...resourceModal, type: e.target.value })}
+                className="input"
+              >
+                {RESOURCE_TYPES.map((t) => (
+                  <option key={t} value={t}>
+                    {t}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              <label className="label">Optional Note</label>
+              <input
+                type="text"
+                value={resourceModal.description}
+                onChange={(e) => setResourceModal({ ...resourceModal, description: e.target.value })}
+                placeholder="Key takeaways or summary..."
+                className="input"
+              />
+            </div>
           </div>
-          <div>
-            <label className="label">Description (Optional)</label>
-            <input
-              type="text"
-              value={resourceModal.description}
-              onChange={(e) => setResourceModal({ ...resourceModal, description: e.target.value })}
-              placeholder="Why this resource is helpful..."
-              className="input"
-            />
-          </div>
+
           <div className="flex justify-end gap-2 pt-2">
             <button
               type="button"
-              onClick={() => setResourceModal({ open: false, title: '', url: '', type: 'Documentation', description: '' })}
+              onClick={() =>
+                setResourceModal({
+                  open: false,
+                  mode: 'url',
+                  title: '',
+                  url: '',
+                  fileName: '',
+                  fileSize: '',
+                  fileType: '',
+                  fileData: '',
+                  type: 'Documentation',
+                  description: '',
+                })
+              }
               className="btn-secondary text-xs"
             >
               Cancel
             </button>
-            <button type="submit" className="btn-primary text-xs">
-              Save Resource
+            <button type="submit" className="btn-primary text-xs flex items-center gap-1.5">
+              <Check className="w-3.5 h-3.5" /> Save Resource
             </button>
           </div>
         </form>
-      </Modal>
+      );
+    })()}
+  </Modal>
       {/* Modal: Subtopic Deep Dive Study View */}
       {subtopicDrawer && (
         <Modal
