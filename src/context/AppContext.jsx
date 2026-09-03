@@ -883,10 +883,22 @@ function reducer(state, action) {
     // Firestore Sync
     case ACTIONS.SYNC_FIRESTORE_JOURNEYS: {
       if (!action.payload || action.payload.length === 0) return state;
+      const sanitized = action.payload.filter((j) => {
+        const name = (j?.name || '').toLowerCase();
+        const isLegacy = name.includes('spanish') || name.includes('photography');
+        const isAutoDefault =
+          (j.templateId === 'ai-ml-engineer' || j.id?.includes('ai-ml')) &&
+          (j.name === 'My AI/ML Engineer Journey' || j.name === 'AI/ML Engineer') &&
+          (j.completedTopics === 0 || !j.completedTopics);
+        return !isLegacy && !isAutoDefault;
+      });
+
       return {
         ...state,
-        journeys: action.payload,
-        activeJourneyId: state.activeJourneyId || action.payload[0]?.id,
+        journeys: sanitized,
+        activeJourneyId: state.activeJourneyId && sanitized.some((j) => j.id === state.activeJourneyId)
+          ? state.activeJourneyId
+          : sanitized[0]?.id || null,
       };
     }
 

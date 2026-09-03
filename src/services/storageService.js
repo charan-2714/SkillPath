@@ -19,11 +19,11 @@ import {
 } from './firestoreService';
 import { isFirebaseConfigured } from './firebase';
 
-const STORAGE_KEY = 'skillpath_v1';
+const STORAGE_KEY = 'skillpath_v2';
 
 export function createInitialState() {
   return {
-    version: 5,
+    version: 6,
     activeJourneyId: null,
     journeys: [],
     recycleBin: [],
@@ -60,32 +60,26 @@ export function loadAppData() {
       parsed.recycleBin = [];
     }
 
-    // Sanitize and filter out legacy removed journeys (Spanish, Photography, etc.)
+    // Sanitize and filter out legacy removed journeys (Spanish, Photography, and default auto-seeded AI/ML journey)
     parsed.journeys = (parsed.journeys || []).filter((j) => {
       const name = (j?.name || '').toLowerCase();
       const cat = (j?.category || '').toLowerCase();
-      return !name.includes('spanish') && !name.includes('photography') && !cat.includes('language');
+      const isLegacyRemoved = name.includes('spanish') || name.includes('photography') || cat.includes('language');
+      const isAutoDefault =
+        (j.templateId === 'ai-ml-engineer' || j.id?.includes('ai-ml')) &&
+        (j.name === 'My AI/ML Engineer Journey' || j.name === 'AI/ML Engineer') &&
+        (j.completedTopics === 0 || !j.completedTopics);
+      return !isLegacyRemoved && !isAutoDefault;
     });
 
-    // Remove default auto-seeded AI/ML journey if user hasn't started studying it (so users start with a clean board)
-    if ((parsed.version || 0) < 5) {
-      parsed.journeys = (parsed.journeys || []).filter((j) => {
-        const isAutoDefault =
-          (j.templateId === 'ai-ml-engineer' || j.id?.includes('ai-ml')) &&
-          j.name === 'My AI/ML Engineer Journey' &&
-          (j.completedTopics || 0) === 0;
-        return !isAutoDefault;
-      });
-
-      if (parsed.journeys.length === 0) {
-        parsed.activeJourneyId = null;
-      } else if (!parsed.journeys.some((j) => j.id === parsed.activeJourneyId)) {
-        parsed.activeJourneyId = parsed.journeys[0]?.id || null;
-      }
-
-      parsed.version = 5;
-      saveAppData(parsed);
+    if (parsed.journeys.length === 0) {
+      parsed.activeJourneyId = null;
+    } else if (!parsed.journeys.some((j) => j.id === parsed.activeJourneyId)) {
+      parsed.activeJourneyId = parsed.journeys[0]?.id || null;
     }
+
+    parsed.version = 6;
+    saveAppData(parsed);
 
     return parsed;
   } catch (err) {
