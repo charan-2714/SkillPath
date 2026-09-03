@@ -63,33 +63,24 @@ export function loadAppData() {
       parsed.recycleBin = [];
     }
 
-    // Auto-migration to v2.0.0 curriculum: if journeys have outdated levels or missing subtopics, upgrade them
-    const needsMigration = parsed.version < 2 || !parsed.journeys.some((j) => (j.levels || []).length >= 35);
+    // Sanitize and filter out legacy removed journeys (Spanish, Photography, etc.)
+    parsed.journeys = (parsed.journeys || []).filter((j) => {
+      const name = (j?.name || '').toLowerCase();
+      const cat = (j?.category || '').toLowerCase();
+      return !name.includes('spanish') && !name.includes('photography') && !cat.includes('language');
+    });
+
+    if (parsed.journeys.length === 0) {
+      const initial = createInitialState();
+      saveAppData(initial);
+      return initial;
+    }
+
+    // Auto-migration to v2.0.0 curriculum
+    const needsMigration = (parsed.version || 0) < 3;
     if (needsMigration) {
-      const defaultTemplate = ROLE_TEMPLATES.find((t) => t.id === 'ai-ml-engineer') || ROLE_TEMPLATES[0];
-      if (defaultTemplate) {
-        const freshCloned = cloneJourneyFromTemplate(defaultTemplate, 'My AI/ML Engineer Journey');
-        parsed.journeys = parsed.journeys.map((j) => {
-          if (j.templateId === 'ai-ml-engineer' || j.id === parsed.activeJourneyId) {
-            return {
-              ...freshCloned,
-              id: j.id,
-              name: j.name || freshCloned.name,
-              createdAt: j.createdAt || freshCloned.createdAt,
-              updatedAt: new Date().toISOString(),
-            };
-          }
-          return j;
-        });
-
-        if (!parsed.journeys.some((j) => j.templateId === 'ai-ml-engineer')) {
-          parsed.journeys.unshift(freshCloned);
-          parsed.activeJourneyId = freshCloned.id;
-        }
-
-        parsed.version = 2;
-        saveAppData(parsed);
-      }
+      parsed.version = 3;
+      saveAppData(parsed);
     }
 
     return parsed;
