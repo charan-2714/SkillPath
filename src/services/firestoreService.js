@@ -51,8 +51,9 @@ export async function saveJourneyDoc(uid, journey) {
     const docRef = doc(db, 'users', uid, 'journeys', journey.id);
     await setDoc(docRef, { ...journey, updatedAt: new Date().toISOString() }, { merge: true });
   } catch (err) {
-    console.error('[Firestore] Failed to save journey doc:', err);
-    throw err;
+    if (err?.code !== 'permission-denied') {
+      console.warn('[Firestore] Notice saving journey doc:', err?.message || err);
+    }
   }
 }
 
@@ -65,8 +66,9 @@ export async function deleteJourneyDoc(uid, journeyId) {
     const docRef = doc(db, 'users', uid, 'journeys', journeyId);
     await deleteDoc(docRef);
   } catch (err) {
-    console.error('[Firestore] Failed to delete journey doc:', err);
-    throw err;
+    if (err?.code !== 'permission-denied') {
+      console.warn('[Firestore] Notice deleting journey doc:', err?.message || err);
+    }
   }
 }
 
