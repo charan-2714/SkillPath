@@ -1,13 +1,25 @@
 // src/pages/Login.jsx
-// Professional authentication page with Google Sign-In and guest mode
+// Professional landing & authentication portal focused on tracking and learning mastery
 
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Sparkles, Shield, Compass, Brain, CheckCircle2, ArrowRight, Lock, AlertCircle } from 'lucide-react';
+import {
+  Sparkles,
+  Compass,
+  CheckCircle2,
+  Clock,
+  TrendingUp,
+  FolderTree,
+  Code2,
+  AlertCircle,
+  ArrowRight,
+  Target,
+  BookOpen,
+} from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
-  const { signInWithGoogle, signInAsGuest, error: authError, isFirebaseConfigured } = useAuth();
+  const { signInWithGoogle, signInAsGuest, error: authError } = useAuth();
   const [loading, setLoading] = useState(false);
   const [localError, setLocalError] = useState(null);
   const navigate = useNavigate();
@@ -46,104 +58,178 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/20 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md text-center">
-        {/* Brand Logo */}
-        <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-tr from-indigo-600 to-violet-600 shadow-xl shadow-indigo-500/20 mb-4">
-          <Sparkles className="w-7 h-7 text-white" />
-        </div>
-        <h2 className="text-3xl font-black text-gray-900 dark:text-gray-100 tracking-tight">
-          SkillPath
-        </h2>
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-          Professional Learning Journey & Skill Mastery Platform
-        </p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50/40 to-indigo-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-gray-900 dark:text-gray-100 flex flex-col justify-center relative overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+      {/* Subtle Ambient Background Accents */}
+      <div className="absolute top-[-10%] left-[-5%] w-[450px] h-[450px] rounded-full bg-sky-400/10 dark:bg-sky-500/10 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-indigo-400/10 dark:bg-indigo-500/10 blur-[120px] pointer-events-none" />
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4 sm:px-0">
-        <div className="card p-8 shadow-2xl border-gray-100 dark:border-gray-800 backdrop-blur-xl">
-          {/* Error Banner */}
-          {(localError || authError) && (
-            <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 flex items-start gap-3 text-red-700 dark:text-red-300 text-xs">
-              <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5" />
-              <div>
-                <p className="font-semibold">Sign in notice</p>
-                <p className="mt-0.5">{localError || authError}</p>
-              </div>
-            </div>
-          )}
-
-          {/* Config Notice if offline/unconfigured */}
-          {!isFirebaseConfigured && (
-            <div className="mb-6 p-3.5 rounded-xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 flex items-start gap-2.5 text-amber-800 dark:text-amber-300 text-xs">
-              <Shield className="w-4 h-4 flex-shrink-0 mt-0.5 text-amber-600" />
-              <div>
-                <span className="font-semibold">Local Session Mode:</span> Real Firebase credentials are not yet added to .env. Signing in will create a local testing session with admin capabilities.
-              </div>
-            </div>
-          )}
-
-          {/* Action Buttons */}
-          <div className="space-y-4">
-            <button
-              onClick={handleGoogleSignIn}
-              disabled={loading}
-              className="w-full flex items-center justify-center gap-3 px-4 py-3.5 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-100 font-semibold shadow-sm hover:shadow transition-all duration-200 active:scale-[0.99] disabled:opacity-50"
-            >
-              <svg className="w-5 h-5" viewBox="0 0 24 24">
-                <path
-                  fill="#4285F4"
-                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                />
-                <path
-                  fill="#34A853"
-                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                />
-                <path
-                  fill="#FBBC05"
-                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
-                />
-                <path
-                  fill="#EA4335"
-                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
-                />
-              </svg>
-              <span>{loading ? 'Signing in...' : 'Continue with Google'}</span>
-            </button>
-
-            <div className="relative flex py-2 items-center">
-              <div className="flex-grow border-t border-gray-100 dark:border-gray-800"></div>
-              <span className="flex-shrink mx-3 text-gray-400 text-xs font-medium uppercase tracking-wider">or</span>
-              <div className="flex-grow border-t border-gray-100 dark:border-gray-800"></div>
-            </div>
-
-            <button
-              onClick={handleGuestSignIn}
-              disabled={loading}
-              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-900/50 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-medium transition-colors"
-            >
-              <Compass className="w-4 h-4 text-gray-500" />
-              <span>Explore as Guest (Offline Mode)</span>
-            </button>
+      <div className="max-w-4xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        {/* Left Column: Mission & Core Tracking Capabilities */}
+        <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100/80 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800/80 text-sky-700 dark:text-sky-300 text-xs font-bold shadow-xs">
+            <Target className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
+            <span>Personal Learning & Mastery Tracker</span>
           </div>
 
-          {/* Features Highlights */}
-          <div className="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800 space-y-3">
-            <div className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-400">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-              <span>Real-time cross-device sync powered by Firestore</span>
+          <div className="space-y-3">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white leading-tight">
+              Track, Structure & Master{' '}
+              <span className="bg-gradient-to-r from-sky-600 via-indigo-600 to-violet-600 dark:from-sky-400 dark:via-indigo-300 dark:to-purple-400 bg-clip-text text-transparent">
+                What You Learn.
+              </span>
+            </h1>
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+              Your personal engineering tracker. Organize self-study milestones, log daily coding hours, keep structured problem-solving journals, and measure your real technical growth.
+            </p>
+          </div>
+
+          {/* 4 Core Tracking Features */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-left max-w-lg mx-auto lg:mx-0">
+            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-sky-300 dark:hover:border-sky-700 transition-all">
+              <div className="flex items-start gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                  <FolderTree className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Milestone Progress</h4>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                    Track completion across custom levels, modules & topics
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-400">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-              <span>Independent user journeys cloned from master templates</span>
+
+            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-indigo-300 dark:hover:border-indigo-700 transition-all">
+              <div className="flex items-start gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                  <Clock className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Study Logs & Streaks</h4>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                    Log daily study sessions and maintain active learning streaks
+                  </p>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-2.5 text-xs text-gray-600 dark:text-gray-400">
-              <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0" />
-              <span>Soft-delete Recycle Bin with full restore capability</span>
+
+            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-purple-300 dark:hover:border-purple-700 transition-all">
+              <div className="flex items-start gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                  <Code2 className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">DSA Practice Journal</h4>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                    Record code solutions, time complexities & reattempts
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-emerald-300 dark:hover:border-emerald-700 transition-all">
+              <div className="flex items-start gap-2.5">
+                <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                  <TrendingUp className="w-4 h-4" />
+                </div>
+                <div>
+                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Growth Analytics</h4>
+                  <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                    Visualize study velocity, weak spots & retention
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        {/* Right Column: Clean Authentication Box */}
+        <div className="lg:col-span-5 w-full">
+          <div className="p-7 sm:p-8 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl relative overflow-hidden">
+            {/* Top Accent Gradient */}
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500" />
+
+            <div className="text-center space-y-1.5 mb-6">
+              <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-600 to-indigo-600 text-white shadow-md shadow-sky-500/20 mb-2">
+                <Sparkles className="w-6 h-6" />
+              </div>
+              <h2 className="text-xl font-black text-gray-900 dark:text-gray-100 tracking-tight">
+                SkillPath Workspace
+              </h2>
+              <p className="text-xs text-gray-500 dark:text-gray-400">
+                Sign in to sync your roadmaps and progress
+              </p>
+            </div>
+
+            {/* Error Banner */}
+            {(localError || authError) && (
+              <div className="mb-5 p-3.5 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 flex items-start gap-2.5 text-red-700 dark:text-red-300 text-xs">
+                <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-red-500" />
+                <div>
+                  <p className="font-semibold">Sign in notice</p>
+                  <p className="mt-0.5">{localError || authError}</p>
+                </div>
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div className="space-y-3">
+              <button
+                onClick={handleGoogleSignIn}
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-3 px-4 py-3 border border-gray-300 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-600 rounded-xl bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-750 text-gray-800 dark:text-gray-100 font-bold shadow-xs hover:shadow-sm transition-all duration-150 active:scale-[0.99] disabled:opacity-50 text-xs sm:text-sm cursor-pointer"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24">
+                  <path
+                    fill="#4285F4"
+                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  />
+                  <path
+                    fill="#34A853"
+                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  />
+                  <path
+                    fill="#FBBC05"
+                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
+                  />
+                  <path
+                    fill="#EA4335"
+                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
+                  />
+                </svg>
+                <span>{loading ? 'Authenticating...' : 'Continue with Google'}</span>
+              </button>
+
+              <div className="relative flex py-1 items-center">
+                <div className="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+                <span className="flex-shrink mx-3 text-gray-400 dark:text-gray-500 text-[10px] font-bold uppercase tracking-wider">
+                  or
+                </span>
+                <div className="flex-grow border-t border-gray-200 dark:border-gray-800"></div>
+              </div>
+
+              <button
+                onClick={handleGuestSignIn}
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-gray-200 dark:border-gray-700 bg-gray-50/70 dark:bg-gray-850 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-700 dark:text-gray-300 text-xs font-semibold transition-all cursor-pointer"
+              >
+                <Compass className="w-4 h-4 text-sky-600 dark:text-sky-400" />
+                <span>Explore as Guest (Offline Mode)</span>
+                <ArrowRight className="w-3.5 h-3.5 ml-auto text-gray-400" />
+              </button>
+            </div>
+
+            <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 text-center">
+              <p className="text-[11px] text-gray-500 dark:text-gray-400">
+                🔒 Private workspace with automatic cloud & offline synchronization.
+              </p>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
 }
+
