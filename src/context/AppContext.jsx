@@ -12,6 +12,27 @@ import {
 import { generateId, createNewJourney, createNewRecycleItem } from '../models/journeySchema';
 import { ROLE_TEMPLATES } from '../data/roles';
 import { useAuth } from './AuthContext';
+import {
+  getLocalDateString,
+  getCalendarPreviousDate,
+  computeConsecutiveStreak,
+} from '../utils/calculations';
+
+function updateStreakOnActivity(analytics, studyMinutesToAdd = 0) {
+  const currentAnalytics = analytics || { streakDays: 1, totalStudyMinutes: 0, activeDates: [] };
+  const today = getLocalDateString();
+  const existingDates = Array.isArray(currentAnalytics.activeDates) ? currentAnalytics.activeDates : [];
+  const activeDates = Array.from(new Set([...existingDates, today]));
+  const streakDays = computeConsecutiveStreak(activeDates, currentAnalytics.streakDays || 1);
+
+  return {
+    ...currentAnalytics,
+    lastActiveDate: today,
+    activeDates,
+    streakDays,
+    totalStudyMinutes: (Number(currentAnalytics.totalStudyMinutes) || 0) + (Number(studyMinutesToAdd) || 0),
+  };
+}
 
 const AppContext = createContext(null);
 
@@ -417,6 +438,7 @@ function reducer(state, action) {
       const { journeyId, topicId, itemId, completed } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, completed ? 15 : 0),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return updateTopicInJourney(j, topicId, (top) => ({
@@ -434,6 +456,7 @@ function reducer(state, action) {
       const { journeyId, topicId, item } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, 0),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return updateTopicInJourney(j, topicId, (top) => ({
@@ -449,6 +472,7 @@ function reducer(state, action) {
       const { journeyId, topicId, itemId, updates } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, 0),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return updateTopicInJourney(j, topicId, (top) => ({
@@ -481,6 +505,7 @@ function reducer(state, action) {
       const { journeyId, topicId, dimensionId, score } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, 10),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return updateTopicInJourney(j, topicId, (top) => ({
@@ -496,6 +521,7 @@ function reducer(state, action) {
       const { journeyId, topicId, practiceId, updates } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, 20),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return updateTopicInJourney(j, topicId, (top) => ({
@@ -513,6 +539,7 @@ function reducer(state, action) {
       const { journeyId, topicId, debuggingId, updates } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, 15),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return updateTopicInJourney(j, topicId, (top) => ({
@@ -530,6 +557,7 @@ function reducer(state, action) {
       const { journeyId, topicId, assessmentId, updates } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, 15),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return updateTopicInJourney(j, topicId, (top) => ({
@@ -547,6 +575,7 @@ function reducer(state, action) {
       const { journeyId, topicId, key, value } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, 5),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return updateTopicInJourney(j, topicId, (top) => ({
@@ -649,6 +678,7 @@ function reducer(state, action) {
       const { journeyId, log } = action.payload;
       return {
         ...state,
+        analytics: updateStreakOnActivity(state.analytics, Number(log?.durationMinutes) || 45),
         journeys: state.journeys.map((j) => {
           if (j.id !== journeyId) return j;
           return { ...j, learningLogs: [log, ...(j.learningLogs || [])], updatedAt: new Date().toISOString() };
@@ -940,18 +970,24 @@ export function AppProvider({ children }) {
 
   // Update study streak on mount & when user authenticates
   useEffect(() => {
-    const today = new Date().toISOString().slice(0, 10);
+    const today = getLocalDateString();
     const lastActive = state.analytics?.lastActiveDate;
-    if (lastActive !== today) {
-      const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-      const prevStreak = Number(state.analytics?.streakDays) || 0;
-      const streak = lastActive === yesterday ? prevStreak + 1 : 1;
+    const existingDates = Array.isArray(state.analytics?.activeDates) ? state.analytics.activeDates : [];
+
+    if (lastActive !== today || !existingDates.includes(today)) {
+      const activeDates = Array.from(new Set([...existingDates, today]));
+      const streak = computeConsecutiveStreak(activeDates, state.analytics?.streakDays || 1);
+
       syncedDispatch({
         type: ACTIONS.UPDATE_ANALYTICS,
-        payload: { lastActiveDate: today, streakDays: streak },
+        payload: {
+          lastActiveDate: today,
+          activeDates,
+          streakDays: streak,
+        },
       });
     }
-  }, [user?.uid, state.analytics?.lastActiveDate]);
+  }, [user?.uid]);
 
   // Compute active journey
   const activeJourney = useMemo(() => {
@@ -1078,6 +1114,11 @@ export function AppProvider({ children }) {
     activeJourney,
     getTopicLocation,
     softDeleteItem,
+    recordStudyActivity: (minutes = 0) =>
+      syncedDispatch({
+        type: ACTIONS.UPDATE_ANALYTICS,
+        payload: updateStreakOnActivity(state.analytics, minutes),
+      }),
     // Admin state
     masterTemplates,
     adminRecycleBin,

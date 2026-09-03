@@ -14,8 +14,6 @@ import cloudEngineer from './cloud-engineer.json' with { type: 'json' };
 import cybersecurityEngineer from './cybersecurity-engineer.json' with { type: 'json' };
 import qaAutomationEngineer from './qa-automation-engineer.json' with { type: 'json' };
 import dataEngineer from './data-engineer.json' with { type: 'json' };
-import photography from './photography.json' with { type: 'json' };
-import languageLearning from './language-learning.json' with { type: 'json' };
 
 // Trending Technologies & Modern Roles
 import pythonAutomationDeveloper from './python-automation-developer.json' with { type: 'json' };
@@ -109,17 +107,35 @@ export const ROLE_TEMPLATES = [
 
   // Quality & Additional
   qaAutomationEngineer,
-  photography,
-  languageLearning,
 ].map((t) => ({
   ...t,
   title: t.title || t.name || 'Untitled Template',
   name: t.name || t.title || 'Untitled Template',
+  templateType: 'role',
   status: t.status || 'Production Standard',
   technologies: Array.isArray(t.technologies) ? t.technologies : (t.tags || []),
   targetRoles: Array.isArray(t.targetRoles) ? t.targetRoles : [t.title || t.name],
   prerequisites: Array.isArray(t.prerequisites) ? t.prerequisites : [],
 }));
+
+export const TECHNOLOGY_TEMPLATES = [
+  ...SAP_TEMPLATES,
+  agenticAiEngineer,
+  devopsPlatformEngineer,
+  mlopsEngineer,
+  dsaInterviewPrep,
+].map((t) => ({
+  ...t,
+  title: t.title || t.name || 'Untitled Technology Template',
+  name: t.name || t.title || 'Untitled Technology Template',
+  templateType: 'technology',
+  status: t.status || 'Production Standard',
+  technologies: Array.isArray(t.technologies) ? t.technologies : (t.tags || []),
+  targetRoles: Array.isArray(t.targetRoles) ? t.targetRoles : [t.title || t.name],
+  prerequisites: Array.isArray(t.prerequisites) ? t.prerequisites : [],
+}));
+
+export { LEARNING_PACKS, getLearningPackById, cloneJourneyFromPacks, addPackToJourney } from '../learningPacks';
 
 export const TEMPLATES = ROLE_TEMPLATES;
 
@@ -128,7 +144,7 @@ export function getRoleTemplateById(id) {
 }
 
 export function getTemplateById(id) {
-  return getRoleTemplateById(id);
+  return getRoleTemplateById(id) || getLearningPackById(id);
 }
 
 /**

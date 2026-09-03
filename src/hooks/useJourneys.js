@@ -21,11 +21,15 @@ export function useJourneys() {
     return journey;
   };
 
-  const createFromTemplate = (templateId, customName = null) => {
-    const template = getTemplateById(templateId);
-    if (!template) throw new Error(`Template not found: ${templateId}`);
+  const createFromTemplate = (templateOrId, customName = null) => {
+    const template =
+      typeof templateOrId === 'object' && templateOrId !== null
+        ? templateOrId
+        : getTemplateById(templateOrId);
+    if (!template) throw new Error(`Template not found: ${templateOrId}`);
     const journey = cloneJourneyFromTemplate(template, customName);
     dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: journey });
+    dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: journey.id });
     return journey;
   };
 

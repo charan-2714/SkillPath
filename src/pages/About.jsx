@@ -41,7 +41,7 @@ export default function About() {
           <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
             SkillPath is a modern personal learning management platform that empowers you to create,
             structure, and track custom learning roadmaps for any discipline — from AI/ML Engineering
-            and Full Stack Development to Language Fluency, Photography, and System Design.
+            and Full Stack Development to Placement Preparation, DSA, and System Design.
           </p>
         </div>
 

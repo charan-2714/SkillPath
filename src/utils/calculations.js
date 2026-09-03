@@ -320,3 +320,97 @@ export function getAIDependencyLabel(score) {
   if (score >= 40) return { label: 'Moderate', color: 'text-amber-600 dark:text-amber-400', bg: 'bg-amber-50 dark:bg-amber-900/30' };
   return { label: 'Low (Independent)', color: 'text-green-600 dark:text-green-400', bg: 'bg-green-50 dark:bg-green-900/30' };
 }
+
+/**
+ * Calculate dynamic progress of a Learning Pack against a user's active journey.
+ */
+export function calculatePackProgress(pack, userJourney = null) {
+  if (!pack || !pack.subjects || pack.subjects.length === 0) {
+    return { overallProgress: 0, subjectBreakdown: [] };
+  }
+
+  const trackingModel = userJourney?.trackingModel || 'skill-development';
+  const skillDimensions = userJourney?.skillDimensions || [];
+
+  const subjectBreakdown = pack.subjects.map((sub) => {
+    let matchedSubject = sub;
+    if (userJourney && userJourney.levels) {
+      for (const lvl of userJourney.levels) {
+        const found = (lvl.subjects || []).find(
+          (s) =>
+            s.id === sub.id ||
+            (s.title || '').trim().toLowerCase() === (sub.title || '').trim().toLowerCase()
+        );
+        if (found) {
+          matchedSubject = found;
+          break;
+        }
+      }
+    }
+
+    const progress = calculateSubjectProgress(matchedSubject, trackingModel, skillDimensions);
+    return {
+      id: sub.id,
+      title: sub.title,
+      progress,
+    };
+  });
+
+  const totalProgress = subjectBreakdown.reduce((acc, s) => acc + s.progress, 0);
+  const overallProgress = Math.round(totalProgress / subjectBreakdown.length);
+
+  return {
+    overallProgress,
+    subjectBreakdown,
+  };
+}
+
+/**
+ * Format a Date object as YYYY-MM-DD in the user's local timezone.
+ */
+export function getLocalDateString(d = new Date()) {
+  const date = new Date(d);
+  if (isNaN(date.getTime())) return new Date().toISOString().slice(0, 10);
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+/**
+ * Get the previous calendar day string YYYY-MM-DD before a given date.
+ */
+export function getCalendarPreviousDate(dateStr) {
+  if (!dateStr) return '';
+  const [y, m, d] = dateStr.split('-').map(Number);
+  const date = new Date(y, m - 1, d);
+  date.setDate(date.getDate() - 1);
+  return getLocalDateString(date);
+}
+
+/**
+ * Calculate consecutive daily learning streak from an array of active dates.
+ */
+export function computeConsecutiveStreak(activeDatesArray, fallbackStreak = 1) {
+  if (!activeDatesArray || activeDatesArray.length === 0) {
+    return Math.max(1, Number(fallbackStreak) || 1);
+  }
+
+  const today = getLocalDateString();
+  const yesterday = getCalendarPreviousDate(today);
+  const dateSet = new Set(activeDatesArray);
+
+  // If today or yesterday is active, trace backwards consecutively
+  let checkDate = dateSet.has(today) ? today : (dateSet.has(yesterday) ? yesterday : null);
+  if (!checkDate) {
+    return 1;
+  }
+
+  let streak = 0;
+  while (dateSet.has(checkDate)) {
+    streak += 1;
+    checkDate = getCalendarPreviousDate(checkDate);
+  }
+
+  return Math.max(1, streak);
+}

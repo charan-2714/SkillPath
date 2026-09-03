@@ -22,6 +22,7 @@ import {
   Boxes,
   Check,
   Zap,
+  Package,
 } from 'lucide-react';
 import { AppLayout, PageHeader } from '../components/layout/AppLayout';
 import { Modal, ConfirmDialog } from '../components/common/Modal';
@@ -29,6 +30,9 @@ import { Breadcrumbs } from '../components/common/Breadcrumbs';
 import { EmptyState } from '../components/common/EmptyState';
 import { useJourney } from '../hooks/useJourney';
 import { TOPIC_PRIORITIES } from '../models/journeySchema';
+import { LEARNING_PACKS, addPackToJourney } from '../data/learningPacks';
+import { useAppState, ACTIONS } from '../context/AppContext';
+import { useToast } from '../context/ToastContext';
 
 const LEVEL_COLOR_PALETTES = [
   {
@@ -382,6 +386,14 @@ export default function JourneyBuilder() {
     message: '',
   });
 
+  const { dispatch } = useAppState();
+  const { showToast } = useToast();
+  const [packModal, setPackModal] = useState({
+    open: false,
+    selectedPack: null,
+    selectedSubjectIds: [],
+  });
+
   if (!journey) {
     return (
       <AppLayout pageTitle="Curriculum Builder">
@@ -452,6 +464,19 @@ export default function JourneyBuilder() {
           <div className="flex items-center gap-2">
             <button onClick={toggleAll} className="btn-secondary text-xs">
               {allExpanded ? 'Collapse All' : 'Expand All'}
+            </button>
+            <button
+              onClick={() =>
+                setPackModal({
+                  open: true,
+                  selectedPack: null,
+                  selectedSubjectIds: [],
+                })
+              }
+              className="btn-secondary text-xs"
+            >
+              <Package className="w-3.5 h-3.5 text-sky-500" />
+              Add Learning Pack
             </button>
             <button
               onClick={() => navigate(`/journeys/${journey.id}`)}
@@ -904,6 +929,159 @@ export default function JourneyBuilder() {
           confirmLabel="Delete"
           danger
         />
+      )}
+
+      {/* LEARNING PACK SELECTION MODAL */}
+      {packModal.open && (
+        <Modal
+          isOpen={packModal.open}
+          onClose={() =>
+            setPackModal({ open: false, selectedPack: null, selectedSubjectIds: [] })
+          }
+          title="Add Reusable Learning Pack to Journey"
+          size="lg"
+        >
+          <div className="space-y-4 max-h-[75vh] overflow-y-auto pr-1">
+            {!packModal.selectedPack ? (
+              <div className="space-y-3">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
+                  Select a Learning Pack to append its structured modules into this journey:
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {LEARNING_PACKS.map((p) => (
+                    <div
+                      key={p.id}
+                      onClick={() =>
+                        setPackModal({
+                          open: true,
+                          selectedPack: p,
+                          selectedSubjectIds: (p.subjects || []).map((s) => s.id),
+                        })
+                      }
+                      className="p-3.5 rounded-2xl border border-gray-200 dark:border-gray-800 hover:border-sky-400 dark:hover:border-sky-600 bg-white dark:bg-gray-850 cursor-pointer transition-all shadow-2xs hover:shadow-xs flex flex-col justify-between"
+                    >
+                      <div className="space-y-1.5">
+                        <div className="flex items-center justify-between">
+                          <span className="badge bg-sky-50 text-sky-700 dark:bg-sky-950/60 dark:text-sky-300 text-[10px] font-bold">
+                            {p.category}
+                          </span>
+                          <span className="text-[10px] text-gray-400 font-semibold">
+                            ~{p.estimatedHours}h
+                          </span>
+                        </div>
+                        <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100 line-clamp-1">
+                          {p.title}
+                        </h4>
+                        <p className="text-[11px] text-gray-500 dark:text-gray-400 line-clamp-2">
+                          {p.description}
+                        </p>
+                      </div>
+                      <div className="pt-2 mt-2 border-t border-gray-150 dark:border-gray-800 flex items-center justify-between text-[11px] text-sky-600 dark:text-sky-400 font-bold">
+                        <span>{(p.subjects || []).length} Modules</span>
+                        <span>Select →</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-4">
+                <button
+                  onClick={() =>
+                    setPackModal((prev) => ({ ...prev, selectedPack: null, selectedSubjectIds: [] }))
+                  }
+                  className="btn-ghost text-xs text-gray-500 flex items-center gap-1 p-0"
+                >
+                  <ArrowLeft className="w-3.5 h-3.5" /> Back to Packs list
+                </button>
+
+                <div className="p-3 rounded-xl bg-sky-50/60 dark:bg-sky-950/30 border border-sky-200 dark:border-sky-800">
+                  <h4 className="text-xs font-black text-sky-900 dark:text-sky-200">
+                    {packModal.selectedPack.title}
+                  </h4>
+                  <p className="text-[11px] text-sky-700 dark:text-sky-300">
+                    {packModal.selectedPack.description}
+                  </p>
+                </div>
+
+                <div className="space-y-2">
+                  <span className="text-xs font-bold text-gray-700 dark:text-gray-300 block">
+                    Choose modules to append ({packModal.selectedSubjectIds.length} of{' '}
+                    {(packModal.selectedPack.subjects || []).length}):
+                  </span>
+                  <div className="space-y-1.5 max-h-52 overflow-y-auto pr-1">
+                    {(packModal.selectedPack.subjects || []).map((sub) => {
+                      const isChecked = packModal.selectedSubjectIds.includes(sub.id);
+                      return (
+                        <div
+                          key={sub.id}
+                          onClick={() =>
+                            setPackModal((prev) => ({
+                              ...prev,
+                              selectedSubjectIds: isChecked
+                                ? prev.selectedSubjectIds.filter((id) => id !== sub.id)
+                                : [...prev.selectedSubjectIds, sub.id],
+                            }))
+                          }
+                          className={`p-2.5 rounded-xl border cursor-pointer transition-all flex items-start gap-2.5 ${
+                            isChecked
+                              ? 'bg-sky-50/80 dark:bg-sky-950/40 border-sky-300 dark:border-sky-800'
+                              : 'bg-white dark:bg-gray-850 border-gray-200 dark:border-gray-800 opacity-60'
+                          }`}
+                        >
+                          <input
+                            type="checkbox"
+                            checked={isChecked}
+                            onChange={() => {}}
+                            className="mt-0.5 rounded text-sky-600 focus:ring-sky-500"
+                          />
+                          <div className="min-w-0 flex-1">
+                            <div className="text-xs font-bold text-gray-900 dark:text-gray-100">
+                              {sub.title}
+                            </div>
+                            <div className="text-[10px] text-gray-500 dark:text-gray-400 truncate">
+                              {(sub.topics || []).length} Topics • {sub.description}
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div className="pt-3 border-t border-gray-200 dark:border-gray-700 flex items-center justify-end gap-2">
+                  <button
+                    onClick={() =>
+                      setPackModal({ open: false, selectedPack: null, selectedSubjectIds: [] })
+                    }
+                    className="btn-secondary text-xs"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    disabled={packModal.selectedSubjectIds.length === 0}
+                    onClick={() => {
+                      const updatedJourney = addPackToJourney(
+                        journey,
+                        packModal.selectedPack,
+                        packModal.selectedSubjectIds
+                      );
+                      dispatch({ type: ACTIONS.UPDATE_JOURNEY, payload: updatedJourney });
+                      showToast(
+                        `Appended ${packModal.selectedSubjectIds.length} module(s) from ${packModal.selectedPack.title}!`,
+                        'success'
+                      );
+                      setPackModal({ open: false, selectedPack: null, selectedSubjectIds: [] });
+                    }}
+                    className="btn-primary text-xs"
+                  >
+                    <Plus className="w-3.5 h-3.5" /> Append Modules to Journey
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+        </Modal>
       )}
     </AppLayout>
   );

@@ -19,6 +19,7 @@ const JourneyDetail = lazy(() => import('./pages/JourneyDetail'));
 const JourneyBuilder = lazy(() => import('./pages/JourneyBuilder'));
 const TopicDetail = lazy(() => import('./pages/TopicDetail'));
 const Templates = lazy(() => import('./pages/Templates'));
+const PackDetail = lazy(() => import('./pages/PackDetail'));
 const DSADashboard = lazy(() => import('./pages/dsa/DSADashboard'));
 const DSAProblemDetail = lazy(() => import('./pages/dsa/DSAProblemDetail'));
 const Practice = lazy(() => import('./pages/Practice'));
@@ -149,12 +150,20 @@ export default function App() {
                   }
                 />
 
-                {/* Master Role Templates */}
+                {/* Master Role Templates & Learning Packs */}
                 <Route
                   path="/templates"
                   element={
                     <ProtectedRoute>
                       <Templates />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/packs/:packId"
+                  element={
+                    <ProtectedRoute>
+                      <PackDetail />
                     </ProtectedRoute>
                   }
                 />
