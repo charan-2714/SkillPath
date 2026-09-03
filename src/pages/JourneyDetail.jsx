@@ -293,28 +293,12 @@ export default function JourneyDetail() {
   const [allExpanded, setAllExpanded] = useState(false);
   const [packModal, setPackModal] = useState({ open: false, selectedPack: null, selectedSubjectIds: [] });
 
-  if (!journey) {
-    return (
-      <AppLayout pageTitle="Journey Not Found">
-        <EmptyState
-          icon="book"
-          title="Learning Journey Not Found"
-          description="The requested learning journey does not exist or was deleted."
-          action={
-            <button onClick={() => navigate('/journeys')} className="btn-primary text-xs">
-              <ArrowLeft className="w-3.5 h-3.5" /> Back to My Journeys
-            </button>
-          }
-        />
-      </AppLayout>
-    );
-  }
-
-  // Sorted and filtered levels
+  // Sorted and filtered levels (declared before any conditional return)
   const sortedAndFilteredLevels = useMemo(() => {
+    if (!journey) return [];
     const rawLevels = journey.levels || [];
 
-    // 2. Filter subjects based on search & status
+    // Filter subjects based on search & status
     return rawLevels
       .map((lvl) => {
         const filteredSubs = (lvl.subjects || []).filter((sub) => {
@@ -347,7 +331,24 @@ export default function JourneyDetail() {
         };
       })
       .filter((lvl) => lvl.subjects.length > 0);
-  }, [journey.levels, search, statusFilter]);
+  }, [journey?.levels, journey?.trackingModel, journey?.skillDimensions, search, statusFilter]);
+
+  if (!journey) {
+    return (
+      <AppLayout pageTitle="Journey Not Found">
+        <EmptyState
+          icon="book"
+          title="Learning Journey Not Found"
+          description="The requested learning journey does not exist or was deleted."
+          action={
+            <button onClick={() => navigate('/journeys')} className="btn-primary text-xs">
+              <ArrowLeft className="w-3.5 h-3.5" /> Back to My Journeys
+            </button>
+          }
+        />
+      </AppLayout>
+    );
+  }
 
   const toggleLevel = (lvlId) => {
     setExpandedLevels((prev) => ({ ...prev, [lvlId]: !Boolean(prev[lvlId]) }));

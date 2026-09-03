@@ -527,35 +527,11 @@ export default function TopicDetail() {
     description: '',
   });
 
-  if (!location || !location.topic) {
-    return (
-      <AppLayout pageTitle="Topic Not Found">
-        <EmptyState
-          icon="book"
-          title="Topic Not Found"
-          description="Could not locate this topic in your journey."
-          action={
-            <button
-              onClick={() => navigate(journey ? `/journeys/${journey.id}` : '/journeys')}
-              className="btn-primary text-xs"
-            >
-              <ChevronLeft className="w-3.5 h-3.5" /> Back to Journey
-            </button>
-          }
-        />
-      </AppLayout>
-    );
-  }
+  const level = location?.level;
+  const subject = location?.subject;
+  const topic = location?.topic;
 
-  const { level, subject, topic } = location;
-  const trackingModel = journey?.trackingModel || 'skill-development';
-  const skillDimensions =
-    journey?.skillDimensions && journey.skillDimensions.length > 0
-      ? journey.skillDimensions
-      : DEFAULT_SKILL_DIMENSIONS;
-  const progress = calculateTopicProgress(topic, trackingModel, skillDimensions);
-
-  // Find next & prev topics
+  // Find next & prev topics (unconditional hook)
   const allJourneyTopics = useMemo(() => {
     return (journey?.levels || []).flatMap((lvl) =>
       (lvl.subjects || []).flatMap((sub) =>
@@ -564,7 +540,7 @@ export default function TopicDetail() {
     );
   }, [journey]);
 
-  const currentIndex = allJourneyTopics.findIndex((t) => t.id === topic.id);
+  const currentIndex = topic ? allJourneyTopics.findIndex((t) => t.id === topic.id) : -1;
   const prevTopic = currentIndex > 0 ? allJourneyTopics[currentIndex - 1] : null;
   const nextTopic =
     currentIndex !== -1 && currentIndex < allJourneyTopics.length - 1
@@ -586,6 +562,33 @@ export default function TopicDetail() {
       sTitle.includes('dsa')
     );
   }, [topic?.title, level?.title, subject?.title]);
+
+  if (!location || !location.topic) {
+    return (
+      <AppLayout pageTitle="Topic Not Found">
+        <EmptyState
+          icon="book"
+          title="Topic Not Found"
+          description="Could not locate this topic in your journey."
+          action={
+            <button
+              onClick={() => navigate(journey ? `/journeys/${journey.id}` : '/journeys')}
+              className="btn-primary text-xs"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" /> Back to Journey
+            </button>
+          }
+        />
+      </AppLayout>
+    );
+  }
+
+  const trackingModel = journey?.trackingModel || 'skill-development';
+  const skillDimensions =
+    journey?.skillDimensions && journey.skillDimensions.length > 0
+      ? journey.skillDimensions
+      : DEFAULT_SKILL_DIMENSIONS;
+  const progress = calculateTopicProgress(topic, trackingModel, skillDimensions);
 
   const handleStatusChange = (newStatus) => {
     updateTopic(topic.id, { status: newStatus });

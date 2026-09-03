@@ -31,12 +31,13 @@ export function subscribeToUserJourneys(uid, onData, onError) {
         onData(journeys);
       },
       (err) => {
-        console.error('[Firestore] Error subscribing to journeys:', err);
+        if (err?.code !== 'permission-denied') {
+          console.warn('[Firestore] Journeys subscription notice:', err?.message || err);
+        }
         if (onError) onError(err);
       }
     );
   } catch (err) {
-    console.warn('[Firestore] Journey subscription skipped:', err);
     return () => {};
   }
 }
@@ -87,12 +88,13 @@ export function subscribeToUserLearningLogs(uid, onData, onError) {
         onData(logs);
       },
       (err) => {
-        console.error('[Firestore] Error subscribing to learning logs:', err);
+        if (err?.code !== 'permission-denied') {
+          console.warn('[Firestore] Learning logs notice:', err?.message || err);
+        }
         if (onError) onError(err);
       }
     );
   } catch (err) {
-    console.warn('[Firestore] Learning logs subscription skipped:', err);
     return () => {};
   }
 }
@@ -106,8 +108,7 @@ export async function saveLearningLogDoc(uid, log) {
     const docRef = doc(db, 'users', uid, 'learningLogs', log.id);
     await setDoc(docRef, log, { merge: true });
   } catch (err) {
-    console.error('[Firestore] Failed to save learning log doc:', err);
-    throw err;
+    if (err?.code !== 'permission-denied') console.warn('[Firestore] Failed to save learning log:', err);
   }
 }
 
@@ -120,8 +121,7 @@ export async function deleteLearningLogDoc(uid, logId) {
     const docRef = doc(db, 'users', uid, 'learningLogs', logId);
     await deleteDoc(docRef);
   } catch (err) {
-    console.error('[Firestore] Failed to delete learning log doc:', err);
-    throw err;
+    if (err?.code !== 'permission-denied') console.warn('[Firestore] Failed to delete learning log:', err);
   }
 }
 
@@ -143,12 +143,13 @@ export function subscribeToUserRecycleBin(uid, onData, onError) {
         onData(items);
       },
       (err) => {
-        console.error('[Firestore] Error subscribing to recycle bin:', err);
+        if (err?.code !== 'permission-denied') {
+          console.warn('[Firestore] Recycle bin notice:', err?.message || err);
+        }
         if (onError) onError(err);
       }
     );
   } catch (err) {
-    console.warn('[Firestore] Recycle bin subscription skipped:', err);
     return () => {};
   }
 }
@@ -162,8 +163,7 @@ export async function saveRecycleBinItem(uid, item) {
     const docRef = doc(db, 'users', uid, 'recycleBin', item.id);
     await setDoc(docRef, { ...item, deletedAt: item.deletedAt || new Date().toISOString() });
   } catch (err) {
-    console.error('[Firestore] Failed to save recycle bin item:', err);
-    throw err;
+    if (err?.code !== 'permission-denied') console.warn('[Firestore] Failed to save recycle bin item:', err);
   }
 }
 
@@ -176,8 +176,7 @@ export async function deleteRecycleBinItem(uid, itemId) {
     const docRef = doc(db, 'users', uid, 'recycleBin', itemId);
     await deleteDoc(docRef);
   } catch (err) {
-    console.error('[Firestore] Failed to delete recycle bin item:', err);
-    throw err;
+    if (err?.code !== 'permission-denied') console.warn('[Firestore] Failed to delete recycle bin item:', err);
   }
 }
 
@@ -197,12 +196,13 @@ export function subscribeToUserSettings(uid, onData, onError) {
         }
       },
       (err) => {
-        console.error('[Firestore] Error subscribing to settings:', err);
+        if (err?.code !== 'permission-denied') {
+          console.warn('[Firestore] Settings notice:', err?.message || err);
+        }
         if (onError) onError(err);
       }
     );
   } catch (err) {
-    console.warn('[Firestore] Settings subscription skipped:', err);
     return () => {};
   }
 }
@@ -216,7 +216,7 @@ export async function saveSettingsDoc(uid, settings) {
     const docRef = doc(db, 'users', uid, 'settings', 'preferences');
     await setDoc(docRef, settings, { merge: true });
   } catch (err) {
-    console.error('[Firestore] Failed to save settings doc:', err);
+    if (err?.code !== 'permission-denied') console.warn('[Firestore] Failed to save settings:', err);
   }
 }
 
@@ -236,12 +236,13 @@ export function subscribeToUserAnalytics(uid, onData, onError) {
         }
       },
       (err) => {
-        console.error('[Firestore] Error subscribing to analytics:', err);
+        if (err?.code !== 'permission-denied') {
+          console.warn('[Firestore] Analytics notice:', err?.message || err);
+        }
         if (onError) onError(err);
       }
     );
   } catch (err) {
-    console.warn('[Firestore] Analytics subscription skipped:', err);
     return () => {};
   }
 }
