@@ -10,11 +10,13 @@ import { Tabs } from '../components/common/Tabs';
 import { EmptyState } from '../components/common/EmptyState';
 import { ConfirmDialog } from '../components/common/Modal';
 import { useJourneys } from '../hooks/useJourneys';
+import { useToast } from '../context/ToastContext';
 
 const CATEGORY_FILTERS = ['All', 'Technology', 'Creative Arts', 'Language', 'Science & Math', 'Other'];
 
 export default function Journeys() {
   const navigate = useNavigate();
+  const { showToast } = useToast();
   const {
     activeJourneys,
     archivedJourneys,
@@ -212,11 +214,12 @@ export default function Journeys() {
           if (deleteJourneyId) {
             deleteJourney(deleteJourneyId);
             setDeleteJourneyId(null);
+            showToast('Journey moved to Recycle Bin.', 'info');
           }
         }}
-        title="Delete Learning Journey"
-        message="Are you sure you want to delete this journey? All of its levels, subjects, topics, learning items, practice tasks, and progress will be permanently removed. This cannot be undone."
-        confirmLabel="Delete Journey"
+        title="Move Journey to Recycle Bin"
+        message="Are you sure you want to delete this journey? It will be moved to your Recycle Bin where you can restore it anytime or delete it permanently."
+        confirmLabel="Move to Recycle Bin"
         danger
       />
     </AppLayout>

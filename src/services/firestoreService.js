@@ -277,12 +277,14 @@ export function subscribeToUserDSAProgress(uid, onData, onError) {
         onData(progressMap);
       },
       (err) => {
-        console.error('[Firestore] Error subscribing to DSA progress:', err);
+        // If Firestore security rules restrict subcollection access, gracefully fallback to local storage
+        if (err?.code !== 'permission-denied') {
+          console.warn('[Firestore] DSA progress notice:', err?.message || err);
+        }
         if (onError) onError(err);
       }
     );
   } catch (err) {
-    console.warn('[Firestore] DSA progress subscription skipped:', err);
     return () => {};
   }
 }

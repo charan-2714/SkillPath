@@ -44,7 +44,9 @@ import {
   LEARNING_PACKS,
   cloneJourneyFromPacks,
   addPackToJourney,
+  addTemplatesToJourney,
 } from '../data/roles';
+import { cloneJourneyFromTemplate } from '../data/templates';
 import { useJourneys } from '../hooks/useJourneys';
 import { useAppState, ACTIONS } from '../context/AppContext';
 import { useToast } from '../context/ToastContext';
@@ -95,7 +97,7 @@ const STATUS_BADGE_STYLES = {
 export default function Templates() {
   const navigate = useNavigate();
   const { showToast } = useToast();
-  const { createFromTemplate } = useJourneys();
+  const { activeJourneys, createFromTemplate } = useJourneys();
   const { state, dispatch, activeJourney } = useAppState();
 
   // State
@@ -189,6 +191,8 @@ export default function Templates() {
     setUseModal({
       open: true,
       template,
+      destinationMode: activeJourneys.length > 0 ? 'existing' : 'new',
+      targetJourneyId: activeJourney?.id || activeJourneys[0]?.id || '',
       customName: `My ${template.title || template.name} Journey`,
       goal: template.category?.includes('SAP')
         ? 'SAP Enterprise Mastery & Certification'
@@ -203,23 +207,35 @@ export default function Templates() {
     e?.preventDefault();
     if (!useModal.template) return;
     const template = useModal.template;
-    const customTitle = useModal.customName?.trim() || template.title || template.name;
+    const { destinationMode, targetJourneyId, customName } = useModal;
 
-    // Immediately close modals so the dialog is instantly dismissed
-    setUseModal({ open: false, template: null, customName: '', goal: '', targetDate: '' });
+    // Immediately close modals
+    setUseModal({ open: false, template: null, destinationMode: 'existing', targetJourneyId: '', customName: '', goal: '', targetDate: '' });
     setPreviewTemplate(null);
 
     try {
-      const newJourney = cloneJourneyFromTemplate(template, customTitle);
-      if (newJourney) {
-        dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: newJourney });
-        dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: newJourney.id });
-        showToast(`Created journey "${newJourney.name}" from template!`, 'success');
-        navigate(`/journeys/${newJourney.id}`);
+      if (destinationMode === 'existing' && targetJourneyId) {
+        const targetJourney = (state.journeys || []).find((j) => j.id === targetJourneyId);
+        if (!targetJourney) throw new Error('Target journey not found.');
+
+        const updatedJourney = addTemplatesToJourney(targetJourney, template);
+        dispatch({ type: ACTIONS.UPDATE_JOURNEY, payload: updatedJourney });
+        dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: updatedJourney.id });
+        showToast(`Appended "${template.title || template.name}" to ${targetJourney.name}!`, 'success');
+        navigate(`/journeys/${updatedJourney.id}`);
+      } else {
+        const customTitle = customName?.trim() || template.title || template.name;
+        const newJourney = cloneJourneyFromTemplate(template, customTitle);
+        if (newJourney) {
+          dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: newJourney });
+          dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: newJourney.id });
+          showToast(`Created roadmap "${newJourney.name}" from template!`, 'success');
+          navigate(`/journeys/${newJourney.id}`);
+        }
       }
     } catch (err) {
-      console.error('Error creating journey from template:', err);
-      showToast('Failed to create journey: ' + err.message, 'error');
+      console.error('Error adding template to roadmap:', err);
+      showToast('Failed to add template: ' + err.message, 'error');
     }
   };
 
@@ -228,6 +244,8 @@ export default function Templates() {
       open: true,
       pack,
       selectedSubjectIds: (pack.subjects || []).map((s) => s.id),
+      destinationMode: activeJourneys.length > 0 ? 'existing' : 'new',
+      targetJourneyId: activeJourney?.id || activeJourneys[0]?.id || '',
       journeyName: `My ${pack.title} Journey`,
     });
   };
@@ -243,27 +261,38 @@ export default function Templates() {
 
   const handleConfirmCreatePackJourney = (e) => {
     e?.preventDefault();
-    const { pack, selectedSubjectIds, journeyName } = packCustomizeModal;
+    const { pack, selectedSubjectIds, journeyName, destinationMode, targetJourneyId } = packCustomizeModal;
     if (!pack) return;
 
     // Immediately close modal
     setPackCustomizeModal({ open: false, pack: null, selectedSubjectIds: [], journeyName: '' });
 
     try {
-      const newJourney = cloneJourneyFromPacks(pack, {
-        name: journeyName?.trim() || `My ${pack.title} Journey`,
-        selectedSubjectIds,
-      });
+      if (destinationMode === 'existing' && targetJourneyId) {
+        const targetJourney = (state.journeys || []).find((j) => j.id === targetJourneyId);
+        if (!targetJourney) throw new Error('Target journey not found.');
 
-      if (newJourney) {
-        dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: newJourney });
-        dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: newJourney.id });
-        showToast(`Successfully created "${newJourney.name}"!`, 'success');
-        navigate(`/journeys/${newJourney.id}`);
+        const updatedJourney = addPackToJourney(targetJourney, pack, selectedSubjectIds);
+        dispatch({ type: ACTIONS.UPDATE_JOURNEY, payload: updatedJourney });
+        dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: updatedJourney.id });
+        showToast(`Appended ${selectedSubjectIds.length} module(s) from "${pack.title}" to ${targetJourney.name}!`, 'success');
+        navigate(`/journeys/${updatedJourney.id}`);
+      } else {
+        const newJourney = cloneJourneyFromPacks(pack, {
+          name: journeyName?.trim() || `My ${pack.title} Journey`,
+          selectedSubjectIds,
+        });
+
+        if (newJourney) {
+          dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: newJourney });
+          dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: newJourney.id });
+          showToast(`Successfully created "${newJourney.name}"!`, 'success');
+          navigate(`/journeys/${newJourney.id}`);
+        }
       }
     } catch (err) {
-      console.error('Error creating pack journey:', err);
-      showToast('Failed to create journey: ' + err.message, 'error');
+      console.error('Error adding pack to roadmap:', err);
+      showToast('Failed to add pack: ' + err.message, 'error');
     }
   };
 
@@ -597,25 +626,118 @@ export default function Templates() {
         isOpen={packCustomizeModal.open}
         onClose={() => setPackCustomizeModal({ open: false, pack: null, selectedSubjectIds: [], journeyName: '' })}
         title={packCustomizeModal.pack ? `Add ${packCustomizeModal.pack.title}` : 'Customize Learning Pack'}
+        size="lg"
       >
         {packCustomizeModal.pack && (
           <form onSubmit={handleConfirmCreatePackJourney} className="space-y-4 max-h-[75vh] overflow-y-auto pr-1">
-            <div>
-              <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
-                Journey Name
-              </label>
-              <input
-                type="text"
-                value={packCustomizeModal.journeyName}
-                onChange={(e) =>
-                  setPackCustomizeModal((prev) => ({ ...prev, journeyName: e.target.value }))
-                }
-                className="input text-sm w-full"
-                placeholder="e.g. My Placement Fundamentals Journey"
-                required
-              />
-            </div>
+            {/* Destination Mode Selector */}
+            {activeJourneys.length > 0 && (
+              <div className="space-y-2">
+                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300">
+                  Where would you like to save this Learning Pack?
+                </label>
+                <div className="grid grid-cols-2 gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-xl text-xs">
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setPackCustomizeModal((prev) => ({ ...prev, destinationMode: 'existing' }))
+                    }
+                    className={`py-2 px-3 rounded-lg font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      (packCustomizeModal.destinationMode || 'existing') === 'existing'
+                        ? 'bg-white dark:bg-gray-900 text-sky-600 dark:text-sky-400 shadow-xs'
+                        : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
+                    }`}
+                  >
+                    <Layers className="w-3.5 h-3.5" />
+                    Add to Existing Roadmap ({activeJourneys.length})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setPackCustomizeModal((prev) => ({ ...prev, destinationMode: 'new' }))
+                    }
+                    className={`py-2 px-3 rounded-lg font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      packCustomizeModal.destinationMode === 'new'
+                        ? 'bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-400 shadow-xs'
+                        : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
+                    }`}
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                    Create New Roadmap
+                  </button>
+                </div>
+              </div>
+            )}
 
+            {/* If Destination is Existing Roadmap */}
+            {(packCustomizeModal.destinationMode || 'existing') === 'existing' && activeJourneys.length > 0 ? (
+              <div className="space-y-2">
+                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300">
+                  Select Target Roadmap:
+                </label>
+                <div className="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+                  {activeJourneys.map((j) => {
+                    const isSelected = (packCustomizeModal.targetJourneyId || activeJourneys[0]?.id) === j.id;
+                    return (
+                      <div
+                        key={j.id}
+                        onClick={() =>
+                          setPackCustomizeModal((prev) => ({ ...prev, targetJourneyId: j.id }))
+                        }
+                        className={`p-2.5 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
+                          isSelected
+                            ? 'bg-sky-50/80 dark:bg-sky-950/40 border-sky-400 dark:border-sky-700 shadow-xs'
+                            : 'bg-white dark:bg-gray-850 border-gray-200 dark:border-gray-800 hover:border-gray-300'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <input
+                            type="radio"
+                            name="packTargetJourney"
+                            checked={isSelected}
+                            onChange={() =>
+                              setPackCustomizeModal((prev) => ({ ...prev, targetJourneyId: j.id }))
+                            }
+                            className="text-sky-600 focus:ring-sky-500"
+                          />
+                          <div>
+                            <div className="text-xs font-bold text-gray-900 dark:text-gray-100">
+                              {j.name}
+                            </div>
+                            <div className="text-[10px] text-gray-400">
+                              {(j.levels || []).length} Milestones • {j.category || 'General'}
+                            </div>
+                          </div>
+                        </div>
+                        {isSelected && (
+                          <span className="text-[10px] font-bold text-sky-600 dark:text-sky-400">
+                            Selected
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              <div>
+                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
+                  New Journey Name
+                </label>
+                <input
+                  type="text"
+                  value={packCustomizeModal.journeyName}
+                  onChange={(e) =>
+                    setPackCustomizeModal((prev) => ({ ...prev, journeyName: e.target.value }))
+                  }
+                  className="input text-sm w-full"
+                  placeholder="e.g. My Placement Fundamentals Journey"
+                  required
+                />
+              </div>
+            )}
+
+            {/* Module Picker */}
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold text-gray-700 dark:text-gray-300">
@@ -642,7 +764,7 @@ export default function Templates() {
                 </button>
               </div>
 
-              <div className="space-y-1.5 max-h-60 overflow-y-auto pr-1">
+              <div className="space-y-1.5 max-h-52 overflow-y-auto pr-1">
                 {(packCustomizeModal.pack.subjects || []).map((subject) => {
                   const isChecked = packCustomizeModal.selectedSubjectIds.includes(subject.id);
                   return (
@@ -690,64 +812,177 @@ export default function Templates() {
                 disabled={packCustomizeModal.selectedSubjectIds.length === 0}
                 className="btn-primary text-xs"
               >
-                <Sparkles className="w-3.5 h-3.5" /> Start Learning Journey
+                <Sparkles className="w-3.5 h-3.5" />
+                {packCustomizeModal.destinationMode === 'existing' && activeJourneys.length > 0
+                  ? 'Append to Selected Roadmap'
+                  : 'Start Learning Journey'}
               </button>
             </div>
           </form>
         )}
       </Modal>
 
-      {/* USE TEMPLATE CONFIRM MODAL */}
+      {/* USE TEMPLATE CONFIRM MODAL (SAVE TO ROADMAP / CREATE NEW) */}
       <Modal
         isOpen={useModal.open}
-        onClose={() => setUseModal({ open: false, template: null, customName: '', goal: '', targetDate: '' })}
-        title={`Create Journey from ${useModal.template?.title || useModal.template?.name || 'Template'}`}
+        onClose={() =>
+          setUseModal({
+            open: false,
+            template: null,
+            destinationMode: 'existing',
+            targetJourneyId: '',
+            customName: '',
+            goal: '',
+            targetDate: '',
+          })
+        }
+        title={`Add "${useModal.template?.title || useModal.template?.name || 'Template'}" to Roadmap`}
+        size="lg"
       >
         {useModal.template && (
           <form onSubmit={handleConfirmUseTemplate} className="space-y-4">
-            <div>
-              <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
-                Journey Name
-              </label>
-              <input
-                type="text"
-                value={useModal.customName}
-                onChange={(e) => setUseModal((prev) => ({ ...prev, customName: e.target.value }))}
-                className="input text-sm w-full"
-                required
-              />
-            </div>
+            {/* Destination Mode Selector */}
+            {activeJourneys.length > 0 && (
+              <div className="space-y-2">
+                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300">
+                  Where would you like to add this curriculum?
+                </label>
+                <div className="grid grid-cols-2 gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-xl text-xs">
+                  <button
+                    type="button"
+                    onClick={() => setUseModal((prev) => ({ ...prev, destinationMode: 'existing' }))}
+                    className={`py-2 px-3 rounded-lg font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      (useModal.destinationMode || 'existing') === 'existing'
+                        ? 'bg-white dark:bg-gray-900 text-sky-600 dark:text-sky-400 shadow-xs'
+                        : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
+                    }`}
+                  >
+                    <Layers className="w-3.5 h-3.5" />
+                    Add to Existing Roadmap ({activeJourneys.length})
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setUseModal((prev) => ({ ...prev, destinationMode: 'new' }))}
+                    className={`py-2 px-3 rounded-lg font-bold transition-all flex items-center justify-center gap-1.5 ${
+                      useModal.destinationMode === 'new'
+                        ? 'bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-400 shadow-xs'
+                        : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
+                    }`}
+                  >
+                    <Plus className="w-3.5 h-3.5" />
+                    Create New Roadmap
+                  </button>
+                </div>
+              </div>
+            )}
 
-            <div>
-              <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
-                Target Completion Date (Optional)
-              </label>
-              <input
-                type="date"
-                value={useModal.targetDate}
-                onChange={(e) => setUseModal((prev) => ({ ...prev, targetDate: e.target.value }))}
-                className="input text-xs w-full"
-              />
-            </div>
+            {/* If Destination is Existing Roadmap */}
+            {(useModal.destinationMode || 'existing') === 'existing' && activeJourneys.length > 0 ? (
+              <div className="space-y-2">
+                <label className="block text-xs font-bold text-gray-700 dark:text-gray-300">
+                  Choose Target Roadmap:
+                </label>
+                <div className="space-y-1.5 max-h-48 overflow-y-auto pr-1">
+                  {activeJourneys.map((j) => {
+                    const isSelected = (useModal.targetJourneyId || activeJourneys[0]?.id) === j.id;
+                    return (
+                      <div
+                        key={j.id}
+                        onClick={() => setUseModal((prev) => ({ ...prev, targetJourneyId: j.id }))}
+                        className={`p-2.5 rounded-xl border cursor-pointer transition-all flex items-center justify-between ${
+                          isSelected
+                            ? 'bg-sky-50/80 dark:bg-sky-950/40 border-sky-400 dark:border-sky-700 shadow-xs'
+                            : 'bg-white dark:bg-gray-850 border-gray-200 dark:border-gray-800 hover:border-gray-300'
+                        }`}
+                      >
+                        <div className="flex items-center gap-2.5">
+                          <input
+                            type="radio"
+                            name="targetJourney"
+                            checked={isSelected}
+                            onChange={() => setUseModal((prev) => ({ ...prev, targetJourneyId: j.id }))}
+                            className="text-sky-600 focus:ring-sky-500"
+                          />
+                          <div>
+                            <div className="text-xs font-bold text-gray-900 dark:text-gray-100">
+                              {j.name}
+                            </div>
+                            <div className="text-[10px] text-gray-400">
+                              {(j.levels || []).length} Milestones • {j.category || 'General'}
+                            </div>
+                          </div>
+                        </div>
+                        {isSelected && (
+                          <span className="text-[10px] font-bold text-sky-600 dark:text-sky-400">
+                            Selected
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              <div className="space-y-3">
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
+                    New Roadmap Name
+                  </label>
+                  <input
+                    type="text"
+                    value={useModal.customName}
+                    onChange={(e) => setUseModal((prev) => ({ ...prev, customName: e.target.value }))}
+                    className="input text-sm w-full"
+                    required
+                  />
+                </div>
 
+                <div>
+                  <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
+                    Target Completion Date (Optional)
+                  </label>
+                  <input
+                    type="date"
+                    value={useModal.targetDate}
+                    onChange={(e) => setUseModal((prev) => ({ ...prev, targetDate: e.target.value }))}
+                    className="input text-xs w-full"
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Overview Box */}
             <div className="p-3 rounded-xl bg-gray-50 dark:bg-gray-800 text-xs text-gray-600 dark:text-gray-300 space-y-1">
               <div className="font-bold text-gray-900 dark:text-gray-100">
-                Template Overview:
+                Curriculum Content to Append:
               </div>
-              <div>• {(useModal.template.levels || []).length} Structured Milestones</div>
-              <div>• {useModal.template.category} Track</div>
+              <div>• {(useModal.template.levels || []).length || (useModal.template.subjects || []).length} Milestones/Modules</div>
+              <div>• {useModal.template.category || 'Professional Track'}</div>
             </div>
 
             <div className="flex items-center justify-end gap-3 pt-3 border-t border-gray-200 dark:border-gray-700">
               <button
                 type="button"
-                onClick={() => setUseModal({ open: false, template: null, customName: '', goal: '', targetDate: '' })}
+                onClick={() =>
+                  setUseModal({
+                    open: false,
+                    template: null,
+                    destinationMode: 'existing',
+                    targetJourneyId: '',
+                    customName: '',
+                    goal: '',
+                    targetDate: '',
+                  })
+                }
                 className="btn-secondary text-xs"
               >
                 Cancel
               </button>
               <button type="submit" className="btn-primary text-xs">
-                <Sparkles className="w-3.5 h-3.5" /> Start Learning Journey
+                <Sparkles className="w-3.5 h-3.5" />
+                {useModal.destinationMode === 'existing' && activeJourneys.length > 0
+                  ? 'Append to Selected Roadmap'
+                  : 'Start Learning Journey'}
               </button>
             </div>
           </form>

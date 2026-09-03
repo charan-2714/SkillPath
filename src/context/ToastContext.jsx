@@ -34,7 +34,7 @@ export function ToastProvider({ children }) {
   }, []);
 
   return (
-    <ToastContext.Provider value={{ toast }}>
+    <ToastContext.Provider value={{ toast, showToast: toast }}>
       {children}
       {/* Toast container */}
       <div className="fixed bottom-4 right-4 z-[9999] flex flex-col gap-2 pointer-events-none">
@@ -62,5 +62,8 @@ export function ToastProvider({ children }) {
 export function useToast() {
   const ctx = useContext(ToastContext);
   if (!ctx) throw new Error('useToast must be used within ToastProvider');
-  return ctx.toast;
+  const toastFn = (...args) => ctx.toast(...args);
+  toastFn.showToast = (...args) => ctx.toast(...args);
+  toastFn.toast = (...args) => ctx.toast(...args);
+  return toastFn;
 }

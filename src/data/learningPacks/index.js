@@ -283,8 +283,10 @@ export function addPackToJourney(journey, pack, selectedSubjectIds = null) {
   });
 
   const subjectsToInject = (pack.subjects || []).filter((s) => {
-    if (selectedSubjectIds && !selectedSubjectIds.includes(s.id)) return false;
-    return !existingSubjectTitles.has((s.title || '').trim().toLowerCase());
+    if (selectedSubjectIds && selectedSubjectIds.length > 0) {
+      return selectedSubjectIds.includes(s.id);
+    }
+    return true;
   });
 
   if (subjectsToInject.length === 0) return journey;

@@ -48,7 +48,7 @@ export function DSAProvider({ children }) {
           }
         },
         (err) => {
-          console.warn('[DSAContext] Firestore sync error:', err);
+          // Graceful fallback to localStorage
         }
       );
       return () => {

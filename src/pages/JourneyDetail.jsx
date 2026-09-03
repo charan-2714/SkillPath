@@ -21,6 +21,7 @@ import {
   Code2,
   ArrowUpRight,
   Boxes,
+  Plus,
 } from 'lucide-react';
 import { AppLayout } from '../components/layout/AppLayout';
 import { ProgressBar, CircularProgress } from '../components/common/ProgressBar';
@@ -28,7 +29,16 @@ import { StatusBadge } from '../components/common/StatusBadge';
 import { SearchBar } from '../components/common/SearchBar';
 import { EmptyState } from '../components/common/EmptyState';
 import { Breadcrumbs } from '../components/common/Breadcrumbs';
+import { Modal } from '../components/common/Modal';
 import { useJourney } from '../hooks/useJourney';
+import { useAppState, ACTIONS } from '../context/AppContext';
+import { useToast } from '../context/ToastContext';
+import {
+  ROLE_TEMPLATES,
+  TECHNOLOGY_TEMPLATES,
+  LEARNING_PACKS,
+  addTemplatesToJourney,
+} from '../data/roles';
 import {
   calculateLevelProgress,
   calculateSubjectProgress,
@@ -273,12 +283,15 @@ function SubjectRow({ subject, level, journey, levelTheme, onClick }) {
 export default function JourneyDetail() {
   const { journeyId } = useParams();
   const navigate = useNavigate();
+  const { dispatch } = useAppState();
+  const { showToast } = useToast();
   const { journey, stats } = useJourney(journeyId);
 
   const [search, setSearch] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [expandedLevels, setExpandedLevels] = useState({});
   const [allExpanded, setAllExpanded] = useState(false);
+  const [packModal, setPackModal] = useState({ open: false, selectedPack: null, selectedSubjectIds: [] });
 
   if (!journey) {
     return (
@@ -430,6 +443,14 @@ export default function JourneyDetail() {
                   Resume Learning
                 </button>
               )}
+
+              <button
+                onClick={() => setPackModal({ open: true, selectedPack: null, selectedSubjectIds: [] })}
+                className="btn-secondary text-xs flex-1 sm:flex-initial justify-center py-2.5 px-4 font-semibold text-sky-600 dark:text-sky-400 border-sky-200 dark:border-sky-800 hover:bg-sky-50 dark:hover:bg-sky-950/40"
+              >
+                <Sparkles className="w-3.5 h-3.5" />
+                Add Learning Pack
+              </button>
 
               <button
                 onClick={() => navigate(`/journeys/${journey.id}/manage`)}
@@ -667,6 +688,301 @@ export default function JourneyDetail() {
           }
         />
       )}
+      {/* UNIVERSAL ADD TEMPLATES & LEARNING PACKS MODAL */}
+      <Modal
+        isOpen={packModal.open}
+        onClose={() => setPackModal({ open: false, activeTab: 'packs', search: '', selectedIds: [], inspectItem: null })}
+        title={packModal.inspectItem ? `Modules in ${packModal.inspectItem.title || packModal.inspectItem.name}` : 'Add Templates & Learning Packs to Roadmap'}
+        size="lg"
+      >
+        <div className="space-y-4">
+          {!packModal.inspectItem ? (
+            <div>
+              {/* Category Tabs */}
+              <div className="flex items-center gap-1.5 p-1 bg-gray-100 dark:bg-gray-800 rounded-xl mb-3 text-xs">
+                <button
+                  onClick={() => setPackModal((prev) => ({ ...prev, activeTab: 'packs' }))}
+                  className={`flex-1 py-1.5 px-3 rounded-lg font-bold transition-all ${
+                    (packModal.activeTab || 'packs') === 'packs'
+                      ? 'bg-white dark:bg-gray-900 text-sky-600 dark:text-sky-400 shadow-xs'
+                      : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
+                  }`}
+                >
+                  Learning Packs ({LEARNING_PACKS.length})
+                </button>
+                <button
+                  onClick={() => setPackModal((prev) => ({ ...prev, activeTab: 'roles' }))}
+                  className={`flex-1 py-1.5 px-3 rounded-lg font-bold transition-all ${
+                    packModal.activeTab === 'roles'
+                      ? 'bg-white dark:bg-gray-900 text-indigo-600 dark:text-indigo-400 shadow-xs'
+                      : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
+                  }`}
+                >
+                  Role Roadmaps ({ROLE_TEMPLATES.length})
+                </button>
+                <button
+                  onClick={() => setPackModal((prev) => ({ ...prev, activeTab: 'technology' }))}
+                  className={`flex-1 py-1.5 px-3 rounded-lg font-bold transition-all ${
+                    packModal.activeTab === 'technology'
+                      ? 'bg-white dark:bg-gray-900 text-purple-600 dark:text-purple-400 shadow-xs'
+                      : 'text-gray-500 hover:text-gray-800 dark:hover:text-gray-200'
+                  }`}
+                >
+                  Technology Tracks ({TECHNOLOGY_TEMPLATES.length})
+                </button>
+              </div>
+
+              {/* Search Bar & Multi-Select Actions */}
+              <div className="flex items-center gap-2 mb-3">
+                <input
+                  type="text"
+                  placeholder="Search roadmaps, packs, skills, keywords..."
+                  value={packModal.search || ''}
+                  onChange={(e) => setPackModal((prev) => ({ ...prev, search: e.target.value }))}
+                  className="input text-xs flex-1 py-1.5"
+                />
+                <button
+                  type="button"
+                  onClick={() => {
+                    const currentList =
+                      (packModal.activeTab || 'packs') === 'packs'
+                        ? LEARNING_PACKS
+                        : packModal.activeTab === 'roles'
+                        ? ROLE_TEMPLATES
+                        : TECHNOLOGY_TEMPLATES;
+                    const allIds = currentList.map((i) => i.id);
+                    const currentSelected = packModal.selectedIds || [];
+                    const isAllSelected = allIds.every((id) => currentSelected.includes(id));
+                    setPackModal((prev) => ({
+                      ...prev,
+                      selectedIds: isAllSelected
+                        ? (prev.selectedIds || []).filter((id) => !allIds.includes(id))
+                        : Array.from(new Set([...(prev.selectedIds || []), ...allIds])),
+                    }));
+                  }}
+                  className="btn-secondary text-[11px] py-1.5 px-2.5 whitespace-nowrap"
+                >
+                  {(packModal.selectedIds || []).length > 0 ? 'Toggle All' : 'Select All'}
+                </button>
+              </div>
+
+              {/* Items Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[55vh] overflow-y-auto pr-1">
+                {(() => {
+                  const list =
+                    (packModal.activeTab || 'packs') === 'packs'
+                      ? LEARNING_PACKS
+                      : packModal.activeTab === 'roles'
+                      ? ROLE_TEMPLATES
+                      : TECHNOLOGY_TEMPLATES;
+                  const q = (packModal.search || '').toLowerCase().trim();
+                  const filtered = list.filter((item) => {
+                    if (!q) return true;
+                    const matchTitle = (item.title || item.name || '').toLowerCase().includes(q);
+                    const matchDesc = (item.description || '').toLowerCase().includes(q);
+                    const matchCat = (item.category || '').toLowerCase().includes(q);
+                    return matchTitle || matchDesc || matchCat;
+                  });
+
+                  if (filtered.length === 0) {
+                    return (
+                      <div className="col-span-2 py-8 text-center text-xs text-gray-400">
+                        No curriculums found matching "{packModal.search}".
+                      </div>
+                    );
+                  }
+
+                  return filtered.map((item) => {
+                    const isSelected = (packModal.selectedIds || []).includes(item.id);
+                    const moduleCount = item.subjects ? item.subjects.length : item.levels ? item.levels.length : 0;
+                    const isLevelBased = Boolean(item.levels);
+
+                    return (
+                      <div
+                        key={item.id}
+                        onClick={() => {
+                          setPackModal((prev) => {
+                            const cur = prev.selectedIds || [];
+                            const next = cur.includes(item.id)
+                              ? cur.filter((id) => id !== item.id)
+                              : [...cur, item.id];
+                            return { ...prev, selectedIds: next };
+                          });
+                        }}
+                        className={`p-3 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
+                          isSelected
+                            ? 'bg-sky-50/80 dark:bg-sky-950/40 border-sky-400 dark:border-sky-700 shadow-xs'
+                            : 'bg-white dark:bg-gray-850 border-gray-200 dark:border-gray-750 hover:border-sky-300'
+                        }`}
+                      >
+                        <div>
+                          <div className="flex items-center justify-between gap-1.5 mb-1.5">
+                            <div className="flex items-center gap-2">
+                              <input
+                                type="checkbox"
+                                checked={isSelected}
+                                onChange={() => {}}
+                                className="rounded text-sky-600 focus:ring-sky-500"
+                              />
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
+                                {item.category || 'Curriculum'}
+                              </span>
+                            </div>
+                            <span className="text-[10px] text-gray-400 font-mono">
+                              {moduleCount} {isLevelBased ? 'Milestone(s)' : 'Module(s)'}
+                            </span>
+                          </div>
+
+                          <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100 line-clamp-1">
+                            {item.title || item.name}
+                          </h4>
+                          <p className="text-[11px] text-gray-500 dark:text-gray-400 line-clamp-2 mt-1">
+                            {item.description}
+                          </p>
+                        </div>
+
+                        <div className="mt-2.5 pt-2 border-t border-gray-100 dark:border-gray-750 flex items-center justify-between text-[11px]">
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setPackModal((prev) => ({ ...prev, inspectItem: item }));
+                            }}
+                            className="text-sky-600 dark:text-sky-400 font-bold hover:underline"
+                          >
+                            Inspect Modules →
+                          </button>
+                          <span className={isSelected ? 'text-sky-600 font-bold' : 'text-gray-400'}>
+                            {isSelected ? '✓ Selected' : 'Click to Select'}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  });
+                })()}
+              </div>
+
+              {/* Footer Batch Action */}
+              <div className="pt-3 border-t border-gray-200 dark:border-gray-700 flex items-center justify-between">
+                <span className="text-xs text-gray-600 dark:text-gray-300 font-medium">
+                  {(packModal.selectedIds || []).length} Curriculum(s) Selected
+                </span>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setPackModal({ open: false, activeTab: 'packs', search: '', selectedIds: [], inspectItem: null })}
+                    className="btn-secondary text-xs"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    disabled={(packModal.selectedIds || []).length === 0}
+                    onClick={() => {
+                      const allKnown = [...LEARNING_PACKS, ...ROLE_TEMPLATES, ...TECHNOLOGY_TEMPLATES];
+                      const selectedTemplates = (packModal.selectedIds || [])
+                        .map((id) => allKnown.find((t) => t.id === id))
+                        .filter(Boolean);
+
+                      if (selectedTemplates.length === 0) return;
+
+                      const updatedJourney = addTemplatesToJourney(journey, selectedTemplates);
+                      dispatch({ type: ACTIONS.UPDATE_JOURNEY, payload: updatedJourney });
+                      showToast(`Successfully appended ${selectedTemplates.length} curriculum(s) to ${journey.name}!`, 'success');
+                      setPackModal({ open: false, activeTab: 'packs', search: '', selectedIds: [], inspectItem: null });
+                    }}
+                    className="btn-primary text-xs"
+                  >
+                    <Plus className="w-3.5 h-3.5" /> Append {(packModal.selectedIds || []).length} Selected to Roadmap
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            /* Inspect Item View */
+            <div className="space-y-4">
+              <button
+                onClick={() => setPackModal((prev) => ({ ...prev, inspectItem: null }))}
+                className="text-xs text-sky-600 hover:underline flex items-center gap-1 font-bold"
+              >
+                <ArrowLeft className="w-3.5 h-3.5" /> Back to Curriculum List
+              </button>
+
+              <div className="p-3.5 rounded-xl bg-sky-50 dark:bg-sky-950/40 border border-sky-100 dark:border-sky-900/50">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-sky-100 text-sky-700 dark:bg-sky-950 dark:text-sky-300">
+                    {packModal.inspectItem.category}
+                  </span>
+                  <span className="text-xs text-sky-600 font-mono">
+                    {packModal.inspectItem.difficulty || 'All Levels'}
+                  </span>
+                </div>
+                <h4 className="text-sm font-bold text-sky-900 dark:text-sky-100">
+                  {packModal.inspectItem.title || packModal.inspectItem.name}
+                </h4>
+                <p className="text-xs text-sky-700 dark:text-sky-300 mt-1 leading-relaxed">
+                  {packModal.inspectItem.description}
+                </p>
+              </div>
+
+              {/* Module Outline */}
+              <div className="space-y-2">
+                <span className="text-xs font-bold text-gray-700 dark:text-gray-300">
+                  Included Milestones & Modules:
+                </span>
+                <div className="space-y-2 max-h-60 overflow-y-auto pr-1">
+                  {packModal.inspectItem.levels ? (
+                    packModal.inspectItem.levels.map((lvl, lIdx) => (
+                      <div key={lvl.id || lIdx} className="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700">
+                        <div className="text-xs font-bold text-gray-900 dark:text-gray-100">
+                          {lvl.title}
+                        </div>
+                        <div className="text-[11px] text-gray-500 mt-0.5">
+                          {(lvl.subjects || []).map((s) => s.title).join(' • ')}
+                        </div>
+                      </div>
+                    ))
+                  ) : (
+                    (packModal.inspectItem.subjects || []).map((subj, sIdx) => (
+                      <div key={subj.id || sIdx} className="p-2.5 rounded-xl bg-gray-50 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700">
+                        <div className="text-xs font-bold text-gray-900 dark:text-gray-100">
+                          {subj.title}
+                        </div>
+                        <div className="text-[11px] text-gray-500 mt-0.5">
+                          {(subj.topics || []).map((t) => t.title).join(' • ')}
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
+
+              {/* Quick Append Single Item Button */}
+              <div className="pt-3 border-t border-gray-200 dark:border-gray-700 flex items-center justify-end gap-2">
+                <button
+                  type="button"
+                  onClick={() => setPackModal((prev) => ({ ...prev, inspectItem: null }))}
+                  className="btn-secondary text-xs"
+                >
+                  Back
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const updatedJourney = addTemplatesToJourney(journey, packModal.inspectItem);
+                    dispatch({ type: ACTIONS.UPDATE_JOURNEY, payload: updatedJourney });
+                    showToast(`Appended "${packModal.inspectItem.title || packModal.inspectItem.name}" to ${journey.name}!`, 'success');
+                    setPackModal({ open: false, activeTab: 'packs', search: '', selectedIds: [], inspectItem: null });
+                  }}
+                  className="btn-primary text-xs"
+                >
+                  <Plus className="w-3.5 h-3.5" /> Append this Curriculum
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </Modal>
     </AppLayout>
   );
 }

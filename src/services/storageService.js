@@ -215,9 +215,18 @@ export async function syncActionToFirestore(uid, action, state) {
       }
 
       case 'DELETE_JOURNEY': {
-        const journeyId = action.payload;
+        const journeyId =
+          typeof action.payload === 'object' && action.payload !== null
+            ? action.payload.journeyId || action.payload.id
+            : action.payload;
         if (journeyId) {
           await deleteJourneyDoc(uid, journeyId);
+          const recycleItem = (state.recycleBin || []).find(
+            (i) => i.originalJourneyId === journeyId || i.data?.id === journeyId
+          );
+          if (recycleItem) {
+            await saveRecycleBinItem(uid, recycleItem);
+          }
         }
         break;
       }

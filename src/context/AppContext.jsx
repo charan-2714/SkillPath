@@ -182,21 +182,45 @@ function reducer(state, action) {
     }
 
     case ACTIONS.UPDATE_JOURNEY: {
-      const { journeyId, updates } = action.payload;
+      const payload = action.payload || {};
+      const targetId = payload.journeyId || payload.id;
+      const updates = payload.updates || payload;
       return {
         ...state,
         journeys: state.journeys.map((j) =>
-          j.id === journeyId ? { ...j, ...updates, updatedAt: new Date().toISOString() } : j
+          j.id === targetId ? { ...j, ...updates, updatedAt: new Date().toISOString() } : j
         ),
       };
     }
 
     case ACTIONS.DELETE_JOURNEY: {
-      const remaining = state.journeys.filter((j) => j.id !== action.payload);
+      const journeyId =
+        typeof action.payload === 'object' && action.payload !== null
+          ? action.payload.journeyId || action.payload.id
+          : action.payload;
+
+      const targetJourney = state.journeys.find((j) => j.id === journeyId);
+      const remaining = state.journeys.filter((j) => j.id !== journeyId);
+
+      let updatedRecycleBin = state.recycleBin || [];
+      if (targetJourney) {
+        const recycleItem = createNewRecycleItem({
+          itemType: 'journey',
+          title: targetJourney.name || 'Untitled Journey',
+          description: targetJourney.description || '',
+          originalJourneyId: targetJourney.id,
+          originalJourneyName: targetJourney.name,
+          data: targetJourney,
+        });
+        updatedRecycleBin = [recycleItem, ...updatedRecycleBin];
+      }
+
       return {
         ...state,
         journeys: remaining,
-        activeJourneyId: state.activeJourneyId === action.payload ? (remaining[0]?.id || null) : state.activeJourneyId,
+        recycleBin: updatedRecycleBin,
+        activeJourneyId:
+          state.activeJourneyId === journeyId ? remaining[0]?.id || null : state.activeJourneyId,
       };
     }
 
