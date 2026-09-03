@@ -22,13 +22,10 @@ import { isFirebaseConfigured } from './firebase';
 const STORAGE_KEY = 'skillpath_v1';
 
 export function createInitialState() {
-  const defaultTemplate = ROLE_TEMPLATES[0]; // AI/ML Engineer
-  const initialJourney = cloneJourneyFromTemplate(defaultTemplate, 'My AI/ML Engineer Journey');
-
   return {
-    version: 1,
-    activeJourneyId: initialJourney.id,
-    journeys: [initialJourney],
+    version: 5,
+    activeJourneyId: null,
+    journeys: [],
     recycleBin: [],
     learningLogs: [],
     settings: {
@@ -39,9 +36,9 @@ export function createInitialState() {
       aiIndependenceMode: true,
     },
     analytics: {
-      streakDays: 1,
+      streakDays: 0,
       lastActiveDate: new Date().toISOString().slice(0, 10),
-      totalStudyMinutes: 120,
+      totalStudyMinutes: 0,
     },
   };
 }
@@ -70,16 +67,23 @@ export function loadAppData() {
       return !name.includes('spanish') && !name.includes('photography') && !cat.includes('language');
     });
 
-    if (parsed.journeys.length === 0) {
-      const initial = createInitialState();
-      saveAppData(initial);
-      return initial;
-    }
+    // Remove default auto-seeded AI/ML journey if user hasn't started studying it (so users start with a clean board)
+    if ((parsed.version || 0) < 5) {
+      parsed.journeys = (parsed.journeys || []).filter((j) => {
+        const isAutoDefault =
+          (j.templateId === 'ai-ml-engineer' || j.id?.includes('ai-ml')) &&
+          j.name === 'My AI/ML Engineer Journey' &&
+          (j.completedTopics || 0) === 0;
+        return !isAutoDefault;
+      });
 
-    // Auto-migration to v2.0.0 curriculum
-    const needsMigration = (parsed.version || 0) < 3;
-    if (needsMigration) {
-      parsed.version = 3;
+      if (parsed.journeys.length === 0) {
+        parsed.activeJourneyId = null;
+      } else if (!parsed.journeys.some((j) => j.id === parsed.activeJourneyId)) {
+        parsed.activeJourneyId = parsed.journeys[0]?.id || null;
+      }
+
+      parsed.version = 5;
       saveAppData(parsed);
     }
 
