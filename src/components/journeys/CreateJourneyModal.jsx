@@ -104,6 +104,8 @@ export function CreateJourneyModal({ isOpen, onClose, onSave, initialData = null
     e.preventDefault();
     if (!name.trim()) return;
 
+    onClose();
+
     if (initialData) {
       onSave({
         name: name.trim(),
@@ -135,10 +137,8 @@ export function CreateJourneyModal({ isOpen, onClose, onSave, initialData = null
       dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: newJourney });
       dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: newJourney.id });
       showToast(`Created journey "${newJourney.name}"!`, 'success');
-      navigate(`/journeys/${newJourney.id}/builder`);
+      navigate(`/journeys/${newJourney.id}`);
     }
-
-    onClose();
   };
 
   return (

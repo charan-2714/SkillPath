@@ -200,33 +200,26 @@ export default function Templates() {
   };
 
   const handleConfirmUseTemplate = (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     if (!useModal.template) return;
     const template = useModal.template;
-    const customTitle = useModal.customName.trim() || template.title || template.name;
+    const customTitle = useModal.customName?.trim() || template.title || template.name;
+
+    // Immediately close modals so the dialog is instantly dismissed
+    setUseModal({ open: false, template: null, customName: '', goal: '', targetDate: '' });
+    setPreviewTemplate(null);
 
     try {
-      const newJourney = createFromTemplate(template, customTitle);
-      showToast(`Created journey "${newJourney.name}" from template!`, 'success');
-      setUseModal({ open: false, template: null, customName: '', goal: '', targetDate: '' });
-      navigate(`/journeys/${newJourney.id}`);
+      const newJourney = cloneJourneyFromTemplate(template, customTitle);
+      if (newJourney) {
+        dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: newJourney });
+        dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: newJourney.id });
+        showToast(`Created journey "${newJourney.name}" from template!`, 'success');
+        navigate(`/journeys/${newJourney.id}`);
+      }
     } catch (err) {
       console.error('Error creating journey from template:', err);
-      // Fallback: directly clone and dispatch
-      try {
-        const fallbackJourney = cloneJourneyFromTemplate(template, customTitle);
-        if (fallbackJourney) {
-          dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: fallbackJourney });
-          dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: fallbackJourney.id });
-          showToast(`Created journey "${fallbackJourney.name}"!`, 'success');
-          setUseModal({ open: false, template: null, customName: '', goal: '', targetDate: '' });
-          navigate(`/journeys/${fallbackJourney.id}`);
-          return;
-        }
-      } catch (fallbackErr) {
-        showToast('Failed to create journey: ' + fallbackErr.message, 'error');
-      }
-      setUseModal({ open: false, template: null, customName: '', goal: '', targetDate: '' });
+      showToast('Failed to create journey: ' + err.message, 'error');
     }
   };
 
@@ -249,21 +242,28 @@ export default function Templates() {
   };
 
   const handleConfirmCreatePackJourney = (e) => {
-    e.preventDefault();
+    e?.preventDefault();
     const { pack, selectedSubjectIds, journeyName } = packCustomizeModal;
-    if (!pack || !journeyName.trim()) return;
+    if (!pack) return;
 
-    const newJourney = cloneJourneyFromPacks(pack, {
-      name: journeyName.trim(),
-      selectedSubjectIds,
-    });
+    // Immediately close modal
+    setPackCustomizeModal({ open: false, pack: null, selectedSubjectIds: [], journeyName: '' });
 
-    if (newJourney) {
-      dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: newJourney });
-      dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: newJourney.id });
-      showToast(`Successfully created "${newJourney.name}"!`, 'success');
-      setPackCustomizeModal({ open: false, pack: null, selectedSubjectIds: [], journeyName: '' });
-      navigate(`/journeys/${newJourney.id}`);
+    try {
+      const newJourney = cloneJourneyFromPacks(pack, {
+        name: journeyName?.trim() || `My ${pack.title} Journey`,
+        selectedSubjectIds,
+      });
+
+      if (newJourney) {
+        dispatch({ type: ACTIONS.CREATE_JOURNEY, payload: newJourney });
+        dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: newJourney.id });
+        showToast(`Successfully created "${newJourney.name}"!`, 'success');
+        navigate(`/journeys/${newJourney.id}`);
+      }
+    } catch (err) {
+      console.error('Error creating pack journey:', err);
+      showToast('Failed to create journey: ' + err.message, 'error');
     }
   };
 

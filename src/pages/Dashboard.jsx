@@ -86,11 +86,14 @@ export default function Dashboard() {
     navigate(`/journeys/${journey.id}`);
   };
 
-  const handleSwitchJourney = (jId) => {
+  const handleSwitchJourney = (jId, shouldNavigate = false) => {
     if (jId === 'create') {
       navigate('/templates');
-    } else {
+    } else if (jId) {
       dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: jId });
+      if (shouldNavigate) {
+        navigate(`/journeys/${jId}`);
+      }
     }
   };
 
@@ -527,8 +530,8 @@ export default function Dashboard() {
             return (
               <div
                 key={j.id}
-                onClick={() => handleSwitchJourney(j.id)}
-                className={`p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between ${
+                onClick={() => handleSwitchJourney(j.id, true)}
+                className={`p-3.5 rounded-xl border transition-all cursor-pointer flex flex-col justify-between hover:shadow-md hover:border-indigo-400 dark:hover:border-indigo-600 ${
                   isSelected
                     ? 'bg-indigo-50/70 dark:bg-indigo-950/40 border-indigo-300 dark:border-indigo-700 shadow-xs'
                     : 'bg-white dark:bg-gray-800/80 border-gray-200 dark:border-gray-700 hover:border-indigo-200'

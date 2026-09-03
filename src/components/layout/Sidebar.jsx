@@ -64,6 +64,7 @@ export function Sidebar({ collapsed, onToggle }) {
       navigate('/templates');
     } else if (jId) {
       dispatch({ type: ACTIONS.SET_ACTIVE_JOURNEY, payload: jId });
+      navigate(`/journeys/${jId}`);
     }
   };
 

@@ -134,6 +134,22 @@ export default function App() {
                   }
                 />
                 <Route
+                  path="/journeys/:journeyId/builder"
+                  element={
+                    <ProtectedRoute>
+                      <JourneyBuilder />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/builder"
+                  element={
+                    <ProtectedRoute>
+                      <JourneyBuilder />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
                   path="/journeys/:journeyId/topics/:topicId"
                   element={
                     <ProtectedRoute>
