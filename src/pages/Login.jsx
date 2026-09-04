@@ -6,7 +6,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import {
   Sparkles,
   Compass,
-  CheckCircle2,
   Clock,
   TrendingUp,
   FolderTree,
@@ -14,7 +13,6 @@ import {
   AlertCircle,
   ArrowRight,
   Target,
-  BookOpen,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
@@ -58,103 +56,44 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50/40 to-indigo-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-gray-900 dark:text-gray-100 flex flex-col justify-center relative overflow-hidden py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-sky-50/40 to-indigo-50/30 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950 text-gray-900 dark:text-gray-100 flex flex-col justify-center relative overflow-hidden py-10 sm:py-12 px-4 sm:px-6 lg:px-8">
       {/* Subtle Ambient Background Accents */}
       <div className="absolute top-[-10%] left-[-5%] w-[450px] h-[450px] rounded-full bg-sky-400/10 dark:bg-sky-500/10 blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] rounded-full bg-indigo-400/10 dark:bg-indigo-500/10 blur-[120px] pointer-events-none" />
 
-      <div className="max-w-4xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div className="max-w-4xl w-full mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 items-center">
         
-        {/* Left Column: Mission & Core Tracking Capabilities */}
-        <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+        {/* 1. HERO HEADER: First on Mobile (Order 1) & Top-Left on Desktop */}
+        <div className="order-1 lg:order-1 lg:col-span-7 space-y-3.5 text-center lg:text-left">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-100/80 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800/80 text-sky-700 dark:text-sky-300 text-xs font-bold shadow-xs">
             <Target className="w-3.5 h-3.5 text-sky-600 dark:text-sky-400" />
             <span>Personal Learning & Mastery Tracker</span>
           </div>
 
-          <div className="space-y-3">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white leading-tight">
+          <div className="space-y-2.5">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-gray-900 dark:text-white leading-tight">
               Track, Structure & Master{' '}
               <span className="bg-gradient-to-r from-sky-600 via-indigo-600 to-violet-600 dark:from-sky-400 dark:via-indigo-300 dark:to-purple-400 bg-clip-text text-transparent">
                 What You Learn.
               </span>
             </h1>
-            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-xs sm:text-base text-gray-600 dark:text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               Your personal engineering tracker. Organize self-study milestones, log daily coding hours, keep structured problem-solving journals, and measure your real technical growth.
             </p>
           </div>
-
-          {/* 4 Core Tracking Features */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2 text-left max-w-lg mx-auto lg:mx-0">
-            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-sky-300 dark:hover:border-sky-700 transition-all">
-              <div className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
-                  <FolderTree className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Milestone Progress</h4>
-                  <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
-                    Track completion across custom levels, modules & topics
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-indigo-300 dark:hover:border-indigo-700 transition-all">
-              <div className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
-                  <Clock className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Study Logs & Streaks</h4>
-                  <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
-                    Log daily study sessions and maintain active learning streaks
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-purple-300 dark:hover:border-purple-700 transition-all">
-              <div className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
-                  <Code2 className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">DSA Practice Journal</h4>
-                  <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
-                    Record code solutions, time complexities & reattempts
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-emerald-300 dark:hover:border-emerald-700 transition-all">
-              <div className="flex items-start gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
-                  <TrendingUp className="w-4 h-4" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Growth Analytics</h4>
-                  <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
-                    Visualize study velocity, weak spots & retention
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* Right Column: Clean Authentication Box */}
-        <div className="lg:col-span-5 w-full">
-          <div className="p-7 sm:p-8 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl relative overflow-hidden">
+        {/* 2. AUTHENTICATION BOX: Second on Mobile (Order 2) & Right Column on Desktop */}
+        <div className="order-2 lg:order-2 lg:col-span-5 lg:row-span-2 w-full self-center">
+          <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-xl dark:shadow-2xl relative overflow-hidden">
             {/* Top Accent Gradient */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-sky-500 via-indigo-500 to-violet-500" />
 
-            <div className="text-center space-y-1.5 mb-6">
-              <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-gradient-to-tr from-sky-600 to-indigo-600 text-white shadow-md shadow-sky-500/20 mb-2">
-                <Sparkles className="w-6 h-6" />
+            <div className="text-center space-y-1.5 mb-5 sm:mb-6">
+              <div className="inline-flex items-center justify-center w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-tr from-sky-600 to-indigo-600 text-white shadow-md shadow-sky-500/20 mb-1.5">
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6" />
               </div>
-              <h2 className="text-xl font-black text-gray-900 dark:text-gray-100 tracking-tight">
+              <h2 className="text-lg sm:text-xl font-black text-gray-900 dark:text-gray-100 tracking-tight">
                 SkillPath Workspace
               </h2>
               <p className="text-xs text-gray-500 dark:text-gray-400">
@@ -164,7 +103,7 @@ export default function Login() {
 
             {/* Error Banner */}
             {(localError || authError) && (
-              <div className="mb-5 p-3.5 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 flex items-start gap-2.5 text-red-700 dark:text-red-300 text-xs">
+              <div className="mb-4 p-3 rounded-xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 flex items-start gap-2.5 text-red-700 dark:text-red-300 text-xs">
                 <AlertCircle className="w-4 h-4 flex-shrink-0 mt-0.5 text-red-500" />
                 <div>
                   <p className="font-semibold">Sign in notice</p>
@@ -220,10 +159,69 @@ export default function Login() {
               </button>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800 text-center">
+            <div className="mt-5 pt-3 border-t border-gray-100 dark:border-gray-800 text-center">
               <p className="text-[11px] text-gray-500 dark:text-gray-400">
                 🔒 Private workspace with automatic cloud & offline synchronization.
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* 3. 4 FEATURE CARDS: Third on Mobile (Order 3) & Bottom-Left on Desktop */}
+        <div className="order-3 lg:order-3 lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left max-w-lg mx-auto lg:mx-0">
+          <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-sky-300 dark:hover:border-sky-700 transition-all">
+            <div className="flex items-start gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-sky-100 dark:bg-sky-950 text-sky-600 dark:text-sky-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                <FolderTree className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Milestone Progress</h4>
+                <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                  Track completion across custom levels, modules & topics
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-indigo-300 dark:hover:border-indigo-700 transition-all">
+            <div className="flex items-start gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-indigo-100 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                <Clock className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Study Logs & Streaks</h4>
+                <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                  Log daily study sessions and maintain active learning streaks
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-purple-300 dark:hover:border-purple-700 transition-all">
+            <div className="flex items-start gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                <Code2 className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">DSA Practice Journal</h4>
+                <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                  Record code solutions, time complexities & reattempts
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="p-3.5 rounded-2xl bg-white/80 dark:bg-gray-900/80 border border-gray-200/80 dark:border-gray-800 shadow-xs hover:border-emerald-300 dark:hover:border-emerald-700 transition-all">
+            <div className="flex items-start gap-2.5">
+              <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold flex-shrink-0 mt-0.5">
+                <TrendingUp className="w-4 h-4" />
+              </div>
+              <div>
+                <h4 className="text-xs font-bold text-gray-900 dark:text-gray-100">Growth Analytics</h4>
+                <p className="text-[11px] text-gray-500 dark:text-gray-400 leading-snug mt-0.5">
+                  Visualize study velocity, weak spots & retention
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -232,4 +230,3 @@ export default function Login() {
     </div>
   );
 }
-
